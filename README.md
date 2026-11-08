@@ -28,9 +28,9 @@ Ouvre une session Claude Code sur ce dépôt, puis :
 
 Tu peux aussi écrire naturellement : « passe-moi Malik », « qu'est-ce qui cloche sur mon site ? ».
 
-## Appels à la voix
+## Au quotidien sur claude.ai (et calls à la voix)
 
-Voir [`entreprise/projet-claude-ai.md`](entreprise/projet-claude-ai.md) : la même équipe dans un Projet claude.ai, utilisable avec le mode vocal de l'app mobile.
+Guide : [`entreprise/projet-claude-ai.md`](entreprise/projet-claude-ai.md). Un Projet claude.ai = l'entreprise, une conversation par employé (Max, Léa, Hugo, Inès, Malik, Zoé, Sam, Réunion), et le mode vocal de l'app mobile pour les calls et le rapport oral de Max.
 
 ## Fichiers
 
