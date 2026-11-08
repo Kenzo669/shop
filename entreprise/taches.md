@@ -16,15 +16,17 @@ Tenu par Max (directeur général). Format d'une ligne : `- [ ] Qui · Tâche ·
 - [ ] Patron · Passer le dépôt `shop` en privé sur GitHub · demandée le 2026-11-08
 - [ ] Léa + Zoé · Revérifier le code après les corrections (le dépôt bloxks-mijo se met à jour tout seul) · demandée le 2026-11-08
 - [ ] Patron · Trancher le positionnement et la cible au call de ce soir · demandée le 2026-11-08
-- [ ] Malik · Valider les prix proposés par Zoé (3,99 €/mois, 24,99 €/an) face aux concurrents · demandée le 2026-11-08
 
 - [ ] Patron · Coller le compte rendu du call vocal ici pour que Max enregistre les décisions et les missions · demandée le 2026-11-08
 - [ ] Patron · Remplir éditeur, adresse et email dans la politique de confidentialité, puis la publier sur une vraie page · demandée le 2026-11-08
 - [ ] Patron · Demander à Bloxks pourquoi les pages légales de Mijo renvoient une erreur 404 · demandée le 2026-11-08
 
+- [ ] Patron · Créer l'abonnement Premium dans Bloxks (texte prêt dans le chat), puis renvoyer le lien GitHub pour vérification · demandée le 2026-11-08
+
 ## En cours
 
 ## Fait
+- [x] Malik · Grille de prix v1 validée par le patron · 2026-11-08
 - [x] Sam · Étude de la plateforme Bloxks · 2026-11-08
 - [x] Hugo · Idées marketing et protocoles de tests de conversion · 2026-11-08
 - [x] Malik · Repères de conversion et modèle 1 000 €/mois · 2026-11-08

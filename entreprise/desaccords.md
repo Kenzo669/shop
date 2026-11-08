@@ -35,11 +35,11 @@ Format :
 - Ce que ça change si on ne tranche pas : l'IA de Bloxks risque d'ajouter une connexion à moitié faite, et la validation Apple prend plus de temps.
 - Statut : ouvert
 
+## Tranchés
+
 ### 2026-11-08 · Prix et contenu du Premium
 - Zoé : 3,99 €/mois ou 24,99 €/an, 7 jours d'essai ; Premium avec menus illimités, mode frigo, liste partagée en famille, import de recettes.
 - Malik : 24,99 €/an est trop bas (-48 % sur le mensuel, ~530 abonnés nécessaires au lieu de ~480). Il recommande 3,99 € / 29,99 € (5 CHF / 35 CHF), essai 7 jours sur l'annuel. Surtout, le Premium de Zoé vend des fonctions qui n'existent pas en v1 (liste partagée = comptes reportés en v2, import photo factice) : risque de refus Apple et de remboursements.
 - Recommandation de Max : la grille de Malik, et un Premium v1 limité à ce qui marche (menus illimités, « Prêtes avec tes courses », suivi des dépenses, carnet illimité). Puis A/B test 29,99 € contre 24,99 € avec Bloxks Pay.
 - Ce que ça change si on ne tranche pas : on ne peut pas créer l'abonnement dans Bloxks Pay.
-- Statut : ouvert
-
-## Tranchés
+- Statut : tranché le 2026-11-08 par le patron (« ok ajuste les prix ») : grille de Malik, 3,99 €/mois ou 29,99 €/an, 5 CHF ou 35 CHF, essai 7 jours sur l'annuel ; Premium v1 limité aux fonctions qui marchent.
