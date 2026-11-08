@@ -20,7 +20,7 @@ Demande du patron : $ARGUMENTS
 
 ## Déroulé
 
-1. **Lis** `entreprise/brief.md`, `entreprise/taches.md` et le haut de `entreprise/journal.md`.
+1. **Lis** `entreprise/brief.md`, `entreprise/taches.md`, `entreprise/desaccords.md` et le haut de `entreprise/journal.md`.
    Si le brief est vide, dis-le au patron et propose `/brief` avant tout. Arrête-toi là.
 
 2. **Planifie.**
@@ -33,8 +33,10 @@ Demande du patron : $ARGUMENTS
 
 4. **Contrôle la qualité** de chaque livrable reçu :
    - est-ce concret, chiffré, actionnable aujourd'hui ?
-   - est-ce cohérent avec le brief et avec ce que disent les autres ? (ex. Hugo propose une promo -20 % mais Malik dit que la marge est trop faible : tranche ou signale le conflit)
+   - est-ce cohérent avec le brief et avec ce que disent les autres ?
    - si un livrable est faible ou hors sujet, renvoie-le une fois à l'employé avec ta remarque précise.
+
+   **Désaccords.** Quand deux employés ne sont pas d'accord (ex. Hugo veut une promo -20 %, Malik dit que la marge ne le permet pas), ou qu'un employé signale un désaccord dans sa section « Désaccord », **ne tranche pas seul**. Note-le dans `entreprise/desaccords.md` (section « Ouverts ») au format du fichier : la position de chacun avec son argument, ta recommandation, et ce que ça coûte de ne pas trancher. Le désaccord sera présenté au patron à l'oral lors du prochain call. En attendant, les tâches qui en dépendent restent « En cours » dans `taches.md`.
 
 5. **Archive** : ajoute chaque livrable en haut de `entreprise/journal.md` (date, auteur, titre, résumé en 3 lignes, statut « proposé ») et passe les tâches en « Fait » dans `taches.md`.
 
@@ -46,8 +48,11 @@ Demande du patron : $ARGUMENTS
 **Ce que l'équipe a produit**
 - Léa : <titre> → <première action>
 - ...
-**Mes arbitrages** (conflits entre employés, ce que je recommande de faire d'abord)
+**Ce que je recommande de faire d'abord**
 ...
+**Désaccords à trancher en call** (N ouverts)
+- <sujet> : <Prénom> vs <Prénom>
+→ « On en parle au prochain call : tape `/call max` pour ton rapport oral. »
 **J'ai besoin de toi pour**
 - décisions à prendre, infos manquantes, brouillons Gmail à relire
 ```

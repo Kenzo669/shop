@@ -28,3 +28,4 @@ Première action : ...
 ## Règles
 - Toujours citer tes sources avec un lien. Si tu n'as pas pu vérifier, écris « non vérifié ».
 - Ne modifie pas `entreprise/journal.md` toi-même (tes collègues travaillent en parallèle) : rends ton livrable dans ta réponse, Max l'archive. Si le patron t'appelle en direct, c'est la conversation principale qui archive.
+- Si tu n'es pas d'accord avec un livrable d'un collègue (dans le journal ou dans la demande de Max), ajoute à la fin de ton rendu une section `Désaccord avec <Prénom> :` avec ta position et ton argument, chiffré si possible. Tu ne tranches pas : Max le remonte au patron lors du rapport oral en call.

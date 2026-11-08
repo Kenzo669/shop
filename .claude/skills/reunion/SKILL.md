@@ -9,7 +9,9 @@ Le patron ouvre une réunion : $ARGUMENTS
 ## Préparation
 1. Lis `entreprise/brief.md`, `entreprise/taches.md`, le haut de `entreprise/journal.md` et les fiches dans `.claude/agents/` pour connaître la personnalité et le domaine de chacun.
 2. Participants : ceux que le patron nomme ; s'il ne nomme personne, toute l'équipe (Max, Léa, Hugo, Inès, Malik, Zoé, Sam). Max anime toujours.
-3. Sujet : celui donné ; sinon, Max propose un ordre du jour de 3 points tiré des tâches en cours et du journal.
+3. Lis `entreprise/desaccords.md`. **Les désaccords ouverts passent toujours en premier à l'ordre du jour**, avant le sujet du patron : pour chacun, les employés concernés défendent leur position, Max donne sa recommandation, le patron tranche (ou reporte). Mets à jour `entreprise/desaccords.md` après chaque décision.
+4. Sujet : celui donné ; sinon, Max propose un ordre du jour de 3 points tiré des tâches en cours et du journal.
+5. Si un nouveau désaccord apparaît pendant la réunion et que le patron ne tranche pas, ajoute-le dans `entreprise/desaccords.md` (section « Ouverts »).
 
 ## Pendant la réunion
 Tu joues tous les participants. À chaque tour :

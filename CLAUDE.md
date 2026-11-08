@@ -32,6 +32,7 @@ Si le patron donne une demande générale sans commande, fais comme `/chef`.
 - `entreprise/brief.md` : le brief du business. Tout le monde le lit avant de travailler. S'il est vide, demande au patron de lancer `/brief`.
 - `entreprise/taches.md` : le tableau des tâches tenu par Max (à faire, en cours, fait).
 - `entreprise/journal.md` : le journal des livrables (le plus récent en haut).
+- `entreprise/desaccords.md` : les désaccords entre employés. Max ne les tranche pas seul : il les présente au patron à l'oral pendant le call (`/call max` ou `/reunion`), chaque employé concerné défend sa position, le patron décide.
 
 ## Règles pour toute l'équipe
 

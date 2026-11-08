@@ -21,6 +21,7 @@ Ouvre une session Claude Code sur ce dépôt, puis :
 | `/brief` | Max te pose quelques questions et remplit le brief de ton business |
 | `/chef <demande>` | Max répartit la demande entre les employés, contrôle et te fait un rapport |
 | `/chef` | Tour de surveillance : chacun travaille sur son domaine, Inès trie tes mails |
+| `/call max` | Rapport oral de Max : l'essentiel, puis chaque désaccord entre employés, qu'ils défendent eux-mêmes avant que tu tranches |
 | `/call hugo` · `/call inès les devis en retard` | Appel en tête-à-tête avec un employé, jusqu'à ce que tu dises « raccroche » |
 | `/reunion prix de Noël` | Réunion d'équipe animée par Max, avec compte rendu à la fin |
 | `/loop 1h /chef` | L'équipe travaille en continu, un point toutes les heures |
@@ -38,3 +39,4 @@ Voir [`entreprise/projet-claude-ai.md`](entreprise/projet-claude-ai.md) : la mê
 - `entreprise/brief.md` : le brief de ton business, lu par toute l'équipe
 - `entreprise/taches.md` : le tableau des tâches tenu par Max
 - `entreprise/journal.md` : l'historique des livrables
+- `entreprise/desaccords.md` : les désaccords entre employés, à trancher au rapport oral
