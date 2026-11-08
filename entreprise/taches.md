@@ -3,7 +3,18 @@
 Tenu par Max (directeur général). Format d'une ligne : `- [ ] Qui · Tâche · demandée le AAAA-MM-JJ`
 
 ## À faire
+- [ ] Patron · Coller le résumé de la discussion de ce matin (concept, cible, fonctions, prix) · demandée le 2026-11-08
+- [ ] Patron · Publier un aperçu web public de l'appli dans Bloxks et coller le lien · demandée le 2026-11-08
+- [ ] Patron · Donner le budget des 30 premiers jours · demandée le 2026-11-08
+- [ ] Léa + Max · Ouvrir l'aperçu, capturer chaque écran et remplir la grille de vérification · demandée le 2026-11-08 (attend le lien)
+- [ ] Hugo · Écrire la page d'attente et 3 scripts vidéo · demandée le 2026-11-08 (attend le concept)
+- [ ] Sam · Trouver les concurrents de l'appli dans Bloxks App analytics · demandée le 2026-11-08 (attend le concept)
+- [ ] Malik · Valider les prix des offres · demandée le 2026-11-08 (attend le concept et le désaccord Hugo/Malik)
 
 ## En cours
 
 ## Fait
+- [x] Sam · Étude de la plateforme Bloxks · 2026-11-08
+- [x] Hugo · Idées marketing et protocoles de tests de conversion · 2026-11-08
+- [x] Malik · Repères de conversion et modèle 1 000 €/mois · 2026-11-08
+- [x] Léa · Grille de vérification et motifs de refus App Store · 2026-11-08
