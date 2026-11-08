@@ -2,6 +2,9 @@
 
 Le plus récent en haut. Chaque entrée : date, auteur, titre, résumé en 3 lignes, statut (proposé / validé par le patron / fait).
 
+## 2026-11-08 (nuit) · Contrôle de la version « Rattrapage automatique »
+- **Max** : nouvelle version reçue, mais elle ne contient que 3 fichiers techniques ajoutés par Bloxks (publicités AdMob, position en arrière-plan, enregistrement d'images), qu'aucun écran n'utilise. Aucune des 22 corrections n'est appliquée (Camille Martin, bouton photo factice et écran vin toujours là). À surveiller : si Bloxks active un jour les pubs ou la position en arrière-plan, les promesses « sans pub » et la politique de confidentialité deviennent fausses. Statut : fait.
+
 ## 2026-11-08 (soir) · Tournée « Au travail ! »
 - **Léa · Pages légales** : les 3 liens légaux de Mijo (confidentialité, conditions, assistance) renvoient une erreur 404 : refus Apple assuré en l'état. Politique de confidentialité rédigée et questionnaire App Store préparé : `entreprise/livrables/politique-confidentialite-mijo.md`. Statut : proposé.
 - **Malik · Prix** : 3,99 €/mois ou 29,99 €/an (5 / 35 CHF), essai 7 jours sur l'annuel. La Suisse rapporte ~43 % de plus par abonné. Désaccord avec Zoé ajouté. Statut : proposé.
