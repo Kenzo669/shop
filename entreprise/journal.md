@@ -2,6 +2,14 @@
 
 Le plus récent en haut. Chaque entrée : date, auteur, titre, résumé en 3 lignes, statut (proposé / validé par le patron / fait).
 
+## 2026-11-08 (après-midi) · Mijo
+Détail : fin de `entreprise/rapport-2026-11-08.md`.
+
+- **Sam · Concurrents de Mijo** : Jow (gratuit + drive) et Marmiton dominent ; prix du marché 2,99 à 6,99 €/mois ; pari « carnet de cuisine de la famille ». Statut : proposé.
+- **Zoé · Écran Profil et premier lancement** : 2 libellés tronqués, profil de démo, fonctions cachées dans le Profil ; parcours « Ta semaine est prête » ; Premium 3,99 €/mois ou 24,99 €/an. Statut : proposé.
+- **Hugo · Marketing Mijo** : série « On mange quoi ce soir ? », défi batch cooking 25 €, page d'attente A/B et 3 scripts ; cible recommandée : jeunes parents. Statut : proposé.
+- **Désaccord** Sam vs Hugo et Zoé sur le positionnement, ajouté pour l'appel. Statut : ouvert.
+
 ## 2026-11-08 · Rapport de Max : lancement de l'appli Bloxks
 Rapport complet : `entreprise/rapport-2026-11-08.md`.
 

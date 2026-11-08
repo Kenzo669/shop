@@ -11,6 +11,10 @@ Tenu par Max (directeur général). Format d'une ligne : `- [ ] Qui · Tâche ·
 - [ ] Sam · Trouver les concurrents de l'appli dans Bloxks App analytics · demandée le 2026-11-08 (attend le concept)
 - [ ] Malik · Valider les prix des offres · demandée le 2026-11-08 (attend le concept et le désaccord Hugo/Malik)
 
+- [ ] Patron · Corriger dans Bloxks les 2 libellés tronqués et retirer le profil de démo (Zoé) · demandée le 2026-11-08
+- [ ] Patron · Trancher le positionnement et la cible au call de ce soir · demandée le 2026-11-08
+- [ ] Malik · Valider les prix proposés par Zoé (3,99 €/mois, 24,99 €/an) face aux concurrents · demandée le 2026-11-08
+
 ## En cours
 
 ## Fait
