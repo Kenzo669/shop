@@ -2,6 +2,13 @@
 
 Le plus récent en haut. Chaque entrée : date, auteur, titre, résumé en 3 lignes, statut (proposé / validé par le patron / fait).
 
+## 2026-11-08 (soir) · Revue du code de Mijo
+Dépôt `Kenzo669/bloxks-mijo` connecté. Détail : fin de `entreprise/rapport-2026-11-08.md`.
+
+- **Léa · Audit App Store** : pas prête. 3 bloquants (transcription photo factice, profil de démo Camille Martin, confidentialité de la position), 7 points importants. Statut : proposé.
+- **Zoé · Revue de l'expérience** : onglets mal branchés, données de démo chez chaque nouvel utilisateur, bug de rayons ; Mijo est un planificateur avec un carnet greffé ; 7 corrections prêtes à coller dans Bloxks. Statut : proposé.
+- **Désaccord** Léa vs Zoé sur la création de compte en v1. Statut : ouvert.
+
 ## 2026-11-08 (après-midi) · Mijo
 Détail : fin de `entreprise/rapport-2026-11-08.md`.
 
