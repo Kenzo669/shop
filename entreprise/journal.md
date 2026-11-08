@@ -2,6 +2,14 @@
 
 Le plus récent en haut. Chaque entrée : date, auteur, titre, résumé en 3 lignes, statut (proposé / validé par le patron / fait).
 
+## 2026-11-08 (soir) · Tournée « Au travail ! »
+- **Léa · Pages légales** : les 3 liens légaux de Mijo (confidentialité, conditions, assistance) renvoient une erreur 404 : refus Apple assuré en l'état. Politique de confidentialité rédigée et questionnaire App Store préparé : `entreprise/livrables/politique-confidentialite-mijo.md`. Statut : proposé.
+- **Malik · Prix** : 3,99 €/mois ou 29,99 €/an (5 / 35 CHF), essai 7 jours sur l'annuel. La Suisse rapporte ~43 % de plus par abonné. Désaccord avec Zoé ajouté. Statut : proposé.
+- **Sam · Avis négatifs et Suisse** : Jow est absent de Suisse ; les vrais concurrents y sont Migusto (Migros), FOOBY (Coop) et Bring!. Pari : Mijo « indépendante des enseignes, sans compte, sans pub » en Suisse romande. Statut : proposé.
+- **Zoé · Fiche App Store** : versions A et B : `entreprise/livrables/fiche-app-store-mijo.md`. Statut : proposé.
+- **Hugo · 7 jours de contenu** : `entreprise/livrables/calendrier-contenu-7-jours.md`. Bug signalé : la saisie de la dépense n'apparaît qu'après avoir partagé la liste. Statut : proposé.
+- **Inès · Tri des mails** : fait, aucun brouillon nécessaire. Points personnels transmis au patron en direct (non archivés ici). Statut : fait.
+
 ## 2026-11-08 (19 h 31) · Nouvelle version de Mijo reçue
 - **Max · Contrôle de la version** : la synchro GitHub fonctionne. Nouveauté : suivi des dépenses de courses (« Dépensé ce mois-ci », en CHF ou EUR selon le pays). Aucune des 7 corrections n'est encore appliquée : la transcription photo est toujours factice et le profil « Camille Martin » toujours présent. Statut : fait.
 
