@@ -1,13 +1,13 @@
 # Politique de confidentialité de Mijo (brouillon de Léa, 8/11/2026)
 
-À compléter : éditeur, adresse, email. À publier sur une vraie page (les liens Bloxks actuels renvoient une erreur 404).
+À compléter : nom de l'éditeur (ou nom commercial) et email pro. Aucune adresse, aucun numéro de téléphone (décision du patron). À publier sur une vraie page (les liens Bloxks actuels renvoient une erreur 404).
 
 ---
 
 **Politique de confidentialité de Mijo**
 Dernière mise à jour : [date]
 
-**Qui sommes-nous ?** Mijo est éditée par [nom de l'éditeur], [adresse]. Contact : [email].
+**Qui sommes-nous ?** Mijo est éditée par [NOM DE L'ÉDITEUR]. Contact : [EMAIL PRO].
 
 **Pas de compte, pas de serveur Mijo.** Mijo s'utilise sans inscription. Tes recettes, ton menu, ta liste de courses, ton placard, tes allergies et tes préférences sont enregistrés uniquement sur ton téléphone. Nous n'y avons pas accès.
 
@@ -17,7 +17,7 @@ Dernière mise à jour : [date]
 
 **Pas de publicité ni de pistage.** Mijo n'affiche pas de publicité, n'utilise aucun outil de mesure d'audience et ne partage ni ne vend aucune donnée.
 
-**Tes droits.** Pour tout supprimer : Profil > Réglages > « Effacer mes données », ou désinstalle l'appli. Questions : [email]. Tu peux aussi saisir l'autorité de protection des données de ton pays (PFPDT en Suisse, CNIL en France).
+**Tes droits.** Pour tout supprimer : Profil > Réglages > « Effacer mes données », ou désinstalle l'appli. Questions : [EMAIL PRO]. Tu peux aussi saisir l'autorité de protection des données de ton pays (PFPDT en Suisse, CNIL en France).
 
 **Enfants.** Mijo n'est pas destinée spécialement aux enfants de moins de 13 ans.
 

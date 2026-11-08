@@ -18,6 +18,10 @@ Tenu par Max (directeur général). Format d'une ligne : `- [ ] Qui · Tâche ·
 
 - [ ] Patron · Coller dans Bloxks le message unique des 22 corrections (`entreprise/livrables/prompts-bloxks-corrections.md`), puis renvoyer le lien GitHub · demandée le 2026-11-08
 
+- [ ] Patron · Créer une adresse email pro pour Mijo (ex. contact.mijo@… ) et choisir le nom d'éditeur affiché · demandée le 2026-11-08
+- [ ] Patron · Choisir les pays de sortie : Suisse seule (aucun téléphone public exigé) ou aussi l'UE (Apple publie téléphone, adresse et email du vendeur) · demandée le 2026-11-08
+- [ ] Zoé · Préparer l'ajout de recettes (à préciser avec le patron : enrichir le catalogue ou améliorer l'ajout de recettes perso) · demandée le 2026-11-08
+
 ## En cours
 
 ## Fait

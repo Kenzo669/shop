@@ -1,7 +1,7 @@
 # Instructions à coller dans le chat de Bloxks (Zoé, validé par Max le 8/11/2026)
 
 Coller les messages un par un, dans l'ordre. Après chaque message, faire la vérification avant de passer au suivant.
-Avant le message 4 : compléter [éditeur], [adresse] et [email] dans `politique-confidentialite-mijo.md` et coller ce texte (de « Politique de confidentialité de Mijo » à « Changements ») sous le message.
+Avant le message 4 : compléter [NOM DE L'ÉDITEUR] et [EMAIL PRO] (pas d'adresse ni de téléphone) dans `politique-confidentialite-mijo.md` et coller ce texte (de « Politique de confidentialité de Mijo » à « Changements ») sous le message.
 
 ## Message 1 · Bloquants Apple
 Corrige ces points avant toute publication :
@@ -39,7 +39,7 @@ Corrige ces points avant toute publication :
 4. L'offre s'affiche seulement quand on touche « Semaine suivante » (une flèche à ajouter sur « Tes menus ») ou quand on enregistre une 31e recette. Ailleurs, les fonctions Premium portent un badge « Premium » et n'ouvrent l'offre que si l'utilisateur les touche. Jamais au lancement.
 5. Sur l'écran de l'offre : l'annuel est présélectionné avec « 7 jours gratuits, puis 29,99 € par an » ; le prix et la durée de chaque formule sont écrits en clair ; la phrase « Renouvellement automatique, résiliable à tout moment dans les réglages de ton identifiant Apple, au moins 24 h avant la fin de la période. Paiement débité sur ton compte Apple. » ; les boutons « Restaurer mes achats », « Conditions d'utilisation » et « Politique de confidentialité » ; un bouton « Continuer gratuitement » bien visible.
 6. Dans les Réglages, ajoute « Mijo Premium » (état de l'abonnement) et « Restaurer mes achats ».
-7. Les liens « Aide et contact », « Politique de confidentialité » et « Conditions d'utilisation » renvoient une erreur. Fais-les ouvrir de vraies pages. Confidentialité : le texte collé sous ce message, complété de trois phrases (la position est arrondie à environ 1 km avant l'envoi ; les dépenses restent sur le téléphone ; le paiement est géré par Apple et Mijo ne voit aucune donnée bancaire). Conditions : les conditions standard d'Apple, plus les conditions de l'abonnement ci-dessus. Aide : l'e-mail de contact et 4 réponses (exporter, importer, effacer mes données, résilier).
+7. Les liens « Aide et contact », « Politique de confidentialité » et « Conditions d'utilisation » renvoient une erreur. Fais-les ouvrir de vraies pages. Confidentialité : le texte collé sous ce message, complété de trois phrases (la position est arrondie à environ 1 km avant l'envoi ; les dépenses restent sur le téléphone ; le paiement est géré par Apple et Mijo ne voit aucune donnée bancaire). Conditions : les conditions standard d'Apple, plus les conditions de l'abonnement ci-dessus. Aide : l'e-mail de contact uniquement (aucun numéro de téléphone, aucune adresse postale) et 4 réponses (exporter, importer, effacer mes données, résilier).
 8. Avant d'envoyer la position à OpenStreetMap, arrondis la latitude et la longitude à 2 décimales.
 
 [coller ici la politique de confidentialité complétée]
