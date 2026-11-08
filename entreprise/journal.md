@@ -2,6 +2,12 @@
 
 Le plus récent en haut. Chaque entrée : date, auteur, titre, résumé en 3 lignes, statut (proposé / validé par le patron / fait).
 
+## 2026-11-08 (soir) · Code de Mijo corrigé par l'équipe
+- **Zoé · Vérification de la v2 (ZIP du patron)** : 7 corrections faites, 7 partielles, 1 non faite (fausse lecture de photo). Prix annuel à 39,99 € sans essai au lieu de 29,99 € avec 7 jours.
+- **Léa · Vérification conformité** : pages légales toujours en 404, Bloxks Pay pas activé (clé vide), aucune donnée personnelle du patron dans le code. La politique de confidentialité doit mentionner Bloxks Pay.
+- **Max · Corrections appliquées dans le code** (ZIP `mijo-code-corrige.zip` remis au patron, détail dans CHANGEMENTS-EQUIPE.md) : fausse photo supprimée, rayons, menu daté, dîners jamais sur un jour passé, 31e recette pour les abonnés, libellés, liste de courses simplifiée, mentions Premium, statut d'abonnement. Non lancé (pas d'environnement Expo) ; syntaxe vérifiée.
+- **Reste côté Bloxks** (fichiers gérés par Bloxks) : prix annuel et essai, bouton « Continuer gratuitement », pages légales, clé Apple pour Bloxks Pay.
+
 ## 2026-11-08 (nuit) · Contrôle de la version « Rattrapage automatique »
 - **Max** : nouvelle version reçue, mais elle ne contient que 3 fichiers techniques ajoutés par Bloxks (publicités AdMob, position en arrière-plan, enregistrement d'images), qu'aucun écran n'utilise. Aucune des 22 corrections n'est appliquée (Camille Martin, bouton photo factice et écran vin toujours là). À surveiller : si Bloxks active un jour les pubs ou la position en arrière-plan, les promesses « sans pub » et la politique de confidentialité deviennent fausses. Statut : fait.
 
