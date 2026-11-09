@@ -1,0 +1,287 @@
+id;titre;pays;type
+ch-filets-perche-meuniere;Filets de perche meunière;CH;repas
+ch-fondue-moitie-moitie;Fondue moitié-moitié;CH;repas
+ch-risotto-safran-luganighe;Risotto au safran et luganighe;CH;repas
+ch-rosti-fromage-tomates;Rösti au fromage et aux tomates;CH;repas
+ch-bratwurst-saint-gall-rosti;Saucisse de Saint-Gall, sauce aux oignons et rösti;CH;repas
+ch-emince-veau-zurichoise;Émincé de veau à la zurichoise;CH;repas
+frv-blanquette-de-veau;Blanquette de veau;FR;repas
+frp-bouillabaisse-express;Bouillabaisse express;FR;repas
+frv-boeuf-bourguignon;Bœuf bourguignon;FR;repas
+frv-choucroute-garnie;Choucroute garnie;FR;repas
+frv-confit-canard-pommes-sarladaises;Confit de canard et pommes sarladaises;FR;repas
+frv-coq-au-vin;Coq au vin;FR;repas
+frv-croque-monsieur;Croque-monsieur;FR;repas
+ch-fondue-savoyarde;Fondue savoyarde;FR;repas
+frv-galettes-completes;Galettes complètes jambon, œuf, fromage;FR;repas
+frv-hachis-parmentier;Hachis parmentier;FR;repas
+frv-pot-au-feu;Pot-au-feu;FR;repas
+frv-poulet-roti-du-dimanche;Poulet rôti du dimanche;FR;repas
+frv-quiche-lorraine;Quiche lorraine;FR;repas
+frp-salade-nicoise;Salade niçoise;FR;repas
+frp-soupe-oignon-gratinee;Soupe à l'oignon gratinée;FR;repas
+frv-tarte-flambee;Tarte flambée;FR;repas
+ch-tartiflette;Tartiflette;FR;repas
+med-tave-kosi;Tavë kosi, agneau au yaourt gratiné;AL;repas
+med-brochettes-porc-armeniennes;Brochettes de porc à l'arménienne;AM;repas
+med-ghapama;Ghapama, potiron farci au riz et fruits secs;AM;repas
+ame-bife-chimichurri;Bife à la chimichurri;AR;repas
+ame-empanadas-carne-four;Empanadas de carne au four;AR;repas
+ame-milanesa-napolitana;Milanesa napolitana;AR;repas
+ch-escalope-viennoise;Escalope viennoise et pommes persillées;AT;repas
+ch-grostl-tyrolien;Gröstl tyrolien;AT;repas
+ch-spatzli-fromage-oignons;Spätzli au fromage et oignons dorés;AT;repas
+med-burek-epinards-fromage;Burek aux épinards et au fromage frais;BA;repas
+med-cevapi-ajvar;Ćevapi, ajvar et oignons crus;BA;repas
+frv-boulets-liegeois;Boulets à la liégeoise;BE;repas
+frp-croquettes-crevettes-grises;Croquettes aux crevettes grises;BE;repas
+frp-moules-creme-frites-four;Moules à la crème et frites au four;BE;repas
+frp-stoemp-carottes-oeuf;Stoemp aux carottes et œuf au plat;BE;repas
+frp-tomates-crevettes;Tomates-crevettes à la belge;BE;repas
+frp-waterzooi-poisson;Waterzooi de poisson;BE;repas
+frv-waterzoi-de-poulet;Waterzoï de poulet;BE;repas
+ame-feijoada-simplifiee;Feijoada simplifiée;BR;repas
+ame-moqueca-poisson;Moqueca de poisson;BR;repas
+ame-picanha-farofa;Picanha et farofa;BR;repas
+ame-poutine-maison;Poutine maison sauce brune végétale;CA;repas
+ame-pate-chinois;Pâté chinois;CA;repas
+ame-tourtiere-quebecoise;Tourtière québécoise;CA;repas
+afr-alloco-oeufs-sauce-tomate;Alloco et œufs à la sauce tomate;CI;repas
+afr-attieke-poisson-braise;Attiéké et poisson braisé;CI;repas
+afr-poulet-kedjenou;Poulet kedjenou;CI;repas
+ame-cazuela-chilena;Cazuela chilena de poulet;CL;repas
+ame-pastel-de-choclo;Pastel de choclo;CL;repas
+ame-porotos-granados;Porotos granados;CL;repas
+afr-ndole-boeuf;Ndolé au bœuf;CM;repas
+afr-poulet-dg;Poulet DG;CM;repas
+ase-chow-mein-legumes;Chow mein aux légumes;CN;repas
+ase-fondue-chinoise-legumes-tofu;Fondue chinoise aux légumes et tofu;CN;repas
+ase-magret-facon-canard-laque;Magret façon canard laqué et crêpes;CN;repas
+ase-nouilles-dan-dan;Nouilles dan dan au porc haché;CN;repas
+ase-porc-aigre-doux;Porc aigre-doux à l'ananas;CN;repas
+ase-porc-char-siu-four;Porc laqué char siu au four;CN;repas
+ase-poulet-kung-pao;Poulet kung pao;CN;repas
+ase-jiaozi-chou-champignons;Raviolis chinois au chou et aux champignons;CN;repas
+ase-riz-saute-oeufs-petits-pois;Riz sauté aux œufs et petits pois;CN;repas
+ase-soupe-wontons-crevettes;Soupe de wontons aux crevettes;CN;repas
+ase-zhajiang-mian-porc;Zhajiang mian au porc haché;CN;repas
+ame-ajiaco-bogota;Ajiaco de Bogotá;CO;repas
+ame-bandeja-paisa-simplifiee;Bandeja paisa simplifiée;CO;repas
+ame-gallo-pinto-oeufs;Gallo pinto aux œufs et plantain;CR;repas
+ame-lechon-asado-mojo;Porc rôti au mojo cubain;CU;repas
+ame-ropa-vieja;Ropa vieja;CU;repas
+med-afelia;Afelia, porc au vin rouge et à la coriandre;CY;repas
+med-kleftiko;Kleftiko, agneau confit en papillote;CY;repas
+afr-chorba-frik-agneau;Chorba frik à l'agneau;DZ;repas
+afr-couscous-poulet-pois-chiches;Couscous algérien au poulet et pois chiches;DZ;repas
+afr-ful-medames;Ful medames aux œufs;EG;repas
+afr-koshari-egyptien;Koshari égyptien;EG;repas
+med-albondigas;Albóndigas en sauce tomate;ES;repas
+med-fabada-asturiana;Fabada asturiana;ES;repas
+med-tortilla-de-patatas;Tortilla de patatas;ES;repas
+afr-doro-wat;Doro wat, poulet au berbéré et aux œufs;ET;repas
+afr-misir-wot;Misir wot, lentilles corail au berbéré;ET;repas
+afr-shiro-ethiopien;Shiro, crème de pois chiches éthiopienne;ET;repas
+afr-tibs-boeuf;Tibs de bœuf éthiopien;ET;repas
+med-chakhokhbili;Chakhokhbili, poulet aux tomates et herbes;GE;repas
+med-khachapuri-adjaruli;Khachapuri adjaruli;GE;repas
+afr-waakye-ragout-boeuf;Waakye et ragoût de bœuf;GH;repas
+ame-poulet-colombo;Colombo de poulet;GP;repas
+med-garides-saganaki;Garides saganaki, crevettes à la tomate et feta;GR;repas
+med-gemista;Gemista, tomates et poivrons farcis au riz;GR;repas
+med-bakaliaros-skordalia;Morue frite et skordalia;GR;repas
+med-moussaka;Moussaka;GR;repas
+med-pastitsio;Pastitsio;GR;repas
+med-spanakopita;Spanakopita en plaque;GR;repas
+ame-pepian-poulet;Pepián de poulet;GT;repas
+med-brodet-poisson;Brodet, ragoût de poisson dalmate;HR;repas
+ame-griot-pikliz;Griot et pikliz;HT;repas
+asd-gado-gado;Gado-gado à la sauce cacahuètes;ID;repas
+asd-nasi-goreng-oeuf;Nasi goreng aux légumes et œuf au plat;ID;repas
+asd-rendang-boeuf;Rendang de bœuf;ID;repas
+med-sabich;Sabich, pita aux aubergines et œufs;IL;repas
+asd-biryani-poulet;Biryani de poulet au four;IN;repas
+asd-butter-chicken;Butter chicken (murgh makhani);IN;repas
+asd-chana-masala;Chana masala du Pendjab;IN;repas
+asd-dal-makhani;Dal makhani crémeux;IN;repas
+asd-palak-paneer;Palak paneer;IN;repas
+asd-vindaloo-porc;Vindaloo de porc de Goa;IN;repas
+med-ash-reshteh;Ash reshteh, soupe persane aux nouilles;IR;repas
+med-fesenjan;Fesenjan, poulet aux noix et à la grenade;IR;repas
+med-ghormeh-sabzi;Ghormeh sabzi, ragoût persan aux herbes;IR;repas
+med-joojeh-kabab;Joojeh kabab au safran;IR;repas
+it-bucatini-amatriciana;Bucatini all'amatriciana;IT;repas
+it-calzone-legumes-mozzarella;Calzone aux légumes grillés et mozzarella;IT;repas
+it-cotoletta-milanese;Côtelettes de veau à la milanaise;IT;repas
+it-gnocchi-maison-beurre-sauge;Gnocchis maison au beurre et sauge;IT;repas
+it-lasagnes-bolognaise;Lasagnes à la bolognaise;IT;repas
+it-minestrone;Minestrone aux légumes et pâtes;IT;repas
+it-osso-buco-milanaise;Osso buco à la milanaise;IT;repas
+it-parmigiana-melanzane;Parmigiana d'aubergines;IT;repas
+it-penne-arrabbiata;Penne all'arrabbiata;IT;repas
+it-piadina-mozzarella-roquette;Piadina mozzarella, roquette et tomates;IT;repas
+it-pizza-capricciosa;Pizza capricciosa;IT;repas
+it-pizza-margherita-plaque;Pizza margherita sur plaque;IT;repas
+it-ribollita;Ribollita toscane;IT;repas
+it-risotto-safran;Risotto au safran à la milanaise;IT;repas
+it-saltimbocca-romana;Saltimbocca alla romana;IT;repas
+it-spaghetti-aglio-olio-peperoncino;Spaghetti aglio, olio e peperoncino;IT;repas
+it-spaghetti-puttanesca;Spaghetti alla puttanesca;IT;repas
+it-spaghetti-vongole;Spaghetti alle vongole;IT;repas
+it-spaghetti-cacio-e-pepe;Spaghetti cacio e pepe;IT;repas
+it-spaghetti-carbonara;Spaghetti carbonara;IT;repas
+it-tagliatelles-ragu-bolognese;Tagliatelles au ragù bolognais;IT;repas
+it-tortellini-en-bouillon;Tortellini en bouillon;IT;repas
+it-trofie-pesto-genovese;Trofie au pesto, pommes de terre et haricots;IT;repas
+it-vitello-tonnato;Vitello tonnato;IT;repas
+ase-curry-japonais-legumes;Curry japonais aux légumes;JP;repas
+ase-gyoza-porc-chou;Gyoza grillés au porc et au chou;JP;repas
+ase-katsudon;Katsudon, porc pané et œuf sur riz;JP;repas
+ase-okonomiyaki-chou;Okonomiyaki au chou;JP;repas
+ase-omurice-champignons;Omurice aux champignons;JP;repas
+ase-poulet-karaage;Poulet karaage et salade de chou;JP;repas
+ase-ramen-shoyu-porc;Ramen shoyu au porc et œuf mollet;JP;repas
+ase-sukiyaki-simplifie;Sukiyaki simplifié;JP;repas
+ase-temaki-saumon-fume-avocat;Temaki au saumon fumé et avocat;JP;repas
+ase-tendon-crevettes-legumes;Tendon, bol de tempura aux crevettes;JP;repas
+ase-yakitori-poele;Yakitori à la poêle;JP;repas
+afr-githeri-kenyan;Githeri kényan, maïs et haricots;KE;repas
+afr-nyama-choma-kachumbari;Nyama choma et kachumbari;KE;repas
+afr-pilau-kenyan-boeuf;Pilau kényan au bœuf;KE;repas
+afr-sukuma-wiki-ugali;Sukuma wiki et ugali;KE;repas
+asd-amok-poisson;Amok de poisson cambodgien;KH;repas
+ase-bulgogi-boeuf;Bulgogi de bœuf;KR;repas
+ase-doenjang-jjigae;Doenjang jjigae aux légumes et tofu;KR;repas
+ase-gimbap-vegetarien;Gimbap végétarien;KR;repas
+ase-japchae-legumes;Japchae aux légumes;KR;repas
+ase-kimchi-jjigae-thon;Kimchi jjigae au thon;KR;repas
+ase-dakgangjeong-four;Poulet croustillant coréen au four;KR;repas
+ase-samgyeopsal-wraps-salade;Samgyeopsal à la poêle et wraps de salade;KR;repas
+ase-sundubu-jjigae-vegetarien;Sundubu jjigae végétarien;KR;repas
+ase-tteokbokki-oeufs;Tteokbokki aux œufs;KR;repas
+asd-larb-porc;Larb de porc laotien;LA;repas
+med-fattoush-complet;Fattoush complet aux pois chiches grillés;LB;repas
+med-shawarma-poulet-plaque;Shawarma de poulet à la plaque;LB;repas
+med-shish-taouk;Shish taouk et toum;LB;repas
+asd-curry-poulet-srilankais;Curry de poulet sri-lankais;LK;repas
+asd-kottu-roti-legumes;Kottu roti aux légumes;LK;repas
+afr-couscous-sept-legumes;Couscous aux sept légumes;MA;repas
+afr-pastilla-poulet;Pastilla au poulet et aux amandes;MA;repas
+afr-tajine-agneau-pruneaux;Tajine d'agneau aux pruneaux et amandes;MA;repas
+afr-ravitoto-porc;Ravitoto au porc;MG;repas
+afr-romazava;Romazava, bœuf aux brèdes;MG;repas
+asd-mohinga;Mohinga, soupe birmane au poisson;MM;repas
+ase-buuz-agneau;Buuz, raviolis vapeur mongols à l'agneau;MN;repas
+ase-khuushuur-boeuf;Khuushuur, chaussons mongols au bœuf;MN;repas
+ase-tsuivan-boeuf;Tsuivan, nouilles mongoles au bœuf;MN;repas
+afr-briani-poulet-mauricien;Briani mauricien au poulet;MU;repas
+afr-mine-frit-vegetarien;Mine frit aux légumes et aux œufs;MU;repas
+afr-vindaye-poisson;Vindaye de poisson mauricien;MU;repas
+ame-mole-poulet-simplifie;Poulet au mole express;MX;repas
+ame-pozole-rojo;Pozole rojo;MX;repas
+ame-tacos-al-pastor-poele;Tacos al pastor à la poêle;MX;repas
+asd-satay-poulet;Satay de poulet, sauce cacahuètes;MY;repas
+afr-suya-boeuf;Brochettes de bœuf suya;NG;repas
+afr-jollof-rice-poulet;Jollof rice au poulet;NG;repas
+afr-egusi-epinards;Soupe egusi aux épinards;NG;repas
+asd-dal-bhat-nepalais;Dal bhat népalais aux légumes sautés;NP;repas
+asd-momos-legumes;Momos aux légumes et sauce tomate;NP;repas
+ame-aji-de-gallina;Ají de gallina;PE;repas
+ame-ceviche-poisson-blanc;Ceviche de poisson blanc;PE;repas
+ame-lomo-saltado;Lomo saltado;PE;repas
+ame-papas-a-la-huancaina;Papas a la huancaína et quinoa;PE;repas
+ame-poulet-a-la-brasa-four;Poulet à la brasa au four;PE;repas
+asd-adobo-poulet;Adobo de poulet philippin;PH;repas
+asd-sinigang-crevettes;Sinigang aux crevettes;PH;repas
+asd-karahi-poulet;Karahi de poulet pakistanais;PK;repas
+asd-seekh-kebab-agneau;Seekh kebabs d'agneau;PK;repas
+med-maqluba-poulet;Maqluba au poulet et chou-fleur;PS;repas
+med-musakhan;Musakhan, poulet au sumac et oignons;PS;repas
+med-bacalhau-com-natas;Bacalhau com natas, gratin de morue à la crème;PT;repas
+med-bacalhau-a-bras;Bacalhau à Brás;PT;repas
+med-caldeirada-peixe;Caldeirada, ragoût de poissons portugais;PT;repas
+med-caldo-verde;Caldo verde au chouriço;PT;repas
+med-frango-piri-piri;Poulet piri-piri à la portugaise;PT;repas
+med-sardines-grillees-portugaises;Sardines grillées et pommes de terre au paprika;PT;repas
+afr-cari-poulet-reunionnais;Cari poulet réunionnais;RE;repas
+afr-rougail-morue;Rougail morue;RE;repas
+afr-rougail-saucisses;Rougail saucisses;RE;repas
+med-pljeskavica;Pljeskavica, galettes de viande serbes;RS;repas
+med-sarma-chou-farci;Sarma, rouleaux de chou farcis;RS;repas
+asd-char-kway-teow;Char kway teow aux crevettes;SG;repas
+asd-poulet-hainanais;Riz au poulet hainanais;SG;repas
+afr-mafe-boeuf;Mafé de bœuf;SN;repas
+afr-poulet-yassa;Poulet yassa;SN;repas
+afr-thieboudienne;Thiéboudienne simplifiée;SN;repas
+ame-pupusas-fromage-haricots;Pupusas fromage et haricots;SV;repas
+med-kibbeh-bil-saniyeh;Kibbeh au plateau;SY;repas
+asd-pad-kra-pao-porc;Pad kra pao, porc au basilic;TH;repas
+asd-pad-thai-tofu;Pad thaï au tofu;TH;repas
+asd-tom-yum-crevettes;Tom yum aux crevettes et nouilles;TH;repas
+afr-brick-oeuf-pommes-de-terre;Bricks à l'œuf et pommes de terre;TN;repas
+afr-chakchouka-tunisienne;Chakchouka tunisienne;TN;repas
+med-shakshuka;Shakshuka à la feta;TN;repas
+med-imam-bayildi;Imam bayildi, aubergines fondantes;TR;repas
+med-iskender-maison;Iskender kebab maison;TR;repas
+med-kuru-fasulye;Kuru fasulye, haricots blancs à la turque;TR;repas
+med-lahmacun;Lahmacun, galettes turques à la viande;TR;repas
+med-menemen;Menemen aux poivrons;TR;repas
+med-mercimek-corbasi;Mercimek çorbası, soupe de lentilles corail;TR;repas
+ase-gua-bao-porc-braise;Gua bao au porc braisé et cacahuètes;TW;repas
+ase-lu-rou-fan;Lu rou fan, riz au porc braisé;TW;repas
+ase-poulet-trois-tasses;Poulet trois tasses au basilic;TW;repas
+ase-soupe-nouilles-boeuf-taiwan;Soupe de nouilles au bœuf taïwanaise;TW;repas
+ame-chaudree-palourdes;Chaudrée de palourdes;US;repas
+ame-jambalaya-poulet-chorizo;Jambalaya au poulet et chorizo;US;repas
+ame-mac-and-cheese-maison;Mac and cheese gratiné;US;repas
+ame-effiloche-porc-four;Porc effiloché au four et coleslaw;US;repas
+ame-arepas-reina-pepiada;Arepas reina pepiada;VE;repas
+ame-pabellon-criollo;Pabellón criollo;VE;repas
+asd-banh-mi-tofu;Bánh mì au tofu caramélisé;VN;repas
+asd-pho-bo;Phở bò, soupe de bœuf;VN;repas
+asd-goi-cuon-tofu;Rouleaux de printemps au tofu;VN;repas
+afr-bobotie-boeuf;Bobotie sud-africain;ZA;repas
+afr-chakalaka-pap;Chakalaka et pap;ZA;repas
+pd-bircher-muesli;Bircher müesli;CH;petit-dejeuner
+pd-crepes-au-sucre;Crêpes au sucre;FR;petit-dejeuner
+pd-pain-perdu;Pain perdu;FR;petit-dejeuner
+pd-kaiserschmarrn;Kaiserschmarrn;AT;petit-dejeuner
+pdm-avocat-ecrase-toast;Avocat écrasé sur toast et feta;AU;petit-dejeuner
+pd-gaufres-bruxelles;Gaufres de Bruxelles;BE;petit-dejeuner
+pd-pao-de-queijo;Pão de queijo;BR;petit-dejeuner
+pdm-congee-poulet-gingembre;Congee au poulet et gingembre;CN;petit-dejeuner
+pdm-jianbing;Jianbing, crêpe pékinoise à l'œuf;CN;petit-dejeuner
+pd-arepas-de-queso;Arepas au fromage;CO;petit-dejeuner
+pd-gallo-pinto;Gallo pinto;CR;petit-dejeuner
+pd-mangu;Mangú aux oignons rouges;DO;petit-dejeuner
+pdm-ful-medames;Ful medames;EG;petit-dejeuner
+pd-churros-chocolat;Churros et chocolat chaud;ES;petit-dejeuner
+pd-pan-con-tomate;Pan con tomate;ES;petit-dejeuner
+pd-full-english-breakfast;Full English breakfast;GB;petit-dejeuner
+pd-porridge-ecossais;Porridge à l'écossaise;GB;petit-dejeuner
+pd-yaourt-grec-miel-noix;Yaourt grec, miel et noix;GR;petit-dejeuner
+pdm-nasi-goreng-oeuf;Nasi goreng à l'œuf au plat;ID;petit-dejeuner
+pdm-idli-sambar;Idli de semoule et sambar;IN;petit-dejeuner
+pdm-masala-dosa;Masala dosa express;IN;petit-dejeuner
+pdm-nan-panir-sabzi;Pain, feta, herbes et noix à l'iranienne;IR;petit-dejeuner
+pdm-petit-dejeuner-japonais;Petit-déjeuner japonais au saumon grillé;JP;petit-dejeuner
+pdm-manakish-zaatar;Manakish au zaatar;LB;petit-dejeuner
+pdm-kiribath;Kiribath, riz au lait de coco et lunu miris;LK;petit-dejeuner
+pdm-baghrir;Baghrir, crêpes mille trous;MA;petit-dejeuner
+pdm-msemen;Msemen, crêpes feuilletées marocaines;MA;petit-dejeuner
+pd-chilaquiles-rojos;Chilaquiles rojos;MX;petit-dejeuner
+pdm-nasi-lemak;Nasi lemak, riz au lait de coco et sambal;MY;petit-dejeuner
+pdm-akara;Akara, beignets de haricots à œil noir;NG;petit-dejeuner
+pd-poffertjes;Poffertjes;NL;petit-dejeuner
+pd-uitsmijter;Uitsmijter;NL;petit-dejeuner
+pd-pan-con-chicharron;Pan con chicharrón;PE;petit-dejeuner
+pdm-tapsilog;Tapsilog, bœuf mariné, riz à l'ail et œuf;PH;petit-dejeuner
+pd-jajecznica;Jajecznica au lard et ciboulette;PL;petit-dejeuner
+pd-menemen;Menemen;TR;petit-dejeuner
+pdm-dan-bing;Dan bing, crêpe taïwanaise roulée à l'œuf;TW;petit-dejeuner
+pd-syrniki;Syrniki;UA;petit-dejeuner
+pdm-rolex-ouganda;Rolex, chapati roulé à l'omelette;UG;petit-dejeuner
+pd-pancakes-americains;Pancakes américains;US;petit-dejeuner
+pd-oeufs-benedicte;Œufs bénédicte;US;petit-dejeuner
+pdm-banh-mi-oeufs-au-plat;Bánh mì aux œufs au plat;VN;petit-dejeuner
+pdm-pho-ga;Phở gà, soupe de nouilles au poulet;VN;petit-dejeuner
