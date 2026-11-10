@@ -2,6 +2,13 @@
 
 Le plus récent en haut. Chaque entrée : date, auteur, titre, résumé en 3 lignes, statut (proposé / validé par le patron / fait).
 
+## 2026-11-10 · Robot cuisinier et nouvelles applis (rapport PDF)
+Rapport : `entreprise/livrables/Rapport-robot-et-nouvelles-applis.pdf`. Recrutement de Nora (matériel et fournisseurs) et Théo (studio d'applis).
+- **Sam** : les fabricants de cuisine connectée ferment (Brava, June, Karakuri, Picnic) ; les gagnants vendent du logiciel. Pari : pas de matériel avant le 6 déc. Statut : proposé.
+- **Nora** : marché, fournisseurs chinois (prix non vérifiés), obligations CE/Suisse ; 3 chemins (aucun matériel 0–500 CHF, accessoire 15–35 k CHF, robot 120–200 k CHF). Message fournisseur prêt, non envoyé. Statut : proposé.
+- **Malik** : robot à notre marque déficitaire même en vendant tout ; accessoire rentable seulement en pack avec l'abonnement et sous conditions (1 000 abonnés, 300 précommandes, 35 k CHF). Statut : proposé.
+- **Théo** : 10 idées notées ; Mijo Bébé 21/25 en tête, puis chiot (18) et suisse allemand (17). Une seule appli en construction à la fois. Statut : proposé.
+
 ## 2026-11-08 (soir) · Code de Mijo corrigé par l'équipe
 - **Zoé · Vérification de la v2 (ZIP du patron)** : 7 corrections faites, 7 partielles, 1 non faite (fausse lecture de photo). Prix annuel à 39,99 € sans essai au lieu de 29,99 € avec 7 jours.
 - **Léa · Vérification conformité** : pages légales toujours en 404, Bloxks Pay pas activé (clé vide), aucune donnée personnelle du patron dans le code. La politique de confidentialité doit mentionner Bloxks Pay.
