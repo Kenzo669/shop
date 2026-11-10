@@ -1,4 +1,28 @@
 ﻿id;Recette;Pays;Type;Allergènes (14 UE);Âge minimum enfant (mois)
+bb-banane-ecrasee;Banane écrasée;—;Premiers repas (bébé);Aucun des 14;6
+bb-batonnets-legumes;Bâtonnets de légumes fondants;—;Premiers repas (bébé);Aucun des 14;9
+bb-compote-pomme;Compote de pomme sans sucre;—;Premiers repas (bébé);Aucun des 14;6
+bb-dhal-doux;Dhal doux de lentilles corail;—;Premiers repas (bébé);Aucun des 14;9
+bb-hachis-boeuf-carotte;Mini-hachis de bœuf et carotte;—;Premiers repas (bébé);Lait;9
+bb-omelette-legumes;Omelette fine aux légumes en lamelles;—;Premiers repas (bébé);Œufs;9
+bb-pates-courgette-poulet;Petites pâtes, courgette et poulet;—;Premiers repas (bébé);Gluten;9
+bb-polenta-epinards;Polenta crémeuse aux épinards;—;Premiers repas (bébé);Lait;9
+bb-porridge-pomme;Porridge d'avoine à la pomme;—;Premiers repas (bébé);Gluten, Lait;9
+bb-epinards-oeuf;Purée d'épinards, pomme de terre et œuf;—;Premiers repas (bébé);Œufs;6
+bb-puree-brocoli;Purée de brocoli et pomme de terre;—;Premiers repas (bébé);Aucun des 14;6
+bb-puree-carotte;Purée de carotte;—;Premiers repas (bébé);Aucun des 14;6
+bb-carotte-poulet;Purée de carotte et poulet;—;Premiers repas (bébé);Aucun des 14;6
+bb-puree-butternut;Purée de courge butternut;—;Premiers repas (bébé);Aucun des 14;6
+bb-courgette-cabillaud;Purée de courgette et cabillaud;—;Premiers repas (bébé);Poissons;6
+bb-puree-courgette-pdt;Purée de courgette et pomme de terre;—;Premiers repas (bébé);Aucun des 14;6
+bb-lentilles-carotte;Purée de lentilles corail et carotte;—;Premiers repas (bébé);Aucun des 14;6
+bb-puree-patate-douce;Purée de patate douce;—;Premiers repas (bébé);Aucun des 14;6
+bb-puree-petits-pois;Purée de petits pois et pomme de terre;—;Premiers repas (bébé);Aucun des 14;6
+bb-risotto-potiron;Risotto doux au potiron;—;Premiers repas (bébé);Lait;9
+bb-semoule-legumes-dinde;Semoule aux légumes et dinde;—;Premiers repas (bébé);Gluten;9
+bb-yaourt-poire;Yaourt nature et poire écrasée;—;Premiers repas (bébé);Lait;9
+bb-cabillaud-brocoli;Écrasé de cabillaud, brocoli et pomme de terre;—;Premiers repas (bébé);Poissons;9
+bb-patate-douce-saumon;Écrasé de patate douce et saumon;—;Premiers repas (bébé);Poissons;9
 pdm-balaleet;Balaleet, vermicelles au safran et omelette;AE;Petit-déjeuner;Gluten, Œufs, Lait;12
 med-tave-kosi;Tavë kosi, agneau au yaourt gratiné;AL;Repas;Gluten, Œufs, Lait;12
 med-brochettes-porc-armeniennes;Brochettes de porc à l'arménienne;AM;Repas;Gluten;12
