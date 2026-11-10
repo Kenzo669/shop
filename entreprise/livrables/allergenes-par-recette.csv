@@ -1,0 +1,1179 @@
+﻿id;Recette;Pays;Type;Allergènes (14 UE);Âge minimum enfant (mois)
+pdm-balaleet;Balaleet, vermicelles au safran et omelette;AE;Petit-déjeuner;Gluten, Œufs, Lait;12
+med-tave-kosi;Tavë kosi, agneau au yaourt gratiné;AL;Repas;Gluten, Œufs, Lait;12
+med-brochettes-porc-armeniennes;Brochettes de porc à l'arménienne;AM;Repas;Gluten;12
+med-ghapama;Ghapama, potiron farci au riz et fruits secs;AM;Repas;Lait, Fruits à coque, Sulfites;12
+med-truite-grenade-armenienne;Truite rôtie à la grenade et aux noix;AM;Repas;Fruits à coque;12
+med-vospapur;Vospapur, soupe arménienne lentilles et boulgour;AM;Repas;Gluten, Lait, Sulfites;12
+ame-bife-chimichurri;Bife à la chimichurri;AR;Repas;Sulfites;12
+ame-empanadas-carne-four;Empanadas de carne au four;AR;Repas;Gluten, Œufs;12
+ame-empanadas-humita;Empanadas de humita;AR;Repas;Gluten, Œufs, Lait;12
+ame-fugazzeta;Fugazzeta;AR;Repas;Gluten, Lait;12
+ame-locro-argentin;Locro argentin;AR;Repas;Aucun des 14;12
+ame-milanesa-napolitana;Milanesa napolitana;AR;Repas;Gluten, Œufs, Lait;12
+pd-panqueques-dulce-de-leche;Panqueques au dulce de leche;AR;Petit-déjeuner;Gluten, Œufs, Lait;12
+ame-tarta-de-acelga;Tarta de acelga;AR;Repas;Gluten, Œufs, Lait;12
+ch-backhendl-four;Backhendl, poulet pané au four;AT;Repas;Gluten, Œufs;12
+ch-escalope-viennoise;Escalope viennoise et pommes persillées;AT;Repas;Gluten, Œufs, Lait;12
+ch-goulash-pommes-terre-tyrolien;Goulash de pommes de terre tyrolien;AT;Repas;Lait;12
+ch-grostl-tyrolien;Gröstl tyrolien;AT;Repas;Œufs, Lait;12
+pd-kaiserschmarrn;Kaiserschmarrn;AT;Petit-déjeuner;Gluten, Œufs, Lait, Sulfites;12
+ch-kaspressknodel-bouillon;Kaspressknödel en bouillon;AT;Repas;Gluten, Œufs, Lait;12
+ch-schlutzkrapfen;Schlutzkrapfen aux épinards;AT;Repas;Gluten, Œufs, Lait;12
+ch-speckknodel-bouillon;Speckknödel en bouillon;AT;Repas;Gluten, Œufs, Lait;12
+ch-spatzli-fromage-oignons;Spätzli au fromage et oignons dorés;AT;Repas;Gluten, Œufs, Lait;12
+ch-strudel-legumes-fromage;Strudel salé aux légumes et au fromage;AT;Repas;Gluten, Lait;12
+pdm-avocat-ecrase-toast;Avocat écrasé sur toast et feta;AU;Petit-déjeuner;Gluten, Œufs, Lait;12
+pdm-damper;Damper, pain du bush;AU;Petit-déjeuner;Gluten, Lait;12
+pdm-galettes-mais;Galettes de maïs à l'australienne;AU;Petit-déjeuner;Gluten, Œufs, Lait;12
+med-bosanski-lonac;Bosanski lonac, marmite bosniaque;BA;Repas;Aucun des 14;12
+med-burek-epinards-fromage;Burek aux épinards et au fromage frais;BA;Repas;Gluten, Œufs, Lait;12
+med-cevapi-ajvar;Ćevapi, ajvar et oignons crus;BA;Repas;Gluten;12
+pdm-khichuri;Khichuri, riz et lentilles au gingembre;BD;Petit-déjeuner;Lait;12
+frp-asperges-flamande;Asperges à la flamande;BE;Repas;Œufs, Lait;12
+frv-boulets-liegeois;Boulets à la liégeoise;BE;Repas;Gluten, Œufs, Lait;12
+frp-cabillaud-chicons-orange;Cabillaud et chicons braisés à l'orange;BE;Repas;Poissons, Lait;12
+frp-chicons-gratin-fromage-noix;Chicons au gratin au fromage et noix;BE;Repas;Gluten, Lait, Fruits à coque;12
+frp-croquettes-fromage;Croquettes au fromage;BE;Repas;Gluten, Œufs, Lait;12
+frp-croquettes-crevettes-grises;Croquettes aux crevettes grises;BE;Repas;Gluten, Crustacés, Œufs, Lait;12
+frp-filets-plie-crevettes-grises;Filets de plie aux crevettes grises;BE;Repas;Gluten, Crustacés, Lait;12
+pd-gaufres-bruxelles;Gaufres de Bruxelles;BE;Petit-déjeuner;Gluten, Œufs, Lait;12
+frp-hutsepot-vegetarien;Hutsepot végétarien;BE;Repas;Lait, Moutarde;12
+pd-matoufet-ardennais;Matoufet ardennais;BE;Petit-déjeuner;Gluten, Œufs, Lait;12
+frp-moules-curry-belge;Moules au curry à la belge;BE;Repas;Gluten, Lait, Céleri, Mollusques;12
+frp-moules-creme-frites-four;Moules à la crème et frites au four;BE;Repas;Lait, Mollusques;12
+frp-salade-liegeoise-vegetarienne;Salade liégeoise végétarienne;BE;Repas;Œufs, Moutarde, Sulfites;12
+frp-soupe-pois-casses;Soupe de pois cassés;BE;Repas;Gluten, Lait;12
+frp-stoemp-carottes-oeuf;Stoemp aux carottes et œuf au plat;BE;Repas;Œufs, Lait;12
+frp-tomates-crevettes;Tomates-crevettes à la belge;BE;Repas;Crustacés, Œufs;12
+frp-vol-au-vent-champignons;Vol-au-vent aux champignons;BE;Repas;Gluten, Lait;12
+frp-waterzooi-poisson;Waterzooi de poisson;BE;Repas;Œufs, Poissons, Lait, Céleri;12
+frv-waterzoi-de-poulet;Waterzoï de poulet;BE;Repas;Œufs, Lait, Céleri;12
+med-gyuvech-vegetarien;Gyuvech bulgare aux légumes et œufs;BG;Repas;Œufs, Lait;12
+med-chushki-burek;Poivrons farcis au fromage, à la bulgare;BG;Repas;Gluten, Œufs, Lait;12
+ame-baiao-de-dois;Baião de dois au fromage grillé;BR;Repas;Lait;12
+ame-bobo-de-camarao;Bobó de camarão;BR;Repas;Crustacés;12
+ame-feijoada-simplifiee;Feijoada simplifiée;BR;Repas;Aucun des 14;12
+ame-moqueca-banane-plantain;Moqueca de plantain;BR;Repas;Aucun des 14;12
+ame-moqueca-poisson;Moqueca de poisson;BR;Repas;Poissons;12
+ame-picanha-farofa;Picanha et farofa;BR;Repas;Lait, Sulfites;12
+pd-pao-de-queijo;Pão de queijo;BR;Petit-déjeuner;Œufs, Lait;12
+ame-strogonoff-de-frango;Strogonoff de poulet à la brésilienne;BR;Repas;Lait, Moutarde;12
+pd-tapioca-bresilienne;Tapioca brésilienne au fromage;BR;Petit-déjeuner;Lait;12
+ame-xinxim-de-galinha;Xinxim de galinha;BR;Repas;Arachides, Fruits à coque;12
+pd-bagel-saumon;Bagel au saumon fumé;CA;Petit-déjeuner;Poissons, Lait;12
+ame-cuisses-poulet-erable-ail;Cuisses de poulet érable et ail;CA;Repas;Gluten, Soja, Sulfites;12
+pd-grands-peres-erable;Grands-pères au sirop d'érable;CA;Petit-déjeuner;Gluten, Lait;12
+ame-poutine-maison;Poutine maison sauce brune végétale;CA;Repas;Gluten, Soja, Lait;12
+ame-tourte-saumon-quebecoise;Pâté au saumon à la québécoise;CA;Repas;Gluten, Œufs, Poissons, Lait;12
+ame-pate-chinois;Pâté chinois;CA;Repas;Lait;12
+ame-ragout-boulettes-quebec;Ragoût de boulettes;CA;Repas;Gluten;12
+ame-saumon-erable-moutarde;Saumon laqué érable et moutarde;CA;Repas;Gluten, Poissons, Soja, Moutarde;12
+ame-soupe-aux-pois-vegetarienne;Soupe aux pois jaunes à la québécoise;CA;Repas;Céleri;12
+ame-soupe-courge-erable;Soupe-repas à la courge et à l'érable;CA;Repas;Lait;12
+ame-tourtiere-quebecoise;Tourtière québécoise;CA;Repas;Gluten, Œufs;12
+ch-atriaux-puree-oignons;Atriaux, purée et sauce aux oignons;CH;Repas;Gluten, Lait;12
+pd-bircher-muesli;Bircher müesli;CH;Petit-déjeuner;Gluten, Lait, Fruits à coque;12
+ch-bouilli-boeuf-raifort;Bouilli de bœuf, légumes et sauce au raifort;CH;Repas;Lait, Céleri;12
+ch-brasato-tessinois-polenta;Brasato tessinois et polenta;CH;Repas;Céleri;12
+ch-brochet-beurre-citron-carottes;Brochet au beurre citronné et carottes glacées;CH;Repas;Poissons, Lait;12
+ch-capuns-grisons;Capuns grisons;CH;Repas;Gluten, Œufs, Lait;12
+ch-cholera-valaisanne;Cholera valaisanne;CH;Repas;Gluten, Œufs, Lait;12
+ch-chou-rouge-marrons;Chou rouge braisé aux marrons et pommes vapeur;CH;Repas;Lait, Sulfites;12
+ch-choucroute-bernoise;Choucroute bernoise;CH;Repas;Sulfites;12
+ch-cordon-bleu;Cordon bleu au Gruyère;CH;Repas;Gluten, Œufs, Lait;12
+ch-courgettes-farcies-tessinoises;Courgettes farcies à la tessinoise;CH;Repas;Œufs, Lait;12
+frp-croute-fromage;Croûte au fromage;CH;Repas;Gluten, Œufs, Lait;12
+ch-croute-fromage-valaisanne;Croûte au fromage valaisanne;CH;Repas;Gluten, Lait;12
+ch-croute-chanterelles;Croûte aux chanterelles;CH;Repas;Gluten, Lait;12
+ch-cotes-porc-sauge;Côtes de porc à la sauge et pommes sautées;CH;Repas;Lait;12
+ch-filets-perche-meuniere;Filets de perche meunière;CH;Repas;Gluten, Poissons, Lait;12
+ch-fischknusperli-sauce-tartare;Fischknusperli et sauce tartare;CH;Repas;Gluten, Œufs, Poissons;12
+ch-fondue-vacherin-fribourgeois;Fondue au vacherin fribourgeois;CH;Repas;Gluten, Lait;12
+ch-fondue-moitie-moitie;Fondue moitié-moitié;CH;Repas;Gluten, Lait, Sulfites;12
+ch-fera-four-herbes;Féra au four, herbes et pommes de terre;CH;Repas;Aucun des 14;12
+frp-fera-nage-legumes;Féra à la nage de légumes;CH;Repas;Aucun des 14;12
+ch-gerstotto-legumes;Gerstotto aux légumes;CH;Repas;Gluten, Lait, Céleri;12
+ch-gratin-cabillaud-poireaux;Gratin de cabillaud aux poireaux;CH;Repas;Poissons, Lait, Moutarde;12
+ch-gratin-cardons-genevois;Gratin de cardons genevois;CH;Repas;Gluten, Lait;12
+ch-gratin-bettes-sbrinz;Gratin de côtes de bettes au Sbrinz;CH;Repas;Gluten, Lait;12
+ch-gateau-fromage;Gâteau au fromage;CH;Repas;Gluten, Œufs, Lait;12
+ch-ghackets-hornli;Hachis de bœuf et cornettes;CH;Repas;Lait;12
+ch-hackbraten;Hackbraten, pain de viande suisse;CH;Repas;Gluten, Œufs, Lait, Moutarde;12
+ch-haricots-bernois-lard;Haricots bernois au lard;CH;Repas;Lait;12
+ch-lapin-romarin-tessinois;Lapin au romarin et aux olives à la tessinoise;CH;Repas;Aucun des 14;12
+ch-longeole-pommes-vapeur;Longeole genevoise et légumes du bouillon;CH;Repas;Moutarde;12
+ch-malakoffs-vaudois;Malakoffs vaudois;CH;Repas;Gluten, Œufs, Lait;12
+ch-maluns-fromage-compote;Maluns, fromage d'alpage et compote;CH;Repas;Gluten, Lait;12
+ch-minestrone-tessinois;Minestrone tessinois;CH;Repas;Gluten, Lait;12
+ch-omble-papillote;Omble chevalier en papillote;CH;Repas;Lait;12
+ch-omble-polenta-cremeuse;Omble chevalier et polenta crémeuse;CH;Repas;Lait;12
+ch-papet-vaudois;Papet vaudois et saucisse aux choux;CH;Repas;Lait;12
+ch-bouchees-reine-poulet;Pastetli, bouchées au poulet;CH;Repas;Gluten, Lait;12
+ch-paupiettes-boeuf-fleischvogel;Paupiettes de bœuf au lard et cornichon;CH;Repas;Gluten, Moutarde;12
+ch-pizokels-chou-fromage;Pizokels au chou et au fromage;CH;Repas;Gluten, Œufs, Lait;12
+ch-polenta-grillee-champignons;Polenta grillée aux champignons;CH;Repas;Lait;12
+ch-gschwellti-sere-herbes;Pommes de terre en robe des champs et séré aux herbes;CH;Repas;Lait;12
+frp-pommes-terre-robe-champs-fromage-blanc;Pommes de terre en robe des champs, fromage blanc aux herbes;CH;Repas;Lait;12
+ch-poule-au-pot-legumes-hiver;Poule au pot aux légumes d'hiver;CH;Repas;Céleri;12
+ch-poulet-citron-romarin-tessinois;Poulet au citron et romarin à la tessinoise;CH;Repas;Aucun des 14;12
+ch-poulet-croute-gruyere;Poulet en croûte de Gruyère et pommes de terre rôties;CH;Repas;Gluten, Lait, Moutarde;12
+ch-poulet-pommes-oignons-thurgovie;Poulet rôti aux pommes de Thurgovie;CH;Repas;Aucun des 14;12
+ch-quiche-truite-fumee-epinards;Quiche à la truite fumée et aux épinards;CH;Repas;Gluten, Œufs, Poissons, Lait;12
+ch-ragout-boeuf-carottes;Ragoût de bœuf aux carottes;CH;Repas;Gluten;12
+ch-ragout-lentilles-legumes-racines;Ragoût de lentilles aux légumes racines;CH;Repas;Aucun des 14;12
+ch-risotto-safran-luganighe;Risotto au safran et luganighe;CH;Repas;Lait;12
+ch-risotto-courge-sauge;Risotto à la courge et à la sauge;CH;Repas;Lait;12
+ch-riz-casimir-poulet;Riz Casimir au poulet;CH;Repas;Lait;12
+ch-rosti-fromage-tomates;Rösti au fromage et aux tomates;CH;Repas;Lait;12
+ch-salade-tete-moine-pommes-noix;Salade au Tête de Moine, pommes et noix;CH;Repas;Œufs, Lait, Fruits à coque, Sulfites;12
+ch-salade-epeautre-betterave-tomme;Salade d'épeautre, betterave et tomme;CH;Repas;Gluten, Lait, Fruits à coque, Moutarde, Sulfites;12
+ch-salade-cervelas-fromage;Salade de cervelas et de fromage;CH;Repas;Œufs, Lait, Moutarde, Sulfites;12
+ch-salade-lentilles-truite-fumee;Salade de lentilles et truite fumée au raifort;CH;Repas;Poissons, Moutarde, Sulfites;12
+ch-salade-pommes-terre-oeufs-cresson;Salade de pommes de terre, œufs mollets et cresson;CH;Repas;Œufs, Moutarde, Sulfites;12
+ch-salade-tiede-poulet-noix-alpage;Salade tiède de poulet, noix et fromage d'alpage;CH;Repas;Lait, Fruits à coque, Sulfites;12
+ch-tarte-poireaux-vaudoise;Salée vaudoise aux poireaux;CH;Repas;Gluten, Œufs, Lait;12
+ch-sandre-croute-pommes-de-terre;Sandre en écailles de pommes de terre;CH;Repas;Lait;12
+ch-bratwurst-saint-gall-rosti;Saucisse de Saint-Gall, sauce aux oignons et rösti;CH;Repas;Gluten, Lait;12
+ch-saumon-croute-herbes;Saumon en croûte d'herbes et pommes de terre rôties;CH;Repas;Gluten, Poissons, Lait, Moutarde;12
+ch-soupe-orge-grisonne;Soupe d'orge grisonne;CH;Repas;Gluten, Lait, Céleri;12
+ch-soupe-chalet;Soupe de chalet fribourgeoise;CH;Repas;Gluten, Lait;12
+ch-soupe-poissons-lac;Soupe de poissons du lac au safran;CH;Repas;Poissons, Lait;12
+ch-soupe-farine-baloise;Soupe à la farine bâloise;CH;Repas;Gluten, Lait;12
+ch-tagliatelles-bolets-creme;Tagliatelles aux bolets et à la crème;CH;Repas;Gluten, Lait;12
+ch-tagliatelles-truite-fumee-herbes;Tagliatelles à la truite fumée et aux herbes;CH;Repas;Gluten, Poissons, Lait;12
+ch-tarte-oignons-baloise;Tarte aux oignons bâloise;CH;Repas;Gluten, Œufs, Lait;12
+ch-tomates-farcies-millet;Tomates farcies au millet et au Gruyère;CH;Repas;Lait;12
+ch-truite-amandes;Truite aux amandes et haricots verts;CH;Repas;Gluten, Lait, Fruits à coque;12
+qt-truite-poelee-pommes-de-terre-persil;Truite poêlée, pommes de terre persillées;CH;Repas;Gluten, Poissons, Lait;12
+ch-mont-or-four-pommes-terre;Vacherin Mont-d'Or au four et pommes de terre;CH;Repas;Lait;12
+ch-veloute-courge-croutes-gruyere;Velouté de courge et tartines au Gruyère;CH;Repas;Gluten, Lait;12
+ch-emince-cerf-airelles-spatzli;Émincé de cerf aux airelles et spätzli;CH;Repas;Lait;12
+ch-emince-dinde-paprika-nouilles;Émincé de dinde au paprika et nouilles;CH;Repas;Gluten, Œufs, Lait;12
+ch-emince-veau-zurichoise;Émincé de veau à la zurichoise;CH;Repas;Gluten, Lait;12
+afr-alloco-oeufs-sauce-tomate;Alloco et œufs à la sauce tomate;CI;Repas;Œufs;12
+afr-attieke-poisson-braise;Attiéké et poisson braisé;CI;Repas;Gluten;12
+afr-poulet-braise-ivoirien;Poulet braisé ivoirien et alloco;CI;Repas;Moutarde;12
+afr-poulet-kedjenou;Poulet kedjenou;CI;Repas;Aucun des 14;12
+afr-salade-attieke-avocat;Salade d'attiéké, avocat et crudités;CI;Repas;Gluten;12
+afr-sauce-gombo-riz;Sauce gombo et riz blanc;CI;Repas;Aucun des 14;12
+afr-sauce-graine-poulet;Sauce graine au poulet;CI;Repas;Lait;12
+ame-caldillo-de-poisson-chilien;Caldillo de poisson chilien;CL;Repas;Poissons, Lait;12
+ame-cazuela-chilena;Cazuela chilena de poulet;CL;Repas;Aucun des 14;12
+ame-humitas-en-cazuela;Humitas en cocotte;CL;Repas;Lait;12
+ame-pastel-de-choclo;Pastel de choclo;CL;Repas;Œufs, Lait;12
+ame-porotos-granados;Porotos granados;CL;Repas;Aucun des 14;12
+ame-saumon-merken-chilien;Saumon au merkén et purée de courge;CL;Repas;Poissons, Lait;12
+pdm-beignets-haricots;Beignets et haricots rouges à la camerounaise;CM;Petit-déjeuner;Gluten;12
+afr-haricots-plantains-camerounais;Haricots rouges aux plantains mûrs;CM;Repas;Aucun des 14;12
+afr-ndole-boeuf;Ndolé au bœuf;CM;Repas;Arachides;12
+afr-poulet-dg;Poulet DG;CM;Repas;Aucun des 14;12
+afr-ragout-porc-plantains;Ragoût de porc aux plantains;CM;Repas;Céleri;12
+ase-agneau-cumin-xinjiang;Agneau sauté au cumin;CN;Repas;Gluten, Soja;12
+ase-aubergines-yuxiang;Aubergines à l'ail façon yuxiang;CN;Repas;Gluten, Soja;12
+ase-brocoli-tofu-ail;Brocoli et tofu sautés à l'ail;CN;Repas;Gluten, Soja, Sésame;12
+ase-boeuf-braise-anis-carottes;Bœuf braisé à l'anis étoilé et aux carottes;CN;Repas;Gluten, Soja;12
+ase-boeuf-brocoli;Bœuf sauté au brocoli;CN;Repas;Gluten, Soja, Mollusques;12
+ase-boeuf-oignons-poivrons-huitre;Bœuf sauté aux poivrons et sauce d'huître;CN;Repas;Gluten, Soja, Mollusques;12
+ase-cabillaud-vapeur-gingembre;Cabillaud vapeur au gingembre et ciboule;CN;Repas;Gluten, Poissons, Soja;12
+ase-chou-chinois-mijote-vermicelles;Chou chinois mijoté au tofu et vermicelles;CN;Repas;Gluten, Soja, Sésame;12
+ase-chow-mein-legumes;Chow mein aux légumes;CN;Repas;Gluten, Œufs, Soja, Sésame;12
+ase-colin-aigre-doux;Colin croustillant sauce aigre-douce;CN;Repas;Gluten, Poissons, Soja;12
+pdm-congee-poulet-gingembre;Congee au poulet et gingembre;CN;Petit-déjeuner;Gluten, Soja, Sésame;12
+ase-congee-champignons-oeuf;Congee aux champignons et œuf mollet;CN;Repas;Gluten, Œufs, Arachides, Soja, Sésame;12
+ase-crevettes-noix-de-cajou;Crevettes sautées aux noix de cajou;CN;Repas;Gluten, Crustacés, Soja, Fruits à coque, Céleri, Mollusques;12
+ase-crevettes-sel-poivre;Crevettes sel et poivre au piment;CN;Repas;Crustacés;12
+ase-vermicelles-crevettes-ail-vapeur;Crevettes vapeur à l'ail sur vermicelles;CN;Repas;Gluten, Crustacés, Soja;12
+ase-fondue-chinoise-legumes-tofu;Fondue chinoise aux légumes et tofu;CN;Repas;Gluten, Soja, Sésame;12
+pdm-cong-you-bing;Galettes feuilletées à la ciboule;CN;Petit-déjeuner;Gluten, Soja;12
+ase-haricots-verts-tofu-fume;Haricots verts sautés à l'ail et tofu fumé;CN;Repas;Gluten, Soja;12
+pdm-jianbing;Jianbing, crêpe pékinoise à l'œuf;CN;Petit-déjeuner;Gluten, Œufs, Soja;12
+ase-magret-facon-canard-laque;Magret façon canard laqué et crêpes;CN;Repas;Gluten, Soja;12
+ase-mapo-tofu-champignons;Mapo tofu aux champignons;CN;Repas;Gluten, Soja;12
+ase-nouilles-dan-dan;Nouilles dan dan au porc haché;CN;Repas;Gluten, Arachides, Soja, Sésame;12
+ase-nouilles-froides-sesame;Nouilles froides au sésame et concombre;CN;Repas;Gluten, Œufs, Soja, Sésame;12
+ase-nouilles-shiitake-pak-choi;Nouilles sautées aux shiitake et pak-choï;CN;Repas;Gluten, Œufs, Soja, Sésame;12
+ase-nouilles-huile-oignon-vert;Nouilles à l'huile d'oignon vert et œuf au plat;CN;Repas;Gluten, Œufs, Soja;12
+ase-porc-aigre-doux;Porc aigre-doux à l'ananas;CN;Repas;Œufs;12
+ase-porc-braise-hong-shao-rou;Porc braisé rouge au soja;CN;Repas;Gluten, Soja;12
+ase-porc-char-siu-four;Porc laqué char siu au four;CN;Repas;Gluten, Soja;12
+ase-porc-haricots-noirs-poivrons;Porc sauté aux haricots noirs et poivrons;CN;Repas;Gluten, Soja;12
+ase-poulet-la-zi-ji;Poulet croustillant aux piments du Sichuan;CN;Repas;Gluten, Soja, Sésame;12
+ase-poulet-hainan;Poulet de Hainan et riz au bouillon;CN;Repas;Gluten, Soja;12
+ase-poulet-kung-pao;Poulet kung pao;CN;Repas;Gluten, Arachides, Soja;12
+ase-poulet-mijote-shiitake;Poulet mijoté aux shiitake;CN;Repas;Gluten, Soja, Mollusques;12
+ase-jiaozi-chou-champignons;Raviolis chinois au chou et aux champignons;CN;Repas;Gluten, Œufs, Soja, Sésame;12
+ase-riz-saute-chou-tofu-fume;Riz sauté au chou chinois et tofu fumé;CN;Repas;Gluten, Œufs, Soja, Sésame;12
+qt-riz-saute-crevettes-ail;Riz sauté aux crevettes et à l'ail;CN;Repas;Gluten, Crustacés, Œufs, Soja;12
+ase-riz-saute-crevettes;Riz sauté aux crevettes et à l'œuf;CN;Repas;Gluten, Crustacés, Œufs, Soja;12
+ase-riz-saute-oeufs-petits-pois;Riz sauté aux œufs et petits pois;CN;Repas;Gluten, Œufs, Soja, Sésame;12
+qt-saute-porc-ananas-poivrons;Sauté de porc à l'ananas et aux poivrons;CN;Repas;Gluten, Soja;12
+ase-soupe-aigre-piquante-tofu;Soupe aigre-piquante au tofu et champignons;CN;Repas;Gluten, Œufs, Soja;12
+ase-soupe-wontons-crevettes;Soupe de wontons aux crevettes;CN;Repas;Gluten, Crustacés, Œufs, Soja, Sésame;12
+ase-tofu-braise-familial;Tofu braisé à la sauce soja et aux légumes;CN;Repas;Gluten, Soja;12
+ase-tofu-croustillant-poivre-sichuan;Tofu croustillant au poivre de Sichuan;CN;Repas;Gluten, Arachides, Soja;12
+ase-tofu-croustillant-aigre-doux;Tofu croustillant sauce aigre-douce;CN;Repas;Gluten, Soja;12
+ase-tofu-poele-gingembre-ciboule;Tofu poêlé sauce gingembre-ciboule;CN;Repas;Gluten, Soja;12
+ase-tomates-oeufs-chinoise;Tomates et œufs sautés à la chinoise;CN;Repas;Gluten, Œufs, Soja;12
+ase-wontons-vegetariens-bouillon;Wontons végétariens en bouillon;CN;Repas;Gluten, Soja, Sésame;12
+ase-zhajiang-mian-porc;Zhajiang mian au porc haché;CN;Repas;Gluten, Soja;12
+pdm-oeufs-au-the;Œufs marbrés au thé;CN;Petit-déjeuner;Gluten, Œufs, Soja;12
+ame-ajiaco-bogota;Ajiaco de Bogotá;CO;Repas;Lait;12
+pd-arepas-de-queso;Arepas au fromage;CO;Petit-déjeuner;Lait;12
+ame-bandeja-paisa-simplifiee;Bandeja paisa simplifiée;CO;Repas;Œufs;12
+pd-calentado-colombien;Calentado colombien au chorizo;CO;Petit-déjeuner;Œufs;12
+pd-changua;Changua;CO;Petit-déjeuner;Gluten, Œufs, Lait;12
+ame-patacones-hogao-oeufs;Patacones, hogao et œufs;CO;Repas;Œufs;12
+ame-poisson-coco-colombien;Poisson au coco de la côte colombienne;CO;Repas;Poissons;12
+ame-sancocho-poulet;Sancocho de poulet;CO;Repas;Aucun des 14;12
+pd-gallo-pinto;Gallo pinto;CR;Petit-déjeuner;Œufs;12
+ame-gallo-pinto-oeufs;Gallo pinto aux œufs et plantain;CR;Repas;Gluten, Œufs, Poissons, Lait;12
+ame-crevettes-enchilado-cubain;Crevettes en enchilado à la cubaine;CU;Repas;Crustacés;12
+ame-yuca-mojo-avocat;Manioc au mojo et salade d'avocat;CU;Repas;Aucun des 14;12
+ame-moros-y-cristianos;Moros y cristianos aux œufs;CU;Repas;Œufs;12
+ame-picadillo-cubain;Picadillo cubain;CU;Repas;Sulfites;12
+ame-lechon-asado-mojo;Porc rôti au mojo cubain;CU;Repas;Aucun des 14;12
+ame-ropa-vieja;Ropa vieja;CU;Repas;Aucun des 14;12
+pd-oeufs-havanaise;Œufs à la havanaise;CU;Petit-déjeuner;Œufs, Lait;12
+med-afelia;Afelia, porc au vin rouge et à la coriandre;CY;Repas;Gluten, Lait, Sulfites;12
+med-halloumi-lentilles;Halloumi grillé et salade de lentilles;CY;Repas;Lait;12
+med-kleftiko;Kleftiko, agneau confit en papillote;CY;Repas;Lait;12
+med-pourgouri-halloumi;Pourgouri aux vermicelles et halloumi;CY;Repas;Gluten, Lait;12
+pd-bauernfruehstueck;Bauernfrühstück;DE;Petit-déjeuner;Œufs, Lait;12
+pd-strammer-max;Strammer Max;DE;Petit-déjeuner;Gluten, Œufs, Lait;12
+pd-smorrebrod-saumon;Smørrebrød saumon et œuf;DK;Petit-déjeuner;Gluten, Œufs, Poissons, Lait;12
+pd-mangu;Mangú aux oignons rouges;DO;Petit-déjeuner;Œufs, Lait, Sulfites;12
+afr-chorba-frik-agneau;Chorba frik à l'agneau;DZ;Repas;Gluten, Céleri;12
+afr-couscous-poulet-pois-chiches;Couscous algérien au poulet et pois chiches;DZ;Repas;Gluten, Moutarde;12
+pdm-mhadjeb;Mhadjeb, crêpes farcies à la tomate;DZ;Petit-déjeuner;Gluten;12
+pdm-tamina;Tamina, semoule grillée au miel et au beurre;DZ;Petit-déjeuner;Gluten, Lait, Fruits à coque;12
+afr-epaule-agneau-mechoui-four;Épaule d'agneau façon méchoui au four;DZ;Repas;Lait;12
+afr-fatteh-poulet;Fatteh égyptienne au poulet;EG;Repas;Gluten, Lait, Sulfites;12
+pdm-ful-medames;Ful medames;EG;Petit-déjeuner;Gluten;12
+afr-ful-medames;Ful medames aux œufs;EG;Repas;Gluten, Œufs;12
+afr-hawawshi-egyptien;Hawawshi, pains farcis à la viande;EG;Repas;Gluten, Lait, Sésame;12
+afr-koshari-egyptien;Koshari égyptien;EG;Repas;Gluten;12
+afr-macarona-bechamel;Macarona béchamel égyptienne;EG;Repas;Gluten, Œufs, Lait;12
+afr-mahshi-poivrons-riz;Mahshi de poivrons au riz et aux herbes;EG;Repas;Aucun des 14;12
+afr-mesaqaa-aubergines;Mesaqa'a d'aubergines aux pois chiches;EG;Repas;Aucun des 14;12
+afr-sayadeya-egyptienne;Sayadeya, riz au poisson d'Alexandrie;EG;Repas;Poissons;12
+pdm-taameya;Ta'ameya, falafels égyptiens aux fèves;EG;Petit-déjeuner;Sésame;12
+med-albondigas;Albóndigas en sauce tomate;ES;Repas;Gluten, Œufs;12
+pd-churros-chocolat;Churros et chocolat chaud;ES;Petit-déjeuner;Gluten, Lait;12
+med-fabada-asturiana;Fabada asturiana;ES;Repas;Gluten;12
+med-marmitako;Marmitako, thon et pommes de terre;ES;Repas;Poissons;12
+med-merlu-sauce-verte;Merlu en sauce verte basque;ES;Repas;Gluten, Poissons;12
+med-merluza-gallega;Merlu à la galicienne;ES;Repas;Poissons;12
+pd-pan-con-tomate;Pan con tomate;ES;Petit-déjeuner;Gluten;12
+med-pisto-manchego-oeufs;Pisto manchego aux œufs;ES;Repas;Gluten, Œufs;12
+med-porrusalda;Porrusalda, soupe basque aux poireaux;ES;Repas;Gluten, Œufs;12
+med-pollo-al-ajillo;Poulet à l'ail à l'espagnole;ES;Repas;Sulfites;12
+med-salmorejo-oeufs-durs;Salmorejo, œufs durs et croûtons;ES;Repas;Gluten, Œufs, Sulfites;12
+med-tortilla-de-patatas;Tortilla de patatas;ES;Repas;Œufs;12
+med-tumbet-majorquin;Tumbet majorquin;ES;Repas;Œufs;12
+med-espinacas-con-garbanzos;Épinards aux pois chiches à la sévillane;ES;Repas;Gluten, Sulfites;12
+afr-asa-tibs;Asa tibs, poisson sauté au berbéré;ET;Repas;Gluten, Poissons;12
+afr-atakilt-wat;Atakilt wat, chou, carottes et pommes de terre;ET;Repas;Aucun des 14;12
+pdm-chechebsa;Chechebsa, galette émiettée au beurre épicé;ET;Petit-déjeuner;Gluten, Lait;12
+afr-doro-wat;Doro wat, poulet au berbéré et aux œufs;ET;Repas;Gluten, Œufs, Lait;12
+pdm-kinche;Kinche, blé concassé au beurre épicé;ET;Petit-déjeuner;Gluten, Lait;12
+afr-misir-wot;Misir wot, lentilles corail au berbéré;ET;Repas;Gluten;12
+afr-shiro-ethiopien;Shiro, crème de pois chiches éthiopienne;ET;Repas;Gluten;12
+afr-tibs-boeuf;Tibs de bœuf éthiopien;ET;Repas;Gluten, Lait;12
+frv-aiguillettes-canard-figues;Aiguillettes de canard aux figues;FR;Repas;Lait;12
+frv-aligot-saucisse;Aligot et saucisse grillée;FR;Repas;Lait;12
+frv-axoa-de-veau;Axoa de veau;FR;Repas;Aucun des 14;12
+frv-baeckeoffe;Baeckeoffe;FR;Repas;Sulfites;12
+frv-bavette-echalote-frites-four;Bavette à l'échalote et frites au four;FR;Repas;Lait, Sulfites;12
+frv-poulet-chevre-miel;Blancs de poulet au chèvre et au miel;FR;Repas;Lait;12
+frv-poulet-farci-fromage-ciboulette;Blancs de poulet farcis au fromage frais et à la ciboulette;FR;Repas;Lait;12
+frp-blanquette-champignons-legumes;Blanquette de champignons et légumes;FR;Repas;Gluten, Lait;12
+frp-blanquette-poisson;Blanquette de poisson;FR;Repas;Œufs, Poissons, Lait;12
+frv-blanquette-de-veau;Blanquette de veau;FR;Repas;Gluten, Œufs, Lait;12
+frv-bouchees-a-la-reine;Bouchées à la reine;FR;Repas;Gluten, Lait;12
+frp-bouillabaisse-express;Bouillabaisse express;FR;Repas;Gluten, Poissons;12
+frv-bouillon-poulet-ravioles;Bouillon de poulet aux ravioles du Dauphiné;FR;Repas;Gluten, Œufs, Lait;12
+frp-bourguignon-champignons;Bourguignon de champignons;FR;Repas;Gluten, Sulfites;12
+frp-brandade-cabillaud-gratinee;Brandade de cabillaud gratinée;FR;Repas;Poissons, Lait;12
+frv-brochettes-poulet-herbes-provence;Brochettes de poulet aux herbes de Provence;FR;Repas;Aucun des 14;12
+frp-brochettes-saumon-courgettes;Brochettes de saumon et courgettes;FR;Repas;Gluten, Poissons;12
+frv-boeuf-bourguignon;Bœuf bourguignon;FR;Repas;Gluten, Sulfites;12
+frv-boeuf-miroton;Bœuf miroton;FR;Repas;Gluten, Lait, Sulfites;12
+frp-cabillaud-croute-herbes-poireaux;Cabillaud en croûte d'herbes et poireaux fondants;FR;Repas;Gluten, Poissons, Lait, Moutarde;12
+frv-cailles-aux-raisins;Cailles aux raisins;FR;Repas;Lait;12
+frp-calamars-persillade;Calamars en persillade et pommes de terre sautées;FR;Repas;Mollusques;12
+frv-canard-aux-navets;Canard aux navets;FR;Repas;Lait;12
+frv-cassoulet-express;Cassoulet express;FR;Repas;Gluten;12
+frp-cassoulet-vegetarien;Cassoulet végétarien;FR;Repas;Gluten;12
+frp-chaudree-moules-pommes-de-terre;Chaudrée de moules et pommes de terre;FR;Repas;Lait, Mollusques;12
+frv-chou-farci;Chou farci;FR;Repas;Gluten, Œufs, Lait;12
+frp-chou-farci-lentilles;Chou farci aux lentilles;FR;Repas;Œufs;12
+ch-chou-farci-savoyard;Chou farci savoyard;FR;Repas;Gluten, Œufs, Lait;12
+frp-chou-fleur-roti-beurre-noisette;Chou-fleur rôti au beurre noisette;FR;Repas;Gluten, Lait, Fruits à coque;12
+frp-choucroute-mer;Choucroute de la mer;FR;Repas;Poissons, Lait, Sulfites;12
+frv-choucroute-garnie;Choucroute garnie;FR;Repas;Sulfites;12
+frp-clafoutis-tomates-cerises-chevre;Clafoutis aux tomates cerises et chèvre;FR;Repas;Gluten, Œufs, Lait;12
+frv-confit-canard-pommes-sarladaises;Confit de canard et pommes sarladaises;FR;Repas;Aucun des 14;12
+frv-coq-au-vin;Coq au vin;FR;Repas;Gluten, Sulfites;12
+frv-coquelets-crapaudine-moutarde;Coquelets en crapaudine à la moutarde;FR;Repas;Gluten, Lait, Moutarde;12
+frp-coquillettes-comte-champignons;Coquillettes au comté et champignons;FR;Repas;Gluten, Lait;12
+frv-coquillettes-jambon-comte;Coquillettes au jambon et au comté;FR;Repas;Gluten, Œufs, Lait;12
+qt-pates-jambon-petits-pois-creme;Coquillettes au jambon et petits pois;FR;Repas;Gluten, Lait;12
+frv-cordons-bleus-dinde;Cordons-bleus de dinde maison;FR;Repas;Gluten, Œufs, Lait;12
+frp-cotriade-bretonne;Cotriade bretonne;FR;Repas;Gluten, Poissons, Lait, Sulfites;12
+frp-crevettes-ail-riz-pilaf;Crevettes à l'ail et riz pilaf;FR;Repas;Crustacés, Lait;12
+frp-crique-ardechoise;Crique ardéchoise et salade;FR;Repas;Œufs, Moutarde, Sulfites;12
+pd-croque-madame;Croque-madame;FR;Petit-déjeuner;Gluten, Œufs, Lait, Moutarde;12
+frp-croque-madame-champignons;Croque-madame aux champignons;FR;Repas;Gluten, Œufs, Lait;12
+frv-croque-monsieur;Croque-monsieur;FR;Repas;Gluten, Lait;12
+ch-crozets-saumon-epinards;Crozets au saumon et aux épinards;FR;Repas;Poissons, Lait;12
+ch-crozets-beaufort-poireaux;Crozets gratinés aux poireaux et beaufort;FR;Repas;Lait;12
+pd-crepes-au-sucre;Crêpes au sucre;FR;Petit-déjeuner;Gluten, Œufs, Lait;12
+frp-crepes-gratinees-champignons;Crêpes gratinées aux champignons;FR;Repas;Gluten, Œufs, Lait;12
+frv-cuisses-canard-orange;Cuisses de canard à l'orange;FR;Repas;Sulfites;12
+frv-poulet-haricots-blancs-lard;Cuisses de poulet aux haricots blancs et au lard;FR;Repas;Aucun des 14;12
+frv-cuisses-poulet-legumes-racines;Cuisses de poulet rôties aux légumes racines;FR;Repas;Aucun des 14;12
+frv-cotelettes-agneau-flageolets;Côtelettes d'agneau et flageolets à l'ail;FR;Repas;Lait;12
+frv-cotes-porc-charcutiere;Côtes de porc sauce charcutière;FR;Repas;Lait, Moutarde;12
+frv-daube-provencale;Daube provençale;FR;Repas;Sulfites;12
+ch-diots-vin-blanc-polenta;Diots au vin blanc et polenta;FR;Repas;Lait, Sulfites;12
+frv-diots-oignons-polenta;Diots de Savoie aux oignons et polenta;FR;Repas;Lait;12
+frp-dorade-four-fenouil-citron;Dorade au four, fenouil et citron;FR;Repas;Aucun des 14;12
+frv-endives-au-jambon;Endives au jambon;FR;Repas;Gluten, Lait;12
+frv-escalopes-poulet-panees-puree;Escalopes de poulet panées et purée maison;FR;Repas;Gluten, Œufs, Lait;12
+frv-escalopes-poulet-sauce-noix;Escalopes de poulet sauce aux noix;FR;Repas;Gluten, Œufs, Lait, Fruits à coque;12
+frv-escalopes-veau-creme-champignons;Escalopes de veau à la crème et aux champignons;FR;Repas;Gluten, Œufs, Lait;12
+frv-ficelles-picardes;Ficelles picardes;FR;Repas;Gluten, Œufs, Lait;12
+frv-filet-mignon-moutarde;Filet mignon de porc à la moutarde;FR;Repas;Lait, Moutarde;12
+frp-flamiche-poireaux;Flamiche aux poireaux;FR;Repas;Gluten, Œufs, Lait;12
+ch-fondue-savoyarde;Fondue savoyarde;FR;Repas;Gluten, Lait, Sulfites;12
+frv-fricassee-poulet-printaniere;Fricassée de poulet printanière;FR;Repas;Lait;12
+frv-galettes-completes;Galettes complètes jambon, œuf, fromage;FR;Repas;Œufs, Lait;12
+frp-galettes-cabillaud-pommes-terre;Galettes de cabillaud et pommes de terre;FR;Repas;Gluten, Œufs, Poissons, Lait;12
+frp-galettes-courgettes-carottes;Galettes de courgettes et carottes;FR;Repas;Gluten, Œufs, Lait;12
+frp-galettes-sarrasin-saumon-fume;Galettes de sarrasin au saumon fumé et poireaux;FR;Repas;Œufs, Poissons, Lait;12
+frp-galette-sarrasin-oeuf-champignons;Galettes de sarrasin œuf, fromage et champignons;FR;Repas;Œufs, Lait;12
+frv-garbure;Garbure béarnaise;FR;Repas;Aucun des 14;12
+frp-garbure-vegetarienne;Garbure végétarienne;FR;Repas;Gluten;12
+frp-gnocchis-parisienne;Gnocchis à la parisienne gratinés;FR;Repas;Gluten, Œufs, Lait;12
+frp-gratin-dauphinois-champignons;Gratin dauphinois aux champignons;FR;Repas;Lait;12
+frp-gratin-brocolis-pommes-terre-bleu;Gratin de brocolis et pommes de terre au bleu;FR;Repas;Lait, Fruits à coque;12
+frp-gratin-butternut-sauge;Gratin de butternut à la sauge;FR;Repas;Lait;12
+frp-gratin-chou-fleur;Gratin de chou-fleur;FR;Repas;Gluten, Lait;12
+frp-gratin-courgettes-riz;Gratin de courgettes au riz;FR;Repas;Œufs, Lait;12
+frp-gratin-crozets-poireaux;Gratin de crozets aux poireaux;FR;Repas;Lait;12
+frv-gratin-macaronis-poulet;Gratin de macaronis au poulet et aux champignons;FR;Repas;Gluten, Lait;12
+frp-gratin-penne-thon-tomate;Gratin de penne au thon et tomate;FR;Repas;Gluten, Poissons, Lait;12
+frp-gratin-poisson-epinards;Gratin de poisson aux épinards;FR;Repas;Gluten, Poissons, Lait;12
+frp-gratin-pommes-terre-haddock;Gratin de pommes de terre au haddock;FR;Repas;Poissons, Lait;12
+frp-gratin-topinambours-noisettes;Gratin de topinambours aux noisettes;FR;Repas;Lait, Fruits à coque;12
+ch-gratin-savoyard;Gratin savoyard au beaufort;FR;Repas;Lait;12
+frv-hachis-parmentier;Hachis parmentier;FR;Repas;Lait;12
+frp-hachis-parmentier-saumon;Hachis parmentier au saumon;FR;Repas;Poissons, Lait;12
+frp-parmentier-lentilles;Hachis parmentier aux lentilles;FR;Repas;Lait;12
+frv-haricot-de-mouton;Haricot de mouton;FR;Repas;Aucun des 14;12
+frv-kig-ha-farz;Kig ha farz;FR;Repas;Œufs, Lait;12
+frv-lapin-moutarde;Lapin à la moutarde;FR;Repas;Gluten, Œufs, Lait, Moutarde;12
+ch-lavaret-chanterelles;Lavaret poêlé aux chanterelles;FR;Repas;Lait;12
+frp-lieu-sauce-vierge-semoule;Lieu noir sauce vierge et semoule;FR;Repas;Gluten, Poissons;12
+frp-macaronis-gratines;Macaronis gratinés au fromage;FR;Repas;Gluten, Lait;12
+frv-magret-miel-thym;Magret de canard au miel et au thym;FR;Repas;Aucun des 14;12
+ch-magret-airelles-puree-celeri;Magret de canard aux airelles et purée de céleri;FR;Repas;Lait, Céleri, Sulfites;12
+frp-maquereaux-four-moutarde;Maquereaux au four à la moutarde;FR;Repas;Poissons, Lait, Moutarde;12
+frp-merlu-puree-celeri;Merlu rôti et purée de céleri;FR;Repas;Poissons, Lait, Fruits à coque, Céleri;12
+frv-navarin-agneau;Navarin d'agneau printanier;FR;Repas;Gluten;12
+frp-navarin-printanier-legumes;Navarin printanier de légumes;FR;Repas;Gluten, Lait;12
+pd-omelette-fines-herbes;Omelette aux fines herbes;FR;Petit-déjeuner;Œufs, Lait;12
+frp-omelette-pommes-de-terre-herbes;Omelette aux pommes de terre et fines herbes;FR;Repas;Œufs, Lait;12
+pd-pain-perdu;Pain perdu;FR;Petit-déjeuner;Gluten, Œufs, Lait;12
+qt-pain-perdu-sale-tomates;Pain perdu salé aux tomates et fromage;FR;Repas;Gluten, Œufs, Lait;12
+frv-papillotes-poulet-citron-thym;Papillotes de poulet au citron et au thym;FR;Repas;Gluten;12
+frp-papillotes-saumon-legumes;Papillotes de saumon aux petits légumes;FR;Repas;Poissons;12
+frv-parmentier-de-canard;Parmentier de canard;FR;Repas;Gluten, Lait;12
+frv-paupiettes-veau-tomate;Paupiettes de veau à la tomate;FR;Repas;Aucun des 14;12
+frv-petit-sale-lentilles;Petit salé aux lentilles;FR;Repas;Aucun des 14;12
+frv-petits-farcis-nicois;Petits farcis niçois;FR;Repas;Gluten, Œufs, Lait;12
+frp-petits-farcis-nicois-vegetariens;Petits farcis niçois végétariens;FR;Repas;Œufs, Lait;12
+frp-petits-pois-francaise-oeufs-poches;Petits pois à la française et œufs pochés;FR;Repas;Gluten, Œufs, Lait, Sulfites;12
+frv-pilons-poulet-miel-moutarde;Pilons de poulet au miel et à la moutarde;FR;Repas;Moutarde;12
+frv-pintade-aux-choux;Pintade aux choux;FR;Repas;Lait;12
+frv-pintade-rotie-pommes;Pintade rôtie aux pommes et aux oignons;FR;Repas;Lait;12
+frp-piperade-oeufs;Piperade aux œufs;FR;Repas;Gluten, Œufs;12
+frv-piperade-jambon-bayonne;Piperade et jambon de Bayonne poêlé;FR;Repas;Œufs;12
+frp-pissaladiere-olives;Pissaladière aux olives;FR;Repas;Gluten;12
+frp-plaque-saumon-pommes-terre-brocoli;Plaque de saumon, pommes de terre et brocoli;FR;Repas;Poissons, Moutarde;12
+frp-polenta-poelee-champignons;Polenta crémeuse et poêlée de champignons;FR;Repas;Lait;12
+frp-pommes-de-terre-farcies-fromage-frais;Pommes de terre farcies au fromage frais;FR;Repas;Œufs, Lait;12
+frv-pot-au-feu;Pot-au-feu;FR;Repas;Aucun des 14;12
+frp-pot-au-feu-legumes-raifort;Pot-au-feu de légumes, sauce raifort;FR;Repas;Lait;12
+frp-potimarron-farci-champignons-chataignes;Potimarron farci aux champignons et châtaignes;FR;Repas;Lait;12
+frv-potee-auvergnate;Potée auvergnate;FR;Repas;Aucun des 14;12
+frv-poule-au-pot;Poule au pot;FR;Repas;Céleri;12
+frv-poulet-gaston-gerard;Poulet Gaston Gérard;FR;Repas;Lait, Moutarde;12
+frv-poulet-au-maroilles;Poulet au maroilles;FR;Repas;Lait;12
+frv-poulet-au-riesling;Poulet au riesling;FR;Repas;Lait, Sulfites;12
+frv-poulet-riz-rouge-camargue;Poulet au riz rouge de Camargue;FR;Repas;Aucun des 14;12
+frv-poulet-riz-sauce-supreme;Poulet au riz sauce suprême;FR;Repas;Gluten, Lait;12
+frv-poulet-au-vinaigre;Poulet au vinaigre;FR;Repas;Lait, Sulfites;12
+frv-poulet-artichauts-lardons;Poulet aux artichauts bretons et aux lardons;FR;Repas;Aucun des 14;12
+frv-poulet-aux-cepes;Poulet aux cèpes et pommes de terre;FR;Repas;Aucun des 14;12
+frv-poulet-quarante-gousses-ail;Poulet aux quarante gousses d'ail;FR;Repas;Gluten;12
+frv-poulet-chasseur;Poulet chasseur;FR;Repas;Gluten, Lait;12
+frv-poulet-grand-mere;Poulet grand-mère;FR;Repas;Lait;12
+frv-poulet-roti-du-dimanche;Poulet rôti du dimanche;FR;Repas;Lait;12
+frv-poulet-courgettes-pistou;Poulet sauté aux courgettes et au pistou;FR;Repas;Gluten, Lait;12
+frv-poulet-saute-lyonnaise;Poulet sauté à la lyonnaise;FR;Repas;Lait;12
+frv-poulet-estragon;Poulet à l'estragon;FR;Repas;Lait, Moutarde;12
+ch-poulet-creme-morilles;Poulet à la crème et aux morilles;FR;Repas;Lait;12
+frv-poulet-creme-facon-bresse;Poulet à la crème façon Bresse;FR;Repas;Gluten, Lait;12
+frv-poulet-provencale;Poulet à la provençale;FR;Repas;Aucun des 14;12
+frv-pounti-auvergnat;Pounti auvergnat;FR;Repas;Gluten, Œufs, Lait, Sulfites;12
+frp-pates-saumon-fume-citron;Pâtes au saumon fumé et citron;FR;Repas;Gluten, Poissons, Lait;12
+frv-quenelles-volaille-gratinees;Quenelles de volaille gratinées, sauce tomate;FR;Repas;Gluten, Œufs, Lait;12
+frp-quiche-epinards-chevre;Quiche aux épinards et chèvre;FR;Repas;Gluten, Œufs, Lait;12
+frv-quiche-lorraine;Quiche lorraine;FR;Repas;Gluten, Œufs, Lait;12
+qt-quiche-sans-pate-legumes-frigo;Quiche sans pâte aux légumes du frigo;FR;Repas;Gluten, Œufs, Lait;12
+frp-quiche-saumon-poireaux;Quiche saumon et poireaux;FR;Repas;Gluten, Œufs, Poissons, Lait;12
+frp-raie-beurre-noisette-capres;Raie au beurre noisette et câpres;FR;Repas;Lait, Sulfites;12
+frv-rouelle-porc-confite;Rouelle de porc confite au four;FR;Repas;Aucun des 14;12
+frv-roti-boeuf-grenailles;Rôti de bœuf et pommes grenaille;FR;Repas;Lait;12
+frv-roti-dinde-marrons;Rôti de dinde aux marrons;FR;Repas;Lait;12
+frv-roti-porc-pruneaux;Rôti de porc aux pruneaux;FR;Repas;Lait, Sulfites;12
+frp-salade-chevre-chaud;Salade de chèvre chaud;FR;Repas;Gluten, Lait, Fruits à coque;12
+frp-salade-lentilles-truite-fumee;Salade de lentilles et truite fumée;FR;Repas;Poissons, Moutarde, Sulfites;12
+frv-salade-landaise;Salade landaise;FR;Repas;Fruits à coque, Sulfites;12
+frv-salade-lyonnaise;Salade lyonnaise;FR;Repas;Gluten, Œufs, Moutarde, Sulfites;12
+frp-salade-lyonnaise-vegetarienne;Salade lyonnaise végétarienne;FR;Repas;Gluten, Œufs, Lait, Fruits à coque, Moutarde, Sulfites;12
+frp-salade-nicoise;Salade niçoise;FR;Repas;Gluten, Œufs, Poissons;12
+frv-salade-tiede-poulet-haricots;Salade tiède de poulet, pommes de terre et haricots verts;FR;Repas;Œufs, Moutarde, Sulfites;12
+frp-sardines-salade-pommes-de-terre;Sardines grillées et salade de pommes de terre;FR;Repas;Poissons, Sulfites;12
+frv-morteau-cancoillotte;Saucisse de Morteau et pommes de terre à la cancoillotte;FR;Repas;Aucun des 14;12
+ch-morteau-cancoillotte;Saucisse de Morteau, pommes de terre et cancoillotte;FR;Repas;Aucun des 14;12
+frv-saucisses-toulouse-puree;Saucisses de Toulouse, purée et oignons confits;FR;Repas;Lait, Sulfites;12
+frv-saucisson-chaud-pommes-huile;Saucisson chaud et pommes à l'huile;FR;Repas;Moutarde, Sulfites;12
+frp-saumon-oseille-riz;Saumon à l'oseille et riz;FR;Repas;Poissons, Lait;12
+frv-saute-porc-pommes-normande;Sauté de porc aux pommes à la normande;FR;Repas;Lait;12
+frv-poulet-endives-caramelisees;Sauté de poulet aux endives caramélisées;FR;Repas;Lait;12
+frv-schaufele-salade-pommes-de-terre;Schäufele et salade de pommes de terre;FR;Repas;Sulfites;12
+frp-souffle-fromage;Soufflé au fromage;FR;Repas;Gluten, Œufs, Lait;12
+frp-soupe-pistou;Soupe au pistou;FR;Repas;Gluten, Lait;12
+frp-soupe-lentilles-vertes-carottes;Soupe de lentilles vertes et carottes;FR;Repas;Céleri, Sulfites;12
+frp-soupe-poireaux-pommes-terre-oeuf;Soupe poireaux-pommes de terre et œuf poché;FR;Repas;Œufs, Lait, Sulfites;12
+ch-soupe-savoyarde;Soupe savoyarde à la tomme;FR;Repas;Gluten, Lait, Céleri;12
+frp-soupe-oignon-gratinee;Soupe à l'oignon gratinée;FR;Repas;Gluten, Lait;12
+frv-spaetzle-munster-lardons;Spaetzle au munster et aux lardons;FR;Repas;Gluten, Œufs, Lait;12
+frv-steak-au-poivre;Steak au poivre;FR;Repas;Lait;12
+frv-steak-au-roquefort;Steak sauce au roquefort;FR;Repas;Lait;12
+frv-supremes-poulet-bearnaise;Suprêmes de poulet sauce béarnaise;FR;Repas;Œufs, Lait, Sulfites;12
+frv-tartare-de-boeuf;Tartare de bœuf à la française;FR;Repas;Œufs, Moutarde;60
+frp-tartare-saumon-pommes-de-terre;Tartare de saumon et pommes de terre tièdes;FR;Repas;Poissons;60
+frp-tarte-courgettes-comte;Tarte aux courgettes et comté;FR;Repas;Gluten, Œufs, Lait;12
+frp-tarte-fine-thon-poivrons;Tarte fine au thon, poivrons et olives;FR;Repas;Gluten, Poissons, Lait;12
+qt-tarte-fine-courgette-chevre;Tarte fine courgette et chèvre;FR;Repas;Gluten, Lait;12
+frv-tarte-flambee;Tarte flambée;FR;Repas;Gluten, Lait;12
+frp-tarte-tomate-moutarde;Tarte tomate-moutarde;FR;Repas;Gluten, Lait, Moutarde;12
+frp-tarte-oignon-alsacienne;Tarte à l'oignon alsacienne;FR;Repas;Gluten, Œufs, Lait;12
+ch-tartiflette;Tartiflette;FR;Repas;Lait;12
+frp-tartiflette-champignons;Tartiflette aux champignons;FR;Repas;Lait;12
+frp-thon-grille-poivrons-confits;Thon grillé et poivrons confits;FR;Repas;Gluten, Poissons;12
+frp-tian-legumes;Tian de légumes provençal;FR;Repas;Lait;12
+frv-tourte-poulet-poireaux;Tourte au poulet et aux poireaux;FR;Repas;Gluten, Œufs, Lait;12
+frp-truffade;Truffade auvergnate;FR;Repas;Lait;12
+frp-truite-amandes;Truite aux amandes;FR;Repas;Gluten, Lait, Fruits à coque;12
+frv-veau-marengo;Veau Marengo;FR;Repas;Gluten;12
+frp-veloute-cresson-oeuf-mollet;Velouté de cresson et œuf mollet;FR;Repas;Gluten, Œufs, Lait;12
+frp-veloute-potiron-tartines;Velouté de potiron et tartines au comté;FR;Repas;Gluten, Lait;12
+frv-emince-dinde-poireaux-moutarde;Émincé de dinde aux poireaux et à la moutarde;FR;Repas;Lait, Moutarde;12
+qt-poulet-creme-moutarde-champignons;Émincé de poulet à la moutarde et champignons;FR;Repas;Gluten, Lait, Moutarde;12
+frv-epaule-agneau-ail;Épaule d'agneau confite à l'ail;FR;Repas;Aucun des 14;12
+ch-epaule-agneau-boulangeres;Épaule d'agneau et pommes boulangères;FR;Repas;Aucun des 14;12
+pd-oeufs-brouilles-saumon;Œufs brouillés au saumon fumé;FR;Petit-déjeuner;Gluten, Œufs, Poissons, Lait;12
+frp-oeufs-cocotte-epinards;Œufs cocotte aux épinards;FR;Repas;Gluten, Œufs, Lait;12
+pd-oeufs-cocotte;Œufs cocotte à la crème;FR;Petit-déjeuner;Gluten, Œufs, Lait;12
+frp-oeufs-a-la-tripe;Œufs à la tripe;FR;Repas;Gluten, Œufs, Lait;12
+pd-full-english-breakfast;Full English breakfast;GB;Petit-déjeuner;Gluten, Œufs, Lait;12
+pd-kedgeree;Kedgeree;GB;Petit-déjeuner;Œufs, Poissons, Lait;12
+pd-porridge-ecossais;Porridge à l'écossaise;GB;Petit-déjeuner;Gluten, Lait;12
+pd-scones-creme-confiture;Scones à la crème et confiture;GB;Petit-déjeuner;Gluten, Œufs, Lait;12
+med-ajapsandali;Ajapsandali, ragoût géorgien de légumes;GE;Repas;Aucun des 14;12
+med-chakhokhbili;Chakhokhbili, poulet aux tomates et herbes;GE;Repas;Gluten, Lait;12
+med-chashushuli;Chashushuli, bœuf épicé à la tomate;GE;Repas;Aucun des 14;12
+med-chkmeruli;Chkmeruli, poulet à l'ail et à la crème;GE;Repas;Gluten, Lait;12
+med-khachapuri-adjaruli;Khachapuri adjaruli;GE;Repas;Gluten, Œufs, Lait;12
+med-lobio;Lobio, haricots rouges à la géorgienne;GE;Repas;Gluten, Fruits à coque, Sulfites;12
+afr-crevettes-shito-riz;Crevettes sautées au shito et riz;GH;Repas;Crustacés, Poissons;12
+afr-garden-egg-stew;Garden egg stew aux œufs;GH;Repas;Œufs;12
+afr-kontomire-oeufs-igname;Kontomire aux œufs et igname;GH;Repas;Œufs;12
+afr-light-soup-poulet;Light soup ghanéenne au poulet;GH;Repas;Aucun des 14;12
+afr-red-red-ghaneen;Red red ghanéen et plantains frits;GH;Repas;Aucun des 14;12
+afr-tilapia-grille-ghaneen;Tilapia grillé à la ghanéenne et plantains;GH;Repas;Aucun des 14;12
+afr-waakye-ragout-boeuf;Waakye et ragoût de bœuf;GH;Repas;Aucun des 14;12
+pdm-waakye;Waakye, riz et haricots rouges;GH;Petit-déjeuner;Œufs;12
+ame-poulet-colombo;Colombo de poulet;GP;Repas;Aucun des 14;12
+ame-gratin-christophine;Gratin de christophines;GP;Repas;Gluten, Lait;12
+ame-poisson-grille-sauce-chien;Poisson grillé sauce chien;GP;Repas;Aucun des 14;12
+pd-bougatsa;Bougatsa à la crème;GR;Petit-déjeuner;Gluten, Œufs, Lait;12
+med-briam;Briam, légumes rôtis à la grecque;GR;Repas;Lait;12
+med-kalamaria-gemista;Calamars farcis au riz et à la feta;GR;Repas;Gluten, Lait, Mollusques;12
+med-fakes-lentilles;Fakes, soupe grecque de lentilles;GR;Repas;Lait, Sulfites;12
+med-fasolada;Fasolada, soupe grecque de haricots blancs;GR;Repas;Gluten, Lait, Céleri;12
+med-garides-saganaki;Garides saganaki, crevettes à la tomate et feta;GR;Repas;Gluten, Crustacés, Lait;12
+med-gemista;Gemista, tomates et poivrons farcis au riz;GR;Repas;Aucun des 14;12
+med-gigantes-plaki;Gigantes plaki, haricots géants au four;GR;Repas;Lait;12
+med-giouvetsi;Giouvetsi, bœuf et orzo au four;GR;Repas;Gluten, Lait;12
+med-kotopoulo-lemonato;Kotopoulo lemonato, poulet au citron et origan;GR;Repas;Moutarde;12
+med-kritharaki-tomate-feta;Kritharaki à la tomate et à la feta;GR;Repas;Gluten, Lait;12
+med-bakaliaros-skordalia;Morue frite et skordalia;GR;Repas;Gluten, Poissons, Sulfites;12
+med-moussaka;Moussaka;GR;Repas;Gluten, Lait;12
+med-pastitsio;Pastitsio;GR;Repas;Gluten, Lait;12
+med-psari-plaki;Psari plaki, poisson au four à la grecque;GR;Repas;Poissons;12
+med-spanakopita;Spanakopita en plaque;GR;Repas;Gluten, Œufs, Lait;12
+med-spanakorizo;Spanakorizo, riz aux épinards et à l'aneth;GR;Repas;Œufs, Lait;12
+med-stifado-boeuf;Stifado de bœuf aux petits oignons;GR;Repas;Gluten, Sulfites;12
+pd-strapatsada;Strapatsada;GR;Petit-déjeuner;Gluten, Œufs, Lait;12
+pd-yaourt-grec-miel-noix;Yaourt grec, miel et noix;GR;Petit-déjeuner;Lait, Fruits à coque;12
+pd-desayuno-chapin;Desayuno chapín;GT;Petit-déjeuner;Œufs, Lait;12
+ame-pepian-poulet;Pepián de poulet;GT;Repas;Sésame;12
+pdm-pain-perdu-hong-kong;Pain perdu de Hong Kong au beurre de cacahuète;HK;Petit-déjeuner;Gluten, Œufs, Arachides, Lait;12
+ame-tapado-garifuna;Tapado garifuna;HN;Repas;Crustacés, Poissons;12
+med-brodet-poisson;Brodet, ragoût de poisson dalmate;HR;Repas;Poissons, Sulfites;12
+ame-griot-pikliz;Griot et pikliz;HT;Repas;Aucun des 14;12
+ame-legim-haitien-legumes;Légim haïtien aux légumes;HT;Repas;Aucun des 14;12
+ame-poulet-creole-haitien;Poulet en sauce à l'haïtienne;HT;Repas;Aucun des 14;12
+ame-riz-noir-champignons-haitien;Riz noir aux champignons à l'haïtienne;HT;Repas;Œufs;12
+ame-soupe-potiron-haitienne;Soupe de potiron à l'haïtienne;HT;Repas;Gluten;12
+asd-babi-kecap;Babi kecap, porc à la sauce soja sucrée;ID;Repas;Gluten, Soja;12
+qt-poulet-satay-express-concombre;Brochettes de poulet satay express et concombre;ID;Repas;Gluten, Arachides, Soja;12
+pdm-bubur-ayam;Bubur ayam, bouillie de riz au poulet;ID;Petit-déjeuner;Gluten, Arachides, Soja;12
+asd-gado-gado;Gado-gado à la sauce cacahuètes;ID;Repas;Gluten, Œufs, Arachides, Soja;12
+asd-maquereau-sambal;Maquereau grillé au sambal;ID;Repas;Gluten, Poissons, Soja;12
+asd-nasi-goreng-oeuf;Nasi goreng aux légumes et œuf au plat;ID;Repas;Gluten, Œufs, Soja;12
+pdm-nasi-goreng-oeuf;Nasi goreng à l'œuf au plat;ID;Petit-déjeuner;Gluten, Œufs, Soja;12
+asd-pepes-ikan;Pepes ikan, poisson en papillote;ID;Repas;Poissons;12
+asd-rendang-boeuf;Rendang de bœuf;ID;Repas;Aucun des 14;12
+asd-sayur-lodeh;Sayur lodeh, légumes au lait de coco;ID;Repas;Soja;12
+asd-soto-ayam;Soto ayam, soupe de poulet au curcuma;ID;Repas;Œufs;12
+asd-tahu-telur;Tahu telur, omelette au tofu;ID;Repas;Gluten, Œufs, Arachides, Soja;12
+asd-tempeh-kecap;Tempeh sauté au kecap manis;ID;Repas;Gluten, Soja;12
+pd-boxty;Boxty, galettes irlandaises;IE;Petit-déjeuner;Gluten, Lait;12
+pd-soda-farls;Soda farls irlandais;IE;Petit-déjeuner;Gluten, Lait;12
+pdm-bourekas-fromage;Bourekas au fromage;IL;Petit-déjeuner;Gluten, Œufs, Lait, Sésame;12
+med-ptitim-legumes-rotis;Ptitim aux légumes rôtis et tahini;IL;Repas;Gluten, Sésame;12
+med-sabich;Sabich, pita aux aubergines et œufs;IL;Repas;Gluten, Œufs, Sésame;12
+asd-aloo-gobi;Aloo gobi au curcuma;IN;Repas;Aucun des 14;12
+pdm-aloo-paratha;Aloo paratha, galettes farcies aux pommes de terre;IN;Petit-déjeuner;Gluten, Lait;12
+asd-avial;Avial, légumes au coco du Kerala;IN;Repas;Œufs, Lait;12
+asd-baingan-bharta;Baingan bharta, aubergines fumées;IN;Repas;Aucun des 14;12
+asd-biryani-poulet;Biryani de poulet au four;IN;Repas;Lait;12
+asd-butter-chicken;Butter chicken (murgh makhani);IN;Repas;Lait;12
+asd-chana-masala;Chana masala du Pendjab;IN;Repas;Aucun des 14;12
+asd-chou-fleur-tandoori;Chou-fleur rôti façon tandoori;IN;Repas;Lait;12
+asd-curry-oeufs-kerala;Curry d'œufs au lait de coco;IN;Repas;Œufs;12
+qt-curry-pois-chiches-epinards-coco;Curry de pois chiches aux épinards et coco;IN;Repas;Aucun des 14;12
+asd-curry-poisson-goa;Curry de poisson de Goa;IN;Repas;Poissons;12
+qt-curry-poisson-coco-express;Curry de poisson express au lait de coco;IN;Repas;Poissons;12
+asd-dal-makhani;Dal makhani crémeux;IN;Repas;Lait;12
+asd-dum-aloo;Dum aloo du Cachemire;IN;Repas;Lait;12
+pdm-idli-sambar;Idli de semoule et sambar;IN;Petit-déjeuner;Gluten, Lait, Moutarde;12
+asd-kadai-paneer;Kadai paneer aux poivrons;IN;Repas;Lait;12
+asd-kadhi-pakora;Kadhi pakora du Pendjab;IN;Repas;Lait;12
+asd-khichdi;Khichdi aux légumes;IN;Repas;Lait;12
+asd-korma-agneau;Korma d'agneau aux amandes;IN;Repas;Lait, Fruits à coque;12
+pdm-masala-dosa;Masala dosa express;IN;Petit-déjeuner;Gluten, Lait, Moutarde;12
+asd-meen-moilee;Meen moilee, poisson coco du Kerala;IN;Repas;Poissons;12
+asd-palak-paneer;Palak paneer;IN;Repas;Lait;12
+asd-pav-bhaji;Pav bhaji de Mumbai;IN;Repas;Gluten, Lait;12
+pdm-poha;Poha aux pommes de terre et cacahuètes;IN;Petit-déjeuner;Arachides, Moutarde;12
+asd-poulet-chettinad;Poulet chettinad;IN;Repas;Aucun des 14;12
+asd-poulet-tikka-plaque;Poulet tikka et légumes à la plaque;IN;Repas;Lait;12
+asd-rajma;Rajma, haricots rouges du Pendjab;IN;Repas;Aucun des 14;12
+asd-riz-citron-cacahuetes;Riz au citron, cacahuètes et légumes;IN;Repas;Arachides, Lait, Moutarde;12
+asd-rogan-josh;Rogan josh d'agneau;IN;Repas;Lait;12
+asd-sambar-legumes;Sambar aux légumes;IN;Repas;Moutarde;12
+asd-saumon-tandoori;Saumon tandoori au four;IN;Repas;Poissons, Lait;12
+asd-rava-uttapam;Uttapam de semoule aux légumes;IN;Repas;Gluten, Lait;12
+asd-vindaloo-porc;Vindaloo de porc de Goa;IN;Repas;Sulfites;12
+qt-bol-boulgour-legumes-rotis-tahini;Bol de boulgour, légumes rôtis et sauce tahini;INT;Repas;Gluten, Sésame;12
+qt-bol-poulet-sesame-riz-chou;Bol de poulet au sésame, riz et chou croquant;INT;Repas;Gluten, Soja, Sésame;12
+qt-bol-quinoa-pois-chiches-rotis;Bol de quinoa et pois chiches rôtis;INT;Repas;Sésame;12
+qt-bol-riz-maquereau-fume;Bol de riz au maquereau fumé et concombre;INT;Repas;Poissons, Lait;12
+qt-bol-riz-tofu-marine-concombre;Bol de riz au tofu mariné et concombre;INT;Repas;Gluten, Soja, Sésame;12
+qt-bol-riz-oeuf-mollet-legumes-soja;Bol de riz, œuf mollet et légumes sautés au soja;INT;Repas;Gluten, Œufs, Soja, Sésame;12
+qt-bol-saumon-riz-avocat-edamame;Bol de saumon poêlé, riz, avocat et edamames;INT;Repas;Gluten, Poissons, Soja, Sésame;12
+qt-batch-boulettes-boeuf-tomate;Boulettes de bœuf en sauce tomate pour la semaine;INT;Repas;Gluten, Œufs, Lait;12
+qt-boulettes-dinde-courgettes-poele;Boulettes de dinde et courgettes à la poêle;INT;Repas;Gluten, Œufs;12
+qt-boeuf-saute-poivrons-nouilles;Bœuf sauté aux poivrons et nouilles;INT;Repas;Gluten, Œufs, Soja, Mollusques;12
+qt-cabillaud-puree-petits-pois;Cabillaud poêlé et écrasé de petits pois;INT;Repas;Gluten, Poissons, Lait;12
+qt-plaque-chou-fleur-pois-chiches-yaourt;Chou-fleur et pois chiches rôtis, sauce yaourt;INT;Repas;Gluten, Lait;12
+qt-colin-plaque-tomates-olives;Colin rôti sur plaque aux tomates et olives;INT;Repas;Gluten, Poissons;12
+qt-coquillettes-cremeuses-chou-fleur;Coquillettes crémeuses au chou-fleur;INT;Repas;Gluten, Lait, Moutarde;12
+qt-courgettes-farcies-riz-feta;Courgettes farcies au reste de riz et feta;INT;Repas;Œufs, Lait;12
+qt-crepes-pois-chiches-legumes;Crêpes de pois chiches garnies aux légumes;INT;Repas;Aucun des 14;12
+qt-cuisses-poulet-plaque-fenouil-orange;Cuisses de poulet rôties au fenouil et à l'orange;INT;Repas;Aucun des 14;12
+qt-curry-frigo-legumes-yaourt;Curry du frigo aux légumes et yaourt;INT;Repas;Lait;12
+qt-dinde-curry-express-riz;Dinde au curry express et riz;INT;Repas;Aucun des 14;12
+qt-escalopes-dinde-citron-haricots-verts;Escalopes de dinde au citron et haricots verts;INT;Repas;Gluten, Lait;12
+qt-porc-plaque-carottes-miel-moutarde;Filet mignon de porc et carottes au miel-moutarde;INT;Repas;Moutarde;12
+qt-galettes-avoine-courgette;Galettes de flocons d'avoine à la courgette;INT;Repas;Gluten, Œufs, Lait;12
+qt-steaks-haricots-rouges-salade;Galettes de haricots rouges et salade croquante;INT;Repas;Gluten, Œufs, Lait;12
+qt-galettes-legumes-rapes-yaourt;Galettes de légumes râpés, yaourt aux herbes;INT;Repas;Gluten, Œufs, Lait;12
+qt-galettes-thon-pommes-de-terre;Galettes de thon et purée de la veille;INT;Repas;Gluten, Œufs, Poissons, Lait;12
+qt-plaque-gnocchis-legumes;Gnocchis rôtis sur plaque aux légumes;INT;Repas;Lait;12
+qt-batch-legumes-rotis-semaine;Grande plaque de légumes rôtis pour la semaine;INT;Repas;Aucun des 14;12
+qt-batch-gratin-legumes-pois-chiches;Gratin de légumes et pois chiches du dimanche;INT;Repas;Lait;12
+qt-pain-rassis-strata-champignons;Gratin de pain rassis aux champignons et épinards;INT;Repas;Gluten, Œufs, Lait;12
+qt-gratin-pain-rassis-poireaux;Gratin de pain rassis aux poireaux et gruyère;INT;Repas;Gluten, Œufs, Lait;12
+qt-gratin-pates-restes-legumes;Gratin de pâtes aux restes de légumes;INT;Repas;Gluten, Lait;12
+qt-batch-hachis-boeuf-lentilles;Hachis de bœuf aux lentilles à préparer d'avance;INT;Repas;Lait;12
+qt-poulet-plaque-pommes-de-terre-carottes;Hauts de cuisse de poulet, pommes de terre et carottes rôtis;INT;Repas;Aucun des 14;12
+pd-johnny-cakes;Johnny cakes;INT;Petit-déjeuner;Gluten, Lait;12
+qt-nouilles-cacahuetes-legumes;Nouilles froides sauce cacahuète et légumes;INT;Repas;Gluten, Arachides, Soja;12
+qt-crevettes-nouilles-gingembre;Nouilles sautées aux crevettes et gingembre;INT;Repas;Gluten, Crustacés, Œufs, Soja;12
+qt-nouilles-sautees-oeuf-poireaux;Nouilles sautées aux poireaux et œufs;INT;Repas;Gluten, Œufs, Soja, Sésame;12
+qt-omelette-pommes-de-terre-herbes;Omelette épaisse aux pommes de terre et herbes;INT;Repas;Œufs, Lait;12
+qt-orzotto-petits-pois-citron;Orge perlé crémeux aux petits pois et citron;INT;Repas;Gluten, Lait;12
+qt-orzo-une-casserole-tomates-epinards;Orzo en une casserole aux tomates et épinards;INT;Repas;Gluten, Lait;12
+qt-papillotes-poisson-blanc-legumes;Papillotes de poisson blanc aux légumes;INT;Repas;Gluten, Poissons;12
+qt-porc-hache-chou-sesame;Porc haché sauté au chou et sésame;INT;Repas;Gluten, Soja, Sésame;12
+qt-batch-poulet-effiloche-tomate;Poulet effiloché à la tomate pour la semaine;INT;Repas;Aucun des 14;12
+qt-poulet-plaque-patates-douces-paprika;Poulet et patates douces au paprika sur plaque;INT;Repas;Lait;12
+qt-poulet-une-poele-riz-tomate;Poulet et riz à la tomate en une poêle;INT;Repas;Aucun des 14;12
+qt-poelee-chou-pommes-de-terre-oeufs;Poêlée de chou vert, pommes de terre et œufs;INT;Repas;Œufs, Lait;12
+qt-pates-brocoli-ail-amandes;Pâtes au brocoli, ail et amandes grillées;INT;Repas;Gluten, Fruits à coque;12
+qt-pates-saumon-fume-aneth;Pâtes au saumon fumé, citron et aneth;INT;Repas;Gluten, Poissons, Lait;12
+qt-pates-thon-tomates-cerises-capres;Pâtes au thon, tomates cerises et câpres;INT;Repas;Poissons;12
+qt-pates-courgettes-menthe-feta;Pâtes aux courgettes, menthe et feta;INT;Repas;Gluten, Lait;12
+qt-pates-epinards-gorgonzola-noix;Pâtes aux épinards, gorgonzola et noix;INT;Repas;Gluten, Lait, Fruits à coque;12
+qt-pates-saucisse-brocoli;Pâtes à la saucisse et au brocoli;INT;Repas;Gluten, Lait;12
+qt-ragout-haricots-blancs-romarin;Ragoût de haricots blancs aux tomates et romarin;INT;Repas;Gluten;12
+qt-riz-epice-boeuf-hache-une-casserole;Riz épicé au bœuf haché en une casserole;INT;Repas;Aucun des 14;12
+qt-salade-epeautre-courge-chevre;Salade d'épeautre, courge rôtie et chèvre;INT;Repas;Gluten, Lait, Fruits à coque;12
+qt-salade-chou-rouge-pomme-lentilles;Salade de chou rouge, pomme, lentilles et noix;INT;Repas;Lait, Fruits à coque, Moutarde, Sulfites;12
+qt-salade-croutons-tomates-pois-chiches;Salade de croûtons, tomates et pois chiches;INT;Repas;Gluten, Sulfites;12
+qt-salade-lentilles-feta-betterave;Salade de lentilles, betterave et feta;INT;Repas;Lait, Moutarde, Sulfites;12
+qt-salade-pommes-de-terre-oeufs-mollets;Salade de pommes de terre, œufs mollets et cornichons;INT;Repas;Œufs, Moutarde, Sulfites;12
+qt-salade-pates-pesto-tomates-mozzarella;Salade de pâtes au pesto, tomates et mozzarella;INT;Repas;Gluten, Lait, Fruits à coque;12
+qt-salade-quinoa-mangue-haricots-noirs;Salade de quinoa, mangue et haricots noirs;INT;Repas;Lait;12
+qt-salade-riz-thon-mais-poivron;Salade de riz au thon, maïs et poivron;INT;Repas;Œufs, Poissons, Moutarde, Sulfites;12
+qt-salade-riz-restes-legumes-croquants;Salade de riz du frigo aux légumes croquants;INT;Repas;Aucun des 14;12
+qt-salade-tiede-saucisse-lentilles;Salade tiède de lentilles et saucisse fumée;INT;Repas;Moutarde, Sulfites;12
+qt-salade-poulet-roti-restes-croutons;Salade-repas aux restes de poulet rôti;INT;Repas;Gluten, Lait, Moutarde;12
+qt-salade-pois-chiches-sardines;Salade-repas de pois chiches et sardines;INT;Repas;Poissons;12
+qt-batch-sauce-tomate-lentilles;Sauce tomate aux lentilles pour la semaine;INT;Repas;Céleri;12
+qt-saucisses-plaque-pommes-oignons;Saucisses, pommes et oignons rôtis au four;INT;Repas;Moutarde;12
+qt-saumon-plaque-brocoli-citron;Saumon et brocoli sur plaque au citron;INT;Repas;Poissons;12
+qt-soupe-lentilles-corail-carottes-coco;Soupe de lentilles corail, carottes et coco;INT;Repas;Aucun des 14;12
+qt-soupe-pois-casses-paprika-fume;Soupe de pois cassés au paprika fumé;INT;Repas;Gluten;12
+qt-soupe-poulet-nouilles-legumes;Soupe-repas aux restes de poulet et nouilles;INT;Repas;Gluten, Œufs, Céleri;12
+qt-soupe-legumes-fatigues-pistou;Soupe-repas des légumes du frigo au pistou;INT;Repas;Gluten, Lait, Céleri;12
+qt-tartines-oeufs-brouilles-champignons;Tartines d'œufs brouillés aux champignons;INT;Repas;Gluten, Œufs, Lait;12
+qt-tofu-croustillant-sauce-cacahuete;Tofu croustillant au four, sauce cacahuète et riz;INT;Repas;Gluten, Arachides, Soja;12
+qt-tofu-saute-brocoli-sesame;Tofu sauté au brocoli et sésame;INT;Repas;Gluten, Soja, Sésame;12
+qt-wok-nouilles-riz-legumes-oeuf;Wok de nouilles de riz aux légumes et œuf;INT;Repas;Gluten, Œufs, Arachides, Soja;12
+qt-wraps-houmous-legumes-feta;Wraps au houmous, légumes croquants et feta;INT;Repas;Gluten, Lait, Sésame;12
+qt-wraps-poulet-crudites-yaourt;Wraps de poulet grillé, crudités et yaourt;INT;Repas;Gluten, Lait;12
+qt-ecrase-pommes-de-terre-oeuf-poireaux;Écrasé de pommes de terre, poireaux et œuf au plat;INT;Repas;Œufs, Lait;12
+qt-emince-poulet-paprika-riz;Émincé de poulet au paprika et poivrons, riz;INT;Repas;Lait;12
+qt-oeufs-poeles-poireaux-epinards;Œufs mijotés aux poireaux et épinards;INT;Repas;Gluten, Œufs, Lait;12
+pdm-kahi-geymar;Kahi feuilleté à la crème et au sirop de dattes;IQ;Petit-déjeuner;Gluten, Lait, Sulfites;12
+med-adas-polo;Adas polo, riz aux lentilles et dattes;IR;Repas;Lait, Sulfites;12
+pdm-adasi;Adasi, soupe de lentilles persane;IR;Petit-déjeuner;Aucun des 14;12
+med-ash-reshteh;Ash reshteh, soupe persane aux nouilles;IR;Repas;Gluten, Lait;12
+med-fesenjan;Fesenjan, poulet aux noix et à la grenade;IR;Repas;Fruits à coque;12
+med-ghalieh-mahi;Ghalieh mahi, poisson au tamarin et à la coriandre;IR;Repas;Poissons;12
+med-ghormeh-sabzi;Ghormeh sabzi, ragoût persan aux herbes;IR;Repas;Aucun des 14;12
+med-joojeh-kabab;Joojeh kabab au safran;IR;Repas;Lait;12
+med-kashk-bademjan;Kashk-e bademjan, aubergines fondantes au yaourt;IR;Repas;Gluten, Lait, Fruits à coque;12
+med-kuku-sabzi;Kuku sabzi aux herbes et noix;IR;Repas;Gluten, Œufs, Lait, Fruits à coque;12
+pdm-kuku-sabzi;Kuku sabzi, omelette persane aux herbes;IR;Petit-déjeuner;Œufs, Fruits à coque;12
+med-mirza-ghasemi;Mirza ghasemi, aubergines fumées aux œufs;IR;Repas;Gluten, Œufs;12
+pdm-nan-panir-sabzi;Pain, feta, herbes et noix à l'iranienne;IR;Petit-déjeuner;Gluten, Lait, Fruits à coque;12
+med-sabzi-polo-mahi;Sabzi polo et saumon poêlé;IR;Repas;Poissons, Lait;12
+it-acquacotta-maremme;Acquacotta de la Maremme;IT;Repas;Gluten, Œufs, Lait, Céleri;12
+it-agneau-cacio-e-uova;Agneau cacio e uova des Abruzzes;IT;Repas;Œufs, Lait;12
+it-arista-porc-toscane;Arista, rôti de porc à la toscane;IT;Repas;Aucun des 14;12
+it-bigoli-in-salsa;Bigoli in salsa vénitiens;IT;Repas;Gluten, Poissons;12
+it-braciole-boeuf-pouilles;Braciole de bœuf à la sauce tomate;IT;Repas;Lait;12
+it-bucatini-amatriciana;Bucatini all'amatriciana;IT;Repas;Gluten, Lait;12
+it-cabillaud-acqua-pazza;Cabillaud all'acqua pazza;IT;Repas;Gluten, Poissons;12
+it-cacciucco-livournais;Cacciucco, soupe de poissons de Livourne;IT;Repas;Gluten, Poissons, Mollusques;12
+it-calamars-farcis-tomate;Calamars farcis à la tomate;IT;Repas;Gluten, Œufs, Lait, Mollusques;12
+it-calzone-legumes-mozzarella;Calzone aux légumes grillés et mozzarella;IT;Repas;Gluten, Lait;12
+it-canederli-fromage-bouillon;Canederli au fromage en bouillon;IT;Repas;Gluten, Œufs, Lait;12
+it-cannelloni-viande;Cannelloni à la viande et béchamel;IT;Repas;Gluten, Œufs, Lait;12
+ch-carbonade-valdotaine;Carbonade valdôtaine et polenta;IT;Repas;Gluten, Lait, Sulfites;12
+it-conchiglioni-ricotta-citron;Conchiglioni farcis ricotta, citron et herbes;IT;Repas;Œufs, Lait;12
+it-crespelle-poireaux-fontina;Crespelle aux poireaux et fontina;IT;Repas;Gluten, Œufs, Lait;12
+ch-crespelle-epinards-ricotta;Crespelle aux épinards et à la ricotta;IT;Repas;Gluten, Œufs, Lait;12
+it-crevettes-alla-busara;Crevettes alla busara;IT;Repas;Gluten, Crustacés;12
+qt-croquettes-riz-restes-mozzarella;Croquettes de riz aux restes et cœur de mozzarella;IT;Repas;Gluten, Œufs, Lait;12
+ch-cotelette-valdotaine;Côtelette valdôtaine;IT;Repas;Gluten, Œufs, Lait;12
+it-agneau-scottadito;Côtelettes d'agneau scottadito;IT;Repas;Aucun des 14;12
+it-cotoletta-milanese;Côtelettes de veau à la milanaise;IT;Repas;Gluten, Œufs, Lait;12
+it-dorade-four-pommes-de-terre;Dorade au four aux pommes de terre;IT;Repas;Aucun des 14;12
+it-espadon-sicilienne;Espadon à la sicilienne;IT;Repas;Poissons, Sulfites;12
+it-foie-veau-venitienne;Foie de veau à la vénitienne;IT;Repas;Lait, Sulfites;12
+pd-frittata-courgettes;Frittata aux courgettes;IT;Petit-déjeuner;Œufs, Lait;12
+it-frittata-courgettes-menthe;Frittata aux courgettes et menthe;IT;Repas;Œufs, Lait;12
+qt-frittata-restes-pates;Frittata aux restes de pâtes;IT;Repas;Gluten, Œufs, Lait;12
+it-garganelli-jambon-petits-pois;Garganelli au jambon et petits pois;IT;Repas;Gluten, Œufs, Lait;12
+it-gnocchi-alla-sorrentina;Gnocchi alla sorrentina;IT;Repas;Lait;12
+ch-gnocchi-fontina;Gnocchi gratinés à la fontina;IT;Repas;Gluten, Œufs, Lait;12
+it-gnocchi-alla-romana;Gnocchi à la romaine;IT;Repas;Gluten, Œufs, Lait;12
+it-gnocchi-maison-beurre-sauge;Gnocchis maison au beurre et sauge;IT;Repas;Gluten, Œufs, Lait;12
+qt-gnocchis-poeles-sauge-butternut;Gnocchis poêlés à la courge et à la sauge;IT;Repas;Lait;12
+it-gnudi-ricotta-epinards;Gnudi toscans ricotta et épinards;IT;Repas;Gluten, Œufs, Lait;12
+ch-knodel-epinards-beurre-noisette;Knödel aux épinards et beurre noisette;IT;Repas;Gluten, Œufs, Lait;12
+it-lapin-ligure-olives;Lapin à la ligure, olives et pignons;IT;Repas;Aucun des 14;12
+ch-lasagnes-bettes-fontina;Lasagnes aux bettes et à la fontina;IT;Repas;Gluten, Lait;12
+it-lasagnes-epinards-ricotta;Lasagnes aux épinards et ricotta;IT;Repas;Gluten, Lait;12
+it-lasagnes-bolognaise;Lasagnes à la bolognaise;IT;Repas;Gluten, Lait;12
+it-lentilles-saucisses-ombrie;Lentilles et saucisses à l'ombrienne;IT;Repas;Céleri;12
+it-linguine-crevettes-citron;Linguine aux crevettes, ail et citron;IT;Repas;Crustacés;12
+it-merlu-livournaise;Merlu à la livournaise;IT;Repas;Gluten, Poissons;12
+it-minestrone;Minestrone aux légumes et pâtes;IT;Repas;Gluten, Fruits à coque;12
+it-orecchiette-cime-di-rapa;Orecchiette aux brocolis et piment;IT;Repas;Gluten, Lait;12
+it-osso-buco-milanaise;Osso buco à la milanaise;IT;Repas;Gluten, Lait, Sulfites;12
+ch-ossobuco-tessinois;Ossobuco tessinois et gremolata;IT;Repas;Gluten;12
+it-paccheri-courge-sauge;Paccheri à la courge rôtie et noisettes;IT;Repas;Lait, Fruits à coque;12
+it-panzanella-mozzarella;Panzanella complète à la mozzarella;IT;Repas;Gluten, Lait, Sulfites;12
+it-pappa-al-pomodoro;Pappa al pomodoro;IT;Repas;Gluten, Lait;12
+it-pappardelle-ragu-canard;Pappardelle au ragù de canard;IT;Repas;Œufs, Lait;12
+it-parmigiana-melanzane;Parmigiana d'aubergines;IT;Repas;Lait;12
+it-pasta-con-le-sarde;Pasta con le sarde;IT;Repas;Gluten, Poissons, Sulfites;12
+it-pasta-e-ceci;Pasta e ceci au romarin;IT;Repas;Gluten, Lait;12
+it-pasta-e-fagioli;Pasta e fagioli;IT;Repas;Gluten, Céleri;12
+it-penne-arrabbiata;Penne all'arrabbiata;IT;Repas;Gluten, Lait;12
+it-peposo-boeuf-poivre;Peposo, bœuf au poivre de l'Impruneta;IT;Repas;Gluten, Sulfites;12
+it-piadina-mozzarella-roquette;Piadina mozzarella, roquette et tomates;IT;Repas;Gluten, Lait;12
+it-pici-aglione;Pici all'aglione;IT;Repas;Gluten, Lait;12
+it-pizza-romana-anchois;Pizza aux anchois et câpres;IT;Repas;Gluten, Poissons, Lait;12
+it-pizza-patate-romarin;Pizza aux pommes de terre et romarin;IT;Repas;Gluten, Lait;12
+it-pizza-capricciosa;Pizza capricciosa;IT;Repas;Gluten, Lait;12
+it-pizza-margherita-plaque;Pizza margherita sur plaque;IT;Repas;Gluten, Lait;12
+it-pizzoccheri-valtellinesi;Pizzoccheri de la Valteline;IT;Repas;Gluten, Lait;12
+it-peperoni-ripieni-riz;Poivrons farcis au riz, olives et câpres;IT;Repas;Lait;12
+it-polenta-concia;Polenta concia du Val d'Aoste;IT;Repas;Lait;12
+ch-polenta-concia;Polenta concia à la fontina;IT;Repas;Lait;12
+it-polenta-champignons;Polenta crémeuse aux champignons;IT;Repas;Lait;12
+it-polenta-poulet-umido;Polenta et poulet mijoté à la tomate;IT;Repas;Lait;12
+it-polpette-al-sugo;Polpette al sugo;IT;Repas;Gluten, Œufs, Lait;12
+it-polpettone-four;Polpettone au four et légumes;IT;Repas;Gluten, Œufs, Lait;12
+it-pollo-cacciatora;Poulet alla cacciatora;IT;Repas;Sulfites;12
+it-poulet-alla-diavola;Poulet alla diavola;IT;Repas;Aucun des 14;12
+it-poulet-aux-poivrons-romain;Poulet aux poivrons à la romaine;IT;Repas;Aucun des 14;12
+it-cuisses-poulet-patates-romarin;Poulet rôti aux pommes de terre et romarin;IT;Repas;Aucun des 14;12
+it-fave-e-cicoria;Purée de fèves et chicorée des Pouilles;IT;Repas;Gluten;12
+it-pates-crudaiola;Pâtes alla crudaiola;IT;Repas;Gluten, Lait;12
+qt-pates-citron-epinards-ricotta;Pâtes au citron, épinards et ricotta;IT;Repas;Gluten, Lait;12
+it-busiate-pesto-trapanese;Pâtes au pesto à la trapanaise;IT;Repas;Gluten, Lait, Fruits à coque;12
+it-pates-courgettes-nerano;Pâtes aux courgettes à la Nerano;IT;Repas;Gluten, Lait;12
+qt-pates-pois-chiches-romarin;Pâtes aux pois chiches et romarin;IT;Repas;Gluten;12
+qt-pates-sardines-citron-chapelure;Pâtes aux sardines, citron et chapelure dorée;IT;Repas;Gluten, Poissons;12
+it-pates-sauce-aux-noix;Pâtes à la sauce aux noix ligure;IT;Repas;Gluten, Lait, Fruits à coque;12
+it-ribollita;Ribollita toscane;IT;Repas;Gluten, Céleri;12
+it-rigatoni-gricia;Rigatoni alla gricia;IT;Repas;Lait;12
+it-risi-e-bisi;Risi e bisi vénitien;IT;Repas;Lait;12
+it-risotto-safran;Risotto au safran à la milanaise;IT;Repas;Lait, Sulfites;12
+it-risotto-asperges;Risotto aux asperges vertes;IT;Repas;Lait;12
+it-risotto-crevettes-citron;Risotto aux crevettes et citron;IT;Repas;Crustacés, Lait;12
+it-risotto-courge;Risotto à la courge et sauge;IT;Repas;Lait;12
+it-risotto-monzese-saucisse;Risotto à la saucisse de Monza;IT;Repas;Lait;12
+it-risotto-radicchio-gorgonzola;Risotto à la trévise et gorgonzola;IT;Repas;Lait, Fruits à coque;12
+it-roti-dinde-sauge;Rôti de dinde à la sauge et au citron;IT;Repas;Aucun des 14;12
+it-salade-epeautre-thon;Salade d'épeautre au thon et légumes;IT;Repas;Gluten, Poissons, Sulfites;12
+it-saltimbocca-romana;Saltimbocca alla romana;IT;Repas;Gluten, Lait;12
+it-sardines-beccafico;Sardines a beccafico;IT;Repas;Gluten, Poissons, Sulfites;12
+it-saumon-croute-pistaches;Saumon en croûte de pistaches;IT;Repas;Gluten, Poissons, Fruits à coque;12
+it-scaloppine-poulet-citron;Scaloppine de poulet au citron;IT;Repas;Gluten, Lait;12
+ch-seupa-valpellinentze;Seupa valpellinentze;IT;Repas;Gluten, Lait;12
+it-zuppa-farro-haricots;Soupe d'épeautre et haricots de Lucques;IT;Repas;Gluten;12
+it-zuppa-di-cozze;Soupe de moules à la tarentaise;IT;Repas;Gluten, Mollusques;12
+it-spaghetti-aglio-olio-peperoncino;Spaghetti aglio, olio e peperoncino;IT;Repas;Gluten;12
+it-spaghetti-al-limone;Spaghetti al limone;IT;Repas;Gluten, Lait;12
+it-spaghetti-puttanesca;Spaghetti alla puttanesca;IT;Repas;Gluten, Poissons;12
+it-spaghetti-vongole;Spaghetti alle vongole;IT;Repas;Gluten, Mollusques;12
+it-spaghetti-moules-tomates;Spaghetti aux moules et tomates cerises;IT;Repas;Gluten, Mollusques;12
+it-spaghetti-cacio-e-pepe;Spaghetti cacio e pepe;IT;Repas;Gluten, Lait;12
+it-spaghetti-carbonara;Spaghetti carbonara;IT;Repas;Gluten, Œufs, Lait;12
+it-spezzatino-boeuf;Spezzatino de bœuf aux pommes de terre;IT;Repas;Aucun des 14;12
+it-steaks-pizzaiola;Steaks à la pizzaiola;IT;Repas;Lait;12
+it-stracciatella-poulet;Stracciatella au poulet et épinards;IT;Repas;Gluten, Œufs, Lait;12
+it-tagliata-roquette-parmesan;Tagliata de bœuf, roquette et parmesan;IT;Repas;Lait;12
+it-tagliatelles-ragu-bolognese;Tagliatelles au ragù bolognais;IT;Repas;Gluten, Œufs, Lait, Céleri;12
+it-tagliatelles-cepes;Tagliatelles aux cèpes et au persil;IT;Repas;Gluten, Œufs, Lait;12
+pd-tartines-ricotta-figues;Tartines ricotta, miel et figues;IT;Petit-déjeuner;Gluten, Lait, Fruits à coque;12
+it-thon-aigre-doux-oignons;Thon à l'aigre-doux et oignons;IT;Repas;Gluten, Poissons, Sulfites;12
+it-pomodori-al-riso;Tomates farcies au riz à la romaine;IT;Repas;Aucun des 14;12
+it-torta-pasqualina;Torta pasqualina aux blettes;IT;Repas;Gluten, Œufs, Lait;12
+it-tortellini-en-bouillon;Tortellini en bouillon;IT;Repas;Lait, Céleri;12
+it-trofie-pesto-genovese;Trofie au pesto, pommes de terre et haricots;IT;Repas;Lait;12
+it-truite-four-amandes;Truite au four aux amandes et citron;IT;Repas;Lait, Fruits à coque;12
+it-vitello-tonnato;Vitello tonnato;IT;Repas;Œufs, Poissons;12
+it-uova-in-purgatorio;Œufs au purgatoire;IT;Repas;Gluten, Œufs, Lait;12
+pdm-galayet-bandora;Galayet bandora, tomates poêlées à l'ail;JO;Petit-déjeuner;Gluten;12
+ase-aubergines-miso-riz-sesame;Aubergines laquées au miso et riz au sésame;JP;Repas;Gluten, Soja, Sésame;12
+ase-cabillaud-miso-four;Cabillaud au miso rôti au four;JP;Repas;Gluten, Poissons, Soja, Sésame;12
+ase-cabillaud-pane-panko;Cabillaud pané au panko et salade de chou;JP;Repas;Gluten, Œufs, Poissons;12
+ase-curry-japonais-legumes;Curry japonais aux légumes;JP;Repas;Gluten, Lait;12
+ase-curry-katsu-poulet;Curry katsu au poulet pané;JP;Repas;Gluten, Œufs;12
+ase-curry-udon-legumes;Curry udon aux légumes;JP;Repas;Gluten, Soja, Lait;12
+ase-donburi-saumon-sesame;Donburi de saumon grillé au sésame;JP;Repas;Gluten, Poissons, Soja, Sésame;12
+ase-donburi-tamagoyaki-legumes;Donburi à l'omelette roulée et légumes sautés;JP;Repas;Gluten, Œufs, Soja, Sésame;12
+ase-gyoza-porc-chou;Gyoza grillés au porc et au chou;JP;Repas;Gluten, Soja, Sésame;12
+ase-gyudon;Gyudon, bol de bœuf aux oignons;JP;Repas;Gluten, Soja;12
+ase-katsudon;Katsudon, porc pané et œuf sur riz;JP;Repas;Gluten, Œufs, Soja;12
+ase-maquereau-miso-poele;Maquereau poêlé au miso;JP;Repas;Gluten, Poissons, Soja, Sésame;12
+ase-nabe-legumes-tofu-miso;Nabe de légumes et tofu au miso;JP;Repas;Gluten, Soja;12
+ase-nikujaga;Nikujaga, bœuf et pommes de terre mijotés;JP;Repas;Gluten, Soja;12
+ase-ochazuke-saumon;Ochazuke au saumon grillé;JP;Repas;Gluten, Poissons, Soja, Sésame;12
+ase-okonomiyaki-chou;Okonomiyaki au chou;JP;Repas;Gluten, Œufs;12
+ase-omurice-champignons;Omurice aux champignons;JP;Repas;Œufs, Lait;12
+pdm-onigiri-saumon;Onigiri au saumon;JP;Petit-déjeuner;Poissons, Sésame;12
+ase-oyakodon;Oyakodon, bol de poulet et œuf;JP;Repas;Gluten, Œufs, Soja;12
+pdm-petit-dejeuner-japonais;Petit-déjeuner japonais au saumon grillé;JP;Petit-déjeuner;Poissons, Soja;12
+ase-porc-gingembre-shogayaki;Porc sauté au gingembre à la japonaise;JP;Repas;Gluten, Soja;12
+ase-poulet-karaage;Poulet karaage et salade de chou;JP;Repas;Gluten, Soja;12
+ase-ramen-miso-crevettes;Ramen miso aux crevettes;JP;Repas;Gluten, Crustacés, Œufs, Soja, Sésame;12
+ase-ramen-shio-poulet;Ramen shio au poulet et gingembre;JP;Repas;Gluten, Œufs, Sésame;12
+ase-ramen-shoyu-porc;Ramen shoyu au porc et œuf mollet;JP;Repas;Gluten, Œufs, Soja, Sésame;12
+ase-ramen-miso-mais-vegetarien;Ramen végétarien au miso et au maïs;JP;Repas;Gluten, Œufs, Soja, Lait, Sésame;12
+ase-soba-froides-tofu-concombre;Soba froides au tofu et concombre;JP;Repas;Gluten, Soja, Sésame;12
+ase-soboro-don-poulet;Soboro don au poulet haché;JP;Repas;Gluten, Œufs, Soja;12
+ase-soupe-miso-tofu-udon;Soupe miso aux udon et au tofu;JP;Repas;Gluten, Soja;12
+qt-soupe-nouilles-miso-tofu;Soupe-repas de nouilles au miso et tofu;JP;Repas;Gluten, Soja;12
+ase-sukiyaki-simplifie;Sukiyaki simplifié;JP;Repas;Gluten, Œufs, Soja;12
+pdm-tamagoyaki;Tamagoyaki, omelette roulée japonaise;JP;Petit-déjeuner;Gluten, Œufs, Soja;12
+ase-temaki-saumon-fume-avocat;Temaki au saumon fumé et avocat;JP;Repas;Gluten, Poissons, Soja, Sésame;12
+ase-tendon-crevettes-legumes;Tendon, bol de tempura aux crevettes;JP;Repas;Gluten, Crustacés, Œufs, Soja;12
+ase-thon-mi-cuit-sesame;Thon mi-cuit au sésame, riz et concombre;JP;Repas;Gluten, Poissons, Soja, Sésame;60
+ase-agedashi-tofu;Tofu frit en bouillon soja-gingembre;JP;Repas;Gluten, Soja;12
+ase-udon-saumon-epinards;Udon au saumon et épinards en bouillon;JP;Repas;Gluten, Poissons, Soja;12
+ase-yaki-udon-legumes;Udon sautés aux légumes;JP;Repas;Gluten, Soja, Sésame;12
+ase-yakisoba-crevettes;Yakisoba aux crevettes;JP;Repas;Gluten, Crustacés, Poissons, Soja;12
+ase-yakitori-poele;Yakitori à la poêle;JP;Repas;Gluten, Soja, Sésame;12
+afr-githeri-kenyan;Githeri kényan, maïs et haricots;KE;Repas;Aucun des 14;12
+pdm-mandazi;Mandazi, beignets à la noix de coco;KE;Petit-déjeuner;Gluten, Œufs;12
+afr-matoke-haricots;Matoke aux tomates et haricots;KE;Repas;Aucun des 14;12
+afr-mukimo-kenyan;Mukimo aux petits pois et maïs;KE;Repas;Lait;12
+afr-nyama-choma-kachumbari;Nyama choma et kachumbari;KE;Repas;Lait;12
+afr-pilau-kenyan-boeuf;Pilau kényan au bœuf;KE;Repas;Aucun des 14;12
+afr-samaki-wa-kupaka;Samaki wa kupaka, poisson grillé au coco;KE;Repas;Poissons;12
+afr-sukuma-wiki-ugali;Sukuma wiki et ugali;KE;Repas;Œufs;12
+asd-amok-poisson;Amok de poisson cambodgien;KH;Repas;Œufs, Poissons;12
+asd-kari-khmer-legumes;Kari khmer aux légumes;KH;Repas;Gluten, Soja;12
+asd-poulet-poivre-kampot;Poulet au poivre vert de Kampot;KH;Repas;Gluten, Poissons, Soja;12
+ase-bulgogi-boeuf;Bulgogi de bœuf;KR;Repas;Gluten, Soja, Sésame;12
+ase-calamars-sautes-coreens;Calamars sautés épicés à la coréenne;KR;Repas;Gluten, Soja, Sésame, Mollusques;12
+ase-dakgalbi-poulet-chou;Dakgalbi, poulet épicé au chou;KR;Repas;Gluten, Soja;12
+ase-doenjang-jjigae;Doenjang jjigae aux légumes et tofu;KR;Repas;Soja;12
+ase-galbi-jjim-boeuf;Galbi-jjim, bœuf mijoté coréen;KR;Repas;Gluten, Soja, Sésame;12
+ase-pajeon-oignons-verts;Galettes coréennes aux oignons verts;KR;Repas;Gluten, Œufs, Soja;12
+ase-gimbap-vegetarien;Gimbap végétarien;KR;Repas;Gluten, Œufs, Soja, Sésame;12
+pdm-hobak-juk;Hobak-juk, velouté de courge au riz gluant;KR;Petit-déjeuner;Aucun des 14;12
+ase-japchae-legumes;Japchae aux légumes;KR;Repas;Gluten, Œufs, Soja, Sésame;12
+ase-kimchi-jjigae-thon;Kimchi jjigae au thon;KR;Repas;Gluten, Poissons, Soja, Sésame;12
+ase-kongguksu-nouilles-lait-soja;Nouilles froides au lait de soja;KR;Repas;Gluten, Œufs, Soja, Sésame;12
+ase-jeyuk-bokkeum;Porc sauté épicé à la coréenne;KR;Repas;Gluten, Soja;12
+ase-dakgangjeong-four;Poulet croustillant coréen au four;KR;Repas;Gluten, Soja, Sésame;12
+ase-ragout-cabillaud-coreen;Ragoût épicé de cabillaud à la coréenne;KR;Repas;Gluten, Poissons, Soja;12
+ase-samgyeopsal-wraps-salade;Samgyeopsal à la poêle et wraps de salade;KR;Repas;Soja, Sésame;12
+ase-sundubu-jjigae-vegetarien;Sundubu jjigae végétarien;KR;Repas;Gluten, Œufs, Soja;12
+pdm-toast-coreen;Toast coréen au chou et à l'omelette;KR;Petit-déjeuner;Gluten, Œufs, Lait;12
+ase-tteokbokki-oeufs;Tteokbokki aux œufs;KR;Repas;Gluten, Œufs, Soja, Sésame;12
+asd-larb-porc;Larb de porc laotien;LA;Repas;Poissons;12
+asd-or-lam-legumes;Or lam laotien aux légumes;LA;Repas;Gluten, Soja;12
+pdm-fatteh-pois-chiches;Fatteh aux pois chiches;LB;Petit-déjeuner;Gluten, Lait, Sésame;12
+med-fattoush-complet;Fattoush complet aux pois chiches grillés;LB;Repas;Gluten, Lait;12
+med-kafta-au-four;Kafta au four, pommes de terre et tomates;LB;Repas;Aucun des 14;12
+med-kibbeh-potiron;Kibbeh de potiron aux épinards;LB;Repas;Gluten;12
+med-loubieh-bi-zeit;Loubieh bi zeit, haricots verts à la tomate;LB;Repas;Gluten, Lait;12
+pdm-manakish-zaatar;Manakish au zaatar;LB;Petit-déjeuner;Gluten, Lait, Sésame;12
+med-mnazaleh;Mnazaleh, aubergines aux pois chiches;LB;Repas;Aucun des 14;12
+med-mujaddara;Mujaddara, lentilles et riz aux oignons frits;LB;Repas;Lait;12
+med-samke-harra;Samke harra, poisson épicé au tahini;LB;Repas;Poissons, Fruits à coque, Sésame;12
+med-sayadieh;Sayadieh, poisson et riz aux oignons caramélisés;LB;Repas;Poissons;12
+med-shawarma-poulet-plaque;Shawarma de poulet à la plaque;LB;Repas;Gluten, Lait, Sésame;12
+med-shish-taouk;Shish taouk et toum;LB;Repas;Gluten, Lait;12
+pdm-oeufs-awarma;Œufs à l'agneau confit à la libanaise;LB;Petit-déjeuner;Gluten, Œufs, Lait;12
+asd-ambul-thiyal;Ambul thiyal, thon aigre sri-lankais;LK;Repas;Poissons;12
+asd-curry-crevettes-srilankais;Curry de crevettes sri-lankais;LK;Repas;Crustacés;12
+asd-curry-cajou-srilankais;Curry de noix de cajou sri-lankais;LK;Repas;Fruits à coque;12
+asd-curry-poulet-srilankais;Curry de poulet sri-lankais;LK;Repas;Aucun des 14;12
+pdm-kiribath;Kiribath, riz au lait de coco et lunu miris;LK;Petit-déjeuner;Aucun des 14;12
+asd-kottu-roti-legumes;Kottu roti aux légumes;LK;Repas;Gluten, Œufs, Soja;12
+pdm-pol-roti;Pol roti, galettes à la noix de coco;LK;Petit-déjeuner;Gluten;12
+med-chraimeh;Chraimeh, poisson en sauce tomate épicée;LY;Repas;Gluten, Poissons;12
+pdm-baghrir;Baghrir, crêpes mille trous;MA;Petit-déjeuner;Gluten, Lait;12
+afr-bissara-feves;Bissara, soupe de fèves au cumin;MA;Repas;Gluten;12
+pdm-bissara;Bissara, velouté de fèves au cumin;MA;Petit-déjeuner;Aucun des 14;12
+afr-boulettes-sardines-tomate;Boulettes de sardines à la tomate;MA;Repas;Gluten, Poissons;12
+afr-couscous-sept-legumes;Couscous aux sept légumes;MA;Repas;Gluten, Moutarde;12
+afr-crevettes-chermoula-riz;Crevettes à la chermoula et riz au citron;MA;Repas;Crustacés;12
+afr-harira-vegetarienne;Harira végétarienne aux lentilles;MA;Repas;Gluten, Céleri;12
+pdm-msemen;Msemen, crêpes feuilletées marocaines;MA;Petit-déjeuner;Gluten, Lait;12
+afr-pastilla-poulet;Pastilla au poulet et aux amandes;MA;Repas;Gluten, Œufs, Lait, Fruits à coque;12
+afr-pastilla-poisson-vermicelles;Pastilla de poisson aux vermicelles;MA;Repas;Gluten, Crustacés, Poissons, Lait;12
+afr-poulet-ras-el-hanout-plaque;Poulet au ras el hanout et légumes sur plaque;MA;Repas;Lait, Moutarde;12
+afr-rfissa-poulet-lentilles;Rfissa au poulet et aux lentilles;MA;Repas;Gluten, Lait, Moutarde;12
+afr-tajine-agneau-pruneaux;Tajine d'agneau aux pruneaux et amandes;MA;Repas;Fruits à coque, Sésame, Sulfites;12
+afr-tajine-boeuf-artichauts;Tajine de bœuf aux artichauts et petits pois;MA;Repas;Aucun des 14;12
+afr-tajine-kefta-oeufs;Tajine de kefta aux œufs;MA;Repas;Œufs;12
+afr-tajine-legumes-pruneaux;Tajine de légumes aux pruneaux;MA;Repas;Fruits à coque, Moutarde, Sulfites;12
+afr-tajine-poisson-chermoula;Tajine de poisson à la chermoula;MA;Repas;Poissons;12
+afr-tajine-pommes-de-terre-petits-pois;Tajine de pommes de terre, petits pois et olives;MA;Repas;Aucun des 14;12
+afr-zaalouk-oeufs-poches;Zaalouk et œufs pochés;MA;Repas;Gluten, Œufs;12
+afr-crevettes-coco-malgaches;Crevettes au coco malgaches;MG;Repas;Crustacés;12
+pdm-mofo-gasy;Mofo gasy, galettes de riz au coco;MG;Petit-déjeuner;Aucun des 14;12
+afr-ravitoto-porc;Ravitoto au porc;MG;Repas;Aucun des 14;12
+afr-romazava;Romazava, bœuf aux brèdes;MG;Repas;Aucun des 14;12
+afr-vary-amin-anana;Vary amin'anana, riz aux brèdes;MG;Repas;Œufs;12
+afr-capitaine-sauce-tomate;Capitaine à la sauce tomate de Bamako;ML;Repas;Poissons, Moutarde;12
+afr-fonio-legumes-cacahuetes;Fonio sauté aux légumes et cacahuètes;ML;Repas;Gluten, Arachides;12
+asd-porc-birman-gingembre;Curry de porc birman au gingembre;MM;Repas;Poissons;12
+asd-mohinga;Mohinga, soupe birmane au poisson;MM;Repas;Œufs, Poissons;12
+asd-ohn-no-khao-swe;Ohn no khao swè végétarien;MM;Repas;Gluten, Œufs;12
+asd-tofu-shan;Salade de tofu shan aux cacahuètes;MM;Repas;Gluten, Arachides, Soja;12
+ase-buuz-agneau;Buuz, raviolis vapeur mongols à l'agneau;MN;Repas;Gluten;12
+ase-khuushuur-boeuf;Khuushuur, chaussons mongols au bœuf;MN;Repas;Gluten;12
+ase-guriltai-shul-agneau;Soupe de nouilles mongole à l'agneau;MN;Repas;Gluten;12
+ase-tsuivan-boeuf;Tsuivan, nouilles mongoles au bœuf;MN;Repas;Gluten, Soja;12
+ame-blaff-poisson;Blaff de poisson;MQ;Repas;Poissons;12
+ame-chiquetaille-morue-riz;Chiquetaille de morue et riz;MQ;Repas;Poissons;12
+ame-colombo-legumes;Colombo de légumes antillais;MQ;Repas;Aucun des 14;12
+afr-briani-poulet-mauricien;Briani mauricien au poulet;MU;Repas;Lait;12
+afr-cari-zoeufs-mauricien;Cari zœufs mauricien;MU;Repas;Œufs;12
+afr-mine-frit-vegetarien;Mine frit aux légumes et aux œufs;MU;Repas;Gluten, Œufs, Soja;12
+afr-vindaye-poisson;Vindaye de poisson mauricien;MU;Repas;Poissons, Moutarde, Sulfites;12
+qt-bol-burrito-riz-haricots;Bol burrito au riz, haricots et maïs;MX;Repas;Lait;12
+ame-esquites-bol-complet;Bol d'esquites au riz et haricots;MX;Repas;Œufs, Lait;12
+ame-calabacitas-mais-fromage;Calabacitas au maïs et au fromage;MX;Repas;Lait;12
+ame-carnitas-maison;Carnitas maison;MX;Repas;Aucun des 14;12
+pd-chilaquiles-rojos;Chilaquiles rojos;MX;Petit-déjeuner;Lait;12
+ame-chilaquiles-verts;Chilaquiles verts aux œufs;MX;Repas;Œufs, Lait;12
+ame-chiles-rellenos-fromage;Chiles rellenos au fromage;MX;Repas;Lait;12
+ame-cochinita-pibil;Cochinita pibil;MX;Repas;Aucun des 14;12
+ame-crevettes-a-la-diabla;Crevettes a la diabla;MX;Repas;Crustacés, Lait;12
+ame-enchiladas-haricots-noirs-fromage;Enchiladas aux haricots noirs;MX;Repas;Gluten, Lait;12
+pd-huevos-a-la-mexicana;Huevos a la mexicana;MX;Petit-déjeuner;Œufs;12
+pd-huevos-motulenos;Huevos motuleños;MX;Petit-déjeuner;Œufs;12
+ame-huevos-rancheros;Huevos rancheros;MX;Repas;Œufs, Lait;12
+pd-molletes;Molletes;MX;Petit-déjeuner;Gluten, Lait;12
+ame-pescado-veracruzana;Poisson à la veracruzana;MX;Repas;Poissons;12
+ame-mole-poulet-simplifie;Poulet au mole express;MX;Repas;Arachides, Sésame;12
+ame-pozole-rojo;Pozole rojo;MX;Repas;Aucun des 14;12
+qt-quesadillas-haricots-noirs-mais;Quesadillas aux haricots noirs et maïs;MX;Repas;Gluten, Lait;12
+ame-quesadillas-champignons-epinards;Quesadillas champignons et épinards;MX;Repas;Gluten, Lait;12
+ame-rajas-poblanas-riz;Rajas poblanas à la crème;MX;Repas;Lait;12
+ame-sopa-de-tortilla;Sopa de tortilla;MX;Repas;Lait;12
+ame-tacos-al-pastor-poele;Tacos al pastor à la poêle;MX;Repas;Aucun des 14;12
+qt-tacos-lentilles-epicees;Tacos de lentilles épicées et crudités;MX;Repas;Lait;12
+ame-tacos-poisson-baja;Tacos de poisson de Basse-Californie;MX;Repas;Gluten, Poissons, Lait;12
+ame-tinga-de-pollo;Tinga de pollo;MX;Repas;Lait;12
+qt-tortillas-roulees-patate-douce-haricots;Tortillas gratinées à la patate douce et aux haricots;MX;Repas;Gluten, Lait;12
+asd-ayam-masak-merah;Ayam masak merah, poulet sauce rouge;MY;Repas;Aucun des 14;12
+asd-laksa-legumes;Laksa aux légumes et tofu;MY;Repas;Gluten, Soja;12
+asd-mee-goreng;Mee goreng mamak aux légumes;MY;Repas;Gluten, Œufs, Soja;12
+asd-nasi-lemak-oeuf;Nasi lemak végétarien;MY;Repas;Œufs, Arachides;12
+pdm-nasi-lemak;Nasi lemak, riz au lait de coco et sambal;MY;Petit-déjeuner;Œufs, Arachides;12
+asd-sambal-udang;Sambal udang, crevettes au piment;MY;Repas;Crustacés;12
+asd-satay-poulet;Satay de poulet, sauce cacahuètes;MY;Repas;Gluten, Arachides, Soja;12
+afr-akara-sauce-pimentee;Akara et sauce tomate pimentée;NG;Repas;Aucun des 14;12
+pdm-akara;Akara, beignets de haricots à œil noir;NG;Petit-déjeuner;Aucun des 14;12
+afr-suya-boeuf;Brochettes de bœuf suya;NG;Repas;Arachides;12
+pdm-dodo-oeufs;Dodo et œufs brouillés à la tomate;NG;Petit-déjeuner;Œufs;12
+afr-ewa-agoyin;Ewa agoyin, haricots à la sauce pimentée;NG;Repas;Gluten;12
+afr-fried-rice-nigerian;Fried rice nigérian au poulet;NG;Repas;Aucun des 14;12
+afr-jollof-rice-poulet;Jollof rice au poulet;NG;Repas;Aucun des 14;12
+afr-moi-moi;Moi moi, flans de haricots vapeur;NG;Repas;Œufs;12
+afr-pepper-soup-poisson;Pepper soup nigériane au poisson;NG;Repas;Poissons;12
+afr-egusi-epinards;Soupe egusi aux épinards;NG;Repas;Aucun des 14;12
+pd-pannenkoeken-pommes;Pannenkoeken aux pommes;NL;Petit-déjeuner;Gluten, Œufs, Lait;12
+pd-poffertjes;Poffertjes;NL;Petit-déjeuner;Gluten, Œufs, Lait;12
+pd-uitsmijter;Uitsmijter;NL;Petit-déjeuner;Gluten, Œufs, Lait;12
+pd-vafler-norvegiennes;Vafler, gaufres norvégiennes;NO;Petit-déjeuner;Gluten, Œufs, Lait;12
+asd-dal-bhat-nepalais;Dal bhat népalais aux légumes sautés;NP;Repas;Aucun des 14;12
+asd-curry-poulet-nepalais;Kukhura ko masu, curry de poulet népalais;NP;Repas;Aucun des 14;12
+asd-momos-legumes;Momos aux légumes et sauce tomate;NP;Repas;Gluten, Soja, Sésame;12
+asd-sekuwa-agneau;Sekuwa, brochettes d'agneau népalaises;NP;Repas;Lait;12
+pdm-sel-roti;Sel roti, anneaux de riz frits;NP;Petit-déjeuner;Lait;12
+asd-thukpa-legumes;Thukpa népalais aux légumes;NP;Repas;Gluten, Œufs, Soja;12
+pdm-boeuf-hache-toast;Bœuf haché sur toast;NZ;Petit-déjeuner;Gluten, Poissons;12
+pdm-pikelets;Pikelets, petites crêpes épaisses;NZ;Petit-déjeuner;Gluten, Œufs, Lait;12
+ame-aji-de-gallina;Ají de gallina;PE;Repas;Gluten, Œufs, Lait, Fruits à coque;12
+ame-anticuchos-boeuf;Brochettes anticuchos;PE;Repas;Sulfites;12
+ame-causa-limena-avocat;Causa limeña à l'avocat et aux œufs;PE;Repas;Œufs;12
+ame-ceviche-poisson-blanc;Ceviche de poisson blanc;PE;Repas;Poissons;60
+ame-chupe-de-camarones;Chupe de crevettes;PE;Repas;Crustacés, Œufs, Lait;12
+ame-lomo-saltado;Lomo saltado;PE;Repas;Gluten, Soja, Sulfites;12
+pd-pan-con-chicharron;Pan con chicharrón;PE;Petit-déjeuner;Gluten;12
+ame-papas-a-la-huancaina;Papas a la huancaína et quinoa;PE;Repas;Gluten, Œufs, Lait;12
+ame-poulet-a-la-brasa-four;Poulet à la brasa au four;PE;Repas;Gluten, Œufs, Soja;12
+pd-quinoa-pomme-cannelle;Quinoa au lait, pomme et cannelle;PE;Petit-déjeuner;Lait;12
+ame-solterito-arequipa;Solterito d'Arequipa;PE;Repas;Lait, Sulfites;12
+ame-soupe-quinoa-andine;Soupe de quinoa andine;PE;Repas;Lait;12
+ame-tacu-tacu-oeuf;Tacu tacu à l'œuf;PE;Repas;Œufs;12
+asd-adobo-poulet;Adobo de poulet philippin;PH;Repas;Gluten, Soja, Sulfites;12
+asd-bistek-tagalog;Bistek tagalog, bœuf au citron et oignons;PH;Repas;Gluten, Soja;12
+pdm-champorado;Champorado, riz gluant au chocolat;PH;Petit-déjeuner;Lait;12
+asd-ginataang-kalabasa;Ginataang kalabasa, courge au lait de coco;PH;Repas;Gluten, Soja;12
+asd-kinilaw-daurade;Kinilaw de daurade au lait de coco;PH;Repas;Poissons;60
+asd-pancit-canton-legumes;Pancit canton aux légumes;PH;Repas;Gluten, Œufs, Soja;12
+asd-sinigang-crevettes;Sinigang aux crevettes;PH;Repas;Crustacés, Poissons;12
+pdm-tapsilog;Tapsilog, bœuf mariné, riz à l'ail et œuf;PH;Petit-déjeuner;Gluten, Œufs, Soja, Sulfites;12
+asd-tinola-poulet;Tinola, soupe de poulet au gingembre;PH;Repas;Poissons;12
+asd-tortang-talong;Tortang talong, omelette d'aubergine;PH;Repas;Gluten, Œufs, Soja;12
+asd-chapli-kebab;Chapli kebabs de Peshawar;PK;Repas;Gluten, Œufs;12
+asd-karahi-poulet;Karahi de poulet pakistanais;PK;Repas;Aucun des 14;12
+asd-keema-matar;Keema matar, bœuf haché aux petits pois;PK;Repas;Aucun des 14;12
+asd-poisson-lahori;Poisson lahori en friture épicée;PK;Repas;Poissons, Lait;12
+asd-chana-pulao;Pulao de pois chiches pakistanais;PK;Repas;Lait;12
+asd-seekh-kebab-agneau;Seekh kebabs d'agneau;PK;Repas;Lait;12
+pd-jajecznica;Jajecznica au lard et ciboulette;PL;Petit-déjeuner;Gluten, Œufs, Lait;12
+med-maqluba-poulet;Maqluba au poulet et chou-fleur;PS;Repas;Lait, Fruits à coque;12
+pdm-msabbaha;Msabbaha, pois chiches tièdes au tahini;PS;Petit-déjeuner;Gluten, Sésame;12
+med-musakhan;Musakhan, poulet au sumac et oignons;PS;Repas;Gluten, Lait, Fruits à coque;12
+med-acorda-alentejana;Açorda alentejana, soupe à l'ail et à la coriandre;PT;Repas;Gluten, Œufs;12
+med-bacalhau-com-natas;Bacalhau com natas, gratin de morue à la crème;PT;Repas;Gluten, Poissons, Lait;12
+med-bacalhau-a-bras;Bacalhau à Brás;PT;Repas;Œufs, Poissons;12
+med-bitoque;Bitoque, steak à l'œuf et pommes sautées;PT;Repas;Œufs, Lait;12
+med-caldeirada-peixe;Caldeirada, ragoût de poissons portugais;PT;Repas;Poissons;12
+med-caldo-verde;Caldo verde au chouriço;PT;Repas;Gluten;12
+med-porco-alentejana;Porc à l'alentejana aux palourdes;PT;Repas;Sulfites, Mollusques;12
+med-frango-piri-piri;Poulet piri-piri à la portugaise;PT;Repas;Aucun des 14;12
+med-arroz-de-tomate-oeufs;Riz à la tomate portugais et œufs pochés;PT;Repas;Œufs;12
+med-sardines-grillees-portugaises;Sardines grillées et pommes de terre au paprika;PT;Repas;Poissons;12
+pd-tosta-mista;Tosta mista;PT;Petit-déjeuner;Gluten, Lait;12
+afr-cari-thon-reunionnais;Cari de thon réunionnais;RE;Repas;Poissons;12
+afr-cari-poulet-reunionnais;Cari poulet réunionnais;RE;Repas;Aucun des 14;12
+afr-gratin-chouchou;Gratin de chouchou réunionnais;RE;Repas;Gluten, Lait;12
+afr-rougail-morue;Rougail morue;RE;Repas;Poissons;12
+afr-rougail-saucisses;Rougail saucisses;RE;Repas;Aucun des 14;12
+afr-zembrocal-porc;Zembrocal au porc;RE;Repas;Aucun des 14;12
+med-pljeskavica;Pljeskavica, galettes de viande serbes;RS;Repas;Gluten, Lait;12
+med-prebranac;Prebranac, haricots blancs au four à la serbe;RS;Repas;Gluten, Sulfites;12
+med-sarma-chou-farci;Sarma, rouleaux de chou farcis;RS;Repas;Lait;12
+med-djuvec-porc;Đuveč au porc, riz et légumes au four;RS;Repas;Aucun des 14;12
+pd-kacha-sarrasin;Kacha de sarrasin au lait;RU;Petit-déjeuner;Lait;12
+pd-pyttipanna;Pyttipanna;SE;Petit-déjeuner;Œufs, Lait;12
+pd-ugnspannkaka;Ugnspannkaka au lard;SE;Petit-déjeuner;Gluten, Œufs, Lait;12
+asd-char-kway-teow;Char kway teow aux crevettes;SG;Repas;Gluten, Crustacés, Œufs, Soja;12
+asd-crevettes-poivre-noir;Crevettes au poivre noir de Singapour;SG;Repas;Gluten, Crustacés, Soja, Lait;12
+pdm-kaya-toast;Kaya toast, tartines à la crème de coco;SG;Petit-déjeuner;Gluten, Œufs, Soja, Lait;12
+asd-poulet-hainanais;Riz au poulet hainanais;SG;Repas;Gluten, Soja;12
+asd-vermicelles-singapour;Vermicelles sautés au curry façon Singapour;SG;Repas;Gluten, Œufs, Soja;12
+afr-caldou-senegalais;Caldou de poisson au citron;SN;Repas;Poissons;12
+afr-dibi-agneau;Dibi, agneau grillé aux oignons;SN;Repas;Gluten, Moutarde, Sulfites;12
+afr-mafe-boeuf;Mafé de bœuf;SN;Repas;Arachides;12
+afr-ndambe-senegalais;Ndambé, ragoût de niébé sénégalais;SN;Repas;Gluten;12
+pdm-ndambe;Ndambé, sandwich de haricots épicés;SN;Petit-déjeuner;Aucun des 14;12
+afr-poulet-yassa;Poulet yassa;SN;Repas;Moutarde;12
+pdm-thiacry;Thiacry, semoule au yaourt sucré;SN;Petit-déjeuner;Gluten, Lait, Sulfites;12
+afr-thieboudienne;Thiéboudienne simplifiée;SN;Repas;Poissons;12
+afr-yassa-pois-chiches;Yassa aux pois chiches;SN;Repas;Moutarde;12
+ame-pupusas-fromage-haricots;Pupusas fromage et haricots;SV;Repas;Lait, Sulfites;12
+med-fattet-hummus;Fatteh aux pois chiches et yaourt;SY;Repas;Gluten, Lait, Sésame;12
+med-kibbeh-bil-saniyeh;Kibbeh au plateau;SY;Repas;Gluten, Lait;12
+asd-cabillaud-tamarin;Cabillaud poêlé, sauce tamarin-piment;TH;Repas;Poissons;12
+asd-curry-rouge-legumes-tofu;Curry rouge thaï aux légumes et tofu;TH;Repas;Gluten, Soja;12
+pdm-khao-tom-porc;Khao tom, soupe de riz au porc;TH;Petit-déjeuner;Poissons;12
+asd-massaman-pommes-de-terre;Massaman de pommes de terre et pois chiches;TH;Repas;Gluten, Arachides, Soja;12
+asd-pad-kra-pao-porc;Pad kra pao, porc au basilic;TH;Repas;Gluten, Œufs, Poissons, Soja;12
+asd-pad-see-ew-tofu;Pad see ew au tofu et brocoli;TH;Repas;Gluten, Œufs, Soja;12
+asd-pad-thai-tofu;Pad thaï au tofu;TH;Repas;Gluten, Œufs, Arachides, Soja;12
+asd-panang-boeuf;Panang de bœuf;TH;Repas;Poissons, Arachides;12
+asd-poisson-vapeur-citron;Poisson vapeur au citron vert et à l'ail;TH;Repas;Poissons;12
+asd-riz-ananas-cajou;Riz sauté à l'ananas et noix de cajou;TH;Repas;Gluten, Œufs, Soja, Fruits à coque;12
+asd-yam-woon-sen-tofu;Salade de vermicelles de soja au tofu;TH;Repas;Gluten, Arachides, Soja, Céleri;12
+asd-tom-kha-tofu;Tom kha au tofu et champignons;TH;Repas;Gluten, Soja;12
+asd-tom-yum-crevettes;Tom yum aux crevettes et nouilles;TH;Repas;Crustacés, Poissons;12
+afr-brick-oeuf-pommes-de-terre;Bricks à l'œuf et pommes de terre;TN;Repas;Gluten, Œufs, Lait;12
+afr-chakchouka-tunisienne;Chakchouka tunisienne;TN;Repas;Œufs;12
+afr-couscous-poisson-djerbien;Couscous au poisson à la tunisienne;TN;Repas;Gluten, Poissons;12
+afr-kamounia-tunisienne;Kamounia tunisienne au bœuf;TN;Repas;Gluten;12
+afr-lablabi-tunisien;Lablabi tunisien;TN;Repas;Gluten, Œufs;12
+pdm-lablabi;Lablabi, soupe de pois chiches au pain;TN;Petit-déjeuner;Gluten, Œufs;12
+afr-merlu-papillote-harissa;Merlu en papillote à la harissa;TN;Repas;Gluten, Poissons;12
+afr-mloukhia-tunisienne-boeuf;Mloukhia tunisienne au bœuf;TN;Repas;Gluten;12
+afr-salade-mechouia-complete;Salade méchouia complète;TN;Repas;Œufs;12
+med-shakshuka;Shakshuka à la feta;TN;Repas;Gluten, Œufs, Lait;12
+med-levrek-papillote;Bar en papillote à la turque;TR;Repas;Gluten, Poissons;12
+med-brochettes-thon-turques;Brochettes de thon à la turque et piyaz;TR;Repas;Poissons;12
+med-hunkar-begendi;Hünkar beğendi, agneau sur purée d'aubergines;TR;Repas;Gluten, Lait;12
+med-imam-bayildi;Imam bayildi, aubergines fondantes;TR;Repas;Gluten;12
+med-iskender-maison;Iskender kebab maison;TR;Repas;Gluten, Lait;12
+med-karniyarik;Karnıyarık, aubergines farcies à la viande;TR;Repas;Aucun des 14;12
+med-kuru-fasulye;Kuru fasulye, haricots blancs à la turque;TR;Repas;Gluten, Lait;12
+med-lahmacun;Lahmacun, galettes turques à la viande;TR;Repas;Gluten;12
+med-maquereau-grille-turc;Maquereau grillé et salade d'oignons au sumac;TR;Repas;Gluten, Poissons;12
+pd-menemen;Menemen;TR;Petit-déjeuner;Gluten, Œufs;12
+med-menemen;Menemen aux poivrons;TR;Repas;Gluten, Œufs, Lait;12
+med-mercimek-koftesi;Mercimek köftesi et salade;TR;Repas;Gluten;12
+med-mercimek-corbasi;Mercimek çorbası, soupe de lentilles corail;TR;Repas;Gluten, Lait;12
+pd-cilbir;Çılbır, œufs pochés au yaourt;TR;Petit-déjeuner;Gluten, Œufs, Lait;12
+med-cilbir;Çılbır, œufs pochés au yaourt et beurre pimenté;TR;Repas;Gluten, Œufs, Lait;12
+pdm-dan-bing;Dan bing, crêpe taïwanaise roulée à l'œuf;TW;Petit-déjeuner;Gluten, Œufs, Soja;12
+ase-gua-bao-porc-braise;Gua bao au porc braisé et cacahuètes;TW;Repas;Gluten, Arachides, Soja;12
+pdm-lait-de-soja-sale;Lait de soja salé;TW;Petit-déjeuner;Gluten, Soja, Sésame;12
+ase-lu-rou-fan;Lu rou fan, riz au porc braisé;TW;Repas;Gluten, Œufs, Soja;12
+ase-nouilles-sautees-taiwanaises-chou;Nouilles sautées taïwanaises au chou;TW;Repas;Gluten, Œufs, Soja, Sésame;12
+ase-poulet-trois-tasses;Poulet trois tasses au basilic;TW;Repas;Gluten, Soja, Sésame;12
+ase-soupe-nouilles-boeuf-taiwan;Soupe de nouilles au bœuf taïwanaise;TW;Repas;Gluten, Soja;12
+ase-soupe-nouilles-tomate-oeuf;Soupe de nouilles à la tomate et à l'œuf;TW;Repas;Gluten, Œufs, Soja;12
+pdm-chipsi-mayai;Chipsi mayai, omelette aux frites;TZ;Petit-déjeuner;Œufs;12
+pd-syrniki;Syrniki;UA;Petit-déjeuner;Gluten, Œufs, Lait;12
+pdm-rolex-ouganda;Rolex, chapati roulé à l'omelette;UG;Petit-déjeuner;Gluten, Œufs;12
+pd-avocado-toast;Avocado toast à l'œuf mollet;US;Petit-déjeuner;Gluten, Œufs, Sésame;12
+pd-biscuits-and-gravy;Biscuits and gravy;US;Petit-déjeuner;Gluten, Lait;12
+pd-breakfast-burrito;Breakfast burrito au chorizo;US;Petit-déjeuner;Gluten, Œufs, Lait;12
+ame-casserole-brocoli-cheddar-riz;Casserole brocoli, cheddar et riz;US;Repas;Gluten, Œufs, Lait;12
+ame-chaudree-palourdes;Chaudrée de palourdes;US;Repas;Gluten, Lait, Céleri, Mollusques;12
+ame-chili-blanc-haricots-mais;Chili blanc aux haricots et maïs;US;Repas;Lait;12
+ame-crab-cakes-maryland;Crab cakes du Maryland;US;Repas;Gluten, Crustacés, Œufs, Moutarde;12
+ame-crevettes-gruau-mais;Crevettes et gruau de maïs;US;Repas;Crustacés, Lait;12
+pd-granola-maison;Granola maison au yaourt;US;Petit-déjeuner;Gluten, Lait, Fruits à coque, Sulfites;12
+pd-grits-cheddar;Grits au cheddar et œuf;US;Petit-déjeuner;Œufs, Lait;12
+ame-jambalaya-poulet-chorizo;Jambalaya au poulet et chorizo;US;Repas;Céleri;12
+ame-mac-and-cheese-maison;Mac and cheese gratiné;US;Repas;Gluten, Lait, Moutarde;12
+pd-muffins-myrtilles;Muffins aux myrtilles;US;Petit-déjeuner;Gluten, Œufs, Lait;12
+ame-pain-de-viande-glace;Pain de viande glacé au ketchup;US;Repas;Gluten, Œufs, Lait;12
+pd-pancakes-americains;Pancakes américains;US;Petit-déjeuner;Gluten, Œufs, Lait;12
+ame-poisson-noirci-cajun;Poisson noirci à la cajun;US;Repas;Poissons, Lait, Céleri;12
+ame-effiloche-porc-four;Porc effiloché au four et coleslaw;US;Repas;Gluten, Œufs, Sulfites;12
+ame-tourte-legumes-pot-pie;Pot pie aux légumes;US;Repas;Gluten, Œufs, Lait;12
+ame-pot-roast-boeuf;Pot roast de bœuf aux légumes;US;Repas;Aucun des 14;12
+ame-poulet-barbecue-four-coleslaw;Poulet barbecue au four à la Kansas City;US;Repas;Moutarde, Sulfites;12
+ame-poulet-croustillant-babeurre-four;Poulet croustillant au babeurre au four;US;Repas;Gluten, Lait;12
+ame-salade-cobb-vegetarienne;Salade Cobb végétarienne;US;Repas;Œufs, Lait, Sulfites;12
+ame-succotash-poele-mais-haricots;Succotash aux haricots et maïs;US;Repas;Gluten, Lait;12
+pd-oeufs-benedicte;Œufs bénédicte;US;Petit-déjeuner;Œufs, Lait;12
+ame-arepas-domino;Arepas domino;VE;Repas;Lait;12
+ame-arepas-reina-pepiada;Arepas reina pepiada;VE;Repas;Œufs;12
+ame-cachapas-fromage;Cachapas au fromage;VE;Repas;Œufs, Lait;12
+ame-pabellon-criollo;Pabellón criollo;VE;Repas;Aucun des 14;12
+asd-banh-mi-tofu;Bánh mì au tofu caramélisé;VN;Repas;Gluten, Œufs, Soja;12
+pdm-banh-mi-oeufs-au-plat;Bánh mì aux œufs au plat;VN;Petit-déjeuner;Gluten, Œufs, Soja;12
+asd-banh-xeo-tofu;Bánh xèo aux champignons et tofu;VN;Repas;Gluten, Soja;12
+asd-bo-luc-lac;Bò lúc lắc, bœuf sauté au poivre;VN;Repas;Gluten, Soja;12
+asd-bun-chay-citronnelle;Bún chay au tofu citronnelle;VN;Repas;Gluten, Arachides, Soja;12
+asd-canh-chua-ca;Canh chua, soupe aigre au poisson;VN;Repas;Poissons, Céleri;12
+asd-cha-ca-hanoi;Chả cá de Hanoï, poisson au curcuma;VN;Repas;Poissons, Arachides;12
+asd-ca-kho-to;Cá kho tộ, poisson caramélisé;VN;Repas;Poissons;12
+asd-ga-xao-sa-ot;Gà xào sả ớt, poulet citronnelle;VN;Repas;Poissons;12
+asd-pho-bo;Phở bò, soupe de bœuf;VN;Repas;Poissons;12
+asd-pho-chay;Phở chay aux champignons;VN;Repas;Gluten, Soja;12
+pdm-pho-ga;Phở gà, soupe de nouilles au poulet;VN;Petit-déjeuner;Poissons;12
+asd-goi-cuon-tofu;Rouleaux de printemps au tofu;VN;Repas;Gluten, Arachides, Soja;12
+asd-thit-kho;Thịt kho, porc caramélisé aux œufs;VN;Repas;Œufs, Poissons;12
+asd-tofu-sauce-tomate;Tofu sauce tomate vietnamien;VN;Repas;Gluten, Soja;12
+pdm-xoi-haricots-mungo;Xôi, riz gluant aux haricots mungo;VN;Petit-déjeuner;Sésame;12
+pdm-fatoot;Fatoot, pain sauté aux œufs;YE;Petit-déjeuner;Gluten, Œufs, Lait;12
+afr-bobotie-boeuf;Bobotie sud-africain;ZA;Repas;Gluten, Œufs, Lait, Sulfites;12
+afr-bobotie-lentilles;Bobotie végétarien aux lentilles;ZA;Repas;Gluten, Œufs, Lait, Sulfites;12
+afr-bunny-chow-haricots;Bunny chow aux haricots;ZA;Repas;Gluten;12
+afr-chakalaka-pap;Chakalaka et pap;ZA;Repas;Aucun des 14;12
+afr-maquereau-braai-abricot;Maquereau grillé à l'abricot façon braai;ZA;Repas;Lait;12
+pdm-pap-chakalaka;Pap et chakalaka;ZA;Petit-déjeuner;Lait;12
+afr-potjiekos-agneau;Potjiekos d'agneau;ZA;Repas;Aucun des 14;12
+afr-poulet-peri-peri;Poulet peri-peri rôti;ZA;Repas;Aucun des 14;12
+afr-sosaties-agneau-abricot;Sosaties d'agneau à l'abricot;ZA;Repas;Sulfites;12
