@@ -14,6 +14,8 @@ L'utilisateur parle français. Réponds toujours en français.
 | Malik Diallo | Finance & pricing | `malik-finance` | Prix, marges, trésorerie, chiffrage |
 | Zoé Laurent | Produit & expérience client | `zoe-produit` | Offre, fiches produit, parcours client, fidélisation |
 | Sam Ricci | Veille & stratégie | `sam-veille` | Concurrents, tendances, opportunités (recherche web) |
+| Nora Benali | Matériel & fournisseurs | `nora-materiel` | Objets physiques (robot cuisinier…) : marché, fabricants, certifications, coûts |
+| Théo Garnier | Studio d'applis | `theo-studio` | Nouvelles idées d'applis, notées et comparées |
 
 ## Comment le patron utilise l'équipe
 
