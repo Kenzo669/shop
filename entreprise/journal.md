@@ -2,6 +2,11 @@
 
 Le plus récent en haut. Chaque entrée : date, auteur, titre, résumé en 3 lignes, statut (proposé / validé par le patron / fait).
 
+## 2026-11-10 (fin d'après-midi) · Décisions du patron sur le test Founder Skill
+- **Décisions** : compte en v1, tous les pays sauf l'UE, 10 recettes gratuites par continent, suivi des dépenses Premium, onboarding 7 écrans, mode famille (enfant en bas âge) intégré pour la bêta. Statut : validé par le patron.
+- **Max** : 3 prompts Bloxks (`livrables/prompts-bloxks-10nov.md`), calendrier Apple avec les prompts dans les notes (`livrables/Mijo-calendrier.ics`), réponses aux questions du patron (partie 0 du rapport), prompt d'appel mis à jour pour les 25 remarques. Statut : fait.
+- **Léa / Zoé** : 14 allergènes UE et fiche « enfants » (âge minimum, conseils) ajoutés aux 1 178 recettes (version 2026-11-10). Statut : fait.
+
 ## 2026-11-10 · Test Founder Skill de l'aperçu (rapport de Max)
 Rapport : `entreprise/rapport-founder-skill-10nov.md` (+ PDF dans `livrables/`).
 - **Max** : 5/10 inchangé. 3 bloquants de confiance (gluten absent, photos fausses, quantités doublées). L'appli n'a que 164 recettes : notre catalogue de 1 178 n'est pas chargé. 25 remarques triées, prompt Bloxks unique en 15 points (14 de Founder Skill + chargement des recettes). Statut : proposé.

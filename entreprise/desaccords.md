@@ -28,14 +28,14 @@ Format :
 - Ce que ça change si on ne tranche pas : les textes, la page d'attente, les vidéos et le paywall partent dans deux directions différentes.
 - Statut : ouvert
 
+## Tranchés
+
 ### 2026-11-08 · Créer un compte utilisateur dans la première version ?
 - Zoé : demander de créer un compte (Apple / Google en 1 clic) à la fin du premier lancement, pour garder la semaine de l'utilisateur et le faire revenir.
 - Léa : pas de compte en v1. Un compte oblige à proposer « Se connecter avec Apple » (règle 4.8), à permettre de supprimer le compte dans l'appli (règle 5.1.1) et à fournir un compte de démo au testeur Apple : 3 motifs de refus en plus. Un bouton « Exporter mes recettes » protège déjà les données.
 - Recommandation de Max : suivre Léa pour la v1 (sortir vite, moins de risques de refus), avec l'export de recettes. Ajouter les comptes en v2 avec la liste de courses partagée en famille, qui en a vraiment besoin.
 - Ce que ça change si on ne tranche pas : l'IA de Bloxks risque d'ajouter une connexion à moitié faite, et la validation Apple prend plus de temps.
-- Statut : ouvert
-
-## Tranchés
+- Statut : tranché le 2026-11-10 par le patron : compte dès la v1 (e-mail + mot de passe, bouton « Supprimer le compte », compte de démo pour Apple).
 
 ### 2026-11-08 · Prix et contenu du Premium
 - Zoé : 3,99 €/mois ou 24,99 €/an, 7 jours d'essai ; Premium avec menus illimités, mode frigo, liste partagée en famille, import de recettes.

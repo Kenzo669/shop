@@ -2,6 +2,76 @@
 
 Le patron a fait tester l'aperçu de Mijo par Founder Skill (board, concurrents, marketing). L'équipe l'a relu point par point. Voici ce qu'on en retient, ce qui est déjà réglé, ce qu'il faut coller dans Bloxks et ce que tu dois trancher.
 
+## 0. Tes notes du 10 novembre : décisions et réponses
+
+### Ce que tu as décidé (noté par Inès)
+
+| Sujet | Décision |
+|---|---|
+| Compte | **Oui dès la v1** : e-mail + mot de passe, bouton rouge « Supprimer le compte » |
+| Pays | **Tous les pays sauf l'Union européenne** |
+| Gratuit | **10 recettes les plus populaires par continent**, le reste avec cadenas |
+| Suivi des dépenses | **Premium uniquement** (on garde la grille du 8 novembre) |
+| Onboarding | **7 écrans** (bienvenue, compte, pays, personnes, cuisines, allergies, paywall) |
+| Mijo Bébé | **Intégré à Mijo dès la bêta** : « Repas de famille » dans la création des menus → enfant en bas âge ? → quel âge ? → recettes adaptées |
+
+### Pourquoi 5 sur 10 ?
+
+**Malik :** « Ce n'est pas seulement le gluten et les quantités. Le board a trois juges, chacun note un angle différent. »
+
+| Juge | Note | Ce qui fait perdre des points | Ce qui la fait monter |
+|---|---|---|---|
+| Offres (le marché paie-t-il ?) | 5 | Jow, Marmiton et Fooby sont gratuits ; aucune preuve que des gens paient (pas d'avis, pas d'abonnés) | 10 à 20 vrais avis de testeurs, un Premium clair en une phrase |
+| Monopole (peut-on se défendre ?) | 4 | N'importe qui peut copier « recettes du monde » en un mois | Posséder un petit public d'abord (francophones hors France, familles) et les notes des utilisateurs |
+| Produit (l'appli tient-elle sa promesse ?) | 6 | Gluten absent, photos fausses, quantités doublées : les bugs que l'utilisateur voit en premier | Les prompts 1 à 3 corrigent tout ça |
+
+**En clair :** les corrections font monter la note « Produit » à 7 ou 8. Les deux autres notes ne montent qu'avec de **vrais utilisateurs** : avis, abonnés, notes. C'est pour ça que les testeurs du 14–15 novembre comptent autant que les corrections.
+
+### Le bug des quantités doublées, expliqué simplement
+
+**Zoé :** « Prends le bibimbap, qui demande 160 g de riz. »
+1. Tu ouvres la recette et tu touches **« Ajouter à la liste »** : la liste affiche **riz 160 g**. C'est juste.
+2. Le bibimbap est aussi dans tes menus de la semaine. Tu vas dans Menus et tu touches **« Préparer la liste de courses »**. L'appli rajoute toutes les recettes de la semaine, **y compris le bibimbap déjà présent**.
+3. Résultat : **riz 320 g, 4 œufs au lieu de 2**. Tu achètes le double pour un seul plat.
+
+**La correction** (point 7 du prompt 1) : l'appli se souvient des recettes déjà dans la liste et ne les rajoute pas. Les quantités ne s'additionnent que si tu as **vraiment** prévu le plat deux fois dans la semaine.
+
+### Les allergènes UE dans les recettes
+
+**Léa :** « Deux étapes. »
+- **Nos 1 178 recettes : c'est fait.** Chaque recette a maintenant sa liste d'allergènes, avec les 14 de l'UE : gluten dans 634 recettes, lait 585, œufs 341, soja 170, poissons 162, sulfites 102, sésame 72, moutarde 64, fruits à coque 51, crustacés 35, céleri 33, arachides 32, mollusques 18. 127 recettes n'en ont aucun. En cas de doute, on a mis l'allergène.
+- **Les recettes déjà dans Bloxks :** c'est le point 6 du prompt 2 qui les fait étiqueter par Bloxks avec les mêmes règles.
+- La fiche recette affichera « Contient : gluten, lait… », et l'avertissement « vérifie toujours les étiquettes » reste.
+
+### « Sortie monde » ou « sortie nationale » : la différence
+
+**Max :** « C'est juste la liste des pays que tu coches dans App Store Connect au moment de l'envoi. L'appli est la même. »
+
+| | Sortie nationale | Sortie monde (ta décision : sauf UE) |
+|---|---|---|
+| Où l'appli est visible | Suisse seulement | Suisse, Royaume-Uni, Canada, Maroc, Émirats, États-Unis… (environ 150 pays) |
+| Avantage | On se concentre, on lit les premiers chiffres proprement | Plus de téléchargements possibles sans effort, le bouche-à-oreille de tes amis à l'étranger marche |
+| Inconvénient | Petit marché (2 millions de Romands) | Pub et vidéos dispersées : il faut quand même **choisir 1 ou 2 pays pour la pub payante** |
+
+**Attention : sans l'UE, il n'y a ni la France, ni la Belgique, ni le Luxembourg.** Ce sont les trois plus grands marchés francophones. La sortie « monde sauf UE » en français vise surtout la Suisse romande, le Québec, le Maroc et les francophones du Royaume-Uni et des Émirats.
+
+### « Tous les pays sauf l'UE : pas besoin de fiche personnelle ? »
+
+**Léa :** « Pour l'essentiel, oui, mais il reste deux choses à savoir. »
+1. **Oui pour le téléphone et l'adresse.** L'obligation d'afficher publiquement téléphone + adresse + e-mail vient de la loi européenne (DSA) et ne s'applique qu'aux pays de l'UE. Hors UE, Apple demande seulement une **page d'assistance** et un **e-mail de contact**, et ton **e-mail pro** suffit. À revérifier au moment de cocher les pays : si App Store Connect bloque un pays pour une raison légale, on le décoche.
+2. **Le nom du vendeur reste visible partout.** Avec un compte Apple développeur **individuel**, la fiche App Store affiche ton **prénom et ton nom** comme vendeur, dans tous les pays. Pour afficher « Mijo » ou le nom d'une société à la place, il faut un compte **organisation** : une entreprise inscrite au registre du commerce et un numéro D-U-N-S (gratuit, 1 à 2 semaines). **À décider ce soir.**
+3. **Pour ouvrir l'UE plus tard** (France, Belgique), il faudra un **numéro pro** (ligne virtuelle, quelques francs par mois) et une **adresse pro** (domiciliation), jamais les tiens. Léa propose de le préparer pour un lancement UE en décembre.
+
+### Mijo Bébé dans Mijo : l'avis de l'équipe
+
+- **Théo :** « Excellente idée. C'était l'idée n°1 du studio (21 sur 25). La mettre dans Mijo évite de construire une 2e appli, et ça donne un vrai argument aux parents. »
+- **Zoé :** « Le parcours : création des menus → "Repas de famille" → "Enfant en bas âge ?" → "Quel âge ?" (6–8 mois, 9–11 mois, 1–2 ans, 3–5 ans). Les plats non adaptés disparaissent des menus de famille, et chaque recette affiche une carte "Pour les petits". C'est le prompt 3. »
+- **Déjà fait :** les 1 178 recettes ont maintenant une fiche « enfants » (âge minimum et conseils). Exemples : saler après avoir servi la part des petits (toutes), œufs bien cuits (337), piment servi à part (174), alcool remplacé par du bouillon (81), fruits à coque mixés avant 5 ans (80), miel jamais avant 1 an (28). 5 recettes crues (tartares, ceviche) sont exclues pour les jeunes enfants.
+- **Léa, le garde-fou :** « Pas de promesse santé ou croissance. Toujours la phrase : "Conseils généraux, pas un avis médical, suis les conseils de ton pédiatre." Les vraies recettes de diversification (purées de 6 à 11 mois) doivent être écrites avec soin. On ne les met pas dans la bêta à la va-vite. »
+- **À trancher ce soir :**
+  1. Les recettes « Premiers repas » (6–11 mois) : on les écrit pour la sortie du 20, ou juste après ? Zoé propose une trentaine, prêtes le jeudi 19.
+  2. Le mode famille est-il gratuit ou Premium ? Malik propose le mode famille gratuit et les « Premiers repas » en Premium.
+
 ## 1. En trois phrases
 
 - **Note du board : 5 sur 10, comme le 9 novembre** (2 « FUND IF », 1 « PASS »). L'appli fait « vraie appli » : le design et le mode cuisine plaisent. Mais trois choses cassent la confiance : **allergies sans gluten, photos fausses, quantités doublées**.
@@ -40,7 +110,7 @@ Le patron a fait tester l'aperçu de Mijo par Founder Skill (board, concurrents,
 
 **Important : notre code corrigé n'est pas dans Bloxks.** Bloxks n'importe ni code ni fichier. La seule voie, c'est le prompt ci-dessous, plus le chargement des recettes depuis un lien public.
 
-## 3. Les décisions du rapport à confirmer
+## 3. Les décisions du rapport à confirmer (tranchées le 10 nov., voir partie 0)
 
 Le rapport dit « tu as décidé » pour cinq points. Ils ne sont pas encore écrits chez nous. L'équipe a deux réserves sérieuses et trois petites.
 
@@ -61,45 +131,9 @@ Le rapport dit « tu as décidé » pour cinq points. Ils ne sont pas encore éc
 - **Malik (budget)** : 300 à 400 € jusqu'à fin décembre, test de 100 € le 21–22 nov. Plafond d'environ 0,40 € par installation si 2 % paient (hypothèse à mesurer la première semaine). Le Black Friday à 24,99 € l'an (27 nov. → 6 déc.) est **compatible avec ta règle « pas de test de prix »** : c'est une promo datée, pas un test.
 - **Léa** : avant d'utiliser « Qu'est-ce qu'on se fait de bon ? » en titre, vérifier la marque à l'IPI (Suisse) et à l'INPI (France). C'est gratuit en ligne, 10 minutes.
 
-## 5. Le prompt unique à coller dans Bloxks
+## 5. Les prompts à coller dans Bloxks
 
-Il reprend les 14 points de Founder Skill, corrigés selon la partie 3 (pays hors UE pour l'instant, onboarding en 7 écrans), plus le chargement de nos 1 178 recettes.
-
-```
-Corrige et complète l'appli Mijo comme suit, sans changer le design actuel :
-
-1. ALLERGIES (onboarding + Préférences) : liste des 14 allergènes UE dans cet ordre : Gluten, Crustacés, Œufs, Poissons, Arachides, Soja, Lait, Fruits à coque, Céleri, Moutarde, Sésame, Sulfites, Lupin, Mollusques. Les recettes qui contiennent un allergène coché ne sont jamais proposées. Corrige les libellés coupés (« Lactose (intolérance) », « Recettes avec mes courses », « Politique de confidentialité ») : texte sur deux lignes au lieu de couper.
-
-2. ONBOARDING en 7 écrans : (1) bienvenue avec l'accroche « Qu'est-ce qu'on se fait de bon ? », (2) création de compte : e-mail + mot de passe, case CGU obligatoire, case newsletter facultative en dessous, (3) pays, (4) nombre de personnes, (5) cuisines préférées par continent, (6) allergies, (7) paywall. Magasin habituel, budget et objectif (se faire plaisir / bien manger / léger / prendre de la masse) vont dans le Profil, facultatifs. Aucun téléphone, aucune adresse demandés.
-
-3. PAYS : propose tous les pays avec la devise automatique pour le suivi des dépenses (CHF, EUR, GBP, AED, MAD, CAD, USD…).
-
-4. PARAMÈTRES : remplace « Effacer les données locales » par un bouton rouge « Supprimer le compte » en bas, avec confirmation, qui efface définitivement le compte et toutes ses données.
-
-5. GRATUIT / PREMIUM : en gratuit, seules les 10 recettes les plus populaires de chaque continent sont ouvertes (champ popularity) ; les autres affichent un cadenas et ouvrent le paywall. Le suivi des dépenses est gratuit pour tous : retire toute mention « Premium » sur les dépenses (écran Menus et paywall). Après « Fin des courses », la saisie du montant est proposée mais jamais obligatoire.
-
-6. PAYWALL : remplace l'image des verres de vin par une photo de plats. Titre : « Le tour du monde dans ton assiette ». Bénéfices : toutes les recettes du monde, de nouvelles recettes chaque semaine, ton carnet de recettes de famille illimité. Sous le bouton, un lien « Continuer gratuitement » qui ferme le paywall. Garde 29,99 €/an présélectionné (35 CHF) et 3,99 €/mois (5 CHF), essai 7 jours.
-
-7. LISTE DE COURSES : une recette déjà dans la liste n'est jamais ajoutée une deuxième fois et ses quantités ne sont jamais doublées (« Ajouter à la liste » + « Préparer la liste de courses » = une seule fois). Crée un rayon « Œufs & frais » et ranges-y les œufs, pas dans « Produits laitiers ».
-
-8. MENUS : le planning commence aujourd'hui, jamais un jour passé. Depuis un créneau, la recherche est filtrée par type de repas : petit-déjeuner pour le créneau du matin, repas pour déjeuner et dîner.
-
-9. PORTIONS : chaque recette s'ouvre avec le nombre de personnes du profil, et la liste des recettes, les menus et la liste de courses affichent ce même nombre.
-
-10. MODE CUISINE : chaque minuteur prend le temps écrit dans l'étape (3 minutes = 3:00) ; pas de minuteur si l'étape n'a pas de durée. « Terminer » affiche « Tu l'as cuisiné ! », augmente le compteur « Cuisinés » et propose une note de 1 à 5 étoiles. 30 minutes plus tard, une notification rappelle de noter si ce n'est pas fait.
-
-11. Fusionne « Ajouter au menu » et « Ajouter au calendrier » en un seul bouton « Ajouter à mes menus » qui ouvre le choix du jour et du repas, et qui fonctionne.
-
-12. CARNET : renomme les options JSON en « Sauvegarder mes recettes » et « Restaurer mes recettes ».
-
-13. MODE NOËL du 1er au 31 décembre : petite neige sur l'accueil, déco sur le logo, section « Spécial Noël » sur l'accueil.
-
-14. Affiche la barre de navigation du bas sur l'accueil aussi.
-
-15. RECETTES : au démarrage, télécharge le catalogue depuis https://raw.githubusercontent.com/Kenzo669/mijo-recettes/main/recettes.json et garde-le en cache sur l'appareil (si pas de réseau, utilise le cache). Chaque recette a : id, name, country (code pays), meal (« repas » ou « petit-dejeuner »), popularity, category, time, servings, ingredients, steps, image. Ajoute un écran Recettes avec une rangée de drapeaux qui défile de gauche à droite, des onglets par continent, et un fil « Les plus populaires ». Les 20 recettes actuelles restent en plus. Si une recette n'a pas de photo, affiche un fond coloré avec le drapeau et le nom du plat, jamais la photo d'un autre plat.
-```
-
-Le point 15 marche seulement quand le dépôt public `mijo-recettes` existe. Tu le crées, je mets le fichier dedans. Si tu ne veux pas ouvrir l'UE tout de suite, au point 3 Bloxks n'y peut rien : **c'est dans App Store Connect que tu choisis les pays** (partie 3).
+Remplacés par la version validée après tes notes : voir l'annexe (« Prompts Bloxks du 10 novembre ») et `entreprise/livrables/prompts-bloxks-10nov.md`.
 
 ## 6. Ce que l'équipe corrige de son côté (aujourd'hui)
 

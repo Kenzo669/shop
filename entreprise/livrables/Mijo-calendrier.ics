@@ -1,0 +1,688 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Mijo//Equipe//FR
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Mijo · lancement
+BEGIN:VEVENT
+UID:mijo-0-2026-11-10@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261110T170000Z
+DTEND:20261110T171500Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Créer le dépôt GitHub mijo-recettes
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Créer le dépôt GitHub mijo-recettes
+DESCRIPTION:1. github.com > + > New repository\n2. Nom : mijo-recettes\n3. 
+ Public\, sans README\n4. Create repository\n5. Écrire à Max : « dépôt
+  créé ». Max y met les 1 178 recettes.
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-1-2026-11-10@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261110T190000Z
+DTEND:20261110T210000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Appel d'équipe : les 25 remarques point par point
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Appel d'équipe : les 25 remarques point par point
+DESCRIPTION:Nouvelle discussion dans l'app Claude. Joindre le PDF « Rappor
+ t Founder Skill 10 nov »\, coller le prompt d'appel (entreprise/appel-voc
+ al.md)\, passer en mode vocal.
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-2-2026-11-11@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261111T080000Z
+DTEND:20261111T083000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Bloxks prompt 1 : corrections Founder Skill
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Bloxks prompt 1 : corrections Founder Skill
+DESCRIPTION:À coller tel quel dans Bloxks\, en un seul message. Attends qu
+ e Bloxks ait fini avant le suivant.\n\nCorrige et complète l'appli Mijo c
+ omme suit\, sans changer le design actuel :\n\n1. ALLERGIES (onboarding + 
+ Préférences) : remplace la liste par les 14 allergènes officiels UE\, d
+ ans cet ordre : Gluten\, Crustacés\, Œufs\, Poissons\, Arachides\, Soja\
+ , Lait\, Fruits à coque\, Céleri\, Moutarde\, Sésame\, Sulfites\, Lupin
+ \, Mollusques. Garde « Lactose (intolérance) » en plus\, à la fin. Une
+  recette qui contient un allergène coché n'est jamais proposée nulle pa
+ rt (accueil\, menus\, recherche). Les libellés longs passent sur deux lig
+ nes au lieu d'être coupés (« Lactose (intolérance) »\, « Recettes av
+ ec mes courses »\, « Politique de confidentialité »).\n\n2. ONBOARDING
+  en 7 écrans\, dans cet ordre : (1) bienvenue avec l'accroche « Qu'est-c
+ e qu'on se fait de bon ? »\, (2) création de compte avec l'authentificat
+ ion intégrée de Bloxks : e-mail + mot de passe\, case CGU obligatoire av
+ ec lien\, case newsletter facultative en dessous\, lien « J'ai déjà un 
+ compte »\, (3) pays\, (4) nombre de personnes\, (5) cuisines préférées
+  par continent\, (6) allergies\, (7) paywall. Ne demande jamais de numéro
+  de téléphone ni d'adresse. Magasin habituel\, budget et objectif (se fa
+ ire plaisir / bien manger / léger / prendre de la masse) vont dans le Pro
+ fil\, facultatifs.\n\n3. PAYS : propose tous les pays\, avec la devise du 
+ pays pour le suivi des dépenses (CHF\, EUR\, GBP\, AED\, MAD\, CAD\, USD\
+ , etc.).\n\n4. COMPTE : dans Paramètres\, remplace « Effacer les donnée
+ s locales » par un bouton rouge « Supprimer le compte » tout en bas. Il
+  demande une confirmation\, puis supprime définitivement le compte et tou
+ tes ses données sur le serveur et sur l'appareil. Ajoute aussi « Se déc
+ onnecter » juste au-dessus. Les menus\, la liste de courses\, le carnet e
+ t les préférences sont enregistrés dans le compte.\n\n5. GRATUIT / PREM
+ IUM : en gratuit\, seules les 10 recettes les plus populaires de chaque co
+ ntinent sont ouvertes. Les autres affichent un petit cadenas et ouvrent le
+  paywall. Le suivi des dépenses reste Premium : en gratuit\, après « Fi
+ n des courses »\, affiche une carte « Suis tes dépenses avec Mijo Premi
+ um » qui ouvre le paywall\, sans jamais bloquer la fin des courses.\n\n6.
+  PAYWALL : remplace l'image des verres de vin par une photo de plats. Titr
+ e : « Le tour du monde dans ton assiette ». Bénéfices\, dans cet ordre
+  : toutes les recettes du monde débloquées\, ton carnet de recettes de f
+ amille illimité\, le suivi de tes dépenses de courses\, des nouvelles re
+ cettes chaque semaine. Sous le bouton\, un lien « Continuer gratuitement 
+ » qui ferme le paywall. Garde l'annuel présélectionné à 29\,99 € (3
+ 5 CHF) et le mensuel à 3\,99 € (5 CHF)\, essai gratuit de 7 jours.\n\n7
+ . LISTE DE COURSES : une recette déjà dans la liste n'est jamais ajouté
+ e une deuxième fois. Si on touche « Ajouter à la liste » sur une recet
+ te puis « Préparer la liste de courses » depuis les menus\, la recette 
+ n'est comptée qu'une fois. Les quantités s'additionnent seulement si la 
+ recette est prévue deux fois dans les menus. Crée un rayon « Œufs & fr
+ ais » et range les œufs dedans\, pas dans « Produits laitiers ».\n\n8.
+  MENUS : le planning commence aujourd'hui\, jamais un jour déjà passé. 
+ Quand on choisit une recette depuis un créneau\, la recherche est filtré
+ e : petit-déjeuner pour le matin\, repas pour le déjeuner et le dîner.\
+ n\n9. PORTIONS : chaque recette s'ouvre avec le nombre de personnes du pro
+ fil. La liste des recettes\, les menus et la liste de courses affichent ce
+  même nombre.\n\n10. MODE CUISINE : chaque minuteur reprend le temps écr
+ it dans l'étape (« 3 minutes » = 3:00) \; pas de minuteur si l'étape n
+ 'a pas de durée. En fin de recette\, « Terminer » affiche « Tu l'as cu
+ isiné ! »\, augmente le compteur « Cuisinés » et propose une note de 
+ 1 à 5 étoiles. Si la note n'est pas donnée\, une notification la redema
+ nde 30 minutes plus tard.\n\n11. Fusionne « Ajouter au menu » et « Ajou
+ ter au calendrier » en un seul bouton « Ajouter à mes menus » qui ouvr
+ e le choix du jour et du repas\, et qui fonctionne.\n\n12. CARNET : renomm
+ e les options JSON en « Sauvegarder mes recettes » et « Restaurer mes r
+ ecettes ».\n\n13. MODE NOËL du 1er au 31 décembre : petite neige sur l'
+ accueil\, une déco sur le logo\, et une section « Spécial Noël » sur 
+ l'accueil.\n\n14. Affiche la barre de navigation du bas sur l'accueil auss
+ i.\n\n15. Retire « Magasin habituel » de la liste de courses et n'affich
+ e aucun prix estimé.
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-3-2026-11-11@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261111T090000Z
+DTEND:20261111T091500Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Vérifier l'aperçu et envoyer le lien à Max
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Vérifier l'aperçu et envoyer le lien à Max
+DESCRIPTION:Ouvrir l'aperçu Bloxks\, vérifier : gluten dans les allergies
+ \, compte à l'inscription\, « Continuer gratuitement » sur le paywall. 
+ Envoyer le lien d'aperçu à Max.
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-4-2026-11-11@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261111T130000Z
+DTEND:20261111T133000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Bloxks prompt 2 : les 1 178 recettes + allergènes
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Bloxks prompt 2 : les 1 178 recettes + allergènes
+DESCRIPTION:Seulement si Max a confirmé que le fichier est dans mijo-recet
+ tes.\n\nÀ coller tel quel dans Bloxks\, en un seul message. Attends que B
+ loxks ait fini avant le suivant.\n\nAjoute le catalogue de recettes de Mij
+ o :\n\n1. Au démarrage\, télécharge https://raw.githubusercontent.com/K
+ enzo669/mijo-recettes/main/recettes.json et garde-le en cache sur l'appare
+ il. S'il n'y a pas de réseau\, utilise le cache. Recharge-le une fois par
+  jour au plus.\n\n2. Le fichier contient « recipes »\, une liste de rece
+ ttes avec : id\, title\, country (code pays à 2 lettres)\, meal (« repas
+  » ou « petit-dejeuner »)\, popularity (1 = la plus populaire du pays)\
+ , tags\, minutes\, servings\, story\, ingredients (name\, qty\, unit\, ais
+ le)\, steps (text\, seconds)\, allergens (liste de codes)\, enfants (des =
+  âge minimum en mois\, conseils = liste de phrases). « allergenLabels »
+  donne le nom affiché de chaque code allergène.\n\n3. Ajoute ces recette
+ s aux recettes actuelles de l'appli. Les recettes actuelles restent.\n\n4.
+  Écran Recettes : en haut\, une rangée de drapeaux qui défile de gauche
+  à droite (toucher un drapeau = les spécialités du pays). En dessous\, 
+ des onglets par continent (Europe\, Afrique\, Amériques\, Asie\, Moyen-Or
+ ient\, Océanie) et un interrupteur Repas / Petit-déjeuner. Puis un fil 
+ « Les plus populaires »\, trié par popularity.\n\n5. Les 10 recettes le
+ s plus populaires de chaque continent sont gratuites \; les autres ont le 
+ cadenas Premium.\n\n6. Allergènes : utilise le champ allergens des nouvel
+ les recettes. Pour les recettes déjà dans l'appli\, ajoute toi-même le 
+ même champ en lisant leurs ingrédients\, avec les mêmes codes : gluten 
+ (blé\, farine\, pain\, pâtes\, semoule\, chapelure\, sauce soja\, bière
+ …)\, crustaces\, oeufs\, poissons\, arachides\, soja\, lait (lait\, beur
+ re\, crème\, fromage\, yaourt)\, fruits_a_coque\, celeri\, moutarde\, ses
+ ame\, sulfites (vin\, vinaigre de vin\, fruits secs)\, lupin\, mollusques.
+  En cas de doute\, ajoute l'allergène. Sur chaque fiche recette\, affiche
+  « Contient : … » avec les noms des allergènes.\n\n7. Photos : si une
+  recette n'a pas sa propre photo\, affiche un fond coloré avec le drapeau
+  du pays et le nom du plat. N'utilise jamais la photo d'un autre plat.
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-5-2026-11-11@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261111T150000Z
+DTEND:20261111T153000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Bloxks prompt 3 : mode famille (enfant en bas âge)
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Bloxks prompt 3 : mode famille (enfant en bas âge)
+DESCRIPTION:À coller tel quel dans Bloxks\, en un seul message. Attends qu
+ e Bloxks ait fini avant le suivant.\n\nAjoute un mode famille à Mijo :\n\
+ n1. Dans l'écran de création des menus\, ajoute une option « Repas de f
+ amille ». Si on l'active : « Il y a un enfant en bas âge ? » Oui / Non
+ . Si oui : « Quel âge ? » avec ces choix : 6 à 8 mois\, 9 à 11 mois\,
+  1 à 2 ans\, 3 à 5 ans. On peut ajouter plusieurs enfants. Le choix est 
+ aussi modifiable dans le Profil\, rubrique « Ma famille ».\n\n2. Quand u
+ n enfant est déclaré :\n   - les recettes dont « enfants.des » (âge m
+ inimum en mois) est plus grand que l'âge de l'enfant ne sont pas proposé
+ es dans les menus de famille \;\n   - sur chaque recette\, une carte « Po
+ ur les petits » affiche la liste « enfants.conseils » \;\n   - la liste
+  de courses ne change pas : l'enfant mange le même plat\, adapté.\n\n3. 
+ Pour les enfants de 6 à 11 mois\, ajoute une section « Premiers repas »
+  avec les recettes qui ont la catégorie « bebe » (elles arriveront dans
+  le fichier de recettes). Tant qu'il n'y en a aucune\, n'affiche pas la se
+ ction.\n\n4. En bas de la carte « Pour les petits » et de la section « 
+ Premiers repas »\, affiche toujours : « Conseils généraux\, pas un avi
+ s médical. Pour la diversification de ton bébé\, suis les conseils de t
+ on pédiatre. »\n\n5. Aucune promesse de santé\, de poids ou de croissan
+ ce dans les textes.
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-6-2026-11-12@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261112T080000Z
+DTEND:20261112T082500Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Bloxks photos lot 1/8
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Bloxks photos lot 1/8
+DESCRIPTION:À coller tel quel dans Bloxks\, en un seul message. Attends qu
+ e Bloxks ait fini avant le suivant.\n\nGénère une photo culinaire réali
+ ste pour chaque plat de la liste ci-dessous et ajoute-la à la bibliothèq
+ ue d'images de Mijo. Règles : vraie photo appétissante du plat fini\, se
+ rvi dans une assiette ou un plat simple\, lumière naturelle\, vue légèr
+ ement en plongée\, format carré\, sans texte\, sans logo\, sans personne
+ . Nomme chaque image EXACTEMENT avec l'identifiant donné avant les deux-p
+ oints (ex. « ch-fondue-moitie-moitie »)\, sans extension ni majuscule\, 
+ pour que l'appli l'affiche automatiquement. Ne modifie aucun écran ni auc
+ un code.\n\nch-filets-perche-meuniere : Filets de perche meunière\nch-fon
+ due-moitie-moitie : Fondue moitié-moitié\nch-risotto-safran-luganighe : 
+ Risotto au safran et luganighe\nch-rosti-fromage-tomates : Rösti au froma
+ ge et aux tomates\nch-bratwurst-saint-gall-rosti : Saucisse de Saint-Gall\
+ , sauce aux oignons et rösti\nch-emince-veau-zurichoise : Émincé de vea
+ u à la zurichoise\nfrv-blanquette-de-veau : Blanquette de veau\nfrp-bouil
+ labaisse-express : Bouillabaisse express\nfrv-boeuf-bourguignon : Bœuf bo
+ urguignon\nfrv-choucroute-garnie : Choucroute garnie\nfrv-confit-canard-po
+ mmes-sarladaises : Confit de canard et pommes sarladaises\nfrv-coq-au-vin 
+ : Coq au vin\nfrv-croque-monsieur : Croque-monsieur\nch-fondue-savoyarde :
+  Fondue savoyarde\nfrv-galettes-completes : Galettes complètes jambon\, 
+ œuf\, fromage\nfrv-hachis-parmentier : Hachis parmentier\nfrv-pot-au-feu 
+ : Pot-au-feu\nfrv-poulet-roti-du-dimanche : Poulet rôti du dimanche\nfrv-
+ quiche-lorraine : Quiche lorraine\nfrp-salade-nicoise : Salade niçoise\nf
+ rp-soupe-oignon-gratinee : Soupe à l'oignon gratinée\nfrv-tarte-flambee 
+ : Tarte flambée\nch-tartiflette : Tartiflette\nmed-tave-kosi : Tavë kosi
+ \, agneau au yaourt gratiné\nmed-brochettes-porc-armeniennes : Brochettes
+  de porc à l'arménienne\nmed-ghapama : Ghapama\, potiron farci au riz et
+  fruits secs\name-bife-chimichurri : Bife à la chimichurri\name-empanadas
+ -carne-four : Empanadas de carne au four\name-milanesa-napolitana : Milane
+ sa napolitana\nch-escalope-viennoise : Escalope viennoise et pommes persil
+ lées\nch-grostl-tyrolien : Gröstl tyrolien\nch-spatzli-fromage-oignons :
+  Spätzli au fromage et oignons dorés\nmed-burek-epinards-fromage : Burek
+  aux épinards et au fromage frais\nmed-cevapi-ajvar : Ćevapi\, ajvar et 
+ oignons crus\nfrv-boulets-liegeois : Boulets à la liégeoise\nfrp-croquet
+ tes-crevettes-grises : Croquettes aux crevettes grises\nfrp-moules-creme-f
+ rites-four : Moules à la crème et frites au four\nfrp-stoemp-carottes-oe
+ uf : Stoemp aux carottes et œuf au plat\nfrp-tomates-crevettes : Tomates-
+ crevettes à la belge\nfrp-waterzooi-poisson : Waterzooi de poisson
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-7-2026-11-12@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261112T083000Z
+DTEND:20261112T085500Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Bloxks photos lot 2/8
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Bloxks photos lot 2/8
+DESCRIPTION:À coller tel quel dans Bloxks\, en un seul message. Attends qu
+ e Bloxks ait fini avant le suivant.\n\nGénère une photo culinaire réali
+ ste pour chaque plat de la liste ci-dessous et ajoute-la à la bibliothèq
+ ue d'images de Mijo. Règles : vraie photo appétissante du plat fini\, se
+ rvi dans une assiette ou un plat simple\, lumière naturelle\, vue légèr
+ ement en plongée\, format carré\, sans texte\, sans logo\, sans personne
+ . Nomme chaque image EXACTEMENT avec l'identifiant donné avant les deux-p
+ oints (ex. « ch-fondue-moitie-moitie »)\, sans extension ni majuscule\, 
+ pour que l'appli l'affiche automatiquement. Ne modifie aucun écran ni auc
+ un code.\n\nfrv-waterzoi-de-poulet : Waterzoï de poulet\name-feijoada-sim
+ plifiee : Feijoada simplifiée\name-moqueca-poisson : Moqueca de poisson\n
+ ame-picanha-farofa : Picanha et farofa\name-poutine-maison : Poutine maiso
+ n sauce brune végétale\name-pate-chinois : Pâté chinois\name-tourtiere
+ -quebecoise : Tourtière québécoise\nafr-alloco-oeufs-sauce-tomate : All
+ oco et œufs à la sauce tomate\nafr-attieke-poisson-braise : Attiéké et
+  poisson braisé\nafr-poulet-kedjenou : Poulet kedjenou\name-cazuela-chile
+ na : Cazuela chilena de poulet\name-pastel-de-choclo : Pastel de choclo\na
+ me-porotos-granados : Porotos granados\nafr-ndole-boeuf : Ndolé au bœuf\
+ nafr-poulet-dg : Poulet DG\nase-chow-mein-legumes : Chow mein aux légumes
+ \nase-fondue-chinoise-legumes-tofu : Fondue chinoise aux légumes et tofu\
+ nase-magret-facon-canard-laque : Magret façon canard laqué et crêpes\na
+ se-nouilles-dan-dan : Nouilles dan dan au porc haché\nase-porc-aigre-doux
+  : Porc aigre-doux à l'ananas\nase-porc-char-siu-four : Porc laqué char 
+ siu au four\nase-poulet-kung-pao : Poulet kung pao\nase-jiaozi-chou-champi
+ gnons : Raviolis chinois au chou et aux champignons\nase-riz-saute-oeufs-p
+ etits-pois : Riz sauté aux œufs et petits pois\nase-soupe-wontons-crevet
+ tes : Soupe de wontons aux crevettes\nase-zhajiang-mian-porc : Zhajiang mi
+ an au porc haché\name-ajiaco-bogota : Ajiaco de Bogotá\name-bandeja-pais
+ a-simplifiee : Bandeja paisa simplifiée\name-gallo-pinto-oeufs : Gallo pi
+ nto aux œufs et plantain\name-lechon-asado-mojo : Porc rôti au mojo cuba
+ in\name-ropa-vieja : Ropa vieja\nmed-afelia : Afelia\, porc au vin rouge e
+ t à la coriandre\nmed-kleftiko : Kleftiko\, agneau confit en papillote\na
+ fr-chorba-frik-agneau : Chorba frik à l'agneau\nafr-couscous-poulet-pois-
+ chiches : Couscous algérien au poulet et pois chiches\nafr-ful-medames : 
+ Ful medames aux œufs\nafr-koshari-egyptien : Koshari égyptien\nmed-albon
+ digas : Albóndigas en sauce tomate\nmed-fabada-asturiana : Fabada asturia
+ na\nmed-tortilla-de-patatas : Tortilla de patatas
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-8-2026-11-12@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261112T090000Z
+DTEND:20261112T092500Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Bloxks photos lot 3/8
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Bloxks photos lot 3/8
+DESCRIPTION:À coller tel quel dans Bloxks\, en un seul message. Attends qu
+ e Bloxks ait fini avant le suivant.\n\nGénère une photo culinaire réali
+ ste pour chaque plat de la liste ci-dessous et ajoute-la à la bibliothèq
+ ue d'images de Mijo. Règles : vraie photo appétissante du plat fini\, se
+ rvi dans une assiette ou un plat simple\, lumière naturelle\, vue légèr
+ ement en plongée\, format carré\, sans texte\, sans logo\, sans personne
+ . Nomme chaque image EXACTEMENT avec l'identifiant donné avant les deux-p
+ oints (ex. « ch-fondue-moitie-moitie »)\, sans extension ni majuscule\, 
+ pour que l'appli l'affiche automatiquement. Ne modifie aucun écran ni auc
+ un code.\n\nafr-doro-wat : Doro wat\, poulet au berbéré et aux œufs\naf
+ r-misir-wot : Misir wot\, lentilles corail au berbéré\nafr-shiro-ethiopi
+ en : Shiro\, crème de pois chiches éthiopienne\nafr-tibs-boeuf : Tibs de
+  bœuf éthiopien\nmed-chakhokhbili : Chakhokhbili\, poulet aux tomates et
+  herbes\nmed-khachapuri-adjaruli : Khachapuri adjaruli\nafr-waakye-ragout-
+ boeuf : Waakye et ragoût de bœuf\name-poulet-colombo : Colombo de poulet
+ \nmed-garides-saganaki : Garides saganaki\, crevettes à la tomate et feta
+ \nmed-gemista : Gemista\, tomates et poivrons farcis au riz\nmed-bakaliaro
+ s-skordalia : Morue frite et skordalia\nmed-moussaka : Moussaka\nmed-pasti
+ tsio : Pastitsio\nmed-spanakopita : Spanakopita en plaque\name-pepian-poul
+ et : Pepián de poulet\nmed-brodet-poisson : Brodet\, ragoût de poisson d
+ almate\name-griot-pikliz : Griot et pikliz\nasd-gado-gado : Gado-gado à l
+ a sauce cacahuètes\nasd-nasi-goreng-oeuf : Nasi goreng aux légumes et œ
+ uf au plat\nasd-rendang-boeuf : Rendang de bœuf\nmed-sabich : Sabich\, pi
+ ta aux aubergines et œufs\nasd-biryani-poulet : Biryani de poulet au four
+ \nasd-butter-chicken : Butter chicken (murgh makhani)\nasd-chana-masala : 
+ Chana masala du Pendjab\nasd-dal-makhani : Dal makhani crémeux\nasd-palak
+ -paneer : Palak paneer\nasd-vindaloo-porc : Vindaloo de porc de Goa\nmed-a
+ sh-reshteh : Ash reshteh\, soupe persane aux nouilles\nmed-fesenjan : Fese
+ njan\, poulet aux noix et à la grenade\nmed-ghormeh-sabzi : Ghormeh sabzi
+ \, ragoût persan aux herbes\nmed-joojeh-kabab : Joojeh kabab au safran\ni
+ t-bucatini-amatriciana : Bucatini all'amatriciana\nit-calzone-legumes-mozz
+ arella : Calzone aux légumes grillés et mozzarella\nit-cotoletta-milanes
+ e : Côtelettes de veau à la milanaise\nit-gnocchi-maison-beurre-sauge : 
+ Gnocchis maison au beurre et sauge\nit-lasagnes-bolognaise : Lasagnes à l
+ a bolognaise\nit-minestrone : Minestrone aux légumes et pâtes\nit-osso-b
+ uco-milanaise : Osso buco à la milanaise\nit-parmigiana-melanzane : Parmi
+ giana d'aubergines\nit-penne-arrabbiata : Penne all'arrabbiata
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-9-2026-11-12@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261112T093000Z
+DTEND:20261112T095500Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Bloxks photos lot 4/8
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Bloxks photos lot 4/8
+DESCRIPTION:À coller tel quel dans Bloxks\, en un seul message. Attends qu
+ e Bloxks ait fini avant le suivant.\n\nGénère une photo culinaire réali
+ ste pour chaque plat de la liste ci-dessous et ajoute-la à la bibliothèq
+ ue d'images de Mijo. Règles : vraie photo appétissante du plat fini\, se
+ rvi dans une assiette ou un plat simple\, lumière naturelle\, vue légèr
+ ement en plongée\, format carré\, sans texte\, sans logo\, sans personne
+ . Nomme chaque image EXACTEMENT avec l'identifiant donné avant les deux-p
+ oints (ex. « ch-fondue-moitie-moitie »)\, sans extension ni majuscule\, 
+ pour que l'appli l'affiche automatiquement. Ne modifie aucun écran ni auc
+ un code.\n\nit-piadina-mozzarella-roquette : Piadina mozzarella\, roquette
+  et tomates\nit-pizza-capricciosa : Pizza capricciosa\nit-pizza-margherita
+ -plaque : Pizza margherita sur plaque\nit-ribollita : Ribollita toscane\ni
+ t-risotto-safran : Risotto au safran à la milanaise\nit-saltimbocca-roman
+ a : Saltimbocca alla romana\nit-spaghetti-aglio-olio-peperoncino : Spaghet
+ ti aglio\, olio e peperoncino\nit-spaghetti-puttanesca : Spaghetti alla pu
+ ttanesca\nit-spaghetti-vongole : Spaghetti alle vongole\nit-spaghetti-caci
+ o-e-pepe : Spaghetti cacio e pepe\nit-spaghetti-carbonara : Spaghetti carb
+ onara\nit-tagliatelles-ragu-bolognese : Tagliatelles au ragù bolognais\ni
+ t-tortellini-en-bouillon : Tortellini en bouillon\nit-trofie-pesto-genoves
+ e : Trofie au pesto\, pommes de terre et haricots\nit-vitello-tonnato : Vi
+ tello tonnato\nase-curry-japonais-legumes : Curry japonais aux légumes\na
+ se-gyoza-porc-chou : Gyoza grillés au porc et au chou\nase-katsudon : Kat
+ sudon\, porc pané et œuf sur riz\nase-okonomiyaki-chou : Okonomiyaki au 
+ chou\nase-omurice-champignons : Omurice aux champignons\nase-poulet-karaag
+ e : Poulet karaage et salade de chou\nase-ramen-shoyu-porc : Ramen shoyu a
+ u porc et œuf mollet\nase-sukiyaki-simplifie : Sukiyaki simplifié\nase-t
+ emaki-saumon-fume-avocat : Temaki au saumon fumé et avocat\nase-tendon-cr
+ evettes-legumes : Tendon\, bol de tempura aux crevettes\nase-yakitori-poel
+ e : Yakitori à la poêle\nafr-githeri-kenyan : Githeri kényan\, maïs et
+  haricots\nafr-nyama-choma-kachumbari : Nyama choma et kachumbari\nafr-pil
+ au-kenyan-boeuf : Pilau kényan au bœuf\nafr-sukuma-wiki-ugali : Sukuma w
+ iki et ugali\nasd-amok-poisson : Amok de poisson cambodgien\nase-bulgogi-b
+ oeuf : Bulgogi de bœuf\nase-doenjang-jjigae : Doenjang jjigae aux légume
+ s et tofu\nase-gimbap-vegetarien : Gimbap végétarien\nase-japchae-legume
+ s : Japchae aux légumes\nase-kimchi-jjigae-thon : Kimchi jjigae au thon\n
+ ase-dakgangjeong-four : Poulet croustillant coréen au four\nase-samgyeops
+ al-wraps-salade : Samgyeopsal à la poêle et wraps de salade\nase-sundubu
+ -jjigae-vegetarien : Sundubu jjigae végétarien\nase-tteokbokki-oeufs : T
+ teokbokki aux œufs
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-10-2026-11-12@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261112T130000Z
+DTEND:20261112T133000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Compte Apple développeur
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Compte Apple développeur
+DESCRIPTION:Vérifier que le compte Apple développeur est ouvert (develope
+ r.apple.com).\nDécision à prendre : compte individuel (ton nom affiché 
+ comme vendeur) ou organisation (nom de la société\, numéro D-U-N-S).\nN
+ e jamais renseigner ton numéro personnel.
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-11-2026-11-13@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261113T080000Z
+DTEND:20261113T082500Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Bloxks photos lot 5/8
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Bloxks photos lot 5/8
+DESCRIPTION:À coller tel quel dans Bloxks\, en un seul message. Attends qu
+ e Bloxks ait fini avant le suivant.\n\nGénère une photo culinaire réali
+ ste pour chaque plat de la liste ci-dessous et ajoute-la à la bibliothèq
+ ue d'images de Mijo. Règles : vraie photo appétissante du plat fini\, se
+ rvi dans une assiette ou un plat simple\, lumière naturelle\, vue légèr
+ ement en plongée\, format carré\, sans texte\, sans logo\, sans personne
+ . Nomme chaque image EXACTEMENT avec l'identifiant donné avant les deux-p
+ oints (ex. « ch-fondue-moitie-moitie »)\, sans extension ni majuscule\, 
+ pour que l'appli l'affiche automatiquement. Ne modifie aucun écran ni auc
+ un code.\n\nasd-larb-porc : Larb de porc laotien\nmed-fattoush-complet : F
+ attoush complet aux pois chiches grillés\nmed-shawarma-poulet-plaque : Sh
+ awarma de poulet à la plaque\nmed-shish-taouk : Shish taouk et toum\nasd-
+ curry-poulet-srilankais : Curry de poulet sri-lankais\nasd-kottu-roti-legu
+ mes : Kottu roti aux légumes\nafr-couscous-sept-legumes : Couscous aux se
+ pt légumes\nafr-pastilla-poulet : Pastilla au poulet et aux amandes\nafr-
+ tajine-agneau-pruneaux : Tajine d'agneau aux pruneaux et amandes\nafr-ravi
+ toto-porc : Ravitoto au porc\nafr-romazava : Romazava\, bœuf aux brèdes\
+ nasd-mohinga : Mohinga\, soupe birmane au poisson\nase-buuz-agneau : Buuz\
+ , raviolis vapeur mongols à l'agneau\nase-khuushuur-boeuf : Khuushuur\, c
+ haussons mongols au bœuf\nase-tsuivan-boeuf : Tsuivan\, nouilles mongoles
+  au bœuf\nafr-briani-poulet-mauricien : Briani mauricien au poulet\nafr-m
+ ine-frit-vegetarien : Mine frit aux légumes et aux œufs\nafr-vindaye-poi
+ sson : Vindaye de poisson mauricien\name-mole-poulet-simplifie : Poulet au
+  mole express\name-pozole-rojo : Pozole rojo\name-tacos-al-pastor-poele : 
+ Tacos al pastor à la poêle\nasd-satay-poulet : Satay de poulet\, sauce c
+ acahuètes\nafr-suya-boeuf : Brochettes de bœuf suya\nafr-jollof-rice-pou
+ let : Jollof rice au poulet\nafr-egusi-epinards : Soupe egusi aux épinard
+ s\nasd-dal-bhat-nepalais : Dal bhat népalais aux légumes sautés\nasd-mo
+ mos-legumes : Momos aux légumes et sauce tomate\name-aji-de-gallina : Aj
+ í de gallina\name-ceviche-poisson-blanc : Ceviche de poisson blanc\name-l
+ omo-saltado : Lomo saltado\name-papas-a-la-huancaina : Papas a la huancaí
+ na et quinoa\name-poulet-a-la-brasa-four : Poulet à la brasa au four\nasd
+ -adobo-poulet : Adobo de poulet philippin\nasd-sinigang-crevettes : Siniga
+ ng aux crevettes\nasd-karahi-poulet : Karahi de poulet pakistanais\nasd-se
+ ekh-kebab-agneau : Seekh kebabs d'agneau\nmed-maqluba-poulet : Maqluba au 
+ poulet et chou-fleur\nmed-musakhan : Musakhan\, poulet au sumac et oignons
+ \nmed-bacalhau-com-natas : Bacalhau com natas\, gratin de morue à la crè
+ me\nmed-bacalhau-a-bras : Bacalhau à Brás
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-12-2026-11-13@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261113T083000Z
+DTEND:20261113T085500Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Bloxks photos lot 6/8
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Bloxks photos lot 6/8
+DESCRIPTION:À coller tel quel dans Bloxks\, en un seul message. Attends qu
+ e Bloxks ait fini avant le suivant.\n\nGénère une photo culinaire réali
+ ste pour chaque plat de la liste ci-dessous et ajoute-la à la bibliothèq
+ ue d'images de Mijo. Règles : vraie photo appétissante du plat fini\, se
+ rvi dans une assiette ou un plat simple\, lumière naturelle\, vue légèr
+ ement en plongée\, format carré\, sans texte\, sans logo\, sans personne
+ . Nomme chaque image EXACTEMENT avec l'identifiant donné avant les deux-p
+ oints (ex. « ch-fondue-moitie-moitie »)\, sans extension ni majuscule\, 
+ pour que l'appli l'affiche automatiquement. Ne modifie aucun écran ni auc
+ un code.\n\nmed-caldeirada-peixe : Caldeirada\, ragoût de poissons portug
+ ais\nmed-caldo-verde : Caldo verde au chouriço\nmed-frango-piri-piri : Po
+ ulet piri-piri à la portugaise\nmed-sardines-grillees-portugaises : Sardi
+ nes grillées et pommes de terre au paprika\nafr-cari-poulet-reunionnais :
+  Cari poulet réunionnais\nafr-rougail-morue : Rougail morue\nafr-rougail-
+ saucisses : Rougail saucisses\nmed-pljeskavica : Pljeskavica\, galettes de
+  viande serbes\nmed-sarma-chou-farci : Sarma\, rouleaux de chou farcis\nas
+ d-char-kway-teow : Char kway teow aux crevettes\nasd-poulet-hainanais : Ri
+ z au poulet hainanais\nafr-mafe-boeuf : Mafé de bœuf\nafr-poulet-yassa :
+  Poulet yassa\nafr-thieboudienne : Thiéboudienne simplifiée\name-pupusas
+ -fromage-haricots : Pupusas fromage et haricots\nmed-kibbeh-bil-saniyeh : 
+ Kibbeh au plateau\nasd-pad-kra-pao-porc : Pad kra pao\, porc au basilic\na
+ sd-pad-thai-tofu : Pad thaï au tofu\nasd-tom-yum-crevettes : Tom yum aux 
+ crevettes et nouilles\nafr-brick-oeuf-pommes-de-terre : Bricks à l'œuf e
+ t pommes de terre\nafr-chakchouka-tunisienne : Chakchouka tunisienne\nmed-
+ shakshuka : Shakshuka à la feta\nmed-imam-bayildi : Imam bayildi\, auberg
+ ines fondantes\nmed-iskender-maison : Iskender kebab maison\nmed-kuru-fasu
+ lye : Kuru fasulye\, haricots blancs à la turque\nmed-lahmacun : Lahmacun
+ \, galettes turques à la viande\nmed-menemen : Menemen aux poivrons\nmed-
+ mercimek-corbasi : Mercimek çorbası\, soupe de lentilles corail\nase-gua
+ -bao-porc-braise : Gua bao au porc braisé et cacahuètes\nase-lu-rou-fan 
+ : Lu rou fan\, riz au porc braisé\nase-poulet-trois-tasses : Poulet trois
+  tasses au basilic\nase-soupe-nouilles-boeuf-taiwan : Soupe de nouilles au
+  bœuf taïwanaise\name-chaudree-palourdes : Chaudrée de palourdes\name-j
+ ambalaya-poulet-chorizo : Jambalaya au poulet et chorizo\name-mac-and-chee
+ se-maison : Mac and cheese gratiné\name-effiloche-porc-four : Porc effilo
+ ché au four et coleslaw\name-arepas-reina-pepiada : Arepas reina pepiada\
+ name-pabellon-criollo : Pabellón criollo\nasd-banh-mi-tofu : Bánh mì au
+  tofu caramélisé\nasd-pho-bo : Phở bò\, soupe de bœuf
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-13-2026-11-13@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261113T090000Z
+DTEND:20261113T092500Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Bloxks photos lot 7/8
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Bloxks photos lot 7/8
+DESCRIPTION:À coller tel quel dans Bloxks\, en un seul message. Attends qu
+ e Bloxks ait fini avant le suivant.\n\nGénère une photo culinaire réali
+ ste pour chaque plat de la liste ci-dessous et ajoute-la à la bibliothèq
+ ue d'images de Mijo. Règles : vraie photo appétissante du plat fini\, se
+ rvi dans une assiette ou un plat simple\, lumière naturelle\, vue légèr
+ ement en plongée\, format carré\, sans texte\, sans logo\, sans personne
+ . Nomme chaque image EXACTEMENT avec l'identifiant donné avant les deux-p
+ oints (ex. « ch-fondue-moitie-moitie »)\, sans extension ni majuscule\, 
+ pour que l'appli l'affiche automatiquement. Ne modifie aucun écran ni auc
+ un code.\n\nasd-goi-cuon-tofu : Rouleaux de printemps au tofu\nafr-bobotie
+ -boeuf : Bobotie sud-africain\nafr-chakalaka-pap : Chakalaka et pap\npd-bi
+ rcher-muesli : Bircher müesli\npd-crepes-au-sucre : Crêpes au sucre\npd-
+ pain-perdu : Pain perdu\npd-kaiserschmarrn : Kaiserschmarrn\npdm-avocat-ec
+ rase-toast : Avocat écrasé sur toast et feta\npd-gaufres-bruxelles : Gau
+ fres de Bruxelles\npd-pao-de-queijo : Pão de queijo\npdm-congee-poulet-gi
+ ngembre : Congee au poulet et gingembre\npdm-jianbing : Jianbing\, crêpe 
+ pékinoise à l'œuf\npd-arepas-de-queso : Arepas au fromage\npd-gallo-pin
+ to : Gallo pinto\npd-mangu : Mangú aux oignons rouges\npdm-ful-medames : 
+ Ful medames\npd-churros-chocolat : Churros et chocolat chaud\npd-pan-con-t
+ omate : Pan con tomate\npd-full-english-breakfast : Full English breakfast
+ \npd-porridge-ecossais : Porridge à l'écossaise\npd-yaourt-grec-miel-noi
+ x : Yaourt grec\, miel et noix\npdm-nasi-goreng-oeuf : Nasi goreng à l'œ
+ uf au plat\npdm-idli-sambar : Idli de semoule et sambar\npdm-masala-dosa :
+  Masala dosa express\npdm-nan-panir-sabzi : Pain\, feta\, herbes et noix 
+ à l'iranienne\npdm-petit-dejeuner-japonais : Petit-déjeuner japonais au 
+ saumon grillé\npdm-manakish-zaatar : Manakish au zaatar\npdm-kiribath : K
+ iribath\, riz au lait de coco et lunu miris\npdm-baghrir : Baghrir\, crêp
+ es mille trous\npdm-msemen : Msemen\, crêpes feuilletées marocaines\npd-
+ chilaquiles-rojos : Chilaquiles rojos\npdm-nasi-lemak : Nasi lemak\, riz a
+ u lait de coco et sambal\npdm-akara : Akara\, beignets de haricots à œil
+  noir\npd-poffertjes : Poffertjes\npd-uitsmijter : Uitsmijter\npd-pan-con-
+ chicharron : Pan con chicharrón\npdm-tapsilog : Tapsilog\, bœuf mariné\
+ , riz à l'ail et œuf\npd-jajecznica : Jajecznica au lard et ciboulette\n
+ pd-menemen : Menemen\npdm-dan-bing : Dan bing\, crêpe taïwanaise roulée
+  à l'œuf
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-14-2026-11-13@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261113T093000Z
+DTEND:20261113T095500Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Bloxks photos lot 8/8
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Bloxks photos lot 8/8
+DESCRIPTION:À coller tel quel dans Bloxks\, en un seul message. Attends qu
+ e Bloxks ait fini avant le suivant.\n\nGénère une photo culinaire réali
+ ste pour chaque plat de la liste ci-dessous et ajoute-la à la bibliothèq
+ ue d'images de Mijo. Règles : vraie photo appétissante du plat fini\, se
+ rvi dans une assiette ou un plat simple\, lumière naturelle\, vue légèr
+ ement en plongée\, format carré\, sans texte\, sans logo\, sans personne
+ . Nomme chaque image EXACTEMENT avec l'identifiant donné avant les deux-p
+ oints (ex. « ch-fondue-moitie-moitie »)\, sans extension ni majuscule\, 
+ pour que l'appli l'affiche automatiquement. Ne modifie aucun écran ni auc
+ un code.\n\npd-syrniki : Syrniki\npdm-rolex-ouganda : Rolex\, chapati roul
+ é à l'omelette\npd-pancakes-americains : Pancakes américains\npd-oeufs-
+ benedicte : Œufs bénédicte\npdm-banh-mi-oeufs-au-plat : Bánh mì aux 
+ œufs au plat\npdm-pho-ga : Phở gà\, soupe de nouilles au poulet
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-15-2026-11-13@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261113T130000Z
+DTEND:20261113T133000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Bloxks : corrections finales de Max
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Bloxks : corrections finales de Max
+DESCRIPTION:Coller le prompt de corrections finales que Max t'envoie après
+  son test complet de l'aperçu (jeudi soir).
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-16-2026-11-13@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261113T170000Z
+DTEND:20261113T173000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Inviter 10 à 20 testeurs
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Inviter 10 à 20 testeurs
+DESCRIPTION:Envoyer le lien d'aperçu à 10 à 20 proches (si possible dans
+  plusieurs pays). Leur demander : 1 menu de la semaine\, 1 liste de course
+ s\, 1 recette cuisinée\, et leur avis honnête.
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-17-2026-11-14@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:Mijo · Week-end testeurs (retours + captures App Store)
+DESCRIPTION:Récolter les retours\, les transmettre à Zoé. Faire les 5 ca
+ ptures pour la fiche App Store.
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-18-2026-11-15@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:Mijo · Week-end testeurs (suite)
+DESCRIPTION:Retours à Zoé\, corrections urgentes avec Max.
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-19-2026-11-16@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261116T090000Z
+DTEND:20261116T100000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Envoi App Store
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Envoi App Store
+DESCRIPTION:App Store Connect : pays = tous SAUF les 27 pays de l'UE. Prix 
+ 3\,99 € / 29\,99 € (5 / 35 CHF)\, essai 7 jours. Compte de démo pour 
+ le testeur Apple (Léa le prépare). E-mail pro uniquement\, jamais ton t
+ éléphone.
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-20-2026-11-20@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:Mijo · SORTIE
+DESCRIPTION:Posts sur tes réseaux\, message perso aux amis dans chaque pay
+ s.
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-21-2026-11-21@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261121T090000Z
+DTEND:20261121T093000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Test pub 100 €
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Test pub 100 €
+DESCRIPTION:50 € Meta\, 50 € TikTok\, vidéos d'Hugo. Malik suit le co
+ ût par installation (plafond ~0\,40 €).
+END:VEVENT
+BEGIN:VEVENT
+UID:mijo-22-2026-12-06@mijo.app
+DTSTAMP:20261110T162624Z
+DTSTART:20261206T170000Z
+DTEND:20261206T180000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Mijo · Bilan du 6 décembre
+TRIGGER:-PT15M
+END:VALARM
+SUMMARY:Mijo · Bilan du 6 décembre
+DESCRIPTION:Abonnés\, coût par installation\, essais → payants. Décisi
+ on 2e appli et robot.
+END:VEVENT
+END:VCALENDAR
