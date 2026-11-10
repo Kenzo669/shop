@@ -2,6 +2,11 @@
 
 Le plus récent en haut. Chaque entrée : date, auteur, titre, résumé en 3 lignes, statut (proposé / validé par le patron / fait).
 
+## 2026-11-10 · Test Founder Skill de l'aperçu (rapport de Max)
+Rapport : `entreprise/rapport-founder-skill-10nov.md` (+ PDF dans `livrables/`).
+- **Max** : 5/10 inchangé. 3 bloquants de confiance (gluten absent, photos fausses, quantités doublées). L'appli n'a que 164 recettes : notre catalogue de 1 178 n'est pas chargé. 25 remarques triées, prompt Bloxks unique en 15 points (14 de Founder Skill + chargement des recettes). Statut : proposé.
+- **Décisions à confirmer** : compte dès le début, tous les pays (risque : en UE, Apple affiche publiquement le téléphone du vendeur, donc pays hors UE d'abord), dépenses gratuites, gratuit limité à 10 recettes par continent, onboarding raccourci à 7 écrans. Statut : ouvert.
+
 ## 2026-11-10 · Robot cuisinier et nouvelles applis (rapport PDF)
 Rapport : `entreprise/livrables/Rapport-robot-et-nouvelles-applis.pdf`. Recrutement de Nora (matériel et fournisseurs) et Théo (studio d'applis).
 - **Sam** : les fabricants de cuisine connectée ferment (Brava, June, Karakuri, Picnic) ; les gagnants vendent du logiciel. Pari : pas de matériel avant le 6 déc. Statut : proposé.
