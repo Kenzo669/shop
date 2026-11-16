@@ -53,6 +53,9 @@ export default function Office3D({ working, selected, onSelect }: Props) {
           minDistance={8}
           maxDistance={28}
           enablePan={false}
+          // Les murs sont au fond et à gauche : on empêche la caméra de passer derrière.
+          minAzimuthAngle={-0.35}
+          maxAzimuthAngle={1.2}
         />
       </Canvas>
       {AGENTS.map((a) => {
