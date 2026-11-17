@@ -2,6 +2,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { addLog, db, getCompanyProfile, type Task } from "./db";
 import { AGENT_BY_ID, type AgentDef } from "./agents";
 import { buildTools } from "./tools";
+import { listConnections } from "./connections";
 
 const MODEL = process.env.CLAUDE_MODEL ?? "claude-opus-5-5";
 const MAX_DELEGATION_DEPTH = 2;
@@ -23,11 +24,18 @@ ${agent.mission}
 Profil de l'entreprise :
 ${getCompanyProfile()}
 
+Comptes connectés au logiciel : ${connectedAccounts()}
+
 Règles :
 - Tu agis vraiment avec tes outils : enregistre les résultats (fichiers, brouillons, écritures, prospects) au lieu de seulement les décrire.
 - Réponds en français, de façon concise.
 - Quand tu as terminé, donne un compte rendu court : ce que tu as fait, où trouver les résultats, et ce qui reste à valider par un humain.
 - Si une information indispensable manque, fais une hypothèse raisonnable, signale-la dans le compte rendu et continue.`;
+}
+
+function connectedAccounts() {
+  const list = listConnections().map((c) => (c.provider === "google" ? `Google (Gmail et Agenda) : ${c.account_email}` : c.provider));
+  return list.length ? list.join(" ; ") : "aucun (pas d'accès à une vraie boîte mail ni à un agenda)";
 }
 
 /** Crée une tâche et la lance en arrière-plan. Renvoie son identifiant. */

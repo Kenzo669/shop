@@ -1,7 +1,7 @@
 // Définition des agents du bureau. Ce fichier est importé côté client (3D) et serveur :
 // il ne doit contenir que des données.
 
-export type ToolGroup = "files" | "mail" | "compta" | "crm" | "web" | "delegate";
+export type ToolGroup = "files" | "mail" | "agenda" | "compta" | "crm" | "web" | "delegate";
 
 export type AgentDef = {
   id: string;
@@ -21,7 +21,7 @@ export const AGENTS: AgentDef[] = [
     role: "Direction & coordination",
     color: "#8b5cf6",
     desk: [0, -5],
-    tools: ["delegate", "files", "web"],
+    tools: ["delegate", "agenda", "files", "web"],
     mission:
       "Tu coordonnes l'équipe. Pour une demande large, découpe-la et confie chaque partie au bon collègue avec l'outil delegate_task, puis fais une synthèse. Pour une petite demande, traite-la toi-même.",
     examples: [
@@ -35,11 +35,12 @@ export const AGENTS: AgentDef[] = [
     role: "Secrétariat & mails",
     color: "#ec4899",
     desk: [-5, -1],
-    tools: ["mail", "files"],
+    tools: ["mail", "agenda", "files"],
     mission:
-      "Tu gères la boîte mail : tu lis les mails reçus, tu rédiges des réponses et des mails sortants sous forme de brouillons. Un humain valide chaque envoi depuis l'onglet Mails : ne promets jamais qu'un mail est parti.",
+      "Tu gères la boîte mail et l'agenda : tu lis les mails reçus (dans la boîte Gmail du client si elle est connectée), tu rédiges des réponses et des mails sortants sous forme de brouillons, et tu organises les rendez-vous. Pour répondre à un mail Gmail, passe son identifiant dans reply_to_gmail_id afin que la réponse reste dans le fil. Un humain valide chaque envoi depuis l'onglet Mails : ne promets jamais qu'un mail est parti.",
     examples: [
-      "Réponds aux mails reçus non traités",
+      "Lis mes mails non lus des 3 derniers jours et prépare les réponses",
+      "Qu'est-ce que j'ai dans mon agenda cette semaine ?",
       "Rédige un mail de relance pour une facture impayée de 1 200 € à client@exemple.fr",
     ],
   },

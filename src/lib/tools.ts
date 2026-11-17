@@ -6,6 +6,7 @@ import type { BetaRunnableTool } from "@anthropic-ai/sdk/lib/tools/BetaRunnableT
 import type Anthropic from "@anthropic-ai/sdk";
 import { addLog, db, FILES_DIR } from "./db";
 import { AGENTS, type AgentDef } from "./agents";
+import { calendarCreate, calendarList, gmailRead, gmailSearch, googleConnected } from "./google";
 
 const ALLOWED_EXT = [".md", ".txt", ".csv", ".html", ".json"];
 
@@ -104,14 +105,73 @@ function mailTools(ctx: Ctx): AnyTool[] {
         to: z.string().describe("Adresse du destinataire (vide si inconnue)"),
         subject: z.string(),
         body: z.string().describe("Corps du mail en texte brut, avec la signature"),
+        reply_to_gmail_id: z
+          .string()
+          .optional()
+          .describe("Si c'est une réponse à un mail Gmail : son identifiant (champ id de gmail_search)"),
       }),
-      run: async ({ to, subject, body }) => {
+      run: async ({ to, subject, body, reply_to_gmail_id }) => {
         const r = db
           .prepare(
-            "INSERT INTO emails (direction, status, to_addr, subject, body, agent_id) VALUES ('out', 'draft', ?, ?, ?, ?)",
+            "INSERT INTO emails (direction, status, to_addr, subject, body, agent_id, reply_to_gmail_id) VALUES ('out', 'draft', ?, ?, ?, ?, ?)",
           )
-          .run(to, subject, body, ctx.agent.id);
+          .run(to, subject, body, ctx.agent.id, reply_to_gmail_id ?? null);
         return `Brouillon n°${r.lastInsertRowid} créé, en attente de validation humaine.`;
+      },
+    }),
+  ];
+}
+
+/** Outils de la vraie boîte Gmail du client (seulement si un compte Google est connecté). */
+function gmailTools(): AnyTool[] {
+  return [
+    betaZodTool({
+      name: "gmail_search",
+      description:
+        "Cherche dans la boîte Gmail connectée, avec la syntaxe de recherche Gmail. Exemples : 'is:unread newer_than:3d', 'from:client@exemple.fr', 'subject:facture'. Renvoie expéditeur, objet, date et extrait.",
+      inputSchema: z.object({
+        query: z.string(),
+        max: z.number().int().min(1).max(30).optional(),
+      }),
+      run: async ({ query, max }) => {
+        const rows = await gmailSearch(query, max ?? 15);
+        return rows.length ? JSON.stringify(rows, null, 1) : "Aucun mail trouvé.";
+      },
+    }),
+    betaZodTool({
+      name: "gmail_read",
+      description: "Lit le contenu complet d'un mail Gmail à partir de son id.",
+      inputSchema: z.object({ id: z.string() }),
+      run: async ({ id }) => JSON.stringify(await gmailRead(id), null, 1),
+    }),
+  ];
+}
+
+function agendaTools(): AnyTool[] {
+  return [
+    betaZodTool({
+      name: "calendar_list",
+      description: "Liste les rendez-vous de l'agenda Google connecté entre deux dates (AAAA-MM-JJ ou ISO 8601).",
+      inputSchema: z.object({ from: z.string(), to: z.string() }),
+      run: async ({ from, to }) => {
+        const rows = await calendarList(from, to);
+        return rows.length ? JSON.stringify(rows, null, 1) : "Aucun rendez-vous sur cette période.";
+      },
+    }),
+    betaZodTool({
+      name: "calendar_create",
+      description:
+        "Ajoute un rendez-vous dans l'agenda Google connecté. Aucune invitation n'est envoyée aux tiers. Dates au format ISO local, ex. 2026-11-20T14:00:00.",
+      inputSchema: z.object({
+        summary: z.string(),
+        start: z.string(),
+        end: z.string(),
+        description: z.string().optional(),
+        location: z.string().optional(),
+      }),
+      run: async (ev) => {
+        const r = await calendarCreate(ev);
+        return `Rendez-vous créé (${r.lien ?? r.id}).`;
       },
     }),
   ];
@@ -258,7 +318,10 @@ export function buildTools(ctx: Ctx): (AnyTool | Anthropic.Beta.BetaToolUnion)[]
   // Ordre fixe pour que le cache de prompt reste valide d'une tâche à l'autre.
   const groups = ctx.agent.tools;
   if (groups.includes("delegate")) tools.push(...delegateTools(ctx).map((t) => logged(ctx, t)));
+  const google = googleConnected();
   if (groups.includes("mail")) tools.push(...mailTools(ctx).map((t) => logged(ctx, t)));
+  if (groups.includes("mail") && google) tools.push(...gmailTools().map((t) => logged(ctx, t)));
+  if (groups.includes("agenda") && google) tools.push(...agendaTools().map((t) => logged(ctx, t)));
   if (groups.includes("compta")) tools.push(...comptaTools().map((t) => logged(ctx, t)));
   if (groups.includes("crm")) tools.push(...crmTools().map((t) => logged(ctx, t)));
   if (groups.includes("files")) tools.push(...fileTools().map((t) => logged(ctx, t)));

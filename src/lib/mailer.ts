@@ -5,7 +5,7 @@ export function smtpConfigured() {
 }
 
 export async function sendMail(to: string, subject: string, text: string) {
-  if (!smtpConfigured()) throw new Error("SMTP non configuré (SMTP_HOST, SMTP_USER, SMTP_PASS dans .env.local).");
+  if (!smtpConfigured()) throw new Error("Aucune boîte mail connectée : connectez votre compte Google depuis le menu Connexions.");
   const port = Number(process.env.SMTP_PORT ?? 587);
   const transport = nodemailer.createTransport({
     host: process.env.SMTP_HOST,

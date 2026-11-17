@@ -31,22 +31,43 @@ npm run dev
 4. Ouvrez <http://localhost:3000>, cliquez sur **⚙️ Profil entreprise** et décrivez votre entreprise (tous les agents le lisent).
 5. Cliquez sur un agent dans le bureau 3D et confiez-lui une tâche.
 
-### Envoi réel des mails (optionnel)
+## Connexions : relier les comptes du client
 
-Renseignez `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` dans `.env.local`.
-Avec Gmail : `smtp.gmail.com`, port `465`, et un *mot de passe d'application* Google.
+Bureau IA est un logiciel indépendant : chaque entreprise y relie ses propres comptes depuis le bouton **🔌 Connexions**, comme sur un site avec « Se connecter avec Google ».
+
+| Service | Ce que les agents peuvent faire | État |
+|---|---|---|
+| Google (Gmail + Agenda) | Léa lit et cherche dans la boîte, prépare les réponses (envoyées depuis la vraie boîte, dans le bon fil, après validation) ; Léa et Nora consultent et créent des rendez-vous | ✅ disponible |
+| Microsoft 365, LinkedIn, HubSpot, Pennylane, Slack | — | bientôt |
+
+Les accès sont chiffrés en base (AES-256), jamais transmis à l'IA, et renouvelés automatiquement. Un compte se déconnecte en un clic (l'accès est aussi révoqué chez Google).
+
+### Configurer Google (une seule fois, par l'éditeur du logiciel)
+
+1. Sur <https://console.cloud.google.com>, créez un projet.
+2. *API et services → Bibliothèque* : activez **Gmail API** et **Google Calendar API**.
+3. *Écran de consentement OAuth* : type « Externe », nom de l'application, et ajoutez les adresses de vos testeurs.
+4. *Identifiants → Créer → ID client OAuth* (application Web), avec comme URI de redirection :
+   `http://localhost:3000/api/connect/google/callback` (et plus tard `https://votre-domaine/api/connect/google/callback`).
+5. Copiez l'ID et le secret dans `.env.local` (`GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`), réglez `APP_URL`, relancez.
+
+⚠️ Lire et envoyer des mails sont des accès « restreints » chez Google. En mode test, l'application fonctionne pour 100 comptes testeurs au maximum. Pour l'ouvrir à tous vos clients, Google exige une **vérification de l'application et un audit de sécurité** (plusieurs semaines, payant). À prévoir avant la commercialisation.
+
+### Envoi par SMTP (sans compte Google)
+
+Si aucun compte Google n'est connecté, l'envoi passe par SMTP : renseignez `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` dans `.env.local`.
 
 ## Organisation du code
 
 - `src/lib/agents.ts` : la liste des agents (nom, rôle, couleur, place dans le bureau, outils, consignes). C'est ici qu'on ajoute un agent.
 - `src/lib/tools.ts` : les outils que les agents peuvent utiliser.
 - `src/lib/runner.ts` : la boucle de travail d'un agent (API Claude + outils).
+- `src/lib/google.ts`, `src/lib/connections.ts`, `src/lib/crypto.ts` : connexion des comptes Google, stockage chiffré des accès, Gmail et Agenda.
 - `src/lib/db.ts` : la base SQLite (`data/bureau.db`) et le dossier des fichiers (`data/files`).
 - `src/components/Office3D.tsx` : le bureau en 3D (Three.js / react-three-fiber).
 - `src/components/Dashboard.tsx` : l'interface (panneau agent, mails, compta, prospects, fichiers).
 
 ## Limites actuelles
 
-- Les mails reçus sont ajoutés à la main (copier-coller). La connexion directe à une boîte mail (IMAP / Gmail) est la prochaine étape.
-- Pas encore de comptes utilisateurs : à n'utiliser qu'en local ou derrière un accès protégé.
+- Pas encore de comptes utilisateurs ni de séparation entre entreprises clientes : une installation = une entreprise. À n'utiliser qu'en local ou derrière un accès protégé.
 - Les tâches tournent dans le serveur Node : il doit rester allumé pendant qu'elles s'exécutent (`npm run dev` ou `npm run build && npm start`). Ce n'est pas adapté à un hébergement « serverless » comme Vercel.

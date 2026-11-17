@@ -67,6 +67,9 @@ function open(): Database.Database {
       value TEXT NOT NULL
     );
   `);
+  // Migrations légères pour les bases créées par une version précédente.
+  const emailCols = (db.prepare("PRAGMA table_info(emails)").all() as { name: string }[]).map((c) => c.name);
+  if (!emailCols.includes("reply_to_gmail_id")) db.exec("ALTER TABLE emails ADD COLUMN reply_to_gmail_id TEXT");
   // Une tâche "en cours" au démarrage a été interrompue par un redémarrage du serveur.
   db.prepare(
     "UPDATE tasks SET status = 'error', result = 'Interrompue (redémarrage du serveur)' WHERE status IN ('running', 'queued')",
