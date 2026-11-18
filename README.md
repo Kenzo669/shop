@@ -8,13 +8,28 @@ Un bureau virtuel en 3D où une équipe d'agents IA (propulsés par Claude) trav
 |---|---|---|
 | **Nora** | Direction & coordination | Découpe les grosses demandes et les délègue aux collègues, puis fait la synthèse |
 | **Léa** | Secrétariat & mails | Lit les mails reçus et rédige les réponses (brouillons à valider) |
-| **Marc** | Comptabilité | Tient le journal recettes/dépenses, calcule la TVA, fait factures et bilans |
+| **Marc** | Comptabilité | Journal recettes/dépenses, factures numérotées, relances des impayés, déclaration de TVA |
 | **Sami** | Prospection | Cherche des entreprises sur le web, remplit le CRM, prépare les mails de prise de contact |
 | **Chloé** | Marketing | Posts réseaux sociaux, newsletters, calendrier éditorial, veille concurrentielle |
 | **Hugo** | Documents | Devis, contrats types, procédures, comptes rendus (HTML imprimable, CSV, Markdown) |
+| **Inès** | RH & planning | Fiches employés, absences, plannings hebdomadaires contrôlés selon le Code du travail |
 
 Les agents agissent avec de vrais outils : base de données (SQLite), fichiers partagés, recherche et lecture de pages web.
 **Aucun mail ne part sans validation humaine** : les agents créent des brouillons, que vous relisez, modifiez puis envoyez depuis l'onglet Mails.
+
+## Outils de gestion (sans IA, donc gratuits à l'usage)
+
+- **🏠 Aujourd'hui** : ce qui demande votre attention (mails à valider, factures en retard, TVA à déclarer, planning manquant ou non conforme, absences à venir), avec un bouton pour confier chaque point au bon agent.
+- **💶 Compta & TVA** : journal, factures numérotées avec mentions légales (« payée » enregistre la recette), et **déclaration de TVA préparée ligne par ligne** (formulaire CA3) selon votre régime (mensuel, trimestriel, franchise). À vérifier avant dépôt sur impots.gouv.fr.
+- **👥 Équipe & planning** : employés, absences, planning de la semaine, heures par rapport au contrat, alertes automatiques (10 h/jour, 48 h/semaine, 11 h de repos, un jour de repos).
+- **⏰ Automatisations** : tâches que les agents font seuls (chaque jour, semaine ou mois).
+
+## Maîtrise des coûts de l'IA
+
+- **💰 Consommation** : coût réel de chaque tâche (tokens lus, écrits, cache, recherches web), par agent et par jour.
+- **Modèle et niveau de réflexion par agent** : Opus 5.5 (le plus capable), Sonnet 5.5, Haiku 5.5 (environ 40 fois moins cher qu'Opus en entrée).
+- **Budget mensuel** (les tâches sont bloquées une fois atteint) et **plafond par tâche** (3 $ par défaut).
+- Cache de prompt activé, recherches web limitées à 6 par tâche.
 
 ## Démarrer
 
@@ -63,6 +78,9 @@ Si aucun compte Google n'est connecté, l'envoi passe par SMTP : renseignez `SMT
 - `src/lib/tools.ts` : les outils que les agents peuvent utiliser.
 - `src/lib/runner.ts` : la boucle de travail d'un agent (API Claude + outils).
 - `src/lib/google.ts`, `src/lib/connections.ts`, `src/lib/crypto.ts` : connexion des comptes Google, stockage chiffré des accès, Gmail et Agenda.
+- `src/lib/business.ts` : TVA, factures, planning et tableau « Aujourd'hui » (calculs exacts, sans IA).
+- `src/lib/billing.ts` : tarifs, suivi de consommation, budget, modèle par agent.
+- `src/lib/scheduler.ts` : automatisations.
 - `src/lib/db.ts` : la base SQLite (`data/bureau.db`) et le dossier des fichiers (`data/files`).
 - `src/components/Office3D.tsx` : le bureau en 3D (Three.js / react-three-fiber).
 - `src/components/Dashboard.tsx` : l'interface (panneau agent, mails, compta, prospects, fichiers).

@@ -3,8 +3,7 @@ import { addLog, db, getCompanyProfile, type Task } from "./db";
 import { AGENT_BY_ID, type AgentDef } from "./agents";
 import { buildTools } from "./tools";
 import { listConnections } from "./connections";
-
-const MODEL = process.env.CLAUDE_MODEL ?? "claude-opus-5-5";
+import { budgetBlockReason, getAgentSettings, getSetting, recordUsage } from "./billing";
 const MAX_DELEGATION_DEPTH = 2;
 
 let client: Anthropic | null = null;
@@ -74,6 +73,20 @@ async function runTask(taskId: number, depth: number): Promise<string> {
     finish(taskId, "error", msg);
     return msg;
   }
+  const blocked = budgetBlockReason();
+  if (blocked) {
+    finish(taskId, "error", blocked);
+    return blocked;
+  }
+
+  const { model, effort } = getAgentSettings()[agent.id];
+  const taskCap = getSetting<number>("task_cap_usd", 3);
+  db.prepare("UPDATE tasks SET model = ? WHERE id = ?").run(model, taskId);
+  // Haiku n'a pas de modèle de secours côté serveur en cas de refus.
+  const fallback =
+    model === "claude-haiku-5-5"
+      ? {}
+      : { betas: ["server-side-fallback-2026-07-01"], fallbacks: "default" as const };
 
   const delegate = async (agentId: string, instruction: string) => {
     if (depth >= MAX_DELEGATION_DEPTH) return "Délégation refusée : trop de niveaux de sous-tâches.";
@@ -83,16 +96,15 @@ async function runTask(taskId: number, depth: number): Promise<string> {
   };
 
   const runner = getClient().beta.messages.toolRunner({
-    model: MODEL,
+    model,
     max_tokens: 16000,
     max_iterations: 30,
     // Si le modèle refuse une requête, l'API la relance automatiquement sur un modèle de secours.
-    betas: ["server-side-fallback-2026-07-01"],
-    fallbacks: "default",
-    output_config: { effort: "medium" },
+    ...fallback,
+    output_config: { effort },
     cache_control: { type: "ephemeral" },
     system: systemPrompt(agent),
-    tools: buildTools({ agent, taskId, delegate }),
+    tools: buildTools({ agent, taskId, delegate, model }),
     messages: [
       {
         role: "user",
@@ -102,11 +114,23 @@ async function runTask(taskId: number, depth: number): Promise<string> {
   });
 
   let last: Anthropic.Beta.BetaMessage | null = null;
+  let taskCost = 0;
   for await (const message of runner) {
     last = message;
+    // Coût calculé au tarif du modèle qui a réellement répondu (il peut différer en cas de repli).
+    taskCost += recordUsage(taskId, agent.id, message.model, message.usage);
     for (const block of message.content) {
       if (block.type === "text" && block.text.trim()) addLog(taskId, "message", block.text.trim());
       if (block.type === "server_tool_use") addLog(taskId, "tool", `${block.name} ${JSON.stringify(block.input)}`);
+    }
+    if (taskCap > 0 && taskCost >= taskCap) {
+      finish(taskId, "error", `Tâche arrêtée : plafond de ${taskCap.toFixed(2)} $ par tâche atteint. Le travail déjà fait est conservé.`);
+      return "Arrêtée (plafond par tâche).";
+    }
+    const over = budgetBlockReason();
+    if (over) {
+      finish(taskId, "error", `Tâche arrêtée : ${over}`);
+      return "Arrêtée (budget mensuel).";
     }
   }
 

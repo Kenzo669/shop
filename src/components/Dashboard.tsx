@@ -3,6 +3,11 @@
 import dynamic from "next/dynamic";
 import { useCallback, useEffect, useState } from "react";
 import { AGENTS, AGENT_BY_ID } from "@/lib/agents";
+import { usd, usePoll } from "./shared";
+import Today from "./Today";
+import ComptaPanel from "./Compta";
+import Team from "./Team";
+import { RecurringModal, UsageModal } from "./Settings";
 
 const Office3D = dynamic(() => import("./Office3D"), {
   ssr: false,
@@ -17,6 +22,7 @@ type Task = {
   result: string | null;
   parent_task_id: number | null;
   created_at: string;
+  cost_usd: number;
 };
 type Log = { id: number; kind: "message" | "tool" | "result" | "error"; content: string; created_at: string };
 type Email = {
@@ -48,6 +54,8 @@ type State = {
   aiConfigured: boolean;
   smtpConfigured: boolean;
   connections: { provider: string; account_email: string }[];
+  monthSpend: number;
+  budget: number;
 };
 type Data = { emails: Email[]; transactions: Transaction[]; prospects: Prospect[]; files: FileInfo[] };
 
@@ -64,30 +72,17 @@ const STATUS_COLOR: Record<Task["status"], string> = {
   error: "bg-red-100 text-red-800",
 };
 
-const eur = (n: number) => n.toLocaleString("fr-FR", { style: "currency", currency: "EUR" });
 
-function usePoll<T>(url: string, ms: number): [T | null, () => void] {
-  const [data, setData] = useState<T | null>(null);
-  const load = useCallback(() => {
-    fetch(url)
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => d && setData(d))
-      .catch(() => {});
-  }, [url]);
-  useEffect(() => {
-    load();
-    const t = setInterval(load, ms);
-    return () => clearInterval(t);
-  }, [load, ms]);
-  return [data, load];
-}
 
 export default function Dashboard() {
   const [state, reloadState] = usePoll<State>("/api/state", 2000);
   const [data, reloadData] = usePoll<Data>("/api/data", 4000);
   const [selectedAgent, setSelectedAgent] = useState<string>("direction");
   const [selectedTask, setSelectedTask] = useState<number | null>(null);
-  const [tab, setTab] = useState<"activite" | "mails" | "compta" | "prospects" | "fichiers">("activite");
+  type Tab = "today" | "activite" | "mails" | "compta" | "equipe" | "prospects" | "fichiers";
+  const [tab, setTab] = useState<Tab>("today");
+  const [showUsage, setShowUsage] = useState(false);
+  const [showRecurring, setShowRecurring] = useState(false);
   const [showCompany, setShowCompany] = useState(false);
   const [showConnections, setShowConnections] = useState(false);
   const [notice, setNotice] = useState<{ ok: boolean; text: string } | null>(null);
@@ -112,6 +107,14 @@ export default function Dashboard() {
     reloadData();
   };
 
+  // Une tâche lancée depuis un bouton (« Demander à Inès »…) : on montre l'agent et son suivi en direct.
+  const onAsked = (taskId: number, agentId: string) => {
+    setSelectedAgent(agentId);
+    setSelectedTask(taskId);
+    refresh();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="flex min-h-screen flex-col bg-slate-100 text-gray-900">
       <header className="flex flex-wrap items-center gap-3 border-b bg-white px-4 py-3">
@@ -119,6 +122,13 @@ export default function Dashboard() {
         <div className="text-sm text-gray-500">Votre équipe d&apos;agents IA, au travail.</div>
         <div className="ml-auto flex flex-wrap items-center gap-2 text-xs">
           <Badge ok={state?.aiConfigured} okText="IA connectée" koText="Clé API Claude manquante" />
+          <button onClick={() => setShowUsage(true)} className="rounded-md border px-3 py-1.5 hover:bg-gray-50">
+            💰 {state ? usd(state.monthSpend) : "…"}
+            {state?.budget ? <span className="text-gray-400"> / {usd(state.budget)}</span> : null}
+          </button>
+          <button onClick={() => setShowRecurring(true)} className="rounded-md border px-3 py-1.5 hover:bg-gray-50">
+            ⏰ Automatisations
+          </button>
           <button
             onClick={() => setShowConnections(true)}
             className="rounded-md border px-3 py-1.5 hover:bg-gray-50"
@@ -176,9 +186,11 @@ export default function Dashboard() {
         <nav className="flex flex-wrap gap-1 border-b px-2 pt-2 text-sm">
           {(
             [
+              ["today", "🏠 Aujourd'hui"],
               ["activite", "📋 Activité"],
               ["mails", `✉️ Mails${countDrafts(data)}`],
-              ["compta", "💶 Compta"],
+              ["compta", "💶 Compta & TVA"],
+              ["equipe", "👥 Équipe & planning"],
               ["prospects", `🎯 Prospects (${data?.prospects.length ?? 0})`],
               ["fichiers", `📁 Fichiers (${data?.files.length ?? 0})`],
             ] as const
@@ -204,13 +216,17 @@ export default function Dashboard() {
             />
           )}
           {tab === "mails" && <Mails emails={data?.emails ?? []} onChange={refresh} />}
-          {tab === "compta" && <Compta transactions={data?.transactions ?? []} />}
+          {tab === "today" && <Today onAsked={onAsked} goTo={setTab} />}
+          {tab === "compta" && <ComptaPanel transactions={data?.transactions ?? []} onAsked={onAsked} />}
+          {tab === "equipe" && <Team onAsked={onAsked} />}
           {tab === "prospects" && <Prospects prospects={data?.prospects ?? []} />}
           {tab === "fichiers" && <Files files={data?.files ?? []} />}
         </div>
       </section>
 
       {showCompany && <CompanyModal onClose={() => setShowCompany(false)} />}
+      {showUsage && <UsageModal onClose={() => { setShowUsage(false); refresh(); }} />}
+      {showRecurring && <RecurringModal onClose={() => setShowRecurring(false)} />}
       {showConnections && (
         <ConnectionsModal
           notice={notice}
@@ -374,6 +390,11 @@ function TaskLine({ t, showAgent }: { t: Task; showAgent?: boolean }) {
         {t.parent_task_id && <span className="mr-1 text-xs text-gray-400">↳ délégué</span>}
         <span className="line-clamp-2">{t.instruction}</span>
       </div>
+      {t.cost_usd > 0 && (
+        <span className="ml-auto shrink-0 text-[11px] text-gray-400" title="Coût IA de cette tâche">
+          {usd(t.cost_usd)}
+        </span>
+      )}
     </div>
   );
 }
@@ -541,50 +562,6 @@ function DraftCard({ email, onChange }: { email: Email; onChange: () => void }) 
   );
 }
 
-function Compta({ transactions }: { transactions: Transaction[] }) {
-  const recettes = transactions.filter((t) => t.amount > 0).reduce((s, t) => s + t.amount, 0);
-  const depenses = transactions.filter((t) => t.amount < 0).reduce((s, t) => s - t.amount, 0);
-  return (
-    <div>
-      <div className="mb-3 grid grid-cols-3 gap-2 text-sm">
-        <Stat label="Recettes TTC" value={eur(recettes)} />
-        <Stat label="Dépenses TTC" value={eur(depenses)} />
-        <Stat label="Résultat" value={eur(recettes - depenses)} />
-      </div>
-      {transactions.length === 0 ? (
-        <p className="text-sm text-gray-500">Aucune écriture. Demandez à Marc d&apos;en enregistrer.</p>
-      ) : (
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead className="text-left text-xs text-gray-500">
-              <tr><th className="p-1">Date</th><th className="p-1">Libellé</th><th className="p-1">Catégorie</th><th className="p-1 text-right">Montant TTC</th><th className="p-1 text-right">TVA</th></tr>
-            </thead>
-            <tbody className="divide-y">
-              {transactions.map((t) => (
-                <tr key={t.id}>
-                  <td className="p-1">{t.date}</td>
-                  <td className="p-1">{t.label}</td>
-                  <td className="p-1">{t.category}</td>
-                  <td className={`p-1 text-right ${t.amount < 0 ? "text-red-600" : "text-emerald-700"}`}>{eur(t.amount)}</td>
-                  <td className="p-1 text-right">{t.vat_rate} %</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
-    </div>
-  );
-}
-
-function Stat({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-md bg-slate-50 p-3">
-      <div className="text-xs text-gray-500">{label}</div>
-      <div className="text-lg font-semibold">{value}</div>
-    </div>
-  );
-}
 
 function Prospects({ prospects }: { prospects: Prospect[] }) {
   if (!prospects.length) return <p className="text-sm text-gray-500">CRM vide. Demandez à Sami de trouver des prospects.</p>;

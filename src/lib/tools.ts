@@ -7,6 +7,7 @@ import type Anthropic from "@anthropic-ai/sdk";
 import { addLog, db, FILES_DIR } from "./db";
 import { AGENTS, type AgentDef } from "./agents";
 import { calendarCreate, calendarList, gmailRead, gmailSearch, googleConnected } from "./google";
+import { addDays, createInvoice, listInvoices, markInvoicePaid, mondayOf, vatReturn, weekPlanning } from "./business";
 
 const ALLOWED_EXT = [".md", ".txt", ".csv", ".html", ".json"];
 
@@ -18,7 +19,12 @@ export function safeFileName(name: string): string | null {
   return base;
 }
 
-type Ctx = { agent: AgentDef; taskId: number; delegate: (agentId: string, instruction: string) => Promise<string> };
+type Ctx = {
+  agent: AgentDef;
+  taskId: number;
+  model: string;
+  delegate: (agentId: string, instruction: string) => Promise<string>;
+};
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyTool = BetaRunnableTool<any>;
 
@@ -75,7 +81,7 @@ function fileTools(): AnyTool[] {
         const name = safeFileName(filename);
         const p = name && path.join(FILES_DIR, name);
         if (!p || !fs.existsSync(p)) return "Fichier introuvable.";
-        return fs.readFileSync(p, "utf8").slice(0, 100_000);
+        return fs.readFileSync(p, "utf8").slice(0, 40_000); // limite la taille relue (coût)
       },
     }),
   ];
@@ -243,6 +249,147 @@ function comptaTools(): AnyTool[] {
   ];
 }
 
+function invoiceTools(): AnyTool[] {
+  return [
+    betaZodTool({
+      name: "create_invoice",
+      description:
+        "Crée une facture numérotée automatiquement (FAC-AAAA-0001…), avec les mentions légales, enregistrée en fichier HTML imprimable. Prix unitaires HT.",
+      inputSchema: z.object({
+        client: z.string(),
+        client_email: z.string().optional(),
+        client_address: z.string().optional(),
+        issue_date: z.string().optional().describe("AAAA-MM-JJ, aujourd'hui par défaut"),
+        due_days: z.number().int().optional().describe("Délai de paiement en jours, 30 par défaut"),
+        lines: z
+          .array(
+            z.object({
+              label: z.string(),
+              qty: z.number(),
+              unit_price_ht: z.number(),
+              vat_rate: z.number().describe("20, 10, 5.5, 2.1 ou 0"),
+            }),
+          )
+          .min(1),
+      }),
+      run: async (input) => JSON.stringify(createInvoice(input)),
+    }),
+    betaZodTool({
+      name: "list_invoices",
+      description: "Liste les factures (statut : brouillon, envoyée, payée, annulée) ; le champ en_retard signale les impayés échus.",
+      inputSchema: z.object({ status: z.enum(["brouillon", "envoyée", "payée", "annulée"]).optional() }),
+      run: async ({ status }) => {
+        const rows = listInvoices(status).map(({ lines, ...rest }) => ({ ...rest, nb_lignes: JSON.parse(lines).length }));
+        return rows.length ? JSON.stringify(rows) : "Aucune facture.";
+      },
+    }),
+    betaZodTool({
+      name: "mark_invoice_paid",
+      description: "Marque une facture payée et enregistre automatiquement la recette dans le journal.",
+      inputSchema: z.object({ id: z.number().int(), paid_date: z.string().optional() }),
+      run: async ({ id, paid_date }) => markInvoicePaid(id, paid_date),
+    }),
+    betaZodTool({
+      name: "vat_return",
+      description:
+        "Calcule les montants de la déclaration de TVA (formulaire CA3) sur une période, à partir du journal : base HT et TVA par taux, TVA déductible, TVA nette due ou crédit.",
+      inputSchema: z.object({ from: z.string().describe("AAAA-MM-JJ"), to: z.string().describe("AAAA-MM-JJ") }),
+      run: async ({ from, to }) => JSON.stringify(vatReturn(from, to), null, 1),
+    }),
+  ];
+}
+
+const TIME = /^([01]\d|2[0-3]):[0-5]\d$/;
+
+function rhTools(): AnyTool[] {
+  return [
+    betaZodTool({
+      name: "add_employee",
+      description: "Ajoute un employé (ou met à jour sa fiche s'il existe déjà sous ce nom).",
+      inputSchema: z.object({
+        name: z.string(),
+        role: z.string().optional(),
+        email: z.string().optional(),
+        weekly_hours: z.number().optional().describe("Heures du contrat par semaine, 35 par défaut"),
+        notes: z.string().optional().describe("Disponibilités et contraintes, ex. « pas le mercredi »"),
+      }),
+      run: async (e) => {
+        const existing = db.prepare("SELECT id FROM employees WHERE lower(name) = lower(?) AND active = 1").get(e.name) as
+          | { id: number }
+          | undefined;
+        if (existing) {
+          db.prepare(
+            "UPDATE employees SET role = COALESCE(?, role), email = COALESCE(?, email), weekly_hours = COALESCE(?, weekly_hours), notes = COALESCE(?, notes) WHERE id = ?",
+          ).run(e.role ?? null, e.email ?? null, e.weekly_hours ?? null, e.notes ?? null, existing.id);
+          return `Fiche de ${e.name} mise à jour (n°${existing.id}).`;
+        }
+        const r = db
+          .prepare("INSERT INTO employees (name, role, email, weekly_hours, notes) VALUES (?, ?, ?, ?, ?)")
+          .run(e.name, e.role ?? null, e.email ?? null, e.weekly_hours ?? 35, e.notes ?? null);
+        return `Employé n°${r.lastInsertRowid} ajouté.`;
+      },
+    }),
+    betaZodTool({
+      name: "week_planning",
+      description:
+        "Planning d'une semaine (du lundi au dimanche contenant la date donnée) : employés et contrats, créneaux, absences, heures par employé et alertes du Code du travail.",
+      inputSchema: z.object({ date: z.string().describe("Une date de la semaine voulue, AAAA-MM-JJ") }),
+      run: async ({ date }) => JSON.stringify(weekPlanning(date)),
+    }),
+    betaZodTool({
+      name: "set_shifts",
+      description:
+        "Enregistre des créneaux de travail. Avec replace_week, efface d'abord tous les créneaux de cette semaine-là (pour refaire un planning).",
+      inputSchema: z.object({
+        replace_week: z.string().optional().describe("Une date de la semaine à remplacer, AAAA-MM-JJ"),
+        shifts: z.array(
+          z.object({
+            employee_id: z.number().int(),
+            date: z.string().describe("AAAA-MM-JJ"),
+            start: z.string().describe("HH:MM"),
+            end: z.string().describe("HH:MM"),
+            label: z.string().optional().describe("ex. Ouverture, Caisse, Fermeture"),
+          }),
+        ),
+      }),
+      run: async ({ replace_week, shifts }) => {
+        const bad = shifts.find((s) => !TIME.test(s.start) || !TIME.test(s.end));
+        if (bad) return `Heure invalide (${bad.start}-${bad.end}) : format HH:MM attendu.`;
+        const tx = db.transaction(() => {
+          if (replace_week) {
+            const from = mondayOf(replace_week);
+            db.prepare("DELETE FROM shifts WHERE date >= ? AND date <= ?").run(from, addDays(from, 6));
+          }
+          const ins = db.prepare("INSERT INTO shifts (employee_id, date, start, end, label) VALUES (?, ?, ?, ?, ?)");
+          for (const s of shifts) ins.run(s.employee_id, s.date, s.start, s.end, s.label ?? null);
+        });
+        tx();
+        const week = weekPlanning(shifts[0]?.date ?? replace_week ?? new Date().toISOString().slice(0, 10));
+        return `${shifts.length} créneau(x) enregistré(s). Alertes : ${week.alerts.length ? JSON.stringify(week.alerts) : "aucune"}`;
+      },
+    }),
+    betaZodTool({
+      name: "add_leave",
+      description: "Enregistre une absence (congés, maladie, formation…).",
+      inputSchema: z.object({
+        employee_id: z.number().int(),
+        start_date: z.string(),
+        end_date: z.string(),
+        type: z.enum(["congés", "maladie", "formation", "autre"]).optional(),
+      }),
+      run: async (l) => {
+        db.prepare("INSERT INTO leaves (employee_id, start_date, end_date, type) VALUES (?, ?, ?, ?)").run(
+          l.employee_id,
+          l.start_date,
+          l.end_date,
+          l.type ?? "congés",
+        );
+        return "Absence enregistrée.";
+      },
+    }),
+  ];
+}
+
 function crmTools(): AnyTool[] {
   return [
     betaZodTool({
@@ -308,10 +455,20 @@ function delegateTools(ctx: Ctx): AnyTool[] {
   ];
 }
 
-const WEB_TOOLS: Anthropic.Beta.BetaToolUnion[] = [
-  { type: "web_search_20260209", name: "web_search", max_uses: 8 },
-  { type: "web_fetch_20260209", name: "web_fetch", max_uses: 8 },
-];
+// Recherche web : version avec filtrage dynamique sur Opus et Sonnet, version de base sur Haiku.
+// max_uses limite le nombre de recherches (et donc le coût) par tâche.
+function webTools(model: string): Anthropic.Beta.BetaToolUnion[] {
+  if (model.startsWith("claude-haiku")) {
+    return [
+      { type: "web_search_20250305", name: "web_search", max_uses: 6 },
+      { type: "web_fetch_20250910", name: "web_fetch", max_uses: 6 },
+    ];
+  }
+  return [
+    { type: "web_search_20260209", name: "web_search", max_uses: 6 },
+    { type: "web_fetch_20260209", name: "web_fetch", max_uses: 6 },
+  ];
+}
 
 export function buildTools(ctx: Ctx): (AnyTool | Anthropic.Beta.BetaToolUnion)[] {
   const tools: (AnyTool | Anthropic.Beta.BetaToolUnion)[] = [];
@@ -323,8 +480,10 @@ export function buildTools(ctx: Ctx): (AnyTool | Anthropic.Beta.BetaToolUnion)[]
   if (groups.includes("mail") && google) tools.push(...gmailTools().map((t) => logged(ctx, t)));
   if (groups.includes("agenda") && google) tools.push(...agendaTools().map((t) => logged(ctx, t)));
   if (groups.includes("compta")) tools.push(...comptaTools().map((t) => logged(ctx, t)));
+  if (groups.includes("factures")) tools.push(...invoiceTools().map((t) => logged(ctx, t)));
+  if (groups.includes("rh")) tools.push(...rhTools().map((t) => logged(ctx, t)));
   if (groups.includes("crm")) tools.push(...crmTools().map((t) => logged(ctx, t)));
   if (groups.includes("files")) tools.push(...fileTools().map((t) => logged(ctx, t)));
-  if (groups.includes("web")) tools.push(...WEB_TOOLS);
+  if (groups.includes("web")) tools.push(...webTools(ctx.model));
   return tools;
 }
