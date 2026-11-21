@@ -731,6 +731,16 @@ function CompanyModal({ onClose }: { onClose: () => void }) {
           onChange={(e) => setProfile(e.target.value)}
         />
         <div className="mt-2 flex justify-end gap-2">
+          <button
+            className="mr-auto text-xs text-red-600 hover:underline"
+            onClick={async () => {
+              if (!confirm("Effacer toutes les données du bureau (tâches, mails, compta, factures, équipe, fichiers) ? Cette action est définitive.")) return;
+              await fetch("/api/demo", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "reset" }) });
+              window.location.reload();
+            }}
+          >
+            Tout effacer
+          </button>
           <button className="rounded-md border px-3 py-1.5 text-sm" onClick={onClose}>Annuler</button>
           <button
             className="rounded-md bg-slate-800 px-3 py-1.5 text-sm text-white"

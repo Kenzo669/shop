@@ -43,7 +43,7 @@ cp .env.example .env.local   # puis collez votre clé dans ANTHROPIC_API_KEY
 npm run dev
 ```
 
-4. Ouvrez <http://localhost:3000>, cliquez sur **⚙️ Profil entreprise** et décrivez votre entreprise (tous les agents le lisent).
+4. Ouvrez <http://localhost:3000>. Pour tout découvrir sans rien saisir, cliquez sur **« Découvrir avec des données d'exemple »** (aucun coût IA, effaçable ensuite depuis ⚙️ Profil entreprise → Tout effacer). Sinon, décrivez votre entreprise dans **⚙️ Profil entreprise** (tous les agents le lisent).
 5. Cliquez sur un agent dans le bureau 3D et confiez-lui une tâche.
 
 ## Connexions : relier les comptes du client
