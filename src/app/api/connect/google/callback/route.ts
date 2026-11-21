@@ -1,8 +1,9 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { finishGoogleConnect } from "@/lib/google";
+import { authed } from "@/lib/auth";
 
 /** Étape 2 : Google renvoie ici avec un code, qu'on échange contre l'accès au compte. */
-export async function GET(req: NextRequest) {
+async function GET_handler(req: NextRequest) {
   const url = req.nextUrl;
   const back = (q: string) => {
     const res = NextResponse.redirect(new URL(`/?${q}`, req.url));
@@ -23,3 +24,5 @@ export async function GET(req: NextRequest) {
     return back(`connect_error=${encodeURIComponent(err instanceof Error ? err.message : String(err))}`);
   }
 }
+
+export const GET = authed("GET", GET_handler);

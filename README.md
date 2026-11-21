@@ -31,6 +31,27 @@ Les agents agissent avec de vrais outils : base de données (SQLite), fichiers p
 - **Budget mensuel** (les tâches sont bloquées une fois atteint) et **plafond par tâche** (3 $ par défaut).
 - Cache de prompt activé, recherches web limitées à 6 par tâche.
 
+## Comptes et entreprises
+
+- Chaque entreprise cliente crée son compte (page **/inscription**) et obtient son propre bureau : **une base de données et un dossier de fichiers séparés par entreprise** (`data/orgs/<id>/`). Aucune donnée n'est partagée entre entreprises.
+- Le propriétaire invite ses collègues (⚙️ Entreprise → *Inviter un collègue*) avec un lien valable 7 jours, à usage unique.
+- Rôles : **propriétaire** (budget IA, connexions, invitations, remise à zéro) et **membre** (utilise le bureau).
+- Sécurité : mots de passe hachés (scrypt), sessions en cookie `httpOnly`, protection contre les requêtes venant d'autres sites, blocage après plusieurs mots de passe erronés, accès aux outils connectés chiffrés (AES-256).
+- Une installation de l'ancienne version (une seule entreprise) est reprise automatiquement par la première entreprise inscrite.
+
+## Mettre en ligne
+
+Le logiciel tourne sur n'importe quel serveur qui exécute Node.js ou Docker et garde un disque persistant (VPS OVH, Scaleway, Hetzner ; Render, Railway, Fly.io avec un volume). **Pas d'hébergement « serverless » type Vercel** : les agents et les automatisations tournent en continu dans le serveur.
+
+```bash
+docker build -t bureau-ia .
+docker run -d -p 3000:3000 -v bureau-data:/data \
+  -e ANTHROPIC_API_KEY=... -e APP_URL=https://votre-domaine.fr -e APP_SECRET=une-longue-phrase-secrete \
+  bureau-ia
+```
+
+À prévoir : un nom de domaine en **HTTPS** (indispensable pour les cookies sécurisés et les connexions OAuth), `APP_URL` réglé sur cette adresse, `APP_SECRET` fixé et gardé secret, et une **sauvegarde régulière du volume `/data`**.
+
 ## Démarrer
 
 ### Le plus simple : double-clic

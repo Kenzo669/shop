@@ -1,4 +1,5 @@
-import { db } from "./db";
+import { db, runAsOrg } from "./db";
+import { allOrgIds } from "./auth";
 import { createTask, startTask } from "./runner";
 import { budgetBlockReason } from "./billing";
 
@@ -60,10 +61,13 @@ const g = globalThis as unknown as { __bureauScheduler?: NodeJS.Timeout };
 export function startScheduler() {
   if (g.__bureauScheduler) return;
   g.__bureauScheduler = setInterval(() => {
-    try {
-      runDueTasks();
-    } catch (err) {
-      console.error("[automatisations]", err);
+    // Chaque entreprise a sa propre base : on passe de l'une à l'autre.
+    for (const orgId of allOrgIds()) {
+      try {
+        runAsOrg({ orgId, userId: null, role: "system" }, () => runDueTasks());
+      } catch (err) {
+        console.error(`[automatisations] entreprise ${orgId}`, err);
+      }
     }
   }, 60_000);
 }

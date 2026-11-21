@@ -1,13 +1,14 @@
 import fs from "fs";
 import path from "path";
 import { NextResponse } from "next/server";
-import { db, FILES_DIR } from "@/lib/db";
+import { db, filesDir } from "@/lib/db";
+import { authed } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
-export function GET() {
-  const files = fs.readdirSync(FILES_DIR).map((name) => {
-    const st = fs.statSync(path.join(FILES_DIR, name));
+function GET_handler() {
+  const files = fs.readdirSync(filesDir()).map((name) => {
+    const st = fs.statSync(path.join(filesDir(), name));
     return { name, size: st.size, modified: st.mtime.toISOString() };
   });
   files.sort((a, b) => b.modified.localeCompare(a.modified));
@@ -18,3 +19,5 @@ export function GET() {
     files,
   });
 }
+
+export const GET = authed("GET", GET_handler);

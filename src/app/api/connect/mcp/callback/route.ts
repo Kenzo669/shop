@@ -1,8 +1,9 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { finishOAuth } from "@/lib/mcp";
+import { authed } from "@/lib/auth";
 
 /** Retour de la page de consentement de l'éditeur. */
-export async function GET(req: NextRequest) {
+async function GET_handler(req: NextRequest) {
   const q = req.nextUrl.searchParams;
   const back = (p: string) => NextResponse.redirect(new URL(`/?${p}`, req.url));
   const error = q.get("error");
@@ -17,3 +18,5 @@ export async function GET(req: NextRequest) {
     return back(`connect_error=${encodeURIComponent(err instanceof Error ? err.message : String(err))}`);
   }
 }
+
+export const GET = authed("GET", GET_handler);

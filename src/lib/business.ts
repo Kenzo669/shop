@@ -2,7 +2,7 @@
 // Les agents les utilisent comme outils, et l'interface les affiche directement.
 import fs from "fs";
 import path from "path";
-import { db, FILES_DIR, getCompanyProfile, getSetting } from "./db";
+import { db, filesDir, getCompanyProfile, getSetting } from "./db";
 
 const round = (n: number) => Math.round(n * 100) / 100;
 const eur = (n: number) => n.toLocaleString("fr-FR", { style: "currency", currency: "EUR" });
@@ -150,7 +150,7 @@ export function createInvoice(input: {
   const file = `facture-${number}.html`;
   const totals = { ht: round(ht), vat: round(vat), ttc: round(ht + vat) };
   fs.writeFileSync(
-    path.join(FILES_DIR, file),
+    path.join(filesDir(), file),
     invoiceHtml({ number, issue, dueDate, ...input, totals }),
     "utf8",
   );

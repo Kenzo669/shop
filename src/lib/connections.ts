@@ -1,4 +1,4 @@
-import { db } from "./db";
+import { db, registerSchema } from "./db";
 import { decrypt, encrypt } from "./crypto";
 
 export type Provider = "google";
@@ -14,7 +14,7 @@ export type Connection = {
 
 type Row = Connection & { access_token: string; refresh_token: string | null };
 
-db.exec(`
+registerSchema(`
   CREATE TABLE IF NOT EXISTS connections (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     provider TEXT NOT NULL,

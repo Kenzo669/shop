@@ -2,7 +2,7 @@
 // Aucune tâche IA n'est lancée : cela ne consomme aucun token.
 import fs from "fs";
 import path from "path";
-import { db, FILES_DIR, setCompanyProfile } from "./db";
+import { db, filesDir, setCompanyProfile } from "./db";
 import { addDays, createInvoice, markInvoicePaid, mondayOf } from "./business";
 
 export function isEmpty() {
@@ -91,5 +91,5 @@ export function resetData() {
     DELETE FROM leaves; DELETE FROM recurring; DELETE FROM usage;
     DELETE FROM settings WHERE key IN ('company');
   `);
-  for (const f of fs.readdirSync(FILES_DIR)) fs.rmSync(path.join(FILES_DIR, f), { force: true });
+  for (const f of fs.readdirSync(filesDir())) fs.rmSync(path.join(filesDir(), f), { force: true });
 }

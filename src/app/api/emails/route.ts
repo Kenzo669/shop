@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import { authed } from "@/lib/auth";
 
 /** Ajoute un mail reçu (copier-coller) pour que Léa puisse le traiter. */
-export async function POST(req: Request) {
+async function POST_handler(req: Request) {
   const { from, subject, body } = (await req.json()) as { from?: string; subject?: string; body?: string };
   if (!subject?.trim() || !body?.trim()) return NextResponse.json({ error: "objet et contenu requis" }, { status: 400 });
   const r = db
@@ -10,3 +11,5 @@ export async function POST(req: Request) {
     .run(from ?? "", subject, body);
   return NextResponse.json({ id: Number(r.lastInsertRowid) });
 }
+
+export const POST = authed("POST", POST_handler);

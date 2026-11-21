@@ -1,14 +1,15 @@
 import { NextResponse } from "next/server";
 import { createInvoice, listInvoices, type InvoiceLine } from "@/lib/business";
+import { authed } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
-export function GET() {
+function GET_handler() {
   return NextResponse.json({ invoices: listInvoices() });
 }
 
 /** Création d'une facture depuis le formulaire (sans IA). */
-export async function POST(req: Request) {
+async function POST_handler(req: Request) {
   const b = (await req.json()) as {
     client?: string;
     client_email?: string;
@@ -33,3 +34,6 @@ export async function POST(req: Request) {
     }),
   );
 }
+
+export const GET = authed("GET", GET_handler);
+export const POST = authed("POST", POST_handler);

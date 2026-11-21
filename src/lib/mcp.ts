@@ -2,11 +2,11 @@
 // découverte OAuth standard, enregistrement automatique du client, PKCE, jetons chiffrés,
 // lecture de la liste des actions du serveur, et configuration pour l'API Claude.
 import crypto from "crypto";
-import { db } from "./db";
+import { db, registerSchema } from "./db";
 import { decrypt, encrypt } from "./crypto";
 import { CATALOG_BY_ID } from "./catalog";
 
-db.exec(`
+registerSchema(`
   CREATE TABLE IF NOT EXISTS mcp_connections (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     catalog_id TEXT NOT NULL,       -- entrée du catalogue, ou 'custom'

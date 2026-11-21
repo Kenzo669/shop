@@ -12,7 +12,11 @@ import ConnectionsModal from "./Connections";
 
 const Office3D = dynamic(() => import("./Office3D"), {
   ssr: false,
-  loading: () => <div className="grid h-full place-items-center text-sm text-gray-500">Chargement du bureau 3D…</div>,
+  loading: () => (
+    <div className="grid h-full place-items-center text-sm text-gray-500">
+      Chargement du bureau 3D…
+    </div>
+  ),
 });
 
 type Task = {
@@ -25,7 +29,12 @@ type Task = {
   created_at: string;
   cost_usd: number;
 };
-type Log = { id: number; kind: "message" | "tool" | "result" | "error"; content: string; created_at: string };
+type Log = {
+  id: number;
+  kind: "message" | "tool" | "result" | "error";
+  content: string;
+  created_at: string;
+};
 type Email = {
   id: number;
   direction: "in" | "out";
@@ -37,7 +46,14 @@ type Email = {
   agent_id: string | null;
   created_at: string;
 };
-type Transaction = { id: number; date: string; label: string; category: string; amount: number; vat_rate: number };
+type Transaction = {
+  id: number;
+  date: string;
+  label: string;
+  category: string;
+  amount: number;
+  vat_rate: number;
+};
 type Prospect = {
   id: number;
   company: string;
@@ -59,7 +75,12 @@ type State = {
   monthSpend: number;
   budget: number;
 };
-type Data = { emails: Email[]; transactions: Transaction[]; prospects: Prospect[]; files: FileInfo[] };
+type Data = {
+  emails: Email[];
+  transactions: Transaction[];
+  prospects: Prospect[];
+  files: FileInfo[];
+};
 
 const STATUS_LABEL: Record<Task["status"], string> = {
   queued: "en attente",
@@ -74,20 +95,36 @@ const STATUS_COLOR: Record<Task["status"], string> = {
   error: "bg-red-100 text-red-800",
 };
 
+type Me = { name: string; email: string; role: "owner" | "member" };
 
-
-export default function Dashboard() {
+export default function Dashboard({
+  me,
+  orgName,
+}: {
+  me: Me;
+  orgName: string;
+}) {
+  const isOwner = me.role === "owner";
   const [state, reloadState] = usePoll<State>("/api/state", 2000);
   const [data, reloadData] = usePoll<Data>("/api/data", 4000);
   const [selectedAgent, setSelectedAgent] = useState<string>("direction");
   const [selectedTask, setSelectedTask] = useState<number | null>(null);
-  type Tab = "today" | "activite" | "mails" | "compta" | "equipe" | "prospects" | "fichiers";
+  type Tab =
+    | "today"
+    | "activite"
+    | "mails"
+    | "compta"
+    | "equipe"
+    | "prospects"
+    | "fichiers";
   const [tab, setTab] = useState<Tab>("today");
   const [showUsage, setShowUsage] = useState(false);
   const [showRecurring, setShowRecurring] = useState(false);
   const [showCompany, setShowCompany] = useState(false);
   const [showConnections, setShowConnections] = useState(false);
-  const [notice, setNotice] = useState<{ ok: boolean; text: string } | null>(null);
+  const [notice, setNotice] = useState<{ ok: boolean; text: string } | null>(
+    null,
+  );
 
   // Retour de la page de connexion Google : on affiche le résultat puis on nettoie l'adresse.
   useEffect(() => {
@@ -97,7 +134,10 @@ export default function Dashboard() {
     if (!connected && !error) return;
     setNotice(
       connected
-        ? { ok: true, text: `Compte ${connected} connecté : vos agents peuvent maintenant l'utiliser.` }
+        ? {
+            ok: true,
+            text: `Compte ${connected} connecté : vos agents peuvent maintenant l'utiliser.`,
+          }
         : { ok: false, text: `Connexion impossible : ${error}` },
     );
     setShowConnections(true);
@@ -121,34 +161,54 @@ export default function Dashboard() {
     <div className="flex min-h-screen flex-col bg-slate-100 text-gray-900">
       <header className="flex flex-wrap items-center gap-3 border-b bg-white px-4 py-3">
         <div className="text-lg font-bold">🏢 Bureau IA</div>
-        <div className="text-sm text-gray-500">Votre équipe d&apos;agents IA, au travail.</div>
+        <div className="text-sm text-gray-500">{orgName}</div>
         <div className="ml-auto flex flex-wrap items-center gap-2 text-xs">
-          <Badge ok={state?.aiConfigured} okText="IA connectée" koText="Clé API Claude manquante" />
-          <button onClick={() => setShowUsage(true)} className="rounded-md border px-3 py-1.5 hover:bg-gray-50">
-            💰 {state ? usd(state.monthSpend) : "…"}
-            {state?.budget ? <span className="text-gray-400"> / {usd(state.budget)}</span> : null}
-          </button>
-          <button onClick={() => setShowRecurring(true)} className="rounded-md border px-3 py-1.5 hover:bg-gray-50">
-            ⏰ Automatisations
-          </button>
+          <Badge
+            ok={state?.aiConfigured}
+            okText="IA connectée"
+            koText="Clé API Claude manquante"
+          />
           <button
-            onClick={() => setShowConnections(true)}
+            onClick={() => setShowUsage(true)}
             className="rounded-md border px-3 py-1.5 hover:bg-gray-50"
           >
-            🔌 Connexions
-            {state && (
-              <span
-                className={`ml-1.5 rounded-full px-1.5 py-0.5 text-[10px] ${
-                  state.connections.length + state.mcpCount ? "bg-emerald-100 text-emerald-800" : "bg-gray-100 text-gray-600"
-                }`}
-              >
-                {state.connections.length + state.mcpCount}
-              </span>
-            )}
+            💰 {state ? usd(state.monthSpend) : "…"}
+            {state?.budget ? (
+              <span className="text-gray-400"> / {usd(state.budget)}</span>
+            ) : null}
           </button>
-          <button onClick={() => setShowCompany(true)} className="rounded-md border px-3 py-1.5 hover:bg-gray-50">
-            ⚙️ Profil entreprise
+          <button
+            onClick={() => setShowRecurring(true)}
+            className="rounded-md border px-3 py-1.5 hover:bg-gray-50"
+          >
+            ⏰ Automatisations
           </button>
+          {isOwner && (
+            <button
+              onClick={() => setShowConnections(true)}
+              className="rounded-md border px-3 py-1.5 hover:bg-gray-50"
+            >
+              🔌 Connexions
+              {state && (
+                <span
+                  className={`ml-1.5 rounded-full px-1.5 py-0.5 text-[10px] ${
+                    state.connections.length + state.mcpCount
+                      ? "bg-emerald-100 text-emerald-800"
+                      : "bg-gray-100 text-gray-600"
+                  }`}
+                >
+                  {state.connections.length + state.mcpCount}
+                </span>
+              )}
+            </button>
+          )}
+          <button
+            onClick={() => setShowCompany(true)}
+            className="rounded-md border px-3 py-1.5 hover:bg-gray-50"
+          >
+            ⚙️ Entreprise
+          </button>
+          <UserMenu me={me} />
         </div>
       </header>
 
@@ -163,7 +223,8 @@ export default function Dashboard() {
             }}
           />
           <div className="pointer-events-none absolute bottom-2 left-3 text-xs text-gray-500">
-            Cliquez sur un agent pour lui confier une tâche · glissez pour tourner la vue
+            Cliquez sur un agent pour lui confier une tâche · glissez pour
+            tourner la vue
           </div>
         </div>
 
@@ -174,7 +235,9 @@ export default function Dashboard() {
             setSelectedAgent(id);
             setSelectedTask(null);
           }}
-          tasks={(state?.tasks ?? []).filter((t) => t.agent_id === selectedAgent)}
+          tasks={(state?.tasks ?? []).filter(
+            (t) => t.agent_id === selectedAgent,
+          )}
           selectedTask={selectedTask}
           onSelectTask={setSelectedTask}
           onCreated={(id) => {
@@ -217,18 +280,38 @@ export default function Dashboard() {
               }}
             />
           )}
-          {tab === "mails" && <Mails emails={data?.emails ?? []} onChange={refresh} />}
+          {tab === "mails" && (
+            <Mails emails={data?.emails ?? []} onChange={refresh} />
+          )}
           {tab === "today" && <Today onAsked={onAsked} goTo={setTab} />}
-          {tab === "compta" && <ComptaPanel transactions={data?.transactions ?? []} onAsked={onAsked} />}
+          {tab === "compta" && (
+            <ComptaPanel
+              transactions={data?.transactions ?? []}
+              onAsked={onAsked}
+            />
+          )}
           {tab === "equipe" && <Team onAsked={onAsked} />}
-          {tab === "prospects" && <Prospects prospects={data?.prospects ?? []} />}
+          {tab === "prospects" && (
+            <Prospects prospects={data?.prospects ?? []} />
+          )}
           {tab === "fichiers" && <Files files={data?.files ?? []} />}
         </div>
       </section>
 
-      {showCompany && <CompanyModal onClose={() => setShowCompany(false)} />}
-      {showUsage && <UsageModal onClose={() => { setShowUsage(false); refresh(); }} />}
-      {showRecurring && <RecurringModal onClose={() => setShowRecurring(false)} />}
+      {showCompany && (
+        <CompanyModal isOwner={isOwner} onClose={() => setShowCompany(false)} />
+      )}
+      {showUsage && (
+        <UsageModal
+          onClose={() => {
+            setShowUsage(false);
+            refresh();
+          }}
+        />
+      )}
+      {showRecurring && (
+        <RecurringModal onClose={() => setShowRecurring(false)} />
+      )}
       {showConnections && (
         <ConnectionsModal
           notice={notice}
@@ -248,10 +331,20 @@ function countDrafts(data: Data | null) {
   return n ? ` (${n} à valider)` : "";
 }
 
-function Badge({ ok, okText, koText }: { ok?: boolean; okText: string; koText: string }) {
+function Badge({
+  ok,
+  okText,
+  koText,
+}: {
+  ok?: boolean;
+  okText: string;
+  koText: string;
+}) {
   if (ok === undefined) return null;
   return (
-    <span className={`rounded-full px-2.5 py-1 ${ok ? "bg-emerald-100 text-emerald-800" : "bg-amber-100 text-amber-800"}`}>
+    <span
+      className={`rounded-full px-2.5 py-1 ${ok ? "bg-emerald-100 text-emerald-800" : "bg-amber-100 text-amber-800"}`}
+    >
       {ok ? "● " + okText : "○ " + koText}
     </span>
   );
@@ -307,13 +400,21 @@ function AgentPanel({
             style={a.id === agentId ? { background: a.color } : undefined}
           >
             {a.name}
-            {working.includes(a.id) && <span className="ml-1 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-amber-400 align-middle" />}
+            {working.includes(a.id) && (
+              <span className="ml-1 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-amber-400 align-middle" />
+            )}
           </button>
         ))}
       </div>
-      <div className="border-b p-4" style={{ borderTop: `4px solid ${agent.color}` }}>
+      <div
+        className="border-b p-4"
+        style={{ borderTop: `4px solid ${agent.color}` }}
+      >
         <div className="flex items-center gap-2">
-          <span className="grid h-9 w-9 place-items-center rounded-full text-white" style={{ background: agent.color }}>
+          <span
+            className="grid h-9 w-9 place-items-center rounded-full text-white"
+            style={{ background: agent.color }}
+          >
             {agent.name[0]}
           </span>
           <div>
@@ -361,10 +462,17 @@ function AgentPanel({
           <TaskDetail id={selectedTask} onBack={() => onSelectTask(null)} />
         ) : (
           <ul className="divide-y">
-            {tasks.length === 0 && <li className="p-4 text-sm text-gray-500">Aucune tâche pour l&apos;instant.</li>}
+            {tasks.length === 0 && (
+              <li className="p-4 text-sm text-gray-500">
+                Aucune tâche pour l&apos;instant.
+              </li>
+            )}
             {tasks.map((t) => (
               <li key={t.id}>
-                <button onClick={() => onSelectTask(t.id)} className="w-full p-3 text-left hover:bg-gray-50">
+                <button
+                  onClick={() => onSelectTask(t.id)}
+                  className="w-full p-3 text-left hover:bg-gray-50"
+                >
                   <TaskLine t={t} />
                 </button>
               </li>
@@ -380,7 +488,9 @@ function TaskLine({ t, showAgent }: { t: Task; showAgent?: boolean }) {
   const a = AGENT_BY_ID[t.agent_id];
   return (
     <div className="flex items-start gap-2">
-      <span className={`shrink-0 rounded px-1.5 py-0.5 text-[10px] font-medium ${STATUS_COLOR[t.status]}`}>
+      <span
+        className={`shrink-0 rounded px-1.5 py-0.5 text-[10px] font-medium ${STATUS_COLOR[t.status]}`}
+      >
         {STATUS_LABEL[t.status]}
       </span>
       <div className="min-w-0 text-sm">
@@ -389,11 +499,16 @@ function TaskLine({ t, showAgent }: { t: Task; showAgent?: boolean }) {
             {a?.name}
           </span>
         )}
-        {t.parent_task_id && <span className="mr-1 text-xs text-gray-400">↳ délégué</span>}
+        {t.parent_task_id && (
+          <span className="mr-1 text-xs text-gray-400">↳ délégué</span>
+        )}
         <span className="line-clamp-2">{t.instruction}</span>
       </div>
       {t.cost_usd > 0 && (
-        <span className="ml-auto shrink-0 text-[11px] text-gray-400" title="Coût IA de cette tâche">
+        <span
+          className="ml-auto shrink-0 text-[11px] text-gray-400"
+          title="Coût IA de cette tâche"
+        >
           {usd(t.cost_usd)}
         </span>
       )}
@@ -406,7 +521,10 @@ function TaskDetail({ id, onBack }: { id: number; onBack: () => void }) {
   if (!d) return <div className="p-4 text-sm text-gray-500">Chargement…</div>;
   return (
     <div className="p-3">
-      <button onClick={onBack} className="mb-2 text-xs text-gray-500 hover:underline">
+      <button
+        onClick={onBack}
+        className="mb-2 text-xs text-gray-500 hover:underline"
+      >
         ← Toutes les tâches
       </button>
       <TaskLine t={d.task} />
@@ -428,20 +546,37 @@ function TaskDetail({ id, onBack }: { id: number; onBack: () => void }) {
           </li>
         ))}
         {(d.task.status === "running" || d.task.status === "queued") && (
-          <li className="animate-pulse text-xs text-gray-400">L&apos;agent travaille…</li>
+          <li className="animate-pulse text-xs text-gray-400">
+            L&apos;agent travaille…
+          </li>
         )}
       </ol>
     </div>
   );
 }
 
-function Activity({ tasks, onOpen }: { tasks: Task[]; onOpen: (t: Task) => void }) {
-  if (!tasks.length) return <p className="text-sm text-gray-500">Rien pour l&apos;instant : cliquez sur un agent et confiez-lui une tâche.</p>;
+function Activity({
+  tasks,
+  onOpen,
+}: {
+  tasks: Task[];
+  onOpen: (t: Task) => void;
+}) {
+  if (!tasks.length)
+    return (
+      <p className="text-sm text-gray-500">
+        Rien pour l&apos;instant : cliquez sur un agent et confiez-lui une
+        tâche.
+      </p>
+    );
   return (
     <ul className="divide-y">
       {tasks.map((t) => (
         <li key={t.id}>
-          <button onClick={() => onOpen(t)} className="w-full py-2 text-left hover:bg-gray-50">
+          <button
+            onClick={() => onOpen(t)}
+            className="w-full py-2 text-left hover:bg-gray-50"
+          >
             <TaskLine t={t} showAgent />
           </button>
         </li>
@@ -450,20 +585,40 @@ function Activity({ tasks, onOpen }: { tasks: Task[]; onOpen: (t: Task) => void 
   );
 }
 
-function Mails({ emails, onChange }: { emails: Email[]; onChange: () => void }) {
+function Mails({
+  emails,
+  onChange,
+}: {
+  emails: Email[];
+  onChange: () => void;
+}) {
   const [adding, setAdding] = useState(false);
   const drafts = emails.filter((e) => e.status === "draft");
   const others = emails.filter((e) => e.status !== "draft");
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-2">
-        <h3 className="font-semibold">Brouillons à valider ({drafts.length})</h3>
-        <button onClick={() => setAdding((v) => !v)} className="ml-auto rounded-md border px-3 py-1 text-sm hover:bg-gray-50">
+        <h3 className="font-semibold">
+          Brouillons à valider ({drafts.length})
+        </h3>
+        <button
+          onClick={() => setAdding((v) => !v)}
+          className="ml-auto rounded-md border px-3 py-1 text-sm hover:bg-gray-50"
+        >
           + Ajouter un mail reçu
         </button>
       </div>
-      {adding && <IncomingForm onDone={() => { setAdding(false); onChange(); }} />}
-      {drafts.length === 0 && <p className="text-sm text-gray-500">Aucun brouillon.</p>}
+      {adding && (
+        <IncomingForm
+          onDone={() => {
+            setAdding(false);
+            onChange();
+          }}
+        />
+      )}
+      {drafts.length === 0 && (
+        <p className="text-sm text-gray-500">Aucun brouillon.</p>
+      )}
       {drafts.map((e) => (
         <DraftCard key={e.id} email={e} onChange={onChange} />
       ))}
@@ -474,11 +629,15 @@ function Mails({ emails, onChange }: { emails: Email[]; onChange: () => void }) 
             <details>
               <summary className="cursor-pointer">
                 <span className="mr-2 text-xs text-gray-500">
-                  {e.status === "received" ? "📥 reçu de " + (e.from_addr || "?") : "📤 envoyé à " + e.to_addr}
+                  {e.status === "received"
+                    ? "📥 reçu de " + (e.from_addr || "?")
+                    : "📤 envoyé à " + e.to_addr}
                 </span>
                 {e.subject}
               </summary>
-              <pre className="mt-2 whitespace-pre-wrap font-sans text-gray-700">{e.body}</pre>
+              <pre className="mt-2 whitespace-pre-wrap font-sans text-gray-700">
+                {e.body}
+              </pre>
             </details>
           </li>
         ))}
@@ -493,10 +652,28 @@ function IncomingForm({ onDone }: { onDone: () => void }) {
   const [body, setBody] = useState("");
   return (
     <div className="space-y-2 rounded-md border bg-slate-50 p-3 text-sm">
-      <p className="text-xs text-gray-500">Collez un mail reçu : Léa pourra ensuite y répondre.</p>
-      <input className="w-full rounded border p-2" placeholder="Expéditeur" value={from} onChange={(e) => setFrom(e.target.value)} />
-      <input className="w-full rounded border p-2" placeholder="Objet" value={subject} onChange={(e) => setSubject(e.target.value)} />
-      <textarea className="w-full rounded border p-2" rows={4} placeholder="Contenu" value={body} onChange={(e) => setBody(e.target.value)} />
+      <p className="text-xs text-gray-500">
+        Collez un mail reçu : Léa pourra ensuite y répondre.
+      </p>
+      <input
+        className="w-full rounded border p-2"
+        placeholder="Expéditeur"
+        value={from}
+        onChange={(e) => setFrom(e.target.value)}
+      />
+      <input
+        className="w-full rounded border p-2"
+        placeholder="Objet"
+        value={subject}
+        onChange={(e) => setSubject(e.target.value)}
+      />
+      <textarea
+        className="w-full rounded border p-2"
+        rows={4}
+        placeholder="Contenu"
+        value={body}
+        onChange={(e) => setBody(e.target.value)}
+      />
       <button
         className="rounded-md bg-slate-800 px-3 py-1.5 text-white"
         onClick={async () => {
@@ -514,7 +691,13 @@ function IncomingForm({ onDone }: { onDone: () => void }) {
   );
 }
 
-function DraftCard({ email, onChange }: { email: Email; onChange: () => void }) {
+function DraftCard({
+  email,
+  onChange,
+}: {
+  email: Email;
+  onChange: () => void;
+}) {
   const [to, setTo] = useState(email.to_addr ?? "");
   const [subject, setSubject] = useState(email.subject);
   const [body, setBody] = useState(email.body);
@@ -523,9 +706,23 @@ function DraftCard({ email, onChange }: { email: Email; onChange: () => void }) 
   return (
     <div className="space-y-2 rounded-md border p-3 text-sm">
       <div className="text-xs text-gray-500">Rédigé par {a?.name ?? "?"}</div>
-      <input className="w-full rounded border p-2" placeholder="Destinataire" value={to} onChange={(e) => setTo(e.target.value)} />
-      <input className="w-full rounded border p-2 font-semibold" value={subject} onChange={(e) => setSubject(e.target.value)} />
-      <textarea className="w-full rounded border p-2" rows={6} value={body} onChange={(e) => setBody(e.target.value)} />
+      <input
+        className="w-full rounded border p-2"
+        placeholder="Destinataire"
+        value={to}
+        onChange={(e) => setTo(e.target.value)}
+      />
+      <input
+        className="w-full rounded border p-2 font-semibold"
+        value={subject}
+        onChange={(e) => setSubject(e.target.value)}
+      />
+      <textarea
+        className="w-full rounded border p-2"
+        rows={6}
+        value={body}
+        onChange={(e) => setBody(e.target.value)}
+      />
       <div className="flex items-center gap-2">
         <button
           className="rounded-md bg-emerald-600 px-3 py-1.5 font-semibold text-white"
@@ -545,7 +742,11 @@ function DraftCard({ email, onChange }: { email: Email; onChange: () => void }) 
         </button>
         <button
           className="rounded-md border px-3 py-1.5"
-          onClick={() => navigator.clipboard.writeText(`${subject}\n\n${body}`).then(() => setMsg("Copié"))}
+          onClick={() =>
+            navigator.clipboard
+              .writeText(`${subject}\n\n${body}`)
+              .then(() => setMsg("Copié"))
+          }
         >
           Copier
         </button>
@@ -564,24 +765,51 @@ function DraftCard({ email, onChange }: { email: Email; onChange: () => void }) 
   );
 }
 
-
 function Prospects({ prospects }: { prospects: Prospect[] }) {
-  if (!prospects.length) return <p className="text-sm text-gray-500">CRM vide. Demandez à Sami de trouver des prospects.</p>;
+  if (!prospects.length)
+    return (
+      <p className="text-sm text-gray-500">
+        CRM vide. Demandez à Sami de trouver des prospects.
+      </p>
+    );
   return (
     <div className="overflow-x-auto">
       <table className="w-full text-sm">
         <thead className="text-left text-xs text-gray-500">
-          <tr><th className="p-1">Entreprise</th><th className="p-1">Contact</th><th className="p-1">Email / tél.</th><th className="p-1">Statut</th><th className="p-1">Notes</th></tr>
+          <tr>
+            <th className="p-1">Entreprise</th>
+            <th className="p-1">Contact</th>
+            <th className="p-1">Email / tél.</th>
+            <th className="p-1">Statut</th>
+            <th className="p-1">Notes</th>
+          </tr>
         </thead>
         <tbody className="divide-y">
           {prospects.map((p) => (
             <tr key={p.id} className="align-top">
               <td className="p-1 font-medium">
-                {p.website ? <a className="underline" href={p.website} target="_blank" rel="noreferrer">{p.company}</a> : p.company}
+                {p.website ? (
+                  <a
+                    className="underline"
+                    href={p.website}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {p.company}
+                  </a>
+                ) : (
+                  p.company
+                )}
               </td>
               <td className="p-1">{p.contact}</td>
-              <td className="p-1">{[p.email, p.phone].filter(Boolean).join(" · ")}</td>
-              <td className="p-1"><span className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">{p.status}</span></td>
+              <td className="p-1">
+                {[p.email, p.phone].filter(Boolean).join(" · ")}
+              </td>
+              <td className="p-1">
+                <span className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">
+                  {p.status}
+                </span>
+              </td>
               <td className="p-1 text-xs text-gray-600">{p.notes}</td>
             </tr>
           ))}
@@ -592,49 +820,221 @@ function Prospects({ prospects }: { prospects: Prospect[] }) {
 }
 
 function Files({ files }: { files: FileInfo[] }) {
-  if (!files.length) return <p className="text-sm text-gray-500">Aucun fichier. Les agents y déposeront leurs documents.</p>;
+  if (!files.length)
+    return (
+      <p className="text-sm text-gray-500">
+        Aucun fichier. Les agents y déposeront leurs documents.
+      </p>
+    );
   return (
     <ul className="divide-y text-sm">
       {files.map((f) => (
         <li key={f.name} className="flex items-center gap-3 py-2">
-          <a className="font-medium underline" href={`/api/files/${encodeURIComponent(f.name)}`} target="_blank" rel="noreferrer">
+          <a
+            className="font-medium underline"
+            href={`/api/files/${encodeURIComponent(f.name)}`}
+            target="_blank"
+            rel="noreferrer"
+          >
             {f.name}
           </a>
-          <span className="text-xs text-gray-500">{(f.size / 1024).toFixed(1)} Ko</span>
-          <span className="ml-auto text-xs text-gray-400">{new Date(f.modified).toLocaleString("fr-FR")}</span>
+          <span className="text-xs text-gray-500">
+            {(f.size / 1024).toFixed(1)} Ko
+          </span>
+          <span className="ml-auto text-xs text-gray-400">
+            {new Date(f.modified).toLocaleString("fr-FR")}
+          </span>
         </li>
       ))}
     </ul>
   );
 }
 
-function CompanyModal({ onClose }: { onClose: () => void }) {
-  const [profile, setProfile] = useState<string | null>(null);
+function UserMenu({ me }: { me: Me }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="grid h-8 w-8 place-items-center rounded-full bg-slate-800 text-xs font-semibold text-white"
+        title={me.email}
+        aria-label="Mon compte"
+      >
+        {me.name.slice(0, 1).toUpperCase()}
+      </button>
+      {open && (
+        <div className="absolute right-0 z-40 mt-2 w-56 rounded-lg border bg-white p-3 text-sm shadow-lg">
+          <div className="font-medium">{me.name}</div>
+          <div className="truncate text-xs text-gray-500">{me.email}</div>
+          <div className="mt-1 text-xs text-gray-400">
+            {me.role === "owner" ? "Propriétaire" : "Membre"}
+          </div>
+          <button
+            className="mt-3 w-full rounded-md border px-3 py-1.5 text-left hover:bg-gray-50"
+            onClick={async () => {
+              await fetch("/api/auth/logout", { method: "POST" });
+              window.location.href = "/login";
+            }}
+          >
+            Se déconnecter
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+type Member = { id: number; name: string; email: string; role: string };
+
+function Members({ isOwner }: { isOwner: boolean }) {
+  const [d, setD] = useState<{
+    members: Member[];
+    me: { id: number } | null;
+  } | null>(null);
+  const [link, setLink] = useState<string | null>(null);
+  const [err, setErr] = useState<string | null>(null);
+  const load = () =>
+    fetch("/api/auth/members")
+      .then((r) => r.json())
+      .then(setD);
   useEffect(() => {
-    fetch("/api/company").then((r) => r.json()).then((d) => setProfile(d.profile));
+    load();
   }, []);
   return (
-    <div className="fixed inset-0 z-50 grid place-items-center bg-black/30 p-4" onClick={onClose}>
-      <div className="w-full max-w-lg rounded-xl bg-white p-4" onClick={(e) => e.stopPropagation()}>
+    <div className="mt-5 border-t pt-4">
+      <h3 className="text-sm font-semibold">Membres du compte</h3>
+      <ul className="mt-2 divide-y text-sm">
+        {d?.members.map((m) => (
+          <li key={m.id} className="flex items-center gap-2 py-1.5">
+            <span className="font-medium">{m.name}</span>
+            <span className="truncate text-xs text-gray-500">{m.email}</span>
+            <span className="ml-auto text-xs text-gray-400">
+              {m.role === "owner" ? "propriétaire" : "membre"}
+            </span>
+            {isOwner && m.id !== d.me?.id && (
+              <button
+                className="text-xs text-red-600 hover:underline"
+                onClick={async () => {
+                  if (!confirm(`Retirer ${m.name} du compte ?`)) return;
+                  const r = await fetch("/api/auth/members", {
+                    method: "DELETE",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ userId: m.id }),
+                  });
+                  if (!r.ok) setErr((await r.json()).error);
+                  load();
+                }}
+              >
+                Retirer
+              </button>
+            )}
+          </li>
+        ))}
+      </ul>
+      {isOwner && (
+        <div className="mt-2">
+          <button
+            className="rounded-md border px-3 py-1.5 text-sm hover:bg-gray-50"
+            onClick={async () => {
+              setErr(null);
+              const r = await fetch("/api/auth/invite", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: "{}",
+              });
+              const j = await r.json();
+              if (r.ok) setLink(j.url);
+              else setErr(j.error);
+            }}
+          >
+            + Inviter un collègue
+          </button>
+          {link && (
+            <div className="mt-2 rounded-md bg-slate-50 p-2 text-xs">
+              Envoyez ce lien (valable 7 jours, une seule utilisation) :
+              <div className="mt-1 flex gap-2">
+                <input
+                  readOnly
+                  value={link}
+                  className="flex-1 rounded border bg-white p-1 font-mono"
+                  onFocus={(e) => e.target.select()}
+                />
+                <button
+                  className="rounded border px-2"
+                  onClick={() => navigator.clipboard.writeText(link)}
+                >
+                  Copier
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+      {err && <p className="mt-1 text-xs text-red-600">{err}</p>}
+    </div>
+  );
+}
+
+function CompanyModal({
+  onClose,
+  isOwner,
+}: {
+  onClose: () => void;
+  isOwner: boolean;
+}) {
+  const [profile, setProfile] = useState<string | null>(null);
+  useEffect(() => {
+    fetch("/api/company")
+      .then((r) => r.json())
+      .then((d) => setProfile(d.profile));
+  }, []);
+  return (
+    <div
+      className="fixed inset-0 z-50 grid place-items-center bg-black/30 p-4"
+      onClick={onClose}
+    >
+      <div
+        className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-xl bg-white p-4"
+        onClick={(e) => e.stopPropagation()}
+      >
         <h2 className="font-semibold">Profil de l&apos;entreprise</h2>
-        <p className="mb-2 text-xs text-gray-500">Tous les agents lisent ce profil avant chaque tâche. Plus il est précis, meilleur est leur travail.</p>
+        <p className="mb-2 text-xs text-gray-500">
+          Tous les agents lisent ce profil avant chaque tâche. Plus il est
+          précis, meilleur est leur travail.
+        </p>
         <textarea
           className="h-64 w-full rounded border p-2 text-sm"
           value={profile ?? "Chargement…"}
           onChange={(e) => setProfile(e.target.value)}
         />
         <div className="mt-2 flex justify-end gap-2">
+          {isOwner && (
+            <button
+              className="mr-auto text-xs text-red-600 hover:underline"
+              onClick={async () => {
+                if (
+                  !confirm(
+                    "Effacer toutes les données du bureau (tâches, mails, compta, factures, équipe, fichiers) ? Cette action est définitive.",
+                  )
+                )
+                  return;
+                await fetch("/api/demo", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ action: "reset" }),
+                });
+                window.location.reload();
+              }}
+            >
+              Tout effacer
+            </button>
+          )}
           <button
-            className="mr-auto text-xs text-red-600 hover:underline"
-            onClick={async () => {
-              if (!confirm("Effacer toutes les données du bureau (tâches, mails, compta, factures, équipe, fichiers) ? Cette action est définitive.")) return;
-              await fetch("/api/demo", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "reset" }) });
-              window.location.reload();
-            }}
+            className="rounded-md border px-3 py-1.5 text-sm"
+            onClick={onClose}
           >
-            Tout effacer
+            Annuler
           </button>
-          <button className="rounded-md border px-3 py-1.5 text-sm" onClick={onClose}>Annuler</button>
           <button
             className="rounded-md bg-slate-800 px-3 py-1.5 text-sm text-white"
             onClick={async () => {
@@ -649,6 +1049,7 @@ function CompanyModal({ onClose }: { onClose: () => void }) {
             Enregistrer
           </button>
         </div>
+        <Members isOwner={isOwner} />
       </div>
     </div>
   );

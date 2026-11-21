@@ -1,17 +1,78 @@
 import Database from "better-sqlite3";
 import fs from "fs";
 import path from "path";
+import { AsyncLocalStorage } from "async_hooks";
 
 export const DATA_DIR = path.resolve(process.env.DATA_DIR ?? "./data");
-export const FILES_DIR = path.join(DATA_DIR, "files");
+fs.mkdirSync(DATA_DIR, { recursive: true });
 
-fs.mkdirSync(FILES_DIR, { recursive: true });
+// ------------------------------------------------------------------ Multi-entreprises
+// Chaque entreprise cliente a sa propre base SQLite et son propre dossier de fichiers :
+// data/orgs/<id>/bureau.db et data/orgs/<id>/files. Le code n'a pas à filtrer par entreprise :
+// `db` désigne toujours la base de l'entreprise de la requête (ou de la tâche) en cours.
 
-// Une seule connexion partagée, même après le rechargement à chaud de Next.js.
-const g = globalThis as unknown as { __bureauDb?: Database.Database };
+export type Tenant = { orgId: number; userId: number | null; role: "owner" | "member" | "system" };
 
-function open(): Database.Database {
-  const db = new Database(path.join(DATA_DIR, "bureau.db"));
+// Sur globalThis : partagé entre les modules de Next.js et conservé au rechargement à chaud.
+const g = globalThis as unknown as {
+  __tenantStore?: AsyncLocalStorage<Tenant>;
+  __orgDbs?: Map<number, Database.Database>;
+  __schemas?: string[];
+};
+const store = (g.__tenantStore ??= new AsyncLocalStorage<Tenant>());
+const dbs = (g.__orgDbs ??= new Map());
+const schemas = (g.__schemas ??= []);
+
+/** Exécute fn dans le contexte d'une entreprise ; les tâches lancées dedans gardent ce contexte. */
+export function runAsOrg<T>(tenant: Tenant, fn: () => T): T {
+  return store.run(tenant, fn);
+}
+
+export function currentTenant(): Tenant {
+  const t = store.getStore();
+  if (!t) throw new Error("Aucune entreprise active (requête non authentifiée).");
+  return t;
+}
+
+export function orgDir(orgId: number) {
+  return path.join(DATA_DIR, "orgs", String(orgId));
+}
+
+/** Les modules qui ont leurs propres tables les déclarent ici ; elles sont créées dans chaque base. */
+export function registerSchema(sql: string) {
+  if (schemas.includes(sql)) return;
+  schemas.push(sql);
+  for (const d of dbs.values()) d.exec(sql);
+}
+
+export function orgDb(orgId: number): Database.Database {
+  let d = dbs.get(orgId);
+  if (!d) {
+    d = open(orgId);
+    dbs.set(orgId, d);
+  }
+  return d;
+}
+
+/** Base de l'entreprise en cours. */
+export const db = new Proxy({} as Database.Database, {
+  get(_t, prop) {
+    const d = orgDb(currentTenant().orgId);
+    const v = Reflect.get(d, prop, d);
+    return typeof v === "function" ? v.bind(d) : v;
+  },
+});
+
+/** Dossier des fichiers de l'entreprise en cours. */
+export function filesDir() {
+  const dir = path.join(orgDir(currentTenant().orgId), "files");
+  fs.mkdirSync(dir, { recursive: true });
+  return dir;
+}
+
+function open(orgId: number): Database.Database {
+  fs.mkdirSync(orgDir(orgId), { recursive: true });
+  const db = new Database(path.join(orgDir(orgId), "bureau.db"));
   db.pragma("journal_mode = WAL");
   db.exec(`
     CREATE TABLE IF NOT EXISTS tasks (
@@ -143,10 +204,9 @@ function open(): Database.Database {
   db.prepare(
     "UPDATE tasks SET status = 'error', result = 'Interrompue (redémarrage du serveur)' WHERE status IN ('running', 'queued')",
   ).run();
+  for (const sql of schemas) db.exec(sql);
   return db;
 }
-
-export const db = g.__bureauDb ?? (g.__bureauDb = open());
 
 export type Task = {
   id: number;

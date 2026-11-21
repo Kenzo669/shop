@@ -1,14 +1,15 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { AGENT_BY_ID } from "@/lib/agents";
+import { authed } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
-export function GET() {
+function GET_handler() {
   return NextResponse.json({ recurring: db.prepare("SELECT * FROM recurring ORDER BY id").all() });
 }
 
-export async function POST(req: Request) {
+async function POST_handler(req: Request) {
   const b = (await req.json()) as {
     agent_id: string;
     instruction: string;
@@ -34,14 +35,19 @@ export async function POST(req: Request) {
   return NextResponse.json({ ok: true });
 }
 
-export async function PATCH(req: Request) {
+async function PATCH_handler(req: Request) {
   const { id, enabled } = (await req.json()) as { id: number; enabled: boolean };
   db.prepare("UPDATE recurring SET enabled = ? WHERE id = ?").run(enabled ? 1 : 0, id);
   return NextResponse.json({ ok: true });
 }
 
-export async function DELETE(req: Request) {
+async function DELETE_handler(req: Request) {
   const { id } = (await req.json()) as { id: number };
   db.prepare("DELETE FROM recurring WHERE id = ?").run(id);
   return NextResponse.json({ ok: true });
 }
+
+export const GET = authed("GET", GET_handler);
+export const POST = authed("POST", POST_handler);
+export const PATCH = authed("PATCH", PATCH_handler);
+export const DELETE = authed("DELETE", DELETE_handler);

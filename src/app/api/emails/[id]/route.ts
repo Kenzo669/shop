@@ -2,11 +2,12 @@ import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { sendMail } from "@/lib/mailer";
 import { gmailSend, googleConnected } from "@/lib/google";
+import { authed } from "@/lib/auth";
 
 type Email = { id: number; status: string; to_addr: string; subject: string; body: string; reply_to_gmail_id: string | null };
 
 /** Valide et envoie un brouillon (action humaine), avec modifications éventuelles. */
-export async function POST(req: Request, { params }: { params: Promise<{ id: string }> }) {
+async function POST_handler(req: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const email = db.prepare("SELECT * FROM emails WHERE id = ?").get(Number(id)) as Email | undefined;
   if (!email || email.status !== "draft") return NextResponse.json({ error: "brouillon introuvable" }, { status: 404 });
@@ -26,8 +27,11 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
   }
 }
 
-export async function DELETE(_req: Request, { params }: { params: Promise<{ id: string }> }) {
+async function DELETE_handler(_req: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   db.prepare("DELETE FROM emails WHERE id = ? AND status = 'draft'").run(Number(id));
   return NextResponse.json({ ok: true });
 }
+
+export const POST = authed("POST", POST_handler);
+export const DELETE = authed("DELETE", DELETE_handler);

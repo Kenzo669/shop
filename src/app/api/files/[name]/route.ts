@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
-import { FILES_DIR } from "@/lib/db";
+import { filesDir } from "@/lib/db";
 import { safeFileName } from "@/lib/tools";
+import { authed } from "@/lib/auth";
 
 const TYPES: Record<string, string> = {
   ".html": "text/html; charset=utf-8",
@@ -11,10 +12,10 @@ const TYPES: Record<string, string> = {
   ".json": "application/json; charset=utf-8",
 };
 
-export async function GET(_req: Request, { params }: { params: Promise<{ name: string }> }) {
+async function GET_handler(_req: Request, { params }: { params: Promise<{ name: string }> }) {
   const { name: raw } = await params;
   const name = safeFileName(decodeURIComponent(raw));
-  const p = name && path.join(FILES_DIR, name);
+  const p = name && path.join(filesDir(), name);
   if (!p || !fs.existsSync(p)) return new Response("Introuvable", { status: 404 });
   const ext = path.extname(p).toLowerCase();
   return new Response(fs.readFileSync(p), {
@@ -25,3 +26,5 @@ export async function GET(_req: Request, { params }: { params: Promise<{ name: s
     },
   });
 }
+
+export const GET = authed("GET", GET_handler);

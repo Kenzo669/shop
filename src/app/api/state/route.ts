@@ -5,10 +5,11 @@ import { smtpConfigured } from "@/lib/mailer";
 import { listConnections } from "@/lib/connections";
 import { listMcp } from "@/lib/mcp";
 import { getBudget, monthSpend } from "@/lib/billing";
+import { authed } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
-export function GET() {
+function GET_handler() {
   const tasks = db.prepare("SELECT * FROM tasks ORDER BY id DESC LIMIT 100").all() as Task[];
   const working = db
     .prepare("SELECT DISTINCT agent_id FROM tasks WHERE status IN ('queued', 'running')")
@@ -24,3 +25,5 @@ export function GET() {
     connections: listConnections().map((c) => ({ provider: c.provider, account_email: c.account_email })),
   });
 }
+
+export const GET = authed("GET", GET_handler);

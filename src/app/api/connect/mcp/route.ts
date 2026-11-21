@@ -2,9 +2,10 @@ import { NextResponse } from "next/server";
 import { AGENT_BY_ID } from "@/lib/agents";
 import { CATALOG_BY_ID } from "@/lib/catalog";
 import { connectWithToken, startOAuth } from "@/lib/mcp";
+import { authed } from "@/lib/auth";
 
 /** Démarre la connexion d'un outil : OAuth (renvoie l'adresse de consentement) ou clé d'accès. */
-export async function POST(req: Request) {
+async function POST_handler(req: Request) {
   const b = (await req.json()) as {
     catalogId?: string;
     name?: string;
@@ -40,3 +41,5 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: err instanceof Error ? err.message : String(err) }, { status: 400 });
   }
 }
+
+export const POST = authed("POST", POST_handler, { ownerOnly: true });

@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { markInvoicePaid } from "@/lib/business";
+import { authed } from "@/lib/auth";
 
-export async function POST(req: Request, { params }: { params: Promise<{ id: string }> }) {
+async function POST_handler(req: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const { action } = (await req.json()) as { action?: "paid" | "cancel" };
   try {
@@ -16,3 +17,5 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
     return NextResponse.json({ error: err instanceof Error ? err.message : String(err) }, { status: 400 });
   }
 }
+
+export const POST = authed("POST", POST_handler);

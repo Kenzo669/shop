@@ -251,7 +251,7 @@ function Welcome() {
       </div>
       <ol className="mt-2 list-inside list-decimal space-y-1 text-gray-700">
         <li>
-          Décrivez votre entreprise dans <strong>⚙️ Profil entreprise</strong>{" "}
+          Décrivez votre entreprise dans <strong>⚙️ Entreprise</strong>{" "}
           (tous les agents le lisent).
         </li>
         <li>
@@ -280,7 +280,7 @@ function Welcome() {
         </button>
         <span className="text-xs text-gray-500">
           Une entreprise fictive pour tout essayer. Aucun coût IA. Effaçable
-          ensuite depuis ⚙️ Profil entreprise.
+          ensuite depuis ⚙️ Entreprise.
         </span>
         {err && <span className="text-xs text-red-600">{err}</span>}
       </div>

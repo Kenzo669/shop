@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
 import { getSetting, setSetting } from "@/lib/db";
 import { MODELS, getAgentSettings, isModelId, monthSpend, setAgentSettings, setBudget, usageReport, type AgentAiSettings } from "@/lib/billing";
+import { authed } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
-export function GET() {
+function GET_handler() {
   return NextResponse.json({
     ...usageReport(),
     monthSpend: monthSpend(),
@@ -14,7 +15,7 @@ export function GET() {
 }
 
 /** Réglages : budget mensuel, plafond par tâche, modèle et effort de chaque agent. */
-export async function PUT(req: Request) {
+async function PUT_handler(req: Request) {
   const body = (await req.json()) as {
     budget?: number;
     taskCap?: number;
@@ -34,3 +35,6 @@ export async function PUT(req: Request) {
   }
   return NextResponse.json({ ok: true });
 }
+
+export const GET = authed("GET", GET_handler);
+export const PUT = authed("PUT", PUT_handler, { ownerOnly: true });

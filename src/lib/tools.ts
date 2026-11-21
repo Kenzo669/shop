@@ -4,7 +4,7 @@ import { z } from "zod";
 import { betaZodTool } from "@anthropic-ai/sdk/helpers/beta/zod";
 import type { BetaRunnableTool } from "@anthropic-ai/sdk/lib/tools/BetaRunnableTool";
 import type Anthropic from "@anthropic-ai/sdk";
-import { addLog, db, FILES_DIR } from "./db";
+import { addLog, db, filesDir } from "./db";
 import { AGENTS, type AgentDef } from "./agents";
 import { calendarCreate, calendarList, gmailRead, gmailSearch, googleConnected } from "./google";
 import { addDays, createInvoice, listInvoices, markInvoicePaid, mondayOf, vatReturn, weekPlanning } from "./business";
@@ -60,7 +60,7 @@ function fileTools(): AnyTool[] {
       run: async ({ filename, content }) => {
         const name = safeFileName(filename);
         if (!name) return `Nom de fichier refusé. Extensions acceptées : ${ALLOWED_EXT.join(", ")}`;
-        fs.writeFileSync(path.join(FILES_DIR, name), content, "utf8");
+        fs.writeFileSync(path.join(filesDir(), name), content, "utf8");
         return `Fichier enregistré : ${name} (${content.length} caractères)`;
       },
     }),
@@ -69,7 +69,7 @@ function fileTools(): AnyTool[] {
       description: "Liste les fichiers de l'espace partagé.",
       inputSchema: z.object({}),
       run: async () => {
-        const files = fs.readdirSync(FILES_DIR);
+        const files = fs.readdirSync(filesDir());
         return files.length ? files.join("\n") : "Aucun fichier.";
       },
     }),
@@ -79,7 +79,7 @@ function fileTools(): AnyTool[] {
       inputSchema: z.object({ filename: z.string() }),
       run: async ({ filename }) => {
         const name = safeFileName(filename);
-        const p = name && path.join(FILES_DIR, name);
+        const p = name && path.join(filesDir(), name);
         if (!p || !fs.existsSync(p)) return "Fichier introuvable.";
         return fs.readFileSync(p, "utf8").slice(0, 40_000); // limite la taille relue (coût)
       },

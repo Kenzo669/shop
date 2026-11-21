@@ -1,13 +1,14 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { db } from "@/lib/db";
 import { weekPlanning } from "@/lib/business";
+import { authed } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 const TIME = /^([01]\d|2[0-3]):[0-5]\d$/;
 
-export function GET(req: NextRequest) {
+function GET_handler(req: NextRequest) {
   const week = req.nextUrl.searchParams.get("week");
   return NextResponse.json(weekPlanning(week && DATE.test(week) ? week : new Date().toISOString().slice(0, 10)));
 }
@@ -20,7 +21,7 @@ type Body =
   | { action: "add_leave"; employee_id: number; start_date: string; end_date: string; type?: string }
   | { action: "delete_leave"; id: number };
 
-export async function POST(req: Request) {
+async function POST_handler(req: Request) {
   const b = (await req.json()) as Body;
   const bad = (msg: string) => NextResponse.json({ error: msg }, { status: 400 });
   switch (b.action) {
@@ -67,3 +68,6 @@ export async function POST(req: Request) {
   }
   return NextResponse.json({ ok: true });
 }
+
+export const GET = authed("GET", GET_handler);
+export const POST = authed("POST", POST_handler);
