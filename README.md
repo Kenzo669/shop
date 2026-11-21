@@ -33,6 +33,14 @@ Les agents agissent avec de vrais outils : base de données (SQLite), fichiers p
 
 ## Démarrer
 
+### Le plus simple : double-clic
+
+1. Installez **Node.js** (version LTS) depuis <https://nodejs.org/fr>, puis redémarrez l'ordinateur.
+2. Double-cliquez sur **`Lancer Bureau IA (Windows).bat`** ou **`Lancer Bureau IA (Mac).command`** (sur Mac, la première fois : clic droit → *Ouvrir*).
+3. La première fois, l'installation prend 1 à 3 minutes, puis le navigateur s'ouvre sur Bureau IA.
+
+### À la main
+
 1. Installez [Node.js](https://nodejs.org) 20 ou plus.
 2. Créez une clé API sur <https://console.anthropic.com> (menu *API Keys*).
 3. Dans ce dossier :
