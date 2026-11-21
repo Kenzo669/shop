@@ -1,13 +1,14 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AGENTS, AGENT_BY_ID } from "@/lib/agents";
 import { usd, usePoll } from "./shared";
 import Today from "./Today";
 import ComptaPanel from "./Compta";
 import Team from "./Team";
 import { RecurringModal, UsageModal } from "./Settings";
+import ConnectionsModal from "./Connections";
 
 const Office3D = dynamic(() => import("./Office3D"), {
   ssr: false,
@@ -54,6 +55,7 @@ type State = {
   aiConfigured: boolean;
   smtpConfigured: boolean;
   connections: { provider: string; account_email: string }[];
+  mcpCount: number;
   monthSpend: number;
   budget: number;
 };
@@ -137,10 +139,10 @@ export default function Dashboard() {
             {state && (
               <span
                 className={`ml-1.5 rounded-full px-1.5 py-0.5 text-[10px] ${
-                  state.connections.length ? "bg-emerald-100 text-emerald-800" : "bg-gray-100 text-gray-600"
+                  state.connections.length + state.mcpCount ? "bg-emerald-100 text-emerald-800" : "bg-gray-100 text-gray-600"
                 }`}
               >
-                {state.connections.length}
+                {state.connections.length + state.mcpCount}
               </span>
             )}
           </button>
@@ -603,115 +605,6 @@ function Files({ files }: { files: FileInfo[] }) {
         </li>
       ))}
     </ul>
-  );
-}
-
-type ConnectionsData = {
-  connections: { id: number; provider: string; account_email: string; created_at: string }[];
-  available: { google: boolean };
-};
-
-// Logiciels proposés à la connexion. Seul Google est branché pour l'instant.
-const PROVIDERS: { id: string; name: string; logo: string; desc: string; agents: string; soon?: boolean }[] = [
-  { id: "google", name: "Google", logo: "G", desc: "Gmail et Google Agenda", agents: "Léa, Nora" },
-  { id: "microsoft", name: "Microsoft 365", logo: "M", desc: "Outlook et Calendrier", agents: "Léa, Nora", soon: true },
-  { id: "linkedin", name: "LinkedIn", logo: "in", desc: "Publication de posts", agents: "Chloé", soon: true },
-  { id: "hubspot", name: "HubSpot", logo: "H", desc: "CRM et contacts", agents: "Sami", soon: true },
-  { id: "pennylane", name: "Pennylane", logo: "P", desc: "Comptabilité et factures", agents: "Marc", soon: true },
-  { id: "slack", name: "Slack", logo: "#", desc: "Messagerie d'équipe", agents: "Nora", soon: true },
-];
-
-function ConnectionsModal({ notice, onClose }: { notice: { ok: boolean; text: string } | null; onClose: () => void }) {
-  const [data, setData] = useState<ConnectionsData | null>(null);
-  const load = useCallback(() => {
-    fetch("/api/connections").then((r) => r.json()).then(setData);
-  }, []);
-  useEffect(load, [load]);
-
-  return (
-    <div className="fixed inset-0 z-50 grid place-items-center bg-black/30 p-4" onClick={onClose}>
-      <div className="max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-xl bg-white p-5" onClick={(e) => e.stopPropagation()}>
-        <div className="flex items-start">
-          <div>
-            <h2 className="text-lg font-semibold">Connexions</h2>
-            <p className="text-sm text-gray-500">
-              Reliez vos comptes : vos agents travaillent directement dans vos outils.
-            </p>
-          </div>
-          <button onClick={onClose} className="ml-auto text-gray-400 hover:text-gray-700" aria-label="Fermer">
-            ✕
-          </button>
-        </div>
-
-        {notice && (
-          <div className={`mt-3 rounded-md p-2 text-sm ${notice.ok ? "bg-emerald-50 text-emerald-800" : "bg-red-50 text-red-700"}`}>
-            {notice.text}
-          </div>
-        )}
-
-        <ul className="mt-4 space-y-2">
-          {PROVIDERS.map((p) => {
-            const accounts = data?.connections.filter((c) => c.provider === p.id) ?? [];
-            const configured = p.id === "google" ? data?.available.google : false;
-            return (
-              <li key={p.id} className="rounded-lg border p-3">
-                <div className="flex items-center gap-3">
-                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-md bg-slate-100 text-sm font-bold text-slate-700">
-                    {p.logo}
-                  </span>
-                  <div className="min-w-0">
-                    <div className="font-medium">{p.name}</div>
-                    <div className="text-xs text-gray-500">
-                      {p.desc} · utilisé par {p.agents}
-                    </div>
-                  </div>
-                  <div className="ml-auto shrink-0">
-                    {p.soon ? (
-                      <span className="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-500">Bientôt</span>
-                    ) : (
-                      <a
-                        href="/api/connect/google"
-                        className={`rounded-md px-3 py-1.5 text-sm font-semibold ${
-                          configured ? "bg-slate-800 text-white hover:bg-slate-700" : "pointer-events-none bg-gray-100 text-gray-400"
-                        }`}
-                      >
-                        {accounts.length ? "Ajouter un compte" : "Connecter"}
-                      </a>
-                    )}
-                  </div>
-                </div>
-                {!p.soon && data && !configured && (
-                  <p className="mt-2 text-xs text-amber-700">
-                    À configurer par l&apos;administrateur : GOOGLE_CLIENT_ID et GOOGLE_CLIENT_SECRET (voir README).
-                  </p>
-                )}
-                {accounts.map((a) => (
-                  <div key={a.id} className="mt-2 flex items-center gap-2 rounded-md bg-emerald-50 px-2 py-1.5 text-sm">
-                    <span className="text-emerald-700">● Connecté</span>
-                    <span className="truncate">{a.account_email}</span>
-                    <button
-                      className="ml-auto text-xs text-red-600 hover:underline"
-                      onClick={async () => {
-                        if (!confirm(`Déconnecter ${a.account_email} ?`)) return;
-                        await fetch(`/api/connections/${a.id}`, { method: "DELETE" });
-                        load();
-                      }}
-                    >
-                      Déconnecter
-                    </button>
-                  </div>
-                ))}
-              </li>
-            );
-          })}
-        </ul>
-
-        <p className="mt-4 text-xs text-gray-500">
-          🔒 Vos accès sont chiffrés et ne sont jamais montrés à l&apos;IA. Aucun mail n&apos;est envoyé sans votre
-          validation, et vous pouvez déconnecter un compte à tout moment.
-        </p>
-      </div>
-    </div>
   );
 }
 

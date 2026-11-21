@@ -3,6 +3,7 @@ import { addLog, db, getCompanyProfile, type Task } from "./db";
 import { AGENT_BY_ID, type AgentDef } from "./agents";
 import { buildTools } from "./tools";
 import { listConnections } from "./connections";
+import { mcpForAgent } from "./mcp";
 import { budgetBlockReason, getAgentSettings, getSetting, recordUsage } from "./billing";
 const MAX_DELEGATION_DEPTH = 2;
 
@@ -15,7 +16,7 @@ export function aiConfigured() {
   return Boolean(process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN);
 }
 
-function systemPrompt(agent: AgentDef) {
+function systemPrompt(agent: AgentDef, tools: string[] = []) {
   return `Tu es ${agent.name}, ${agent.role}, un agent IA qui travaille dans le bureau virtuel d'une entreprise.
 
 ${agent.mission}
@@ -24,6 +25,7 @@ Profil de l'entreprise :
 ${getCompanyProfile()}
 
 Comptes connectés au logiciel : ${connectedAccounts()}
+Outils externes auxquels tu as accès : ${tools.length ? tools.join(", ") + ". Avant une action qui envoie, publie, paie ou modifie des données chez un client ou un fournisseur, vérifie que la demande le prévoit clairement ; sinon prépare et décris l'action au lieu de l'exécuter." : "aucun"}
 
 Règles :
 - Tu agis vraiment avec tes outils : enregistre les résultats (fichiers, brouillons, écritures, prospects) au lieu de seulement les décrire.
@@ -82,11 +84,13 @@ async function runTask(taskId: number, depth: number): Promise<string> {
   const { model, effort } = getAgentSettings()[agent.id];
   const taskCap = getSetting<number>("task_cap_usd", 3);
   db.prepare("UPDATE tasks SET model = ? WHERE id = ?").run(model, taskId);
+  // Outils externes connectés (MCP) autorisés pour cet agent.
+  const mcp = await mcpForAgent(agent.id, (msg) => addLog(taskId, "error", msg));
+  const betas: string[] = [];
   // Haiku n'a pas de modèle de secours côté serveur en cas de refus.
-  const fallback =
-    model === "claude-haiku-5-5"
-      ? {}
-      : { betas: ["server-side-fallback-2026-07-01"], fallbacks: "default" as const };
+  if (model !== "claude-haiku-5-5") betas.push("server-side-fallback-2026-07-01");
+  if (mcp.servers.length) betas.push("mcp-client-2025-11-20");
+  const fallback = model === "claude-haiku-5-5" ? {} : { fallbacks: "default" as const };
 
   const delegate = async (agentId: string, instruction: string) => {
     if (depth >= MAX_DELEGATION_DEPTH) return "Délégation refusée : trop de niveaux de sous-tâches.";
@@ -101,10 +105,12 @@ async function runTask(taskId: number, depth: number): Promise<string> {
     max_iterations: 30,
     // Si le modèle refuse une requête, l'API la relance automatiquement sur un modèle de secours.
     ...fallback,
+    ...(betas.length ? { betas } : {}),
+    ...(mcp.servers.length ? { mcp_servers: mcp.servers } : {}),
     output_config: { effort },
     cache_control: { type: "ephemeral" },
-    system: systemPrompt(agent),
-    tools: buildTools({ agent, taskId, delegate, model }),
+    system: systemPrompt(agent, mcp.names),
+    tools: [...buildTools({ agent, taskId, delegate, model }), ...mcp.toolsets],
     messages: [
       {
         role: "user",
@@ -122,6 +128,9 @@ async function runTask(taskId: number, depth: number): Promise<string> {
     for (const block of message.content) {
       if (block.type === "text" && block.text.trim()) addLog(taskId, "message", block.text.trim());
       if (block.type === "server_tool_use") addLog(taskId, "tool", `${block.name} ${JSON.stringify(block.input)}`);
+      if (block.type === "mcp_tool_use")
+        addLog(taskId, "tool", `${block.server_name.replace(/^c\d+-/, "")} › ${block.name} ${JSON.stringify(block.input).slice(0, 300)}`);
+      if (block.type === "mcp_tool_result" && block.is_error) addLog(taskId, "error", `Échec d'une action externe`);
     }
     if (taskCap > 0 && taskCost >= taskCap) {
       finish(taskId, "error", `Tâche arrêtée : plafond de ${taskCap.toFixed(2)} $ par tâche atteint. Le travail déjà fait est conservé.`);

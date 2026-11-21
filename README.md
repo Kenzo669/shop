@@ -54,16 +54,25 @@ npm run dev
 4. Ouvrez <http://localhost:3000>. Pour tout découvrir sans rien saisir, cliquez sur **« Découvrir avec des données d'exemple »** (aucun coût IA, effaçable ensuite depuis ⚙️ Profil entreprise → Tout effacer). Sinon, décrivez votre entreprise dans **⚙️ Profil entreprise** (tous les agents le lisent).
 5. Cliquez sur un agent dans le bureau 3D et confiez-lui une tâche.
 
-## Connexions : relier les comptes du client
+## Connexions : relier les outils du client
 
-Bureau IA est un logiciel indépendant : chaque entreprise y relie ses propres comptes depuis le bouton **🔌 Connexions**, comme sur un site avec « Se connecter avec Google ».
+Bureau IA est un logiciel indépendant : chaque entreprise y relie ses propres comptes depuis le bouton **🔌 Connexions**.
 
-| Service | Ce que les agents peuvent faire | État |
+| Outil | Ce que les agents peuvent faire | Connexion |
 |---|---|---|
-| Google (Gmail + Agenda) | Léa lit et cherche dans la boîte, prépare les réponses (envoyées depuis la vraie boîte, dans le bon fil, après validation) ; Léa et Nora consultent et créent des rendez-vous | ✅ disponible |
-| Microsoft 365, LinkedIn, HubSpot, Pennylane, Slack | — | bientôt |
+| **Google** (Gmail + Agenda) | Léa lit la boîte et prépare les réponses (envoyées depuis la vraie boîte après validation) ; Léa et Nora gèrent l'agenda | intégré |
+| **Zapier** | plus de 8 000 applications (Outlook, Sheets, Shopify, WhatsApp, Trello…) en une seule connexion | MCP, compte ou clé |
+| **Make** | déclencher les scénarios Make | MCP, adresse personnelle |
+| **Notion, Asana, monday.com, Linear, Jira & Confluence** | documents, projets, tâches | MCP, compte |
+| **HubSpot** | CRM | MCP, compte |
+| **Stripe, PayPal, Square** | paiements, encaissements | MCP, compte ou clé |
+| **Intercom** | support client | MCP, compte |
+| **Autre outil** | tout logiciel qui propose un serveur MCP (adresse à coller) | MCP |
 
-Les accès sont chiffrés en base (AES-256), jamais transmis à l'IA, et renouvelés automatiquement. Un compte se déconnecte en un clic (l'accès est aussi révoqué chez Google).
+Fonctionnement (MCP, le standard de connexion des IA) :
+- **Connexion par compte** : découverte automatique du serveur d'autorisation de l'éditeur, enregistrement automatique de Bureau IA, consentement chez l'éditeur (OAuth 2.1 + PKCE), jetons chiffrés et renouvelés automatiquement.
+- **Par outil** : choix des agents autorisés et des actions permises. Les actions destructrices (supprimer, rembourser, annuler…) sont désactivées par défaut.
+- Les adresses du catalogue sont celles publiées par les éditeurs (`src/lib/catalog.ts`) ; elles restent modifiables au moment de la connexion. Le serveur doit être accessible publiquement en HTTPS.
 
 ### Configurer Google (une seule fois, par l'éditeur du logiciel)
 
@@ -85,6 +94,7 @@ Si aucun compte Google n'est connecté, l'envoi passe par SMTP : renseignez `SMT
 - `src/lib/agents.ts` : la liste des agents (nom, rôle, couleur, place dans le bureau, outils, consignes). C'est ici qu'on ajoute un agent.
 - `src/lib/tools.ts` : les outils que les agents peuvent utiliser.
 - `src/lib/runner.ts` : la boucle de travail d'un agent (API Claude + outils).
+- `src/lib/mcp.ts`, `src/lib/catalog.ts` : connexion des outils externes (MCP) et catalogue.
 - `src/lib/google.ts`, `src/lib/connections.ts`, `src/lib/crypto.ts` : connexion des comptes Google, stockage chiffré des accès, Gmail et Agenda.
 - `src/lib/business.ts` : TVA, factures, planning et tableau « Aujourd'hui » (calculs exacts, sans IA).
 - `src/lib/billing.ts` : tarifs, suivi de consommation, budget, modèle par agent.
