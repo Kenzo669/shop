@@ -9,6 +9,8 @@ import ComptaPanel from "./Compta";
 import Team from "./Team";
 import { RecurringModal, UsageModal } from "./Settings";
 import ConnectionsModal from "./Connections";
+import SectorPanel from "./Sector";
+import { SECTORS, SECTOR_BY_ID, type SectorId } from "@/lib/sector-info";
 
 const Office3D = dynamic(() => import("./Office3D"), {
   ssr: false,
@@ -72,6 +74,7 @@ type State = {
   smtpConfigured: boolean;
   connections: { provider: string; account_email: string }[];
   mcpCount: number;
+  sector: SectorId;
   monthSpend: number;
   budget: number;
 };
@@ -116,7 +119,7 @@ export default function Dashboard({
     | "compta"
     | "equipe"
     | "prospects"
-    | "fichiers";
+    | "fichiers" | "metier";
   const [tab, setTab] = useState<Tab>("today");
   const [showUsage, setShowUsage] = useState(false);
   const [showRecurring, setShowRecurring] = useState(false);
@@ -229,6 +232,7 @@ export default function Dashboard({
         </div>
 
         <AgentPanel
+          sector={state?.sector ?? "general"}
           agentId={selectedAgent}
           working={state?.working ?? []}
           onSelectAgent={(id) => {
@@ -254,11 +258,12 @@ export default function Dashboard({
               ["today", "🏠 Aujourd'hui"],
               ["activite", "📋 Activité"],
               ["mails", `✉️ Mails${countDrafts(data)}`],
+              ...(state && SECTOR_BY_ID[state.sector]?.tab ? [["metier", SECTOR_BY_ID[state.sector].tab!] as const] : []),
               ["compta", "💶 Compta & TVA"],
               ["equipe", "👥 Équipe & planning"],
               ["prospects", `🎯 Prospects (${data?.prospects.length ?? 0})`],
               ["fichiers", `📁 Fichiers (${data?.files.length ?? 0})`],
-            ] as const
+            ] as readonly (readonly [Tab, string])[]
           ).map(([k, label]) => (
             <button
               key={k}
@@ -291,6 +296,7 @@ export default function Dashboard({
             />
           )}
           {tab === "equipe" && <Team onAsked={onAsked} />}
+          {tab === "metier" && <SectorPanel onAsked={onAsked} />}
           {tab === "prospects" && (
             <Prospects prospects={data?.prospects ?? []} />
           )}
@@ -351,6 +357,7 @@ function Badge({
 }
 
 function AgentPanel({
+  sector,
   agentId,
   working,
   onSelectAgent,
@@ -359,6 +366,7 @@ function AgentPanel({
   onSelectTask,
   onCreated,
 }: {
+  sector: SectorId;
   agentId: string;
   working: string[];
   onSelectAgent: (id: string) => void;
@@ -433,7 +441,7 @@ function AgentPanel({
           className="mt-3 w-full resize-none rounded-md border p-2 text-sm outline-none focus:ring-2 focus:ring-slate-300"
         />
         <div className="mt-2 flex flex-wrap gap-1">
-          {agent.examples.map((ex) => (
+          {[...(SECTOR_BY_ID[sector]?.examples[agentId] ?? []), ...agent.examples].slice(0, 4).map((ex) => (
             <button
               key={ex}
               onClick={() => setInstruction(ex)}
@@ -975,6 +983,42 @@ function Members({ isOwner }: { isOwner: boolean }) {
   );
 }
 
+function SectorPicker() {
+  const [sector, setSector] = useState<SectorId | null>(null);
+  const [saved, setSaved] = useState(false);
+  useEffect(() => {
+    fetch("/api/sector").then((r) => r.json()).then((d) => setSector(d.sector));
+  }, []);
+  if (!sector) return null;
+  return (
+    <div className="mt-5 border-t pt-4">
+      <h3 className="text-sm font-semibold">Métier</h3>
+      <p className="text-xs text-gray-500">Active un onglet dédié, et adapte les outils et les conseils des agents.</p>
+      <div className="mt-2 grid grid-cols-1 gap-1 sm:grid-cols-2">
+        {SECTORS.map((x) => (
+          <button
+            key={x.id}
+            onClick={async () => {
+              await fetch("/api/sector", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ action: "set_sector", sector: x.id }),
+              });
+              setSector(x.id);
+              setSaved(true);
+              setTimeout(() => setSaved(false), 1500);
+            }}
+            className={`rounded-md border px-2 py-1.5 text-left text-sm ${sector === x.id ? "border-slate-800 bg-slate-800 text-white" : "hover:bg-gray-50"}`}
+          >
+            {x.emoji} {x.label}
+          </button>
+        ))}
+      </div>
+      {saved && <p className="mt-1 text-xs text-emerald-700">Métier enregistré ✓</p>}
+    </div>
+  );
+}
+
 function CompanyModal({
   onClose,
   isOwner,
@@ -1049,6 +1093,7 @@ function CompanyModal({
             Enregistrer
           </button>
         </div>
+        {isOwner && <SectorPicker />}
         <Members isOwner={isOwner} />
       </div>
     </div>

@@ -4,10 +4,11 @@ import fs from "fs";
 import path from "path";
 import { db, filesDir, setCompanyProfile } from "./db";
 import { addDays, createInvoice, markInvoicePaid, mondayOf } from "./business";
+import { getSector, setRateInputs, upsertIngredient, upsertProduct, upsertRecipe } from "./sectors";
 
 export function isEmpty() {
   const count = (t: string) => (db.prepare(`SELECT COUNT(*) AS n FROM ${t}`).get() as { n: number }).n;
-  return ["transactions", "invoices", "employees", "prospects", "emails"].every((t) => count(t) === 0);
+  return ["transactions", "invoices", "employees", "prospects", "emails", "recipes", "products"].every((t) => count(t) === 0);
 }
 
 export function loadDemo() {
@@ -81,6 +82,61 @@ Signature des mails : Camille, Atelier Lumen`);
     addDays(today, 9),
     addDays(today, 13),
   );
+  loadSectorDemo();
+}
+
+/** Données d'exemple propres au métier choisi. */
+function loadSectorDemo() {
+  const sector = getSector();
+  const profiles: Partial<Record<string, string>> = {
+    restaurant: "Nom : Le Bistrot des Pentes (exemple)\nActivité : restaurant bistronomique, 45 couverts, midi et soir, vente à emporter\nAdresse : 8 montée de la Grande-Côte, 69001 Lyon\nClients cibles : actifs du quartier le midi, couples et groupes d'amis le soir\nTon de communication : chaleureux et gourmand\nSignature des mails : Camille, Le Bistrot des Pentes",
+    ecommerce: "Nom : Maison Lumen (exemple)\nActivité : boutique en ligne de bougies et objets de décoration artisanaux, aussi sur Amazon\nClients cibles : particuliers 25-45 ans, cadeaux\nTon de communication : doux, élégant\nSignature des mails : Camille, Maison Lumen",
+    dropshipping: "Nom : Lumen Store (exemple)\nActivité : boutique en dropshipping (maison, bien-être, high-tech), publicités Meta et TikTok\nClients cibles : 18-40 ans, achats d'impulsion\nTon de communication : dynamique, direct\nSignature des mails : Le service client Lumen Store",
+    services: "Nom : Camille Martin Conseil (exemple)\nActivité : consultante indépendante en marketing digital pour PME\nClients cibles : PME et commerces de la région lyonnaise\nTon de communication : professionnel et accessible\nSignature des mails : Camille Martin",
+  };
+  if (profiles[sector]) setCompanyProfile(profiles[sector]!);
+  if (sector === "restaurant") {
+    const ing: [string, string, number, number, string][] = [
+      ["Bœuf haché 15 %", "kg", 13.9, 0, "Boucherie Martin"],
+      ["Pain burger brioché", "pièce", 0.42, 0, "Boulangerie Petit"],
+      ["Cheddar affiné", "kg", 16.5, 0, "Métro"],
+      ["Oignon jaune", "kg", 1.6, 15, "Primeur Halles"],
+      ["Pomme de terre", "kg", 1.2, 20, "Primeur Halles"],
+      ["Huile de friture", "L", 2.8, 0, "Métro"],
+      ["Saumon frais", "kg", 24, 25, "Marée du Port"],
+      ["Riz basmati", "kg", 2.9, 0, "Métro"],
+      ["Avocat", "pièce", 1.1, 30, "Primeur Halles"],
+      ["Chocolat noir 70 %", "kg", 14, 0, "Métro"],
+      ["Œuf", "pièce", 0.28, 0, "Ferme Dubois"],
+      ["Beurre doux", "kg", 9.8, 0, "Métro"],
+      ["Sucre", "kg", 1.3, 0, "Métro"],
+      ["Crème liquide 35 %", "L", 4.9, 0, "Métro"],
+    ];
+    for (const [name, unit, price_ht, waste_pct, supplier] of ing) upsertIngredient({ name, unit, price_ht, waste_pct, supplier });
+    upsertRecipe({ name: "Burger maison et frites", category: "Plat", portions: 10, price_ttc: 17.5, items: [
+      { ingredient: "Bœuf haché 15 %", quantity: 1.6 }, { ingredient: "Pain burger brioché", quantity: 10 },
+      { ingredient: "Cheddar affiné", quantity: 0.3 }, { ingredient: "Oignon jaune", quantity: 0.5 },
+      { ingredient: "Pomme de terre", quantity: 2.5 }, { ingredient: "Huile de friture", quantity: 0.8 } ] });
+    upsertRecipe({ name: "Poke saumon avocat", category: "Plat", portions: 8, price_ttc: 15.9, items: [
+      { ingredient: "Saumon frais", quantity: 1.2 }, { ingredient: "Riz basmati", quantity: 0.8 }, { ingredient: "Avocat", quantity: 6 } ] });
+    upsertRecipe({ name: "Fondant au chocolat", category: "Dessert", portions: 12, price_ttc: 8.5, items: [
+      { ingredient: "Chocolat noir 70 %", quantity: 0.4 }, { ingredient: "Beurre doux", quantity: 0.3 },
+      { ingredient: "Œuf", quantity: 8 }, { ingredient: "Sucre", quantity: 0.25 }, { ingredient: "Crème liquide 35 %", quantity: 0.2 } ] });
+    upsertRecipe({ name: "Frites maison", category: "Accompagnement", portions: 10, price_ttc: 4.5, items: [
+      { ingredient: "Pomme de terre", quantity: 2.5 }, { ingredient: "Huile de friture", quantity: 0.8 } ] });
+  } else if (sector === "ecommerce") {
+    upsertProduct({ name: "Bougie parfumée Figue", supplier: "Atelier Cire", cost_ht: 6.5, shipping_cost: 4.9, packaging_cost: 1.2, price_ttc: 29, ad_cost: 3, stock: 42, reorder_level: 20 });
+    upsertProduct({ name: "Coffret 3 bougies", supplier: "Atelier Cire", cost_ht: 17, shipping_cost: 5.9, packaging_cost: 2.5, price_ttc: 69, ad_cost: 6, stock: 8, reorder_level: 10 });
+    upsertProduct({ name: "Diffuseur rotin", supplier: "Maison Sud", cost_ht: 9, shipping_cost: 4.9, packaging_cost: 1, price_ttc: 24, ad_cost: 7, stock: 65, reorder_level: 15 });
+    upsertProduct({ name: "Bougie Amazon (vendue sur la place de marché)", supplier: "Atelier Cire", cost_ht: 6.5, shipping_cost: 5.5, packaging_cost: 1.2, marketplace_pct: 15, price_ttc: 22, ad_cost: 2, stock: 30, reorder_level: 10 });
+  } else if (sector === "dropshipping") {
+    upsertProduct({ name: "Lampe coucher de soleil", supplier: "Fournisseur EU (5-8 j)", cost_ht: 8.9, shipping_cost: 3.5, price_ttc: 34.9, ad_cost: 11 });
+    upsertProduct({ name: "Correcteur de posture", supplier: "Fournisseur EU (6-9 j)", cost_ht: 6.2, shipping_cost: 3.2, price_ttc: 29.9, ad_cost: 16 });
+    upsertProduct({ name: "Organiseur de câbles", supplier: "Fournisseur Asie (12-18 j)", cost_ht: 2.1, shipping_cost: 2.4, price_ttc: 19.9, ad_cost: 6.5 });
+    upsertProduct({ name: "Mini projecteur", supplier: "Fournisseur EU (4-7 j)", cost_ht: 38, shipping_cost: 6, price_ttc: 89, ad_cost: 22 });
+  } else if (sector === "services") {
+    setRateInputs({ revenu_net_annuel: 48000, taux_charges_sociales_pct: 25, charges_fixes_annuelles: 4800, jours_travailles_an: 215, taux_facturable_pct: 65 });
+  }
 }
 
 /** Efface toutes les données (garde les comptes connectés et les réglages IA). */
@@ -89,6 +145,7 @@ export function resetData() {
     DELETE FROM tasks; DELETE FROM task_logs; DELETE FROM emails; DELETE FROM transactions;
     DELETE FROM prospects; DELETE FROM invoices; DELETE FROM employees; DELETE FROM shifts;
     DELETE FROM leaves; DELETE FROM recurring; DELETE FROM usage;
+    DELETE FROM recipe_items; DELETE FROM recipes; DELETE FROM ingredients; DELETE FROM products;
     DELETE FROM settings WHERE key IN ('company');
   `);
   for (const f of fs.readdirSync(filesDir())) fs.rmSync(path.join(filesDir(), f), { force: true });

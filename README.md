@@ -31,6 +31,19 @@ Les agents agissent avec de vrais outils : base de données (SQLite), fichiers p
 - **Budget mensuel** (les tâches sont bloquées une fois atteint) et **plafond par tâche** (3 $ par défaut).
 - Cache de prompt activé, recherches web limitées à 6 par tâche.
 
+## Modules métier
+
+Choisi à l'inscription (modifiable dans ⚙️ Entreprise), le métier ajoute un onglet dédié, des outils et des consignes pour les agents, et des alertes dans « Aujourd'hui ». Calculs exacts, sans IA.
+
+| Métier | Onglet | Ce qui est calculé |
+|---|---|---|
+| 🍽️ Restaurant, café, traiteur | Carte & coûts | Fiches techniques : coût de revient par portion (pertes d'épluchage incluses), ratio coût matière, coefficient, marge brute, prix minimum pour la cible (30 % par défaut) |
+| 🛒 E-commerce, boutique | Produits & marges | Marge nette par vente (achat, port, emballage, frais de paiement, commission, pub), CPA max, ROAS mini, prix minimum, alertes de stock |
+| 📦 Dropshipping | Produits & rentabilité pub | Idem sans stock : CPA maximal et ROAS de rentabilité par produit |
+| 💼 Services, freelance | Tarifs & rentabilité | TJM et taux horaire minimum selon le revenu visé, les charges et les jours facturables |
+
+Les données d'exemple s'adaptent au métier choisi.
+
 ## Comptes et entreprises
 
 - Chaque entreprise cliente crée son compte (page **/inscription**) et obtient son propre bureau : **une base de données et un dossier de fichiers séparés par entreprise** (`data/orgs/<id>/`). Aucune donnée n'est partagée entre entreprises.
@@ -117,6 +130,7 @@ Si aucun compte Google n'est connecté, l'envoi passe par SMTP : renseignez `SMT
 - `src/lib/runner.ts` : la boucle de travail d'un agent (API Claude + outils).
 - `src/lib/mcp.ts`, `src/lib/catalog.ts` : connexion des outils externes (MCP) et catalogue.
 - `src/lib/google.ts`, `src/lib/connections.ts`, `src/lib/crypto.ts` : connexion des comptes Google, stockage chiffré des accès, Gmail et Agenda.
+- `src/lib/sectors.ts`, `src/lib/sector-info.ts` : modules métier (calculs, consignes et idées de tâches par métier).
 - `src/lib/business.ts` : TVA, factures, planning et tableau « Aujourd'hui » (calculs exacts, sans IA).
 - `src/lib/billing.ts` : tarifs, suivi de consommation, budget, modèle par agent.
 - `src/lib/scheduler.ts` : automatisations.

@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { SECTORS } from "@/lib/sector-info";
 
 type Mode = "login" | "signup" | "join";
 
 export default function AuthForm({ mode, token, orgName }: { mode: Mode; token?: string; orgName?: string }) {
-  const [f, setF] = useState({ name: "", email: "", password: "", orgName: "" });
+  const [f, setF] = useState({ name: "", email: "", password: "", orgName: "", sector: "general" });
   const [hasAccount, setHasAccount] = useState(false);
   const [err, setErr] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -58,6 +59,23 @@ export default function AuthForm({ mode, token, orgName }: { mode: Mode; token?:
           )}
           {mode === "signup" && (
             <Field label="Nom de votre entreprise" value={f.orgName} onChange={(v) => setF({ ...f, orgName: v })} autoComplete="organization" />
+          )}
+          {mode === "signup" && (
+            <label className="block text-sm">
+              <span className="text-gray-600">Votre métier</span>
+              <select
+                value={f.sector}
+                onChange={(e) => setF({ ...f, sector: e.target.value })}
+                className="mt-1 w-full rounded-lg border p-2.5 outline-none focus:ring-2 focus:ring-slate-300"
+              >
+                {SECTORS.map((s) => (
+                  <option key={s.id} value={s.id}>
+                    {s.emoji} {s.label}
+                  </option>
+                ))}
+              </select>
+              <span className="text-xs text-gray-400">Active les outils et les conseils adaptés à votre activité.</span>
+            </label>
           )}
           <Field label="Email" type="email" value={f.email} onChange={(v) => setF({ ...f, email: v })} autoComplete="email" />
           <Field

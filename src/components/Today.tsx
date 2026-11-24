@@ -36,6 +36,7 @@ type TodayData = {
   }[];
   month: { recettes: number; depenses: number };
   ai: { spent: number; budget: number };
+  sectorAlerts: { kind: "food_cost" | "loss" | "stock"; names: string[]; target?: number }[];
 };
 
 const fr = (d: string) =>
@@ -50,7 +51,7 @@ export default function Today({
   goTo,
 }: {
   onAsked: (taskId: number, agentId: string) => void;
-  goTo: (tab: "mails" | "compta" | "equipe") => void;
+  goTo: (tab: "mails" | "compta" | "equipe" | "metier") => void;
 }) {
   const [d] = usePoll<TodayData>("/api/today", 10000);
   if (!d) return <p className="text-sm text-gray-500">Chargement…</p>;
@@ -142,6 +143,46 @@ export default function Today({
       ),
       tone: "red",
     });
+
+  for (const a of d.sectorAlerts ?? []) {
+    const list = a.names.slice(0, 4).join(", ") + (a.names.length > 4 ? "…" : "");
+    if (a.kind === "food_cost")
+      todo.push({
+        icon: "🍽️",
+        title: `${a.names.length} plat${a.names.length > 1 ? "s" : ""} au-dessus de ${a.target} % de coût matière`,
+        detail: list,
+        action: (
+          <button className="rounded-md border px-3 py-1.5 text-sm hover:bg-gray-50" onClick={() => goTo("metier")}>
+            Voir la carte
+          </button>
+        ),
+        tone: "amber",
+      });
+    if (a.kind === "loss")
+      todo.push({
+        icon: "📉",
+        title: `${a.names.length} produit${a.names.length > 1 ? "s" : ""} vendu${a.names.length > 1 ? "s" : ""} à perte`,
+        detail: list,
+        action: (
+          <button className="rounded-md border px-3 py-1.5 text-sm hover:bg-gray-50" onClick={() => goTo("metier")}>
+            Voir les marges
+          </button>
+        ),
+        tone: "red",
+      });
+    if (a.kind === "stock")
+      todo.push({
+        icon: "📦",
+        title: `${a.names.length} produit${a.names.length > 1 ? "s" : ""} à réapprovisionner`,
+        detail: list,
+        action: (
+          <button className="rounded-md border px-3 py-1.5 text-sm hover:bg-gray-50" onClick={() => goTo("metier")}>
+            Voir le stock
+          </button>
+        ),
+        tone: "amber",
+      });
+  }
 
   const toneClass = {
     red: "border-l-red-500",

@@ -8,6 +8,16 @@ import { addLog, db, filesDir } from "./db";
 import { AGENTS, type AgentDef } from "./agents";
 import { calendarCreate, calendarList, gmailRead, gmailSearch, googleConnected } from "./google";
 import { addDays, createInvoice, listInvoices, markInvoicePaid, mondayOf, vatReturn, weekPlanning } from "./business";
+import {
+  getRateInputs,
+  getSector,
+  productsOverview,
+  rateCalculator,
+  restaurantOverview,
+  upsertIngredient,
+  upsertProduct,
+  upsertRecipe,
+} from "./sectors";
 
 const ALLOWED_EXT = [".md", ".txt", ".csv", ".html", ".json"];
 
@@ -470,6 +480,108 @@ function webTools(model: string): Anthropic.Beta.BetaToolUnion[] {
   ];
 }
 
+/** Outils du métier de l'entreprise. canEdit : l'agent peut modifier les fiches (sinon lecture). */
+function sectorTools(canEdit: boolean): AnyTool[] {
+  const sector = getSector();
+  if (sector === "restaurant") {
+    const read = betaZodTool({
+      name: "restaurant_costing",
+      description:
+        "Fiches techniques du restaurant avec coût de revient calculé : coût recette, coût portion, prix HT, ratio coût matière, coefficient, prix TTC minimum pour respecter la cible, et liste des ingrédients avec prix et pertes.",
+      inputSchema: z.object({}),
+      run: async () => JSON.stringify(restaurantOverview()),
+    });
+    if (!canEdit) return [read];
+    return [
+      read,
+      betaZodTool({
+        name: "upsert_ingredient",
+        description: "Crée ou met à jour un ingrédient (prix d'achat HT par unité, pourcentage de perte).",
+        inputSchema: z.object({
+          name: z.string(),
+          unit: z.enum(["kg", "L", "pièce"]),
+          price_ht: z.number().min(0).describe("Prix d'achat HT pour 1 kg, 1 L ou 1 pièce"),
+          waste_pct: z.number().min(0).max(95).optional().describe("Perte à l'épluchage, au parage ou à la cuisson, en %"),
+          supplier: z.string().optional(),
+        }),
+        run: async (i) => `Ingrédient n°${upsertIngredient(i)} enregistré.`,
+      }),
+      betaZodTool({
+        name: "upsert_recipe",
+        description:
+          "Crée ou remplace une fiche technique. Quantités pour TOUTE la recette, dans l'unité de chaque ingrédient (ex. 0.18 kg). Les ingrédients doivent exister.",
+        inputSchema: z.object({
+          name: z.string(),
+          category: z.string().optional().describe("Entrée, Plat, Dessert, Boisson…"),
+          portions: z.number().positive(),
+          price_ttc: z.number().min(0).describe("Prix de vente TTC d'une portion"),
+          vat_rate: z.number().optional().describe("10 sur place par défaut"),
+          items: z.array(z.object({ ingredient: z.string(), quantity: z.number().positive() })).min(1),
+        }),
+        run: async (r) => {
+          const id = upsertRecipe(r);
+          const c = restaurantOverview().recipes.find((x) => x.id === id);
+          return `Fiche enregistrée : coût portion ${c?.cout_portion} €, ratio coût matière ${c?.ratio_cout_matiere_pct} %.`;
+        },
+      }),
+    ];
+  }
+  if (sector === "ecommerce" || sector === "dropshipping") {
+    const read = betaZodTool({
+      name: "products_margins",
+      description:
+        "Rentabilité de chaque produit : prix HT, frais, coût direct, marge avant pub, marge nette (€ et %), CPA maximal, ROAS de rentabilité, prix TTC minimum pour la marge cible, stock bas.",
+      inputSchema: z.object({}),
+      run: async () => JSON.stringify(productsOverview()),
+    });
+    if (!canEdit) return [read];
+    return [
+      read,
+      betaZodTool({
+        name: "upsert_product",
+        description: "Crée ou met à jour un produit (seuls les champs fournis changent). Montants en euros, frais en %.",
+        inputSchema: z.object({
+          name: z.string(),
+          sku: z.string().optional(),
+          supplier: z.string().optional(),
+          cost_ht: z.number().min(0).optional().describe("Prix d'achat HT"),
+          shipping_cost: z.number().min(0).optional().describe("Livraison payée par vous, par vente"),
+          packaging_cost: z.number().min(0).optional(),
+          payment_pct: z.number().min(0).optional().describe("Frais de paiement en % du TTC"),
+          payment_fixed: z.number().min(0).optional().describe("Frais de paiement fixes par vente"),
+          marketplace_pct: z.number().min(0).optional().describe("Commission de la plateforme en % du TTC"),
+          ad_cost: z.number().min(0).optional().describe("Coût publicitaire moyen par vente"),
+          price_ttc: z.number().min(0).optional(),
+          vat_rate: z.number().optional(),
+          stock: z.number().int().optional(),
+          reorder_level: z.number().int().optional(),
+        }),
+        run: async (p) => `Produit n°${upsertProduct(p)} enregistré.`,
+      }),
+    ];
+  }
+  if (sector === "services") {
+    return [
+      betaZodTool({
+        name: "rate_calculator",
+        description:
+          "Calcule le chiffre d'affaires nécessaire, les jours facturables, le TJM et le taux horaire minimum. Sans paramètre : utilise les réglages de l'entreprise ; les paramètres fournis les remplacent pour une simulation.",
+        inputSchema: z.object({
+          revenu_net_annuel: z.number().optional(),
+          taux_charges_sociales_pct: z.number().optional(),
+          charges_fixes_annuelles: z.number().optional(),
+          jours_travailles_an: z.number().optional(),
+          taux_facturable_pct: z.number().optional(),
+          heures_par_jour: z.number().optional(),
+        }),
+        run: async (i) =>
+          JSON.stringify(rateCalculator({ ...getRateInputs(), ...Object.fromEntries(Object.entries(i).filter(([, v]) => v !== undefined)) })),
+      }),
+    ];
+  }
+  return [];
+}
+
 export function buildTools(ctx: Ctx): (AnyTool | Anthropic.Beta.BetaToolUnion)[] {
   const tools: (AnyTool | Anthropic.Beta.BetaToolUnion)[] = [];
   // Ordre fixe pour que le cache de prompt reste valide d'une tâche à l'autre.
@@ -482,6 +594,8 @@ export function buildTools(ctx: Ctx): (AnyTool | Anthropic.Beta.BetaToolUnion)[]
   if (groups.includes("compta")) tools.push(...comptaTools().map((t) => logged(ctx, t)));
   if (groups.includes("factures")) tools.push(...invoiceTools().map((t) => logged(ctx, t)));
   if (groups.includes("rh")) tools.push(...rhTools().map((t) => logged(ctx, t)));
+  if (groups.includes("compta") || groups.includes("delegate"))
+    tools.push(...sectorTools(groups.includes("compta")).map((t) => logged(ctx, t)));
   if (groups.includes("crm")) tools.push(...crmTools().map((t) => logged(ctx, t)));
   if (groups.includes("files")) tools.push(...fileTools().map((t) => logged(ctx, t)));
   if (groups.includes("web")) tools.push(...webTools(ctx.model));

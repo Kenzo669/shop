@@ -4,6 +4,8 @@ import { AGENT_BY_ID, type AgentDef } from "./agents";
 import { buildTools } from "./tools";
 import { listConnections } from "./connections";
 import { mcpForAgent } from "./mcp";
+import { getSector } from "./sectors";
+import { SECTOR_BY_ID } from "./sector-info";
 import { budgetBlockReason, getAgentSettings, getSetting, recordUsage } from "./billing";
 const MAX_DELEGATION_DEPTH = 2;
 
@@ -24,7 +26,7 @@ ${agent.mission}
 Profil de l'entreprise :
 ${getCompanyProfile()}
 
-Comptes connectés au logiciel : ${connectedAccounts()}
+${sectorGuidance(agent.id)}Comptes connectés au logiciel : ${connectedAccounts()}
 Outils externes auxquels tu as accès : ${tools.length ? tools.join(", ") + ". Avant une action qui envoie, publie, paie ou modifie des données chez un client ou un fournisseur, vérifie que la demande le prévoit clairement ; sinon prépare et décris l'action au lieu de l'exécuter." : "aucun"}
 
 Règles :
@@ -32,6 +34,12 @@ Règles :
 - Réponds en français, de façon concise.
 - Quand tu as terminé, donne un compte rendu court : ce que tu as fait, où trouver les résultats, et ce qui reste à valider par un humain.
 - Si une information indispensable manque, fais une hypothèse raisonnable, signale-la dans le compte rendu et continue.`;
+}
+
+function sectorGuidance(agentId: string) {
+  const info = SECTOR_BY_ID[getSector()];
+  const lines = [info.guidance["*"], info.guidance[agentId]].filter(Boolean);
+  return lines.length ? `Métier de l'entreprise (${info.label}) :\n${lines.join("\n")}\n\n` : "";
 }
 
 function connectedAccounts() {
