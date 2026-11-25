@@ -73,3 +73,35 @@ Nora répartit le travail…
 19
 00:00:39,000 --> 00:00:41,580
 Rien ne part sans son accord : il relit, il valide.
+
+20
+00:00:43,500 --> 00:00:46,070
+Le logiciel calcule sa vraie marge,
+
+21
+00:00:46,100 --> 00:00:48,420
+son coût de pub maximal, le ROAS à viser.
+
+22
+00:00:48,450 --> 00:00:50,500
+Max voit enfin ce qu'il gagne vraiment.
+
+23
+00:00:50,600 --> 00:00:53,900
+Besoin d'idées ? Son coach IA cherche les produits gagnants…
+
+24
+00:00:53,950 --> 00:00:56,700
+…et vérifie qu'ils sont rentables avant de lancer la pub.
+
+25
+00:00:56,750 --> 00:01:00,000
+TVA, factures, planning, outils connectés : tout est au même endroit.
+
+26
+00:01:00,060 --> 00:01:04,300
+Une équipe complète, jour et nuit, pour le prix d'un abonnement.
+
+27
+00:01:04,400 --> 00:01:07,600
+Équipia. Votre équipe IA, au travail.
