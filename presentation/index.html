@@ -1,0 +1,530 @@
+<title>Bureau IA</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Mise en page : récit vertical, captures du vrai logiciel au centre, l'équipe présentée en badges d'employés. */
+:root {
+  --bg: #f7f6fb;
+  --surface: #ffffff;
+  --ink: #1b1530;
+  --muted: #625c76;
+  --line: #e6e2ef;
+  --accent: #b5179e;
+  --warm: #e8890c;
+  --soft: #f1ecfa;
+  --shadow: 0 1px 2px rgba(27, 21, 48, .06), 0 12px 32px -12px rgba(27, 21, 48, .18);
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121019; --surface: #1b1826; --ink: #f1eef8; --muted: #a8a2bb; --line: #2d2939;
+    --accent: #e25bd0; --warm: #f2a43a; --soft: #231e31;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 16px 40px -16px rgba(0, 0, 0, .7);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121019; --surface: #1b1826; --ink: #f1eef8; --muted: #a8a2bb; --line: #2d2939;
+  --accent: #e25bd0; --warm: #f2a43a; --soft: #231e31;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 16px 40px -16px rgba(0, 0, 0, .7);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  background: var(--bg); color: var(--ink);
+  font: 400 17px/1.6 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1160px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.08; text-wrap: balance; margin: 0; letter-spacing: -.02em; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.4rem); font-weight: 800; }
+h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -.01em; }
+p { margin: 0; }
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 60ch; }
+.eyebrow { font: 500 .74rem/1 var(--mono); text-transform: uppercase; letter-spacing: .12em; color: var(--accent); }
+section { padding-block: clamp(56px, 9vw, 112px); }
+.head { display: grid; gap: 14px; margin-bottom: 40px; max-width: 760px; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.mark { background: linear-gradient(transparent 62%, color-mix(in oklab, var(--warm) 38%, transparent) 62%); }
+
+/* barre de navigation */
+.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+  padding: 12px max(16px, env(safe-area-inset-left, 0px));
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+.nav .wrap { display: flex; align-items: center; gap: 20px; }
+.brand { display: flex; align-items: center; gap: 10px; font: 700 1.1rem var(--display); text-decoration: none; }
+.logo {
+  width: 32px; height: 32px; border-radius: 10px; display: grid; place-items: center; color: #fff; font-size: 15px;
+  background: linear-gradient(135deg, #8b5cf6, #c026d3 55%, #f59e0b);
+}
+.nav ul { display: flex; gap: 22px; list-style: none; margin: 0 0 0 auto; padding: 0; font-size: .92rem; color: var(--muted); }
+.nav ul a { text-decoration: none; }
+.nav ul a:hover { color: var(--ink); }
+@media (max-width: 760px) { .nav ul { display: none; } }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; border-radius: 12px; padding: 13px 20px;
+  font: 600 .98rem var(--body); text-decoration: none; border: 1px solid transparent; cursor: pointer;
+}
+.btn-primary { background: var(--ink); color: var(--bg); }
+.btn-primary:hover { background: color-mix(in oklab, var(--ink) 86%, var(--accent)); }
+.btn-ghost { border-color: var(--line); background: var(--surface); }
+.btn-ghost:hover { border-color: var(--muted); }
+
+/* hero */
+.hero { padding-block: clamp(40px, 7vw, 88px) 24px; }
+.hero-grid { display: grid; gap: 40px; }
+.hero-copy { display: grid; gap: 22px; max-width: 780px; }
+.hero-copy .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--muted); font-size: .92rem; }
+.facts span::before { content: "✓ "; color: var(--accent); font-weight: 700; }
+.stage { position: relative; border-radius: 22px; overflow: hidden; background: var(--surface); box-shadow: var(--shadow); border: 1px solid var(--line); }
+.stage img { display: block; width: 100%; height: auto; transition: opacity .6s ease; }
+.stage .night { position: absolute; inset: 0; opacity: 0; }
+.stage.is-night .night { opacity: 1; }
+.toggle {
+  position: absolute; right: 14px; top: 14px; display: flex; padding: 4px; gap: 2px; border-radius: 999px;
+  background: color-mix(in oklab, var(--surface) 86%, transparent); backdrop-filter: blur(8px); border: 1px solid var(--line);
+}
+.toggle button {
+  border: 0; background: transparent; color: var(--muted); font: 600 .82rem var(--body); padding: 7px 13px; border-radius: 999px; cursor: pointer;
+}
+.toggle button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.caption { margin-top: 12px; font-size: .88rem; color: var(--muted); }
+
+/* badges de l'équipe */
+.team { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+.badge {
+  position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px 20px 18px;
+  display: grid; gap: 12px; box-shadow: var(--shadow); min-width: 0;
+}
+.badge::before { /* fente du porte-badge */
+  content: ""; position: absolute; top: 10px; left: 50%; width: 44px; height: 6px; margin-left: -22px;
+  border-radius: 6px; background: var(--bg); border: 1px solid var(--line);
+}
+.badge .who { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+.avatar { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; color: #fff; font: 700 1.2rem var(--display); flex: none; }
+.badge .name { font: 700 1.15rem var(--display); }
+.badge .role { font-size: .88rem; color: var(--muted); }
+.badge p { font-size: .95rem; }
+.access { display: flex; flex-wrap: wrap; gap: 6px; }
+.access span { font: 500 .7rem var(--mono); text-transform: uppercase; letter-spacing: .06em; padding: 4px 8px; border-radius: 6px; background: var(--soft); color: var(--muted); }
+.ask { font-size: .88rem; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 10px; }
+.ask b { color: var(--ink); font-weight: 600; }
+
+/* étapes */
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; counter-reset: s; }
+.step { display: grid; gap: 8px; padding: 22px; border-radius: 18px; border: 1px solid var(--line); background: var(--surface); }
+.step::before { counter-increment: s; content: "Étape " counter(s); font: 500 .74rem var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.step p { color: var(--muted); font-size: .96rem; }
+
+/* métiers */
+.sectors { display: grid; gap: 22px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.tabs button {
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 10px 16px;
+  font: 600 .94rem var(--body); cursor: pointer;
+}
+.tabs button[aria-selected="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.panel { display: grid; gap: 28px; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: start; }
+@media (max-width: 900px) { .panel { grid-template-columns: minmax(0, 1fr); } }
+.shot { border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); background: var(--surface); cursor: zoom-in; display: block; padding: 0; width: 100%; }
+.shot img { display: block; width: 100%; height: auto; }
+.panel ul { margin: 14px 0 0; padding-left: 1.1em; display: grid; gap: 8px; }
+.receipt {
+  margin-top: 18px; font: 500 .86rem/1.7 var(--mono); padding: 16px 18px; border-radius: 12px;
+  background: var(--soft); border: 1px dashed var(--line); font-variant-numeric: tabular-nums;
+}
+.receipt .row { display: flex; justify-content: space-between; gap: 16px; }
+.receipt .total { border-top: 1px dashed var(--muted); margin-top: 6px; padding-top: 6px; font-weight: 700; }
+.receipt .bad { color: #d23a3a; }
+.receipt .good { color: #1f9d63; }
+
+/* assistant */
+.duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+@media (max-width: 760px) { .duo { grid-template-columns: minmax(0, 1fr); } }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+@media (max-width: 900px) { .split { grid-template-columns: minmax(0, 1fr); } }
+.points { display: grid; gap: 16px; margin-top: 22px; }
+.point { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; }
+.point i { font-style: normal; width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--soft); }
+.point b { display: block; }
+.point span { color: var(--muted); font-size: .95rem; }
+
+/* gestion */
+.gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+@media (max-width: 760px) { .gallery { grid-template-columns: minmax(0, 1fr); } }
+.tile { display: grid; gap: 12px; min-width: 0; }
+.tile h3 { display: flex; align-items: center; gap: 10px; }
+.tile p { color: var(--muted); font-size: .96rem; }
+
+/* connexions */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.chips span { padding: 9px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); font-weight: 600; font-size: .94rem; }
+.chips span.big { border-color: color-mix(in oklab, var(--accent) 50%, var(--line)); }
+
+/* sécurité */
+.safe { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.safe div { padding: 18px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+.safe b { display: block; margin-bottom: 4px; }
+.safe span { color: var(--muted); font-size: .93rem; }
+
+/* fin */
+.closing {
+  border-radius: 28px; padding: clamp(32px, 6vw, 64px); display: grid; gap: 18px; justify-items: start;
+  background: var(--ink); color: var(--bg);
+}
+.closing .lead { color: color-mix(in oklab, var(--bg) 75%, var(--ink)); }
+.closing .btn-primary { background: var(--bg); color: var(--ink); }
+footer { padding-block: 32px 48px; color: var(--muted); font-size: .88rem; display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
+
+/* agrandissement des captures */
+dialog { border: 0; padding: 0; background: transparent; max-width: min(1400px, 96vw); max-height: 92vh; }
+dialog::backdrop { background: rgba(10, 8, 18, .82); }
+dialog img { display: block; max-width: 100%; max-height: 88vh; border-radius: 12px; }
+dialog button { position: absolute; top: 10px; right: 10px; border: 0; border-radius: 999px; width: 38px; height: 38px; font-size: 18px; cursor: pointer; background: rgba(255,255,255,.92); color: #111; }
+
+@media (prefers-reduced-motion: reduce) { .stage img { transition: none; } }
+</style>
+
+<nav class="nav" aria-label="Navigation">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="logo" aria-hidden="true">✦</span>Bureau IA</a>
+    <ul>
+      <li><a href="#equipe">L'équipe</a></li>
+      <li><a href="#metiers">Votre métier</a></li>
+      <li><a href="#assistant">L'assistant</a></li>
+      <li><a href="#gestion">Gestion</a></li>
+      <li><a href="#connexions">Connexions</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Le bureau virtuel des petites entreprises</span>
+        <h1>Sept collègues IA qui font <span class="mark">vraiment</span> le travail.</h1>
+        <p class="lead">Mails, compta, factures, TVA, prospection, marketing, plannings : confiez une tâche à un agent, regardez-le s'y mettre dans votre bureau en 3D, et validez le résultat. Rien ne part sans votre accord.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#equipe">Rencontrer l'équipe</a>
+          <a class="btn btn-ghost" href="#metiers">Voir pour mon métier</a>
+        </div>
+        <div class="facts"><span>Restaurant, e-commerce, dropshipping, services</span><span>Vos comptes Google, Zapier, Notion, Stripe…</span><span>Budget IA plafonné</span></div>
+      </div>
+      <div>
+        <div class="stage" id="stage">
+          <img src="img/office-day.jpg" alt="Le bureau 3D en journée : sept agents à leur poste autour d'une table de réunion ; Nora délègue des tâches à Sami et Chloé, reliés par des rayons animés." width="1800" height="1067">
+          <img class="night" src="img/office-night.jpg" alt="Le même bureau la nuit, lampes allumées." width="1800" height="1067" loading="lazy">
+          <div class="toggle" role="group" aria-label="Heure du bureau">
+            <button type="button" id="day" aria-pressed="true">Jour</button>
+            <button type="button" id="night" aria-pressed="false">Nuit</button>
+          </div>
+        </div>
+        <p class="caption">Le bureau suit votre heure : soleil le jour, lampes allumées le soir. Ici, Nora a découpé une demande et l'a confiée à Sami et Chloé.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipe">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">L'équipe</span>
+        <h2>Chaque agent a son poste, ses outils et ses limites.</h2>
+        <p class="lead">Les agents travaillent avec de vrais outils : base de données, fichiers, recherche web, vos comptes connectés. Ils rendent un compte rendu à chaque tâche.</p>
+      </div>
+      <div class="team">
+        <article class="badge"><div class="who"><span class="avatar" style="background:#8b5cf6">N</span><div><div class="name">Nora</div><div class="role">Direction & coordination</div></div></div>
+          <p>Découpe les demandes larges et répartit le travail entre ses collègues, puis fait la synthèse.</p>
+          <div class="access"><span>délégation</span><span>agenda</span><span>web</span></div>
+          <p class="ask">« <b>Prépare le lancement de notre offre : prospects, mail et post LinkedIn</b> »</p></article>
+        <article class="badge"><div class="who"><span class="avatar" style="background:#ec4899">L</span><div><div class="name">Léa</div><div class="role">Secrétariat & mails</div></div></div>
+          <p>Lit votre boîte Gmail, prépare les réponses dans le bon fil et organise l'agenda. Vous validez chaque envoi.</p>
+          <div class="access"><span>gmail</span><span>agenda</span><span>brouillons</span></div>
+          <p class="ask">« <b>Lis mes mails non lus des 3 derniers jours et prépare les réponses</b> »</p></article>
+        <article class="badge"><div class="who"><span class="avatar" style="background:#10b981">M</span><div><div class="name">Marc</div><div class="role">Comptabilité</div></div></div>
+          <p>Tient le journal, fait les factures numérotées, relance les impayés et prépare la déclaration de TVA.</p>
+          <div class="access"><span>journal</span><span>factures</span><span>tva</span></div>
+          <p class="ask">« <b>Relance les factures en retard</b> »</p></article>
+        <article class="badge"><div class="who"><span class="avatar" style="background:#f59e0b">S</span><div><div class="name">Sami</div><div class="role">Prospection</div></div></div>
+          <p>Trouve de vraies entreprises sur le web, les ajoute au CRM et rédige des prises de contact personnalisées.</p>
+          <div class="access"><span>web</span><span>crm</span><span>brouillons</span></div>
+          <p class="ask">« <b>Trouve 10 agences immobilières à Lyon</b> »</p></article>
+        <article class="badge"><div class="who"><span class="avatar" style="background:#ef4444">C</span><div><div class="name">Chloé</div><div class="role">Marketing & contenu</div></div></div>
+          <p>Posts, newsletters, calendrier éditorial, analyse de la concurrence. Chaque livrable est rangé dans vos fichiers.</p>
+          <div class="access"><span>web</span><span>fichiers</span></div>
+          <p class="ask">« <b>Calendrier éditorial LinkedIn du mois prochain</b> »</p></article>
+        <article class="badge"><div class="who"><span class="avatar" style="background:#3b82f6">H</span><div><div class="name">Hugo</div><div class="role">Documents</div></div></div>
+          <p>Devis, contrats types, procédures, comptes rendus, en HTML prêt à imprimer ou en tableau.</p>
+          <div class="access"><span>fichiers</span><span>web</span></div>
+          <p class="ask">« <b>Rédige une procédure d'accueil pour un nouveau salarié</b> »</p></article>
+        <article class="badge"><div class="who"><span class="avatar" style="background:#14b8a6">I</span><div><div class="name">Inès</div><div class="role">RH & planning</div></div></div>
+          <p>Fiches employés, absences et plannings de la semaine, vérifiés selon les règles du Code du travail.</p>
+          <div class="access"><span>équipe</span><span>planning</span><span>congés</span></div>
+          <p class="ask">« <b>Fais le planning de la semaine : ouvert du mardi au samedi, 2 personnes minimum</b> »</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="fonctionnement" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Comment ça marche</span><h2>Vous décidez, ils exécutent.</h2></div>
+      <div class="steps">
+        <div class="step"><h3>Décrivez votre entreprise</h3><p>Votre activité, vos clients, votre ton. Choisissez votre métier : le logiciel ajoute les outils qui vont avec.</p></div>
+        <div class="step"><h3>Confiez une tâche</h3><p>Cliquez sur un agent dans le bureau et écrivez la demande. Vous suivez chaque étape en direct.</p></div>
+        <div class="step"><h3>Validez</h3><p>Brouillons de mails, factures, plannings : tout ce qui sort de l'entreprise attend votre feu vert.</p></div>
+      </div>
+      <p class="caption" style="margin-top:18px">Les tâches répétitives peuvent aussi tourner seules : tri des mails chaque matin, TVA le 5 du mois, planning chaque jeudi.</p>
+    </div>
+  </section>
+
+  <section id="metiers" style="background:var(--surface);margin-inline:calc(-1 * max(16px, env(safe-area-inset-left, 0px)));padding-inline:max(16px, env(safe-area-inset-left, 0px))">
+    <div class="wrap sectors">
+      <div class="head" style="margin-bottom:0">
+        <span class="eyebrow">Un logiciel qui parle votre métier</span>
+        <h2>Les bons calculs pour votre activité, faits sans IA et donc gratuits.</h2>
+        <p class="lead">À l'inscription, choisissez votre métier : un onglet dédié apparaît, et les agents reçoivent les outils et les conseils qui vont avec.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Métiers">
+        <button role="tab" id="t-resto" aria-selected="true" aria-controls="p-resto">🍽️ Restaurant</button>
+        <button role="tab" id="t-drop" aria-selected="false" aria-controls="p-drop">📦 Dropshipping</button>
+        <button role="tab" id="t-ecom" aria-selected="false" aria-controls="p-ecom">🛒 E-commerce</button>
+        <button role="tab" id="t-free" aria-selected="false" aria-controls="p-free">💼 Services & freelance</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-resto" aria-labelledby="t-resto">
+        <button class="shot" type="button" data-full="img/resto.jpg"><img src="img/resto.jpg" alt="Onglet Carte et coûts : fiches techniques avec coût par portion, coût matière en pourcentage, coefficient et prix minimum ; liste des ingrédients avec prix d'achat et pertes." width="1800" height="1252" loading="lazy"></button>
+        <div>
+          <h3>Carte & coûts</h3>
+          <ul>
+            <li>Coût de revient de chaque plat, pertes à l'épluchage comprises.</li>
+            <li>Coût matière, coefficient et marge brute par portion.</li>
+            <li>Prix minimum pour tenir votre cible de coût matière.</li>
+            <li>Le prix d'un ingrédient change : toute la carte se recalcule.</li>
+          </ul>
+          <div class="receipt" aria-label="Exemple de calcul">
+            <div class="row"><span>Saumon frais 24,00 €/kg · perte 25 %</span><span>32,00 €/kg</span></div>
+            <div class="row"><span>Poke saumon avocat, 8 portions</span><span>6,27 €/portion</span></div>
+            <div class="row"><span>Prix carte 15,90 € TTC (TVA 10 %)</span><span>14,45 € HT</span></div>
+            <div class="row total"><span>Coût matière</span><span class="bad">43,4 % · cible 30 %</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-drop" aria-labelledby="t-drop" hidden>
+        <button class="shot" type="button" data-full="img/drop.jpg"><img src="img/drop.jpg" alt="Onglet Produits et rentabilité pub : marge nette par vente, CPA maximal, ROAS minimal et prix minimum pour chaque produit." width="1800" height="655" loading="lazy"></button>
+        <div>
+          <h3>Produits & rentabilité pub</h3>
+          <ul>
+            <li>Marge nette réelle par vente : achat, livraison, frais de paiement, commission, publicité.</li>
+            <li>CPA maximal : ce que vous pouvez payer en pub par vente sans perdre d'argent.</li>
+            <li>ROAS minimal à viser dans vos campagnes.</li>
+          </ul>
+          <div class="receipt" aria-label="Exemple de calcul">
+            <div class="row"><span>Correcteur de posture, prix 29,90 € TTC</span><span>24,92 € HT</span></div>
+            <div class="row"><span>Achat + livraison fournisseur</span><span>− 9,40 €</span></div>
+            <div class="row"><span>Frais de paiement</span><span>− 0,70 €</span></div>
+            <div class="row"><span>Publicité par vente</span><span>− 16,00 €</span></div>
+            <div class="row total"><span>Marge nette</span><span class="bad">− 1,18 € par vente</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-ecom" aria-labelledby="t-ecom" hidden>
+        <button class="shot" type="button" data-full="img/ecom.jpg"><img src="img/ecom.jpg" alt="Onglet Produits et marges : produits vendus à perte en rouge, stock bas signalé, prix minimum par produit." width="1800" height="655" loading="lazy"></button>
+        <div>
+          <h3>Produits & marges</h3>
+          <ul>
+            <li>Les produits vendus à perte ressortent en rouge, même sur une place de marché.</li>
+            <li>Prix minimum pour garder votre marge cible.</li>
+            <li>Alertes de réassort quand le stock passe sous le seuil.</li>
+          </ul>
+          <div class="receipt" aria-label="Exemple de calcul">
+            <div class="row"><span>Bougie sur une place de marché, 22,00 € TTC</span><span>18,33 € HT</span></div>
+            <div class="row"><span>Commission 15 % + frais</span><span>− 3,88 €</span></div>
+            <div class="row"><span>Achat, livraison, emballage, pub</span><span>− 15,20 €</span></div>
+            <div class="row total"><span>Marge nette</span><span class="bad">− 0,75 € par vente</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-free" aria-labelledby="t-free" hidden>
+        <button class="shot" type="button" data-full="img/free.jpg"><img src="img/free.jpg" alt="Onglet Tarifs et rentabilité : revenu souhaité, cotisations, charges, jours facturables, et taux journalier minimum calculé." width="1800" height="495" loading="lazy"></button>
+        <div>
+          <h3>Tarifs & rentabilité</h3>
+          <ul>
+            <li>Taux journalier et horaire minimum selon votre revenu visé.</li>
+            <li>Cotisations, charges fixes et jours réellement facturés pris en compte.</li>
+            <li>Marc vérifie que vos devis respectent ce minimum.</li>
+          </ul>
+          <div class="receipt" aria-label="Exemple de calcul">
+            <div class="row"><span>Revenu net visé</span><span>48 000 €/an</span></div>
+            <div class="row"><span>Cotisations 25 % + charges 4 800 €</span><span>68 800 € de CA</span></div>
+            <div class="row"><span>215 jours × 65 % facturés</span><span>140 jours</span></div>
+            <div class="row total"><span>TJM minimum</span><span class="good">492 € HT</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="assistant">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <span class="eyebrow">L'assistant</span>
+          <h2 style="margin-top:14px">Un conseiller qui connaît vos chiffres.</h2>
+          <p class="lead" style="margin-top:14px">Les agents exécutent. L'assistant réfléchit avec vous. Il s'adapte à votre métier : conseiller restaurant, coach dropshipping, conseiller freelance.</p>
+          <div class="points">
+            <div class="point"><i>📊</i><div><b>Il part de vos vrais chiffres</b><span>Mois en cours, impayés, TVA à venir, carte, marges.</span></div></div>
+            <div class="point"><i>🧮</i><div><b>Il calcule avant de conseiller</b><span>Coût de revient d'un nouveau plat avec vos prix d'ingrédients, rentabilité d'un produit avant d'acheter de la pub.</span></div></div>
+            <div class="point"><i>🔎</i><div><b>Il cherche sur le web</b><span>Produits tendance, fournisseurs, prix du marché, idées de saison, avec ses sources.</span></div></div>
+            <div class="point"><i>✋</i><div><b>Il demande avant d'agir</b><span>Ajouter un plat à la carte ou confier une tâche à un agent : jamais sans votre « oui ».</span></div></div>
+          </div>
+        </div>
+        <button class="shot" type="button" data-full="img/assistant-resto.jpg"><img src="img/assistant-resto.jpg" alt="L'assistant conseiller restaurant calcule le coût de revient d'un risotto aux champignons et propose de l'ajouter à la carte." width="1800" height="1125" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="gestion" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">La gestion au quotidien</span>
+        <h2>Ce qui demande votre attention, sur une seule page.</h2>
+        <p class="lead">Mails à valider, factures en retard, TVA à déclarer, planning à faire : chaque point a un bouton pour le confier au bon agent.</p>
+      </div>
+      <div class="gallery">
+        <div class="tile"><h3>🏠 Aujourd'hui</h3><button class="shot" type="button" data-full="img/today.jpg"><img src="img/today.jpg" alt="Page Aujourd'hui : liste des choses à faire avec un bouton pour chaque action, et les chiffres du mois." width="1800" height="704" loading="lazy"></button><p>Votre journée en un coup d'œil, avec les chiffres du mois.</p></div>
+        <div class="tile"><h3>🧾 Déclaration de TVA</h3><button class="shot" type="button" data-full="img/tva.jpg"><img src="img/tva.jpg" alt="Déclaration de TVA préparée ligne par ligne selon le formulaire CA3." width="1800" height="1099" loading="lazy"></button><p>Préparée ligne par ligne d'après votre journal, à vérifier avant dépôt.</p></div>
+        <div class="tile"><h3>💶 Factures et relances</h3><button class="shot" type="button" data-full="img/invoices.jpg"><img src="img/invoices.jpg" alt="Liste des factures avec statut, factures en retard en rouge et bouton pour faire relancer." width="1800" height="584" loading="lazy"></button><p>Numérotation et mentions légales automatiques ; « payée » enregistre la recette.</p></div>
+        <div class="tile"><h3>👥 Planning de l'équipe</h3><button class="shot" type="button" data-full="img/planning.jpg"><img src="img/planning.jpg" alt="Planning de la semaine par employé avec heures par rapport au contrat et alertes." width="1800" height="738" loading="lazy"></button><p>Heures par rapport au contrat et alertes : 10 h par jour, 48 h par semaine, 11 h de repos.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="connexions" style="padding-top:0">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">Connexions</span>
+        <h2 style="margin-top:14px">Vos agents travaillent dans vos outils.</h2>
+        <p class="lead" style="margin-top:14px">Connexion en un clic avec votre compte. Pour chaque outil, vous choisissez quels agents y ont accès et quelles actions sont permises ; les actions destructrices sont désactivées par défaut.</p>
+        <div class="chips">
+          <span class="big">Zapier · plus de 8 000 applications</span><span>Gmail</span><span>Google Agenda</span><span>Make</span><span>Notion</span><span>HubSpot</span><span>Stripe</span><span>PayPal</span><span>Square</span><span>Asana</span><span>monday.com</span><span>Linear</span><span>Jira & Confluence</span><span>Intercom</span><span>+ tout outil compatible MCP</span>
+        </div>
+      </div>
+      <button class="shot" type="button" data-full="img/connections.jpg"><img src="img/connections.jpg" alt="Fenêtre Connexions : catalogue des outils par catégorie avec boutons Connecter." width="1536" height="1620" loading="lazy"></button>
+    </div>
+  </section>
+
+  <section id="couts" style="padding-top:0">
+    <div class="wrap split">
+      <button class="shot" type="button" data-full="img/usage.jpg"><img src="img/usage.jpg" alt="Fenêtre Consommation IA : coût du mois, budget, coût par agent et par tâche, choix du modèle pour chaque agent." width="1536" height="1620" loading="lazy"></button>
+      <div>
+        <span class="eyebrow">Coûts maîtrisés</span>
+        <h2 style="margin-top:14px">Vous savez ce que coûte chaque tâche.</h2>
+        <div class="points">
+          <div class="point"><i>💰</i><div><b>Coût affiché à chaque tâche</b><span>Par agent, par jour, par modèle.</span></div></div>
+          <div class="point"><i>🎚️</i><div><b>Le bon modèle pour chaque agent</b><span>Un modèle économique pour trier les mails, le plus capable pour la prospection.</span></div></div>
+          <div class="point"><i>🛑</i><div><b>Budget mensuel et plafond par tâche</b><span>Une fois le budget atteint, plus aucune tâche ne part.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="securite" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Sécurité</span><h2>Vos données restent les vôtres.</h2></div>
+      <div class="safe">
+        <div><b>Une base par entreprise</b><span>Données et fichiers séparés : aucune entreprise ne voit celles d'une autre.</span></div>
+        <div><b>Accès chiffrés</b><span>Les accès à vos outils sont chiffrés et jamais montrés à l'IA.</span></div>
+        <div><b>Validation humaine</b><span>Mails, actions externes, enregistrements de l'assistant : rien sans votre accord.</span></div>
+        <div><b>Équipe et rôles</b><span>Invitez vos collègues ; budget et connexions restent réservés au propriétaire.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="closing">
+        <span class="eyebrow" style="color:var(--warm)">Version de test</span>
+        <h2>Bureau IA est en cours de développement.</h2>
+        <p class="lead">Les captures de cette page viennent du logiciel lui-même, avec des entreprises d'exemple. Les premiers tests avec de vraies entreprises arrivent.</p>
+        <a class="btn btn-primary" href="#top">Revoir le bureau</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>Bureau IA · bureau virtuel d'agents IA pour les petites entreprises</span>
+  <span>Agents propulsés par Claude</span>
+</footer>
+
+<dialog id="zoom" aria-label="Capture agrandie">
+  <img id="zoom-img" alt="">
+  <button type="button" id="zoom-close" aria-label="Fermer">✕</button>
+</dialog>
+
+<script>
+(function () {
+  // Jour / nuit sur le bureau
+  var stage = document.getElementById("stage");
+  var day = document.getElementById("day"), night = document.getElementById("night");
+  function setNight(on) {
+    stage.classList.toggle("is-night", on);
+    day.setAttribute("aria-pressed", String(!on));
+    night.setAttribute("aria-pressed", String(on));
+  }
+  day.addEventListener("click", function () { setNight(false); });
+  night.addEventListener("click", function () { setNight(true); });
+
+  // Onglets métiers
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  function select(tab) {
+    tabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute("aria-selected", String(on));
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+    });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () { select(t); });
+    t.addEventListener("keydown", function (e) {
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      var n = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+      select(n); n.focus();
+    });
+  });
+
+  // Agrandissement des captures
+  var dlg = document.getElementById("zoom"), zimg = document.getElementById("zoom-img");
+  document.querySelectorAll("[data-full]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      zimg.src = b.getAttribute("data-full");
+      zimg.alt = b.querySelector("img").alt;
+      if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
+    });
+  });
+  document.getElementById("zoom-close").addEventListener("click", function () { dlg.close(); });
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+})();
+</script>
