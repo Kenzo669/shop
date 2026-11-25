@@ -1,4 +1,27 @@
 =====================================================================
+SUNO — MODE « DISCOURS » (voix off seule, recommandé)
+Colle ce texte tel quel (sans crochets). Voix française chaleureuse, ton narrateur.
+=====================================================================
+
+Voici Max. Max fait du dropshipping.
+Et ça marche ! Les commandes s'enchaînent… mais il croule sous le travail : clients, pubs, compta.
+Il lui faudrait une équipe. Sept salariés, c'est plus de dix mille euros par mois. Pas le budget.
+Et même avec le budget : recruter, former, gérer… Et le soir, tout s'arrête.
+Et si son équipe tenait… dans son ordinateur ?
+Voici Équipia. Sept agents IA : une équipe complète, dans un bureau virtuel.
+Nora coordonne. Léa gère les clients. Marc, la compta. Sami, les fournisseurs. Chloé, les pubs. Hugo, les fiches produits. Inès, le planning.
+Max écrit une seule phrase. Nora répartit le travail… et Max suit tout, en direct.
+Rien ne part sans son accord : il relit, il valide.
+Le logiciel calcule sa vraie marge, son coût de pub maximal, le roasse à viser. Max voit enfin ce qu'il gagne vraiment.
+Besoin d'idées ? Son coach IA cherche les produits gagnants… et vérifie qu'ils sont rentables avant de lancer la pub.
+TVA, factures, planning, outils connectés : tout est au même endroit.
+Une équipe complète, jour et nuit, pour le prix d'un abonnement.
+Équipia. Votre équipe IA, au travail.
+
+(« roasse » est écrit exprès pour la bonne prononciation de ROAS.)
+
+
+=====================================================================
 SUNO — VERSION AVEC VOIX (musique + voix off parlée)
 Mode : Custom · Instrumental : DÉSACTIVÉ · Vocal gender : Male (ou Female)
 =====================================================================
