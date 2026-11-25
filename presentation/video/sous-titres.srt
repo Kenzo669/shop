@@ -1,123 +1,75 @@
 1
-00:00:00,100 --> 00:00:01,170
-Voici Max.
+00:00:00,150 --> 00:00:02,070
+Voici Max. Max fait du dropshipping.
 
 2
-00:00:01,200 --> 00:00:02,770
-Max fait du dropshipping.
-
-3
-00:00:02,800 --> 00:00:04,296
+00:00:02,750 --> 00:00:04,320
 Et ça marche ! Les commandes s'enchaînent…
 
-4
-00:00:04,326 --> 00:00:07,510
+3
+00:00:04,350 --> 00:00:07,070
 …mais il croule sous le travail : clients, pubs, compta.
 
+4
+00:00:08,000 --> 00:00:10,020
+Il lui faudrait une équipe. Sept salariés,
+
 5
-00:00:08,000 --> 00:00:09,570
-Il lui faudrait une équipe.
+00:00:10,050 --> 00:00:11,390
+c'est plus de 10 000 € par mois.
 
 6
-00:00:09,600 --> 00:00:11,737
-Sept salariés : plus de 10 000 € par mois.
-
-7
-00:00:11,767 --> 00:00:12,585
+00:00:11,420 --> 00:00:12,290
 Pas le budget.
 
-8
-00:00:12,615 --> 00:00:14,972
+7
+00:00:12,500 --> 00:00:14,950
 Et même avec le budget : recruter, former, gérer…
 
-9
-00:00:15,002 --> 00:00:16,328
+8
+00:00:14,980 --> 00:00:16,050
 Et le soir, tout s'arrête.
 
-10
-00:00:16,358 --> 00:00:19,170
+9
+00:00:16,080 --> 00:00:18,130
 Et si son équipe tenait… dans son ordinateur ?
 
+10
+00:00:19,250 --> 00:00:20,800
+Voici Équipia. Sept agents IA :
+
 11
-00:00:19,200 --> 00:00:20,270
-Voici Équipia.
+00:00:20,830 --> 00:00:22,820
+une équipe complète, dans un bureau virtuel.
 
 12
-00:00:20,300 --> 00:00:22,021
-Sept agents IA, une équipe complète.
+00:00:22,850 --> 00:00:25,070
+Nora coordonne. Léa gère les clients.
 
 13
-00:00:22,051 --> 00:00:23,170
-Nora coordonne.
+00:00:25,100 --> 00:00:27,140
+Marc, la compta. Sami, les fournisseurs.
 
 14
-00:00:23,200 --> 00:00:24,370
-Léa gère les clients.
+00:00:27,170 --> 00:00:29,180
+Chloé, les pubs. Hugo, les fiches produits.
 
 15
-00:00:24,400 --> 00:00:25,670
-Marc, la compta.
-
-16
-00:00:25,700 --> 00:00:26,970
-Sami, les fournisseurs.
-
-17
-00:00:27,000 --> 00:00:27,970
-Chloé, la pub.
-
-18
-00:00:28,000 --> 00:00:29,062
-Hugo, les fiches produits.
-
-19
-00:00:29,092 --> 00:00:30,093
+00:00:29,210 --> 00:00:30,000
 Inès, le planning.
 
-20
-00:00:30,123 --> 00:00:32,070
+16
+00:00:30,550 --> 00:00:32,070
 Max écrit une seule phrase.
 
-21
-00:00:32,100 --> 00:00:34,202
+17
+00:00:32,100 --> 00:00:33,310
 Nora répartit le travail…
 
-22
-00:00:34,800 --> 00:00:36,819
+18
+00:00:34,800 --> 00:00:36,640
 …et Max suit tout, en direct.
 
-23
-00:00:39,000 --> 00:00:42,240
+19
+00:00:39,000 --> 00:00:41,580
 Rien ne part sans son accord : il relit, il valide.
-
-24
-00:00:43,500 --> 00:00:45,975
-Le logiciel calcule sa vraie marge,
-
-25
-00:00:46,400 --> 00:00:48,627
-son coût de pub maximal, le ROAS à viser.
-
-26
-00:00:48,657 --> 00:00:50,507
-Max voit enfin ce qu'il gagne vraiment.
-
-27
-00:00:50,537 --> 00:00:53,476
-Besoin d'idées ? Son coach IA cherche les produits gagnants…
-
-28
-00:00:53,506 --> 00:00:56,970
-…et vérifie qu'ils sont rentables avant de lancer la pub.
-
-29
-00:00:57,000 --> 00:01:00,970
-TVA, factures, planning, outils connectés : tout est au même endroit.
-
-30
-00:01:01,000 --> 00:01:04,270
-Une équipe complète, jour et nuit, pour le prix d'un abonnement.
-
-31
-00:01:04,300 --> 00:01:06,809
-Équipia. Votre équipe IA, au travail.
