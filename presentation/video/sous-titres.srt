@@ -1,107 +1,135 @@
 1
-00:00:00,150 --> 00:00:02,070
-Voici Max. Max fait du dropshipping.
+00:00:00,250 --> 00:00:01,390
+Voici Max.
 
 2
-00:00:02,750 --> 00:00:04,320
-Et ça marche ! Les commandes s'enchaînent…
+00:00:01,420 --> 00:00:02,720
+Max fait du dropshipping.
 
 3
-00:00:04,350 --> 00:00:07,070
-…mais il croule sous le travail : clients, pubs, compta.
+00:00:02,750 --> 00:00:04,930
+Et ça marche ! Les commandes s'enchaînent…
 
 4
-00:00:08,000 --> 00:00:10,020
-Il lui faudrait une équipe. Sept salariés,
+00:00:04,960 --> 00:00:06,570
+…mais il croule sous le travail :
 
 5
-00:00:10,050 --> 00:00:11,390
-c'est plus de 10 000 € par mois.
+00:00:06,600 --> 00:00:08,340
+clients, pubs, compta.
 
 6
-00:00:11,420 --> 00:00:12,290
-Pas le budget.
+00:00:08,370 --> 00:00:09,480
+Il lui faudrait une équipe.
 
 7
-00:00:12,500 --> 00:00:14,950
-Et même avec le budget : recruter, former, gérer…
+00:00:09,510 --> 00:00:11,970
+Sept salariés : plus de 10 000 € par mois.
 
 8
-00:00:14,980 --> 00:00:16,050
-Et le soir, tout s'arrête.
+00:00:12,000 --> 00:00:12,770
+Pas le budget !
 
 9
-00:00:16,080 --> 00:00:18,130
-Et si son équipe tenait… dans son ordinateur ?
+00:00:12,800 --> 00:00:15,580
+Et même avec le budget : recruter, former, gérer…
 
 10
-00:00:19,250 --> 00:00:20,800
-Voici Équipia. Sept agents IA :
+00:00:15,610 --> 00:00:16,730
+Et le soir, tout s'arrête.
 
 11
-00:00:20,830 --> 00:00:22,820
-une équipe complète, dans un bureau virtuel.
+00:00:16,760 --> 00:00:19,270
+Et si son équipe tenait… dans son ordinateur ?
 
 12
-00:00:22,850 --> 00:00:25,070
-Nora coordonne. Léa gère les clients.
+00:00:19,300 --> 00:00:20,300
+Voici Équipia.
 
 13
-00:00:25,100 --> 00:00:27,140
-Marc, la compta. Sami, les fournisseurs.
+00:00:20,330 --> 00:00:23,280
+Sept agents IA, une équipe complète, dans un bureau virtuel.
 
 14
-00:00:27,170 --> 00:00:29,180
-Chloé, les pubs. Hugo, les fiches produits.
+00:00:23,310 --> 00:00:24,250
+Nora coordonne.
 
 15
-00:00:29,210 --> 00:00:30,000
-Inès, le planning.
+00:00:24,280 --> 00:00:25,330
+Léa gère les clients.
 
 16
-00:00:30,550 --> 00:00:32,070
-Max écrit une seule phrase.
+00:00:25,360 --> 00:00:26,130
+Marc, la compta.
 
 17
-00:00:32,100 --> 00:00:33,310
-Nora répartit le travail…
+00:00:26,160 --> 00:00:27,320
+Sami, les fournisseurs.
 
 18
-00:00:34,800 --> 00:00:36,640
-…et Max suit tout, en direct.
+00:00:27,350 --> 00:00:28,010
+Chloé, les pubs.
 
 19
-00:00:39,000 --> 00:00:41,580
-Rien ne part sans son accord : il relit, il valide.
+00:00:28,040 --> 00:00:29,180
+Hugo, les fiches produits.
 
 20
-00:00:43,500 --> 00:00:46,070
-Le logiciel calcule sa vraie marge,
+00:00:29,210 --> 00:00:30,150
+Inès, le planning.
 
 21
-00:00:46,100 --> 00:00:48,420
-son coût de pub maximal, le ROAS à viser.
+00:00:30,180 --> 00:00:31,710
+Max écrit une seule phrase.
 
 22
-00:00:48,450 --> 00:00:50,500
-Max voit enfin ce qu'il gagne vraiment.
+00:00:32,150 --> 00:00:33,640
+Nora répartit le travail…
 
 23
-00:00:50,600 --> 00:00:53,900
-Besoin d'idées ? Son coach IA cherche les produits gagnants…
+00:00:34,850 --> 00:00:36,730
+…et Max suit tout, en direct.
 
 24
-00:00:53,950 --> 00:00:56,700
-…et vérifie qu'ils sont rentables avant de lancer la pub.
+00:00:39,050 --> 00:00:41,830
+Rien ne part sans son accord : il relit, il valide.
 
 25
-00:00:56,750 --> 00:01:00,000
-TVA, factures, planning, outils connectés : tout est au même endroit.
+00:00:43,550 --> 00:00:45,420
+Le logiciel calcule sa vraie marge,
 
 26
-00:01:00,060 --> 00:01:04,300
-Une équipe complète, jour et nuit, pour le prix d'un abonnement.
+00:00:45,450 --> 00:00:47,120
+son coût de pub maximal,
 
 27
-00:01:04,400 --> 00:01:07,600
+00:00:47,150 --> 00:00:48,770
+le ROAS à viser.
+
+28
+00:00:48,800 --> 00:00:50,770
+Max voit enfin ce qu'il gagne vraiment.
+
+29
+00:00:50,800 --> 00:00:54,810
+Besoin d'idées ? Son coach IA cherche les produits gagnants…
+
+30
+00:00:54,840 --> 00:00:57,410
+…et vérifie qu'ils sont rentables avant de lancer la pub.
+
+31
+00:00:57,440 --> 00:01:00,420
+TVA, factures, planning, outils connectés :
+
+32
+00:01:00,450 --> 00:01:01,380
+tout est au même endroit.
+
+33
+00:01:01,410 --> 00:01:04,050
+Une équipe complète, jour et nuit, pour le prix d'un abonnement.
+
+34
+00:01:04,500 --> 00:01:07,120
 Équipia. Votre équipe IA, au travail.
