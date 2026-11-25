@@ -31,6 +31,15 @@ Les agents agissent avec de vrais outils : base de données (SQLite), fichiers p
 - **Budget mensuel** (les tâches sont bloquées une fois atteint) et **plafond par tâche** (3 $ par défaut).
 - Cache de prompt activé, recherches web limitées à 6 par tâche.
 
+## Assistant conseil (chat)
+
+Bouton **✦ Assistant** en bas à droite : un conseiller qui s'adapte au métier (conseiller restaurant, coach dropshipping, conseiller e-commerce, conseiller freelance…).
+- Il lit les vrais chiffres de l'entreprise (mois en cours, impayés, TVA, carte, marges…).
+- Il calcule avec des outils exacts : simulation du coût de revient d'un nouveau plat (avec les prix enregistrés ou estimés), rentabilité d'un produit avant lancement (marge, CPA max, ROAS mini).
+- Il cherche sur le web (produits gagnants, tendances, fournisseurs, idées de plats) en citant ses sources.
+- Il n'enregistre rien et ne confie aucune tâche aux agents sans un « oui » explicite.
+- Réponses en flux, historique conservé, coût inclus dans le budget IA (modèle réglable dans 💰 Consommation).
+
 ## Modules métier
 
 Choisi à l'inscription (modifiable dans ⚙️ Entreprise), le métier ajoute un onglet dédié, des outils et des consignes pour les agents, et des alertes dans « Aujourd'hui ». Calculs exacts, sans IA.
@@ -130,6 +139,7 @@ Si aucun compte Google n'est connecté, l'envoi passe par SMTP : renseignez `SMT
 - `src/lib/runner.ts` : la boucle de travail d'un agent (API Claude + outils).
 - `src/lib/mcp.ts`, `src/lib/catalog.ts` : connexion des outils externes (MCP) et catalogue.
 - `src/lib/google.ts`, `src/lib/connections.ts`, `src/lib/crypto.ts` : connexion des comptes Google, stockage chiffré des accès, Gmail et Agenda.
+- `src/lib/assistant.ts`, `src/components/Assistant.tsx` : assistant conseil (chat en flux, outils de simulation).
 - `src/lib/sectors.ts`, `src/lib/sector-info.ts` : modules métier (calculs, consignes et idées de tâches par métier).
 - `src/lib/business.ts` : TVA, factures, planning et tableau « Aujourd'hui » (calculs exacts, sans IA).
 - `src/lib/billing.ts` : tarifs, suivi de consommation, budget, modèle par agent.

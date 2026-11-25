@@ -39,6 +39,19 @@ export function getAgentSettings(): Record<string, AgentAiSettings> {
   );
 }
 
+/** Modèle et réflexion de l'assistant conseil (chat). */
+export function getAssistantSettings(): AgentAiSettings {
+  const s = getSetting<Partial<AgentAiSettings>>("assistant_ai", {});
+  return {
+    model: s.model && isModelId(s.model) ? s.model : DEFAULT_MODEL,
+    effort: s.effort === "low" || s.effort === "high" ? s.effort : "medium",
+  };
+}
+
+export function setAssistantSettings(v: AgentAiSettings) {
+  setSetting("assistant_ai", v);
+}
+
 export function setAgentSettings(value: Record<string, AgentAiSettings>) {
   setSetting("agent_ai", value);
 }
@@ -138,5 +151,5 @@ export function usageReport() {
       `SELECT id, agent_id, instruction, cost_usd, model FROM tasks WHERE created_at >= date('now', 'start of month') ORDER BY cost_usd DESC LIMIT 8`,
     )
     .all();
-  return { totals, byAgent, byModel, byDay, topTasks, budget: getBudget(), agents: getAgentSettings() };
+  return { totals, byAgent, byModel, byDay, topTasks, budget: getBudget(), agents: getAgentSettings(), assistant: getAssistantSettings() };
 }

@@ -10,6 +10,7 @@ import Team from "./Team";
 import { RecurringModal, UsageModal } from "./Settings";
 import ConnectionsModal from "./Connections";
 import SectorPanel from "./Sector";
+import Assistant from "./Assistant";
 import { SECTORS, SECTOR_BY_ID, type SectorId } from "@/lib/sector-info";
 
 const Office3D = dynamic(() => import("./Office3D"), {
@@ -297,6 +298,7 @@ export default function Dashboard({
         </div>
       </section>
 
+      <Assistant sector={state?.sector ?? "general"} />
       {showCompany && (
         <CompanyModal isOwner={isOwner} onClose={() => setShowCompany(false)} />
       )}

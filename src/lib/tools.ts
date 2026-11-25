@@ -36,7 +36,7 @@ type Ctx = {
   delegate: (agentId: string, instruction: string) => Promise<string>;
 };
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type AnyTool = BetaRunnableTool<any>;
+export type AnyTool = BetaRunnableTool<any>;
 
 /** Enveloppe chaque outil pour journaliser son appel et son résultat dans la tâche. */
 function logged(ctx: Ctx, tool: AnyTool): AnyTool {
@@ -481,7 +481,7 @@ function webTools(model: string): Anthropic.Beta.BetaToolUnion[] {
 }
 
 /** Outils du métier de l'entreprise. canEdit : l'agent peut modifier les fiches (sinon lecture). */
-function sectorTools(canEdit: boolean): AnyTool[] {
+export function sectorTools(canEdit: boolean): AnyTool[] {
   const sector = getSector();
   if (sector === "restaurant") {
     const read = betaZodTool({

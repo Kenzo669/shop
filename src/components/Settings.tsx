@@ -15,6 +15,7 @@ type UsageData = {
   taskCap: number;
   monthSpend: number;
   agents: Record<string, { model: string; effort: Effort }>;
+  assistant: { model: string; effort: Effort };
   models: { id: string; label: string; input: number; output: number }[];
 };
 
@@ -25,6 +26,7 @@ export function UsageModal({ onClose }: { onClose: () => void }) {
   const [budget, setBudget] = useState<number | null>(null);
   const [cap, setCap] = useState<number | null>(null);
   const [agents, setAgents] = useState<UsageData["agents"] | null>(null);
+  const [assistant, setAssistant] = useState<UsageData["assistant"] | null>(null);
   const [saved, setSaved] = useState(false);
 
   // Initialise le formulaire une seule fois, au premier chargement.
@@ -33,6 +35,7 @@ export function UsageModal({ onClose }: { onClose: () => void }) {
       setBudget(d.budget);
       setCap(d.taskCap);
       setAgents(d.agents);
+      setAssistant(d.assistant);
     }
   }, [d, agents]);
 
@@ -82,7 +85,8 @@ export function UsageModal({ onClose }: { onClose: () => void }) {
             {d.byAgent.length === 0 && <li className="text-gray-500">Aucune tâche ce mois-ci.</li>}
             {d.byAgent.map((a) => (
               <li key={a.agent_id} className="flex border-b py-1">
-                <span style={{ color: AGENT_BY_ID[a.agent_id]?.color }}>●</span>&nbsp;{AGENT_BY_ID[a.agent_id]?.name ?? a.agent_id}
+                <span style={{ color: AGENT_BY_ID[a.agent_id]?.color ?? "#c026d3" }}>●</span>&nbsp;
+                {AGENT_BY_ID[a.agent_id]?.name ?? (a.agent_id === "assistant" ? "Assistant (chat)" : a.agent_id)}
                 <span className="ml-auto text-gray-500">{a.tasks} tâche(s) · {usd(a.cost)}</span>
               </li>
             ))}
@@ -157,6 +161,29 @@ export function UsageModal({ onClose }: { onClose: () => void }) {
                 </td>
               </tr>
             ))}
+            {assistant && (
+              <tr>
+                <td className="p-2">
+                  <span style={{ color: "#c026d3" }}>✦</span> Assistant <span className="text-xs text-gray-400">chat conseil</span>
+                </td>
+                <td className="p-2">
+                  <select className="rounded border p-1" value={assistant.model} onChange={(e) => setAssistant({ ...assistant, model: e.target.value })}>
+                    {d.models.map((m) => (
+                      <option key={m.id} value={m.id}>
+                        {m.label} ({m.input} $ / {m.output} $)
+                      </option>
+                    ))}
+                  </select>
+                </td>
+                <td className="p-2">
+                  <select className="rounded border p-1" value={assistant.effort} onChange={(e) => setAssistant({ ...assistant, effort: e.target.value as Effort })}>
+                    <option value="low">Rapide</option>
+                    <option value="medium">Normale</option>
+                    <option value="high">Approfondie</option>
+                  </select>
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
@@ -165,7 +192,7 @@ export function UsageModal({ onClose }: { onClose: () => void }) {
         <button
           className="rounded-md bg-slate-800 px-4 py-2 text-sm font-semibold text-white"
           onClick={async () => {
-            await postJson("/api/usage", { budget, taskCap: cap, agents }, "PUT");
+            await postJson("/api/usage", { budget, taskCap: cap, agents, assistant }, "PUT");
             setSaved(true);
             reload();
             setTimeout(() => setSaved(false), 2000);

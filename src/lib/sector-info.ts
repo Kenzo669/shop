@@ -11,10 +11,29 @@ export type SectorInfo = {
   guidance: Record<string, string>;
   /** Idées de tâches affichées en premier, par agent. */
   examples: Record<string, string[]>;
+  /** Questions de départ proposées dans l'assistant conseil. */
+  assistant: { title: string; desc: string; prompts: string[] };
 };
 
 export const SECTORS: SectorInfo[] = [
-  { id: "general", label: "Entreprise généraliste", emoji: "🏢", tab: null, guidance: {}, examples: {} },
+  {
+    id: "general",
+    label: "Entreprise généraliste",
+    emoji: "🏢",
+    tab: null,
+    guidance: {},
+    examples: {},
+    assistant: {
+      title: "Votre conseiller d'entreprise",
+      desc: "Trésorerie, prix, organisation, croissance : réfléchissons ensemble, chiffres à l'appui.",
+      prompts: [
+        "Fais-moi un bilan de mon mois et dis-moi quoi améliorer",
+        "Comment augmenter mon chiffre d'affaires de 20 % ?",
+        "Aide-moi à fixer le prix d'une nouvelle offre",
+        "Qu'est-ce que je dois faire en priorité cette semaine ?",
+      ],
+    },
+  },
   {
     id: "restaurant",
     label: "Restaurant, café, traiteur",
@@ -36,6 +55,16 @@ export const SECTORS: SectorInfo[] = [
       rh: ["Fais le planning de la semaine : service midi 11h-15h, soir 18h30-23h, fermé lundi"],
       direction: ["Fais un point sur la rentabilité de la carte et propose 3 actions"],
     },
+    assistant: {
+      title: "Votre conseiller restaurant",
+      desc: "Créer des plats rentables, bâtir la carte, réduire le coût matière, remplir la salle.",
+      prompts: [
+        "Aide-moi à créer un nouveau plat rentable autour de 16 €",
+        "Construis-moi un menu de saison avec entrée, plat, dessert",
+        "Comment baisser mon coût matière sans perdre en qualité ?",
+        "Quel plat du jour proposer cette semaine avec ce que j'ai ?",
+      ],
+    },
   },
   {
     id: "ecommerce",
@@ -55,6 +84,16 @@ export const SECTORS: SectorInfo[] = [
       ],
       marketing: ["Rédige les fiches produits de mes 3 meilleures ventes", "Propose une promo de Noël qui reste rentable"],
       direction: ["Fais un point hebdo : marges, stock, ventes et actions prioritaires"],
+    },
+    assistant: {
+      title: "Votre conseiller e-commerce",
+      desc: "Prix, marges, catalogue, promotions et acquisition : décidons avec les bons chiffres.",
+      prompts: [
+        "Quels prix devrais-je augmenter et de combien ?",
+        "Prépare-moi une promo de fin d'année qui reste rentable",
+        "Quel nouveau produit ajouter à mon catalogue ?",
+        "Comment augmenter mon panier moyen ?",
+      ],
     },
   },
   {
@@ -77,6 +116,16 @@ export const SECTORS: SectorInfo[] = [
       prospection: ["Trouve 5 produits tendance dans la niche maison avec des fournisseurs européens"],
       marketing: ["Écris 5 accroches de pubs TikTok pour mon produit phare"],
     },
+    assistant: {
+      title: "Votre coach dropshipping",
+      desc: "Trouver le produit gagnant, le valider chiffres en main avant de dépenser en pub, puis le lancer.",
+      prompts: [
+        "Aide-moi à trouver un produit gagnant dans une niche porteuse",
+        "Analyse ce produit avant que je le lance : est-il rentable ?",
+        "À quel prix vendre pour rester rentable avec 12 € de CPA ?",
+        "Écris une fiche produit qui convertit pour mon meilleur produit",
+      ],
+    },
   },
   {
     id: "services",
@@ -91,6 +140,16 @@ export const SECTORS: SectorInfo[] = [
       compta: ["Quel TJM minimum je dois facturer pour gagner 4 000 € net par mois ?"],
       prospection: ["Trouve 10 PME de ma région qui pourraient avoir besoin de mes services"],
       documents: ["Prépare un modèle de devis et de contrat de prestation"],
+    },
+    assistant: {
+      title: "Votre conseiller freelance",
+      desc: "Tarifs, offres, prospection et organisation de votre activité de services.",
+      prompts: [
+        "Quel TJM dois-je facturer pour vivre correctement ?",
+        "Aide-moi à créer une offre packagée à prix fixe",
+        "Comment trouver mes 3 prochains clients ?",
+        "Comment justifier une hausse de mes tarifs à mes clients ?",
+      ],
     },
   },
 ];

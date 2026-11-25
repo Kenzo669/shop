@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSetting, setSetting } from "@/lib/db";
-import { MODELS, getAgentSettings, isModelId, monthSpend, setAgentSettings, setBudget, usageReport, type AgentAiSettings } from "@/lib/billing";
+import { MODELS, getAgentSettings, isModelId, monthSpend, setAgentSettings, setAssistantSettings, setBudget, usageReport, type AgentAiSettings } from "@/lib/billing";
 import { authed } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
@@ -20,6 +20,7 @@ async function PUT_handler(req: Request) {
     budget?: number;
     taskCap?: number;
     agents?: Record<string, AgentAiSettings>;
+    assistant?: AgentAiSettings;
   };
   if (typeof body.budget === "number") setBudget(body.budget);
   if (typeof body.taskCap === "number") setSetting("task_cap_usd", Math.max(0, body.taskCap));
@@ -32,6 +33,12 @@ async function PUT_handler(req: Request) {
       current[id] = { model: s.model, effort: s.effort };
     }
     setAgentSettings(current);
+  }
+  if (body.assistant) {
+    if (!isModelId(body.assistant.model) || !["low", "medium", "high"].includes(body.assistant.effort)) {
+      return NextResponse.json({ error: "réglage invalide pour l'assistant" }, { status: 400 });
+    }
+    setAssistantSettings({ model: body.assistant.model, effort: body.assistant.effort });
   }
   return NextResponse.json({ ok: true });
 }
