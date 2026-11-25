@@ -1,8 +1,8 @@
 @echo off
-title Bureau IA
+title Equipia
 cd /d "%~dp0"
 echo.
-echo  ==== Bureau IA ====
+echo  ==== Equipia ====
 echo.
 where node >nul 2>nul
 if errorlevel 1 (
@@ -25,7 +25,7 @@ if not exist "node_modules" (
   )
 )
 echo  Demarrage... le navigateur va s'ouvrir tout seul.
-echo  Pour arreter Bureau IA : fermez cette fenetre.
+echo  Pour arreter Equipia : fermez cette fenetre.
 start "" cmd /c "timeout /t 12 >nul & start http://localhost:3000"
 call npm run dev
 pause

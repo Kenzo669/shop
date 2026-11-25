@@ -1,0 +1,99 @@
+=====================================================================
+SUNO — VERSION AVEC VOIX (musique + voix off parlée)
+Mode : Custom · Instrumental : DÉSACTIVÉ · Vocal gender : Male (ou Female)
+=====================================================================
+
+----- TITLE (à coller dans « Title ») -----
+Équipia - Votre équipe IA
+
+----- STYLE OF MUSIC (à coller dans « Style ») -----
+French spoken word narration, male voice speaking not singing, warm friendly storyteller, clear French diction, over upbeat modern tech commercial music, playful pizzicato and marimba intro, tension break, riser, bright drop, uplifting future pop groove, punchy drums, sparkling synth plucks, 120 BPM, energetic, optimistic, clean mix, voice upfront
+
+----- EXCLUDE STYLES (options avancées) -----
+singing, choir, rap, autotune, english lyrics, heavy metal, sad, lo-fi
+
+----- LYRICS (à coller dans « Lyrics ») -----
+[Intro]
+[Spoken Word]
+Voici Max.
+Max fait du dropshipping.
+Et ça marche ! Les commandes s'enchaînent…
+mais il croule sous le travail : clients, pubs, compta.
+
+[Break]
+[Spoken Word]
+Il lui faudrait une équipe.
+Sept salariés, c'est plus de dix mille euros par mois.
+Pas le budget.
+Et même avec le budget : recruter, former, gérer…
+Et le soir, tout s'arrête.
+
+[Build]
+[Spoken Word]
+Et si son équipe tenait… dans son ordinateur ?
+
+[Drop]
+[Spoken Word]
+Voici Équipia.
+Sept agents IA : une équipe complète, dans un bureau virtuel.
+
+[Verse]
+[Spoken Word]
+Nora coordonne. Léa gère les clients.
+Marc, la compta. Sami, les fournisseurs.
+Chloé, les pubs. Hugo, les fiches produits. Inès, le planning.
+Max écrit une seule phrase.
+Nora répartit le travail… et Max suit tout, en direct.
+Rien ne part sans son accord : il relit, il valide.
+
+[Verse 2]
+[Spoken Word]
+Le logiciel calcule sa vraie marge, son coût de pub maximal, le ROAS à viser.
+Max voit enfin ce qu'il gagne vraiment.
+Besoin d'idées ? Son coach IA cherche les produits gagnants…
+et vérifie qu'ils sont rentables avant de lancer la pub.
+
+[Chorus]
+[Spoken Word]
+TVA, factures, planning, outils connectés : tout est au même endroit.
+Une équipe complète, jour et nuit, pour le prix d'un abonnement.
+
+[Outro]
+[Spoken Word]
+Équipia.
+Votre équipe IA, au travail.
+[End]
+
+----- OPTIONS AVANCÉES -----
+Weirdness : 25 %
+Style Influence : 75 %
+
+CONSEILS
+- Génère plusieurs versions et garde celle où la voix PARLE (pas chante) et articule bien.
+- Si Suno chante quand même, ajoute "talking, narrator, podcast voice" au début du Style.
+- Suno ne suit pas un minutage précis : la vidéo dure 68 s. Au montage, cale « Voici Équipia » sur le flash blanc à 0:19 et coupe ou fais un fondu à la fin.
+- Si le texte est trop long pour la musique, tu peux supprimer la ligne « Le logiciel calcule… » : les chiffres restent visibles à l'écran.
+
+
+=====================================================================
+SUNO — VERSION MUSIQUE SEULE (si tu fais la voix ailleurs)
+Mode : Custom · Instrumental : ACTIVÉ
+=====================================================================
+
+----- STYLE OF MUSIC -----
+upbeat modern tech commercial, playful quirky intro, pizzicato and marimba, soft claps, warm synth bass, tension break with ticking clock and low pulse, rising riser, big bright drop with punchy drums, uplifting future pop groove, sparkling synth plucks, airy pads, optimistic, energetic, clean mix, 120 BPM, C major, instrumental, no vocals
+
+----- EXCLUDE STYLES -----
+vocals, singing, choir, lo-fi, heavy metal, sad, dark ambient, distorted guitar
+
+----- LYRICS (structure) -----
+[Intro - playful, light pizzicato, marimba, finger snaps]
+[Build - notification blips, more percussion]
+[Break - sudden stop, low tense pulse, ticking clock]
+[Breakdown - night mood, soft pad]
+[Riser - whoosh build up, snare roll]
+[Drop - bright, punchy, euphoric synths]
+[Verse - steady groove, confident, plucks]
+[Chorus - full energy, claps, uplifting lead]
+[Outro - big final hit, short shimmering tail]
+[End]

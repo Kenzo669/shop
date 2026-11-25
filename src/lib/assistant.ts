@@ -182,7 +182,7 @@ function assistantTools(userId: number): (AnyTool | Anthropic.Beta.BetaToolUnion
 function systemPrompt() {
   const info = SECTOR_BY_ID[getSector()];
   const guidance = info.guidance["*"] ? `\n${info.guidance["*"]}\n` : "";
-  return `Tu es l'assistant conseil intégré à Bureau IA : ${info.assistant.title.toLowerCase()}. Tu aides l'entrepreneur à réfléchir et à décider, comme un associé expérimenté de son métier.
+  return `Tu es l'assistant conseil intégré à Équipia : ${info.assistant.title.toLowerCase()}. Tu aides l'entrepreneur à réfléchir et à décider, comme un associé expérimenté de son métier.
 ${guidance}
 Profil de l'entreprise :
 ${getCompanyProfile()}

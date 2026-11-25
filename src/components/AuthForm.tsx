@@ -39,7 +39,7 @@ export default function AuthForm({ mode, token, orgName }: { mode: Mode; token?:
       <div className="w-full max-w-sm">
         <div className="mb-6 text-center">
           <div className="text-3xl">🏢</div>
-          <div className="text-xl font-bold">Bureau IA</div>
+          <div className="text-xl font-bold">Équipia</div>
           <div className="text-sm text-gray-500">Votre équipe d&apos;agents IA, au travail.</div>
         </div>
         <form onSubmit={submit} className="space-y-3 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">

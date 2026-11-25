@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Bureau IA",
+  title: "Équipia",
   description: "Un bureau virtuel en 3D où des agents IA travaillent pour votre entreprise.",
 };
 

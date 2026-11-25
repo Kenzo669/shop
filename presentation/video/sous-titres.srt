@@ -1,0 +1,127 @@
+1
+00:00:00,000 --> 00:00:01,200
+Voici Max.
+
+2
+00:00:01,200 --> 00:00:02,800
+Max fait du dropshipping.
+
+3
+00:00:02,800 --> 00:00:04,200
+Et ça marche ! Les commandes s'enchaînent…
+
+4
+00:00:04,200 --> 00:00:06,000
+…mais il croule sous le travail :
+
+5
+00:00:06,000 --> 00:00:07,900
+clients, pubs, compta.
+
+6
+00:00:08,000 --> 00:00:09,500
+Il lui faudrait une équipe.
+
+7
+00:00:09,600 --> 00:00:11,300
+Sept salariés : plus de 10 000 € par mois.
+
+8
+00:00:11,400 --> 00:00:12,400
+Pas le budget.
+
+9
+00:00:12,500 --> 00:00:14,100
+Et même avec le budget : recruter, former, gérer…
+
+10
+00:00:14,200 --> 00:00:15,400
+Et le soir, tout s'arrête.
+
+11
+00:00:15,600 --> 00:00:18,600
+Et si son équipe tenait… dans son ordinateur ?
+
+12
+00:00:19,000 --> 00:00:20,300
+Voici Équipia.
+
+13
+00:00:20,400 --> 00:00:21,900
+Sept agents IA : une équipe complète, dans un bureau virtuel.
+
+14
+00:00:22,000 --> 00:00:23,100
+Nora coordonne.
+
+15
+00:00:23,200 --> 00:00:24,300
+Léa gère les clients.
+
+16
+00:00:24,400 --> 00:00:25,600
+Marc, la compta.
+
+17
+00:00:25,700 --> 00:00:26,900
+Sami, les fournisseurs.
+
+18
+00:00:27,000 --> 00:00:27,900
+Chloé, les pubs.
+
+19
+00:00:28,000 --> 00:00:28,900
+Hugo, les fiches produits.
+
+20
+00:00:29,000 --> 00:00:29,900
+Inès, le planning.
+
+21
+00:00:30,000 --> 00:00:32,000
+Max écrit une seule phrase.
+
+22
+00:00:32,100 --> 00:00:34,700
+Nora répartit le travail…
+
+23
+00:00:34,800 --> 00:00:38,800
+…et Max suit tout, en direct.
+
+24
+00:00:39,000 --> 00:00:43,300
+Rien ne part sans son accord : il relit, il valide.
+
+25
+00:00:43,500 --> 00:00:46,400
+Le logiciel calcule sa vraie marge,
+
+26
+00:00:46,400 --> 00:00:48,400
+son coût de pub maximal, le ROAS à viser.
+
+27
+00:00:48,500 --> 00:00:50,400
+Max voit enfin ce qu'il gagne vraiment.
+
+28
+00:00:50,500 --> 00:00:53,400
+Besoin d'idées ? Son coach IA cherche les produits gagnants…
+
+29
+00:00:53,500 --> 00:00:56,900
+…et vérifie qu'ils sont rentables avant de lancer la pub.
+
+30
+00:00:57,000 --> 00:01:00,900
+TVA, factures, planning, outils connectés : tout est au même endroit.
+
+31
+00:01:01,000 --> 00:01:03,900
+Une équipe complète, jour et nuit, pour le prix d'un abonnement.
+
+32
+00:01:04,200 --> 00:01:07,800
+Équipia. Votre équipe IA, au travail.

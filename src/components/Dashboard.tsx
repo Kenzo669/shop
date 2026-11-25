@@ -169,7 +169,7 @@ export default function Dashboard({
             ✦
           </span>
           <div className="leading-tight">
-            <div className="text-[15px] font-bold tracking-tight">Bureau IA</div>
+            <div className="text-[15px] font-bold tracking-tight">Équipia</div>
             <div className="text-xs text-slate-500">{orgName}</div>
           </div>
         </div>

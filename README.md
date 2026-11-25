@@ -1,4 +1,4 @@
-# Bureau IA
+# Équipia
 
 Un bureau virtuel en 3D où une équipe d'agents IA (propulsés par Claude) travaille pour une entreprise : mails, comptabilité, prospection, marketing et création de documents.
 
@@ -66,10 +66,10 @@ Les données d'exemple s'adaptent au métier choisi.
 Le logiciel tourne sur n'importe quel serveur qui exécute Node.js ou Docker et garde un disque persistant (VPS OVH, Scaleway, Hetzner ; Render, Railway, Fly.io avec un volume). **Pas d'hébergement « serverless » type Vercel** : les agents et les automatisations tournent en continu dans le serveur.
 
 ```bash
-docker build -t bureau-ia .
+docker build -t equipia .
 docker run -d -p 3000:3000 -v bureau-data:/data \
   -e ANTHROPIC_API_KEY=... -e APP_URL=https://votre-domaine.fr -e APP_SECRET=une-longue-phrase-secrete \
-  bureau-ia
+  equipia
 ```
 
 À prévoir : un nom de domaine en **HTTPS** (indispensable pour les cookies sécurisés et les connexions OAuth), `APP_URL` réglé sur cette adresse, `APP_SECRET` fixé et gardé secret, et une **sauvegarde régulière du volume `/data`**.
@@ -79,8 +79,8 @@ docker run -d -p 3000:3000 -v bureau-data:/data \
 ### Le plus simple : double-clic
 
 1. Installez **Node.js** (version LTS) depuis <https://nodejs.org/fr>, puis redémarrez l'ordinateur.
-2. Double-cliquez sur **`Lancer Bureau IA (Windows).bat`** ou **`Lancer Bureau IA (Mac).command`** (sur Mac, la première fois : clic droit → *Ouvrir*).
-3. La première fois, l'installation prend 1 à 3 minutes, puis le navigateur s'ouvre sur Bureau IA.
+2. Double-cliquez sur **`Lancer Equipia (Windows).bat`** ou **`Lancer Equipia (Mac).command`** (sur Mac, la première fois : clic droit → *Ouvrir*).
+3. La première fois, l'installation prend 1 à 3 minutes, puis le navigateur s'ouvre sur Équipia.
 
 ### À la main
 
@@ -99,7 +99,7 @@ npm run dev
 
 ## Connexions : relier les outils du client
 
-Bureau IA est un logiciel indépendant : chaque entreprise y relie ses propres comptes depuis le bouton **🔌 Connexions**.
+Équipia est un logiciel indépendant : chaque entreprise y relie ses propres comptes depuis le bouton **🔌 Connexions**.
 
 | Outil | Ce que les agents peuvent faire | Connexion |
 |---|---|---|
@@ -113,7 +113,7 @@ Bureau IA est un logiciel indépendant : chaque entreprise y relie ses propres c
 | **Autre outil** | tout logiciel qui propose un serveur MCP (adresse à coller) | MCP |
 
 Fonctionnement (MCP, le standard de connexion des IA) :
-- **Connexion par compte** : découverte automatique du serveur d'autorisation de l'éditeur, enregistrement automatique de Bureau IA, consentement chez l'éditeur (OAuth 2.1 + PKCE), jetons chiffrés et renouvelés automatiquement.
+- **Connexion par compte** : découverte automatique du serveur d'autorisation de l'éditeur, enregistrement automatique de Équipia, consentement chez l'éditeur (OAuth 2.1 + PKCE), jetons chiffrés et renouvelés automatiquement.
 - **Par outil** : choix des agents autorisés et des actions permises. Les actions destructrices (supprimer, rembourser, annuler…) sont désactivées par défaut.
 - Les adresses du catalogue sont celles publiées par les éditeurs (`src/lib/catalog.ts`) ; elles restent modifiables au moment de la connexion. Le serveur doit être accessible publiquement en HTTPS.
 

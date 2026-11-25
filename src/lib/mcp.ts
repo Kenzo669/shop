@@ -182,7 +182,7 @@ export async function startOAuth(input: { catalogId: string; name: string; url: 
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      client_name: "Bureau IA",
+      client_name: "Équipia",
       redirect_uris: [redirectUri()],
       grant_types: ["authorization_code", "refresh_token"],
       response_types: ["code"],
@@ -346,7 +346,7 @@ async function validToken(r: Row): Promise<string | undefined> {
 // ------------------------------------------------------------ Dialogue MCP (liste des actions)
 
 function initParams() {
-  return { protocolVersion: "2025-06-18", capabilities: {}, clientInfo: { name: "Bureau IA", version: "1.0" } };
+  return { protocolVersion: "2025-06-18", capabilities: {}, clientInfo: { name: "Équipia", version: "1.0" } };
 }
 
 /** Lit une réponse JSON-RPC, en JSON simple ou en flux SSE (« Streamable HTTP »). */

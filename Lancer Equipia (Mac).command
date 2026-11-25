@@ -1,7 +1,7 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 echo ""
-echo " ==== Bureau IA ===="
+echo " ==== Équipia ===="
 echo ""
 if ! command -v node >/dev/null 2>&1; then
   echo " Node.js n'est pas installé sur ce Mac."
@@ -22,6 +22,6 @@ if [ ! -d node_modules ]; then
   fi
 fi
 echo " Démarrage... le navigateur va s'ouvrir tout seul."
-echo " Pour arrêter Bureau IA : fermez cette fenêtre."
+echo " Pour arrêter Équipia : fermez cette fenêtre."
 (sleep 12; open "http://localhost:3000") &
 npm run dev
