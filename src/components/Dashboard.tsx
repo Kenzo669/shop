@@ -161,74 +161,67 @@ export default function Dashboard({
   };
 
   return (
-    <div className="flex min-h-screen flex-col bg-slate-100 text-gray-900">
-      <header className="flex flex-wrap items-center gap-3 border-b bg-white px-4 py-3">
-        <div className="text-lg font-bold">🏢 Bureau IA</div>
-        <div className="text-sm text-gray-500">{orgName}</div>
-        <div className="ml-auto flex flex-wrap items-center gap-2 text-xs">
-          <Badge
-            ok={state?.aiConfigured}
-            okText="IA connectée"
-            koText="Clé API Claude manquante"
-          />
-          <button
-            onClick={() => setShowUsage(true)}
-            className="rounded-md border px-3 py-1.5 hover:bg-gray-50"
+    <div className="flex min-h-screen flex-col bg-[radial-gradient(ellipse_at_top_left,#eef2ff_0%,#f8fafc_45%,#f1f5f9_100%)] text-slate-900">
+      <header className="sticky top-0 z-30 flex flex-wrap items-center gap-3 border-b border-slate-200/70 bg-white/80 px-4 py-2.5 backdrop-blur-md">
+        <div className="flex items-center gap-2.5">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-violet-500 via-fuchsia-500 to-amber-400 text-lg text-white shadow-md shadow-fuchsia-500/20">
+            ✦
+          </span>
+          <div className="leading-tight">
+            <div className="text-[15px] font-bold tracking-tight">Bureau IA</div>
+            <div className="text-xs text-slate-500">{orgName}</div>
+          </div>
+        </div>
+        <div className="ml-auto flex flex-wrap items-center gap-1.5 text-xs">
+          <span
+            className={`hidden items-center gap-1.5 rounded-full px-2.5 py-1 font-medium sm:inline-flex ${
+              state?.aiConfigured ? "bg-emerald-50 text-emerald-700" : "bg-amber-50 text-amber-700"
+            }`}
+            title={state?.aiConfigured ? "Clé API Claude configurée" : "Ajoutez ANTHROPIC_API_KEY dans .env.local"}
           >
-            💰 {state ? usd(state.monthSpend) : "…"}
-            {state?.budget ? (
-              <span className="text-gray-400"> / {usd(state.budget)}</span>
-            ) : null}
-          </button>
-          <button
-            onClick={() => setShowRecurring(true)}
-            className="rounded-md border px-3 py-1.5 hover:bg-gray-50"
-          >
-            ⏰ Automatisations
-          </button>
+            <span className={`h-1.5 w-1.5 rounded-full ${state?.aiConfigured ? "bg-emerald-500" : "bg-amber-500"}`} />
+            {state?.aiConfigured ? "IA connectée" : "Clé API manquante"}
+          </span>
+          <HeaderButton onClick={() => setShowUsage(true)} icon="💰">
+            {state ? usd(state.monthSpend) : "…"}
+            {state?.budget ? <span className="text-slate-400"> / {usd(state.budget)}</span> : null}
+          </HeaderButton>
+          <HeaderButton onClick={() => setShowRecurring(true)} icon="⏰">
+            <span className="hidden md:inline">Automatisations</span>
+          </HeaderButton>
           {isOwner && (
-            <button
-              onClick={() => setShowConnections(true)}
-              className="rounded-md border px-3 py-1.5 hover:bg-gray-50"
-            >
-              🔌 Connexions
+            <HeaderButton onClick={() => setShowConnections(true)} icon="🔌">
+              <span className="hidden md:inline">Connexions</span>
               {state && (
                 <span
-                  className={`ml-1.5 rounded-full px-1.5 py-0.5 text-[10px] ${
-                    state.connections.length + state.mcpCount
-                      ? "bg-emerald-100 text-emerald-800"
-                      : "bg-gray-100 text-gray-600"
+                  className={`rounded-full px-1.5 text-[10px] font-semibold ${
+                    state.connections.length + state.mcpCount ? "bg-emerald-100 text-emerald-700" : "bg-slate-100 text-slate-500"
                   }`}
                 >
                   {state.connections.length + state.mcpCount}
                 </span>
               )}
-            </button>
+            </HeaderButton>
           )}
-          <button
-            onClick={() => setShowCompany(true)}
-            className="rounded-md border px-3 py-1.5 hover:bg-gray-50"
-          >
-            ⚙️ Entreprise
-          </button>
+          <HeaderButton onClick={() => setShowCompany(true)} icon="⚙️">
+            <span className="hidden md:inline">Entreprise</span>
+          </HeaderButton>
           <UserMenu me={me} />
         </div>
       </header>
 
-      <div className="grid grid-cols-1 gap-3 p-3 lg:grid-cols-[1fr_420px]">
-        <div className="relative h-[55vh] overflow-hidden rounded-xl border bg-white lg:h-[62vh]">
+      <div className="grid grid-cols-1 gap-4 p-4 lg:grid-cols-[1fr_420px]">
+        <div className="relative h-[55vh] overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/80 lg:h-[64vh]">
           <Office3D
             working={state?.working ?? []}
+            links={delegationLinks(state?.tasks ?? [])}
             selected={selectedAgent}
             onSelect={(id) => {
               setSelectedAgent(id);
               setSelectedTask(null);
             }}
           />
-          <div className="pointer-events-none absolute bottom-2 left-3 text-xs text-gray-500">
-            Cliquez sur un agent pour lui confier une tâche · glissez pour
-            tourner la vue
-          </div>
+          <OfficeOverlay working={state?.working.length ?? 0} />
         </div>
 
         <AgentPanel
@@ -239,9 +232,7 @@ export default function Dashboard({
             setSelectedAgent(id);
             setSelectedTask(null);
           }}
-          tasks={(state?.tasks ?? []).filter(
-            (t) => t.agent_id === selectedAgent,
-          )}
+          tasks={(state?.tasks ?? []).filter((t) => t.agent_id === selectedAgent)}
           selectedTask={selectedTask}
           onSelectTask={setSelectedTask}
           onCreated={(id) => {
@@ -251,8 +242,8 @@ export default function Dashboard({
         />
       </div>
 
-      <section className="mx-3 mb-3 rounded-xl border bg-white">
-        <nav className="flex flex-wrap gap-1 border-b px-2 pt-2 text-sm">
+      <section className="mx-4 mb-6 rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/80">
+        <nav className="flex gap-1 overflow-x-auto border-b border-slate-100 p-2 text-sm">
           {(
             [
               ["today", "🏠 Aujourd'hui"],
@@ -268,13 +259,15 @@ export default function Dashboard({
             <button
               key={k}
               onClick={() => setTab(k)}
-              className={`rounded-t-md px-3 py-2 ${tab === k ? "bg-slate-100 font-semibold" : "text-gray-600 hover:bg-gray-50"}`}
+              className={`shrink-0 whitespace-nowrap rounded-xl px-3.5 py-2 transition-colors ${
+                tab === k ? "bg-slate-900 font-semibold text-white shadow-sm" : "text-slate-600 hover:bg-slate-100"
+              }`}
             >
               {label}
             </button>
           ))}
         </nav>
-        <div className="p-3">
+        <div className="p-4">
           {tab === "activite" && (
             <Activity
               tasks={state?.tasks ?? []}
@@ -332,29 +325,61 @@ export default function Dashboard({
   );
 }
 
+/** Délégations en cours : [agent parent, agent qui exécute] pour les sous-tâches actives. */
+function delegationLinks(tasks: Task[]): [string, string][] {
+  const byId = new Map(tasks.map((t) => [t.id, t]));
+  const out = new Map<string, [string, string]>();
+  for (const t of tasks) {
+    if (t.parent_task_id === null || (t.status !== "running" && t.status !== "queued")) continue;
+    const parent = byId.get(t.parent_task_id);
+    if (parent && parent.agent_id !== t.agent_id) out.set(`${parent.agent_id}-${t.agent_id}`, [parent.agent_id, t.agent_id]);
+  }
+  return [...out.values()];
+}
+
 function countDrafts(data: Data | null) {
   const n = data?.emails.filter((e) => e.status === "draft").length ?? 0;
   return n ? ` (${n} à valider)` : "";
 }
 
-function Badge({
-  ok,
-  okText,
-  koText,
-}: {
-  ok?: boolean;
-  okText: string;
-  koText: string;
-}) {
-  if (ok === undefined) return null;
+function HeaderButton({ onClick, icon, children }: { onClick: () => void; icon: string; children: React.ReactNode }) {
   return (
-    <span
-      className={`rounded-full px-2.5 py-1 ${ok ? "bg-emerald-100 text-emerald-800" : "bg-amber-100 text-amber-800"}`}
+    <button
+      onClick={onClick}
+      className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 font-medium text-slate-700 transition hover:bg-slate-100"
     >
-      {ok ? "● " + okText : "○ " + koText}
-    </span>
+      <span>{icon}</span>
+      {children}
+    </button>
   );
 }
+
+/** Bandeau en surimpression sur le bureau 3D : activité et heure. */
+function OfficeOverlay({ working }: { working: number }) {
+  const [now, setNow] = useState(() => new Date());
+  useEffect(() => {
+    const t = setInterval(() => setNow(new Date()), 30_000);
+    return () => clearInterval(t);
+  }, []);
+  return (
+    <>
+      <div className="pointer-events-none absolute left-3 top-3 flex items-center gap-2">
+        <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm ring-1 ring-black/5 backdrop-blur">
+          <span className={`h-2 w-2 rounded-full ${working ? "animate-pulse bg-amber-500" : "bg-emerald-500"}`} />
+          {working ? `${working} agent${working > 1 ? "s" : ""} au travail` : "Toute l'équipe est disponible"}
+        </span>
+        <span className="rounded-full bg-white/80 px-3 py-1.5 text-xs font-medium tabular-nums text-slate-600 shadow-sm ring-1 ring-black/5 backdrop-blur">
+          {now.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" })}
+        </span>
+      </div>
+      <div className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white/75 px-3 py-1 text-[11px] text-slate-500 shadow-sm ring-1 ring-black/5 backdrop-blur">
+        <span className="sm:hidden">Touchez un agent pour lui confier une tâche</span>
+        <span className="hidden sm:inline">Cliquez sur un agent pour lui confier une tâche · glissez pour tourner · molette pour zoomer</span>
+      </div>
+    </>
+  );
+}
+
 
 function AgentPanel({
   sector,
@@ -397,71 +422,90 @@ function AgentPanel({
   };
 
   return (
-    <aside className="flex max-h-[62vh] min-h-[400px] flex-col overflow-hidden rounded-xl border bg-white">
-      <div className="flex gap-1 overflow-x-auto border-b p-2">
-        {AGENTS.map((a) => (
-          <button
-            key={a.id}
-            onClick={() => onSelectAgent(a.id)}
-            title={`${a.name} · ${a.role}`}
-            className={`relative shrink-0 rounded-full px-2.5 py-1 text-xs ${a.id === agentId ? "font-semibold text-white" : "bg-slate-100 text-gray-700"}`}
-            style={a.id === agentId ? { background: a.color } : undefined}
-          >
-            {a.name}
-            {working.includes(a.id) && (
-              <span className="ml-1 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-amber-400 align-middle" />
-            )}
-          </button>
-        ))}
+    <aside className="flex max-h-[64vh] min-h-[420px] flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/80">
+      <div className="flex gap-1.5 overflow-x-auto border-b border-slate-100 px-3 py-2.5">
+        {AGENTS.map((a) => {
+          const active = a.id === agentId;
+          return (
+            <button
+              key={a.id}
+              onClick={() => onSelectAgent(a.id)}
+              title={`${a.name} · ${a.role}`}
+              className={`relative grid h-9 w-9 shrink-0 place-items-center rounded-full text-sm font-semibold text-white transition ${
+                active ? "scale-110 ring-2 ring-offset-2" : "opacity-60 hover:opacity-100"
+              }`}
+              style={{ background: a.color, ...(active ? ({ "--tw-ring-color": a.color } as React.CSSProperties) : {}) }}
+              aria-label={a.name}
+            >
+              {a.name[0]}
+              {working.includes(a.id) && (
+                <span className="absolute -right-0.5 -top-0.5 flex h-3 w-3">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75" />
+                  <span className="relative inline-flex h-3 w-3 rounded-full border-2 border-white bg-amber-500" />
+                </span>
+              )}
+            </button>
+          );
+        })}
       </div>
-      <div
-        className="border-b p-4"
-        style={{ borderTop: `4px solid ${agent.color}` }}
-      >
-        <div className="flex items-center gap-2">
+      <div className="relative border-b border-slate-100 p-4">
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-20 opacity-[0.12]"
+          style={{ background: `linear-gradient(180deg, ${agent.color}, transparent)` }}
+        />
+        <div className="relative flex items-center gap-3">
           <span
-            className="grid h-9 w-9 place-items-center rounded-full text-white"
-            style={{ background: agent.color }}
+            className="grid h-12 w-12 place-items-center rounded-2xl text-lg font-bold text-white shadow-md"
+            style={{ background: `linear-gradient(135deg, ${agent.color}, ${agent.color}cc)` }}
           >
             {agent.name[0]}
           </span>
-          <div>
-            <div className="font-semibold">{agent.name}</div>
-            <div className="text-xs text-gray-500">{agent.role}</div>
+          <div className="min-w-0">
+            <div className="flex items-center gap-2 font-semibold">
+              {agent.name}
+              {working.includes(agentId) ? (
+                <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-medium text-amber-800">au travail</span>
+              ) : (
+                <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700">disponible</span>
+              )}
+            </div>
+            <div className="text-xs text-slate-500">{agent.role}</div>
           </div>
         </div>
-        <textarea
-          value={instruction}
-          onChange={(e) => setInstruction(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) submit();
-          }}
-          placeholder={`Que doit faire ${agent.name} ?`}
-          rows={3}
-          className="mt-3 w-full resize-none rounded-md border p-2 text-sm outline-none focus:ring-2 focus:ring-slate-300"
-        />
-        <div className="mt-2 flex flex-wrap gap-1">
+        <div className="relative mt-3 rounded-xl border border-slate-200 bg-white focus-within:ring-2" style={{ "--tw-ring-color": `${agent.color}55` } as React.CSSProperties}>
+          <textarea
+            value={instruction}
+            onChange={(e) => setInstruction(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) submit();
+            }}
+            placeholder={`Que doit faire ${agent.name} ?`}
+            rows={3}
+            className="w-full resize-none rounded-xl bg-transparent p-3 text-sm outline-none"
+          />
+          <div className="flex items-center gap-2 px-2 pb-2">
+            <span className="text-[11px] text-slate-400">Ctrl+Entrée</span>
+            {error && <span className="text-xs text-red-600">{error}</span>}
+            <button
+              onClick={submit}
+              disabled={sending || !instruction.trim()}
+              className="ml-auto rounded-lg px-4 py-1.5 text-sm font-semibold text-white shadow-sm transition disabled:opacity-40"
+              style={{ background: agent.color }}
+            >
+              {sending ? "Envoi…" : "Confier la tâche →"}
+            </button>
+          </div>
+        </div>
+        <div className="mt-2.5 flex flex-wrap gap-1.5">
           {[...(SECTOR_BY_ID[sector]?.examples[agentId] ?? []), ...agent.examples].slice(0, 4).map((ex) => (
             <button
               key={ex}
               onClick={() => setInstruction(ex)}
-              className="rounded-full bg-slate-100 px-2 py-1 text-left text-[11px] text-gray-700 hover:bg-slate-200"
+              className="rounded-lg border border-slate-200 bg-slate-50 px-2 py-1 text-left text-[11px] leading-snug text-slate-600 transition hover:border-slate-300 hover:bg-white"
             >
-              {ex}
+              ✨ {ex}
             </button>
           ))}
-        </div>
-        <div className="mt-2 flex items-center gap-2">
-          <button
-            onClick={submit}
-            disabled={sending || !instruction.trim()}
-            className="rounded-md px-4 py-2 text-sm font-semibold text-white disabled:opacity-50"
-            style={{ background: agent.color }}
-          >
-            {sending ? "Envoi…" : "Confier la tâche"}
-          </button>
-          <span className="text-[11px] text-gray-400">Ctrl+Entrée</span>
-          {error && <span className="text-xs text-red-600">{error}</span>}
         </div>
       </div>
 

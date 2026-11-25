@@ -73,6 +73,7 @@ export function filesDir() {
 function open(orgId: number): Database.Database {
   fs.mkdirSync(orgDir(orgId), { recursive: true });
   const db = new Database(path.join(orgDir(orgId), "bureau.db"));
+  db.pragma("busy_timeout = 5000");
   db.pragma("journal_mode = WAL");
   db.exec(`
     CREATE TABLE IF NOT EXISTS tasks (

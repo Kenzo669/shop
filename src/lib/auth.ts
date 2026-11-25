@@ -16,6 +16,7 @@ const g = globalThis as unknown as { __appDb?: Database.Database };
 
 function openApp() {
   const a = new Database(path.join(DATA_DIR, "app.db"));
+  a.pragma("busy_timeout = 5000");
   a.pragma("journal_mode = WAL");
   a.pragma("foreign_keys = ON");
   a.exec(`
@@ -56,7 +57,14 @@ function openApp() {
   return a;
 }
 
-export const appDb = g.__appDb ?? (g.__appDb = openApp());
+/** Ouverte à la première utilisation (pas au chargement du module : le build de Next.js charge les routes en parallèle). */
+export const appDb = new Proxy({} as Database.Database, {
+  get(_t, prop) {
+    const d = (g.__appDb ??= openApp());
+    const v = Reflect.get(d, prop, d);
+    return typeof v === "function" ? v.bind(d) : v;
+  },
+});
 
 const sha256 = (s: string) => crypto.createHash("sha256").update(s).digest("hex");
 
