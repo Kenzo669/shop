@@ -43,3 +43,8 @@ next-env.d.ts
 
 # données locales du bureau
 /data
+
+# application de bureau
+/desktop/node_modules
+/desktop/dist
+/desktop/server

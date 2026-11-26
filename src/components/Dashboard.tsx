@@ -7,10 +7,11 @@ import { usd, usePoll } from "./shared";
 import Today from "./Today";
 import ComptaPanel from "./Compta";
 import Team from "./Team";
-import { RecurringModal, UsageModal } from "./Settings";
+import { ApiKeyModal, RecurringModal, UsageModal } from "./Settings";
 import ConnectionsModal from "./Connections";
 import SectorPanel from "./Sector";
 import Assistant from "./Assistant";
+import { OfficeBoundary } from "./SafeOffice";
 import { SECTORS, SECTOR_BY_ID, type SectorId } from "@/lib/sector-info";
 
 const Office3D = dynamic(() => import("./Office3D"), {
@@ -72,6 +73,7 @@ type State = {
   tasks: Task[];
   working: string[];
   aiConfigured: boolean;
+  desktop: boolean;
   smtpConfigured: boolean;
   connections: { provider: string; account_email: string }[];
   mcpCount: number;
@@ -123,6 +125,8 @@ export default function Dashboard({
     | "fichiers" | "metier";
   const [tab, setTab] = useState<Tab>("today");
   const [showUsage, setShowUsage] = useState(false);
+  const [showApiKey, setShowApiKey] = useState(false);
+  const [apiKeyPrompted, setApiKeyPrompted] = useState(false);
   const [showRecurring, setShowRecurring] = useState(false);
   const [showCompany, setShowCompany] = useState(false);
   const [showConnections, setShowConnections] = useState(false);
@@ -174,15 +178,24 @@ export default function Dashboard({
           </div>
         </div>
         <div className="ml-auto flex flex-wrap items-center gap-1.5 text-xs">
-          <span
-            className={`hidden items-center gap-1.5 rounded-full px-2.5 py-1 font-medium sm:inline-flex ${
-              state?.aiConfigured ? "bg-emerald-50 text-emerald-700" : "bg-amber-50 text-amber-700"
+          <button
+            type="button"
+            disabled={!(state?.desktop && isOwner)}
+            onClick={() => setShowApiKey(true)}
+            className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-medium enabled:cursor-pointer enabled:hover:ring-1 ${
+              state?.aiConfigured ? "bg-emerald-50 text-emerald-700 ring-emerald-200" : "bg-amber-50 text-amber-700 ring-amber-300"
             }`}
-            title={state?.aiConfigured ? "Clé API Claude configurée" : "Ajoutez ANTHROPIC_API_KEY dans .env.local"}
+            title={
+              state?.aiConfigured
+                ? "Clé API Claude configurée"
+                : state?.desktop
+                  ? "Cliquez pour ajouter votre clé API Claude"
+                  : "Ajoutez ANTHROPIC_API_KEY dans .env.local"
+            }
           >
             <span className={`h-1.5 w-1.5 rounded-full ${state?.aiConfigured ? "bg-emerald-500" : "bg-amber-500"}`} />
             {state?.aiConfigured ? "IA connectée" : "Clé API manquante"}
-          </span>
+          </button>
           <HeaderButton onClick={() => setShowUsage(true)} icon="💰">
             {state ? usd(state.monthSpend) : "…"}
             {state?.budget ? <span className="text-slate-400"> / {usd(state.budget)}</span> : null}
@@ -213,15 +226,24 @@ export default function Dashboard({
 
       <div className="grid grid-cols-1 gap-4 p-4 lg:grid-cols-[1fr_420px]">
         <div className="relative h-[55vh] overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/80 lg:h-[64vh]">
-          <Office3D
+          <OfficeBoundary
             working={state?.working ?? []}
-            links={delegationLinks(state?.tasks ?? [])}
             selected={selectedAgent}
             onSelect={(id) => {
               setSelectedAgent(id);
               setSelectedTask(null);
             }}
-          />
+          >
+            <Office3D
+              working={state?.working ?? []}
+              links={delegationLinks(state?.tasks ?? [])}
+              selected={selectedAgent}
+              onSelect={(id) => {
+                setSelectedAgent(id);
+                setSelectedTask(null);
+              }}
+            />
+          </OfficeBoundary>
           <OfficeOverlay working={state?.working.length ?? 0} />
         </div>
 
@@ -301,6 +323,16 @@ export default function Dashboard({
       <Assistant sector={state?.sector ?? "general"} />
       {showCompany && (
         <CompanyModal isOwner={isOwner} onClose={() => setShowCompany(false)} />
+      )}
+      {(showApiKey || (state?.desktop && isOwner && !state.aiConfigured && !apiKeyPrompted)) && (
+        <ApiKeyModal
+          configured={Boolean(state?.aiConfigured)}
+          onClose={() => {
+            setShowApiKey(false);
+            setApiKeyPrompted(true);
+            refresh();
+          }}
+        />
       )}
       {showUsage && (
         <UsageModal

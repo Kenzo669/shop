@@ -349,3 +349,63 @@ export function RecurringModal({ onClose }: { onClose: () => void }) {
     </Modal>
   );
 }
+
+/** Saisie de la clé API Claude (application de bureau uniquement). */
+export function ApiKeyModal({ configured, onClose }: { configured: boolean; onClose: (saved: boolean) => void }) {
+  const [key, setKey] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+  const save = async () => {
+    setBusy(true);
+    setError("");
+    try {
+      await postJson("/api/settings/apikey", { key });
+      onClose(true);
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  };
+  return (
+    <Modal
+      title={configured ? "Changer la clé API Claude" : "Dernière étape : votre clé API Claude"}
+      subtitle="C'est elle qui fait travailler vos agents. Vous ne payez que ce que vous consommez, directement à Anthropic."
+      onClose={() => onClose(false)}
+    >
+      <ol className="mb-3 list-decimal space-y-1 pl-5 text-sm text-slate-600">
+        <li>
+          Ouvrez{" "}
+          <a className="text-violet-700 underline" href="https://console.anthropic.com/settings/keys" target="_blank" rel="noreferrer">
+            console.anthropic.com
+          </a>{" "}
+          et créez un compte (ajoutez quelques euros de crédit).
+        </li>
+        <li>Cliquez sur « Create Key », puis copiez la clé (elle commence par sk-ant-).</li>
+        <li>Collez-la ci-dessous. Elle reste chiffrée sur cet ordinateur.</li>
+      </ol>
+      <input
+        type="password"
+        autoFocus
+        className="w-full rounded-md border px-3 py-2 font-mono text-sm"
+        placeholder="sk-ant-..."
+        value={key}
+        onChange={(e) => setKey(e.target.value)}
+        onKeyDown={(e) => e.key === "Enter" && key && !busy && save()}
+      />
+      {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
+      <div className="mt-3 flex justify-end gap-2">
+        <button className="rounded-md px-3 py-1.5 text-sm text-slate-600 hover:bg-slate-100" onClick={() => onClose(false)}>
+          Plus tard
+        </button>
+        <button
+          className="rounded-md bg-violet-600 px-3 py-1.5 text-sm font-medium text-white disabled:opacity-50"
+          disabled={!key.trim() || busy}
+          onClick={save}
+        >
+          {busy ? "Vérification…" : "Enregistrer"}
+        </button>
+      </div>
+    </Modal>
+  );
+}

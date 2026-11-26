@@ -20,7 +20,7 @@ import { sectorAlerts } from "./sectors";
 import { todayOverview, vatReturn } from "./business";
 import { sectorTools, type AnyTool } from "./tools";
 import { budgetBlockReason, getAssistantSettings, monthSpend, recordUsage } from "./billing";
-import { createTask, startTask } from "./runner";
+import { aiConfigured, createTask, getClient, startTask } from "./runner";
 
 registerSchema(`
   CREATE TABLE IF NOT EXISTS chat_messages (
@@ -52,8 +52,6 @@ export function history(userId: number, conversationId: string) {
 function save(userId: number, conversationId: string, role: "user" | "assistant", content: string) {
   db.prepare("INSERT INTO chat_messages (user_id, conversation_id, role, content) VALUES (?, ?, ?, ?)").run(userId, conversationId, role, content);
 }
-
-let client: Anthropic | null = null;
 
 // ------------------------------------------------------------------ Outils de l'assistant
 
@@ -223,8 +221,8 @@ const TOOL_LABELS: Record<string, string> = {
 export async function chat(userId: number, conversationId: string | null, message: string, emit: (e: ChatEvent) => void) {
   const blocked = budgetBlockReason();
   if (blocked) return emit({ type: "error", message: blocked });
-  if (!process.env.ANTHROPIC_API_KEY && !process.env.ANTHROPIC_AUTH_TOKEN) {
-    return emit({ type: "error", message: "Clé API Claude absente : ajoutez ANTHROPIC_API_KEY dans .env.local puis relancez." });
+  if (!aiConfigured()) {
+    return emit({ type: "error", message: "Clé API Claude absente : cliquez sur « Clé API manquante » en haut de l'écran pour l'ajouter." });
   }
   const conv = conversationId ?? crypto.randomBytes(8).toString("hex");
   // Historique en texte simple (les étapes d'outils ne sont pas rejouées : moins de tokens).
@@ -232,7 +230,7 @@ export async function chat(userId: number, conversationId: string | null, messag
   save(userId, conv, "user", message);
   const { model, effort } = getAssistantSettings();
   const haiku = model.startsWith("claude-haiku");
-  client ??= new Anthropic();
+  const client = getClient();
 
   const runner = client.beta.messages.toolRunner({
     model,

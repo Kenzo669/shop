@@ -7,14 +7,23 @@ import { mcpForAgent } from "./mcp";
 import { getSector } from "./sectors";
 import { SECTOR_BY_ID } from "./sector-info";
 import { budgetBlockReason, getAgentSettings, getSetting, recordUsage } from "./billing";
+import { loadStoredApiKey } from "./apikey";
 const MAX_DELEGATION_DEPTH = 2;
 
 let client: Anthropic | null = null;
-function getClient() {
-  return (client ??= new Anthropic());
+let clientKey: string | undefined;
+export function getClient() {
+  loadStoredApiKey();
+  // Recrée le client si la clé a été changée depuis le logiciel.
+  if (!client || clientKey !== process.env.ANTHROPIC_API_KEY) {
+    client = new Anthropic();
+    clientKey = process.env.ANTHROPIC_API_KEY;
+  }
+  return client;
 }
 
 export function aiConfigured() {
+  loadStoredApiKey();
   return Boolean(process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN);
 }
 
@@ -79,7 +88,7 @@ async function runTask(taskId: number, depth: number): Promise<string> {
   db.prepare("UPDATE tasks SET status = 'running' WHERE id = ?").run(taskId);
 
   if (!aiConfigured()) {
-    const msg = "Clé API Claude absente : ajoutez ANTHROPIC_API_KEY dans le fichier .env.local puis relancez le serveur.";
+    const msg = "Clé API Claude absente : cliquez sur « Clé API manquante » en haut de l'écran pour l'ajouter.";
     finish(taskId, "error", msg);
     return msg;
   }

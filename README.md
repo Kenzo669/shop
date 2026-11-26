@@ -152,3 +152,13 @@ Si aucun compte Google n'est connecté, l'envoi passe par SMTP : renseignez `SMT
 
 - Pas encore de comptes utilisateurs ni de séparation entre entreprises clientes : une installation = une entreprise. À n'utiliser qu'en local ou derrière un accès protégé.
 - Les tâches tournent dans le serveur Node : il doit rester allumé pendant qu'elles s'exécutent (`npm run dev` ou `npm run build && npm start`). Ce n'est pas adapté à un hébergement « serverless » comme Vercel.
+
+## Application de bureau (installateurs Mac, Windows, Linux)
+
+Le dossier `desktop/` emballe Équipia dans une application Electron : le serveur tourne en local, les données vont dans le dossier « Equipia » de l'utilisateur, et la clé API Claude se saisit dans le logiciel au premier lancement.
+
+- Tester en local : `cd desktop && npm install && node prepare-server.mjs && npm start`
+- Fabriquer un installateur pour son propre système : `cd desktop && npm run dist`
+- Publier une version : poussez une étiquette `v…` (par exemple `git tag v0.1.0 && git push origin v0.1.0`). Le workflow GitHub « Application de bureau » fabrique les installateurs Mac, Windows et Linux et les publie dans les Releases. Le bouton « Télécharger » du site pointe vers la dernière version.
+
+Les installateurs ne sont pas signés : Windows et macOS affichent un avertissement au premier lancement (voir la page du site). Pour le supprimer, il faut un certificat Apple Developer et un certificat de signature Windows.

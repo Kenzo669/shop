@@ -7,6 +7,7 @@ import { listMcp } from "@/lib/mcp";
 import { getSector } from "@/lib/sectors";
 import { getBudget, monthSpend } from "@/lib/billing";
 import { authed } from "@/lib/auth";
+import { desktopMode } from "@/lib/apikey";
 
 export const dynamic = "force-dynamic";
 
@@ -19,6 +20,7 @@ function GET_handler() {
     tasks,
     working: working.map((w) => w.agent_id),
     aiConfigured: aiConfigured(),
+    desktop: desktopMode(),
     smtpConfigured: smtpConfigured(),
     mcpCount: listMcp().length,
     sector: getSector(),

@@ -1,0 +1,92 @@
+{
+  "name": "equipia-desktop",
+  "productName": "Équipia",
+  "version": "0.1.0",
+  "description": "Équipia : votre équipe d'agents IA, dans un bureau virtuel.",
+  "author": "Équipia",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "prepare-server": "node prepare-server.mjs",
+    "start": "electron .",
+    "dist": "node prepare-server.mjs && electron-builder"
+  },
+  "dependencies": {
+    "electron-updater": "6.8.11"
+  },
+  "devDependencies": {
+    "electron": "45.2.3",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "app.equipia.desktop",
+    "productName": "Équipia",
+    "executableName": "equipia",
+    "copyright": "Équipia",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "server",
+        "to": "server",
+        "filter": [
+          "**/*",
+          "**/.next/**/*"
+        ]
+      },
+      {
+        "from": "server/node_modules",
+        "to": "server/node_modules",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "asar": true,
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Kenzo669",
+        "repo": "shop",
+        "releaseType": "release"
+      }
+    ],
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.business",
+      "artifactName": "Equipia-mac-${arch}.${ext}",
+      "identity": "-"
+    },
+    "dmg": {
+      "title": "Équipia"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "artifactName": "Equipia-windows-setup.${ext}"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Équipia"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Office",
+      "artifactName": "Equipia-linux.${ext}"
+    }
+  }
+}

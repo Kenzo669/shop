@@ -192,6 +192,22 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 }
 .closing .lead { color: color-mix(in oklab, var(--bg) 75%, var(--ink)); }
 .closing .btn-primary { background: var(--bg); color: var(--ink); }
+/* téléchargement */
+.nav .dl { padding: 7px 14px; border-radius: 999px; background: var(--ink); color: var(--bg) !important; font-weight: 600; }
+.download { border-radius: 28px; padding: clamp(28px, 5vw, 56px); background: var(--ink); color: var(--bg); display: grid; gap: 22px; }
+.download .lead { color: color-mix(in oklab, var(--bg) 75%, var(--ink)); margin: 0; }
+.download .btn-primary { background: var(--bg); color: var(--ink); font-size: 1.05rem; padding: 14px 26px; }
+.dl-main { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; }
+.dl-main small { color: color-mix(in oklab, var(--bg) 65%, var(--ink)); }
+.dl-all { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.dl-all a { display: block; padding: 14px 16px; border-radius: 14px; border: 1px solid color-mix(in oklab, var(--bg) 22%, var(--ink)); color: var(--bg); text-decoration: none; }
+.dl-all a:hover { border-color: var(--bg); }
+.dl-all b { display: block; }
+.dl-all span { font-size: .85rem; color: color-mix(in oklab, var(--bg) 65%, var(--ink)); }
+.dl-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.dl-steps div { padding: 16px; border-radius: 14px; background: color-mix(in oklab, var(--bg) 8%, var(--ink)); font-size: .93rem; }
+.dl-steps b { display: block; margin-bottom: 4px; color: var(--bg); }
+.dl-steps span { color: color-mix(in oklab, var(--bg) 72%, var(--ink)); }
 footer { padding-block: 32px 48px; color: var(--muted); font-size: .88rem; display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
 
 /* agrandissement des captures */
@@ -212,6 +228,7 @@ dialog button { position: absolute; top: 10px; right: 10px; border: 0; border-ra
       <li><a href="#assistant">L'assistant</a></li>
       <li><a href="#gestion">Gestion</a></li>
       <li><a href="#connexions">Connexions</a></li>
+      <li><a class="dl" href="#telecharger">Télécharger</a></li>
     </ul>
   </div>
 </nav>
@@ -224,7 +241,8 @@ dialog button { position: absolute; top: 10px; right: 10px; border: 0; border-ra
         <h1>Sept collègues IA qui font <span class="mark">vraiment</span> le travail.</h1>
         <p class="lead">Mails, compta, factures, TVA, prospection, marketing, plannings : confiez une tâche à un agent, regardez-le s'y mettre dans votre bureau en 3D, et validez le résultat. Rien ne part sans votre accord.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="#equipe">Rencontrer l'équipe</a>
+          <a class="btn btn-primary" href="#telecharger">Télécharger Équipia</a>
+          <a class="btn btn-ghost" href="#equipe">Rencontrer l'équipe</a>
           <a class="btn btn-ghost" href="#metiers">Voir pour mon métier</a>
         </div>
         <div class="facts"><span>Restaurant, e-commerce, dropshipping, services</span><span>Vos comptes Google, Zapier, Notion, Stripe…</span><span>Budget IA plafonné</span></div>
@@ -463,11 +481,25 @@ dialog button { position: absolute; top: 10px; right: 10px; border: 0; border-ra
 
   <section style="padding-top:0">
     <div class="wrap">
-      <div class="closing">
+      <div class="download" id="telecharger">
         <span class="eyebrow" style="color:var(--warm)">Version de test</span>
-        <h2>Équipia est en cours de développement.</h2>
-        <p class="lead">Les captures de cette page viennent du logiciel lui-même, avec des entreprises d'exemple. Les premiers tests avec de vraies entreprises arrivent.</p>
-        <a class="btn btn-primary" href="#top">Revoir le bureau</a>
+        <h2>Installez Équipia sur votre ordinateur.</h2>
+        <p class="lead">Un vrai logiciel : double-cliquez sur le fichier téléchargé et votre bureau s'ouvre. Rien d'autre à installer. Vos données restent sur votre ordinateur.</p>
+        <div class="dl-main">
+          <a class="btn btn-primary" id="dl-btn" href="https://github.com/Kenzo669/shop/releases/latest">Télécharger Équipia</a>
+          <small id="dl-hint">Mac, Windows et Linux</small>
+        </div>
+        <div class="dl-all">
+          <a href="https://github.com/Kenzo669/shop/releases/latest/download/Equipia-windows-setup.exe"><b>Windows</b><span>Windows 10 et 11 · .exe</span></a>
+          <a href="https://github.com/Kenzo669/shop/releases/latest/download/Equipia-mac-arm64.dmg"><b>Mac puce Apple</b><span>M1, M2, M3, M4 · .dmg</span></a>
+          <a href="https://github.com/Kenzo669/shop/releases/latest/download/Equipia-mac-x64.dmg"><b>Mac Intel</b><span>Mac avant fin 2020 · .dmg</span></a>
+          <a href="https://github.com/Kenzo669/shop/releases/latest/download/Equipia-linux.AppImage"><b>Linux</b><span>AppImage</span></a>
+        </div>
+        <div class="dl-steps">
+          <div><b>1. Installez</b><span>Windows : ouvrez le fichier, Équipia s'installe et se lance. Mac : ouvrez le .dmg et glissez Équipia dans Applications.</span></div>
+          <div><b>2. Premier lancement</b><span>Windows peut afficher « Windows a protégé votre ordinateur » : cliquez sur « Informations complémentaires », puis « Exécuter quand même ». Sur Mac : Réglages système → Confidentialité et sécurité → « Ouvrir quand même ».</span></div>
+          <div><b>3. Créez votre bureau</b><span>Votre nom, votre entreprise, votre métier. Puis collez votre clé API Claude (console.anthropic.com) : vous ne payez que ce que vos agents consomment.</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -526,5 +558,20 @@ dialog button { position: absolute; top: 10px; right: 10px; border: 0; border-ra
   });
   document.getElementById("zoom-close").addEventListener("click", function () { dlg.close(); });
   dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+})();
+// Bouton de téléchargement adapté au système du visiteur.
+(() => {
+  const base = "https://github.com/Kenzo669/shop/releases/latest/download/";
+  const btn = document.getElementById("dl-btn"), hint = document.getElementById("dl-hint");
+  const ua = navigator.userAgent, plat = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || "";
+  if (/Win/i.test(plat) || /Windows/i.test(ua)) {
+    btn.href = base + "Equipia-windows-setup.exe"; btn.textContent = "Télécharger pour Windows"; hint.textContent = "Windows 10 et 11";
+  } else if (/Mac/i.test(plat) && !/iPhone|iPad/i.test(ua)) {
+    btn.href = base + "Equipia-mac-arm64.dmg"; btn.textContent = "Télécharger pour Mac"; hint.textContent = "Mac à puce Apple (M1 à M4). Mac Intel : lien plus bas.";
+  } else if (/Linux/i.test(plat) && !/Android/i.test(ua)) {
+    btn.href = base + "Equipia-linux.AppImage"; btn.textContent = "Télécharger pour Linux"; hint.textContent = "AppImage";
+  } else {
+    hint.textContent = "Équipia s'installe sur un ordinateur (Mac, Windows ou Linux).";
+  }
 })();
 </script>
